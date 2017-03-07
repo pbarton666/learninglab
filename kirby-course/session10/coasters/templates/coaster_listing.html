@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+{% block the_table %}
+<table>
+<tr>
+    <th>Name</th>
+    <th>Park</th>
+    <th>Yr. Opened</th>
+</tr>
+{% for coaster in coasters %}
+  <tr class="{{ loop.cycle('odd', 'even') }}">
+      <td><a href="/coaster/{{ coaster[0] }}">{{coaster[0]}}</a></td>
+      <td>{{ coaster[1] }}</td>
+      <td>{{ coaster[2] }}</td></tr>
+{% endfor %}
+</table>
+{% endblock %}

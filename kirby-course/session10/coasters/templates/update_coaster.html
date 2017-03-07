@@ -1,0 +1,31 @@
+{% extends "master.html" %}
+{% block the_table %}
+<form method="POST" action="/coaster/{{the_data[0]}}">
+<table>
+<tr><td>Name:</td>
+<td><input type="Name" value="{{the_data[0]}}" disabled/></td></tr>
+<tr><td>Park:</td>
+<td><input type="Park" value="{{the_data[1]}}" size="50" autofocus/></td></tr>
+<tr><td>State:</td>
+<td><input type="State" value="{{the_data[2]}}" /></td></tr>
+<tr><td>Country:</td>
+<td><input type="Country" value="{{the_data[3]}}" /></td></tr>
+<tr><td>Duration:</td>
+<td><input type="Duration" value="{{the_data[4]}}" /></td></tr> 
+<tr><td>Speed:</td>
+<td><input type="Speed" value="{{the_data[5]}}" /></td></tr>
+<tr><td>Height:</td>
+<td><input type="Height" value="{{the_data[6]}}" /></td></tr>
+<tr><td>VertDrop:</td>
+<td><input type="VertDrop" value="{{the_data[7]}}" /></td></tr> 
+<tr><td>Length:</td>
+<td><input type="Length" value="{{the_data[8]}}" /></td></tr> 
+<tr><td>Yr_Opened:</td>
+<td><input type="Yr_Opened" value="{{the_data[9]}}" /></td></tr>
+<tr><td>Inversions:</td>
+<td><input type="Inversions" value="{{the_data[10]}}" /></td></tr>
+<tr><td><input type="submit" name="submit" value="Submit" /></td>
+<td><input type="reset" value="Start Over"></td></tr>
+</table>
+</form>
+{% endblock %}

@@ -1,0 +1,45 @@
+{
+        "Definition": [
+                "class",
+                "def",
+                "del",
+                "lambda"
+        ],
+        "Flow": [
+                "assert",
+                "break",
+                "continue",
+                "elif",
+                "else",
+                "try",
+                "raise",
+                "except",
+                "finally",
+                "while",
+                "for",
+                "if",
+                "pass",
+                "return",
+                "yield",
+                "async",
+                "awaits"
+        ],
+        "Boolean": [
+                "False",
+                "None",
+                "True",
+                "and",
+                "in",
+                "is",
+                "not",
+                "or"
+        ],
+        "Scope": [
+                "as",
+                "from",
+                "global",
+                "import",
+                "nonlocal",
+                "with"
+        ]
+}

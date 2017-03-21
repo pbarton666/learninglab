@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Feb 14 10:58:06 2017
+Modified Mar 21, 2017 to send a pull request to pbarton.
+
+This DB class does not yet implement full "CRUD" i.e.
+it creates the coaster table, inserts new coasters,
+but does not delete or update existing coaster records.
+For this Flask application to be more complete as a
+demo, we need delete and update. I am adding stubs 
+in this commit.
 
 @author: Kirby Urner
 
@@ -48,7 +56,15 @@ class DB:
              Length int,
              Yr_Opened int,
              Inversions int)""")
-           
+     
+    @classmethod
+    def update_coaster(cls, row): # use primary key
+        pass
+    
+    @classmethod
+    def delete_coaster(cls, name): # use primary key
+        pass
+    
     @classmethod
     def save_coaster(cls, row):
         # row should be tuple / namedtuple

@@ -62,7 +62,10 @@ class DB:
         pass
     
     @classmethod
-    def delete_coaster(cls, name): # use primary key
+    def delete_coaster(cls, name): # use primary 
+        """
+        get the coaster by name, and delete it
+        """
         pass
     
     @classmethod

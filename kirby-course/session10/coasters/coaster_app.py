@@ -11,7 +11,18 @@ from jinja2 import Environment, PackageLoader
 import sys
 import json
 
-sys.path.append("/Users/kurner/Downloads/session10/")
+import os
+#sys.path.append("/Users/kurner/Downloads/session10/")
+#sys.path.append("/home/pat/workspace/learninglab/kirby-course/session10/")
+
+#fixes "hard path problem" by grabing parent dir and adding a slash
+path_elements=os.path.split(os.getcwd())
+parent_dir=os.path.sep.join(path_elements[:-1]) + os.path.sep
+sys.path.append(parent_dir)
+
+print (os.getcwd())
+print(parent_dir)
+
 
 app = Flask(__name__)
 
@@ -33,10 +44,25 @@ def coasters():
 @app.route("/coaster/<coaster>", methods=["POST", "GET"])
 def coaster(coaster):
     if request.method == "POST":
-        print("POST DATA")
+        #triggered by Submit button on update_coaster.html
+        #the response.form is a dict-like object w/ keys
+        #the name of the input fields and values the user input
+        
+        x=1
+        #Kirby's original placeholder:
+        #print("POST DATA")#
+        
+        #the request.form
+        #update_coaster.html has editable content  
+        #should work but ...
+        template = env.get_template('update_coaster.html')
+        the_data = one_coaster(coaster)
+        return template.render(the_data = the_data[0])
 
+    #if we're here, its a GET triggered by a link embedded
+    #   in coaster.html
     the_data = one_coaster(coaster)
-    template = env.get_template('coaster.html')
+    template = env.get_template('update_coaster.html')
     return template.render(the_data = the_data[0])
 
 @app.route("/api/coaster/<coaster>")

@@ -2,7 +2,17 @@
 {% block the_table %}
 <form method="POST" action="/coaster/{{the_data[0]}}">
 <table>
-<tr><td>Name:</td>
+<tr>
+  <td>Name:</td>
+  <td><input type="text" name="Name" value="{{the_data[0]}}" /></td></tr>
+<tr>
+  <td>Park:</td>
+  <td><input type="text" name="Park" value="{{the_data[1]}}" /></td></tr>
+<tr>
+  <td>State:</td>
+  <td><input type="text" name="State" value="{{the_data[2]}}" /></td></tr>
+
+
 <td><input type="Name" value="{{the_data[0]}}" disabled/></td></tr>
 <tr><td>Park:</td>
 <td><input type="Park" value="{{the_data[1]}}" size="50" autofocus/></td></tr>
@@ -24,7 +34,7 @@
 <td><input type="Yr_Opened" value="{{the_data[9]}}" /></td></tr>
 <tr><td>Inversions:</td>
 <td><input type="Inversions" value="{{the_data[10]}}" /></td></tr>
-<tr><td><input type="submit" name="submit" value="Submit" /></td>
+<tr><td><input type="submit" name="submit" value="SubmitUpdate" /></td>
 <td><input type="reset" value="Start Over"></td></tr>
 </table>
 </form>

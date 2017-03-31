@@ -59,7 +59,28 @@ class DB:
      
     @classmethod
     def update_coaster(cls, row): # use primary key
-        pass
+        "this allows user to update coaster properties"
+        
+        #invoked from coaster_app.py::coaster() by dint of SUBMIT
+        #  button defined in coaster.html
+        
+        col_names="('Name', 'Park', 'State', 'Country', 'Duration', 'Speed'," 
+        " 'Height', 'VertDrop', 'Length', 'Yr_Opened', 'Inversions')"
+        
+        ##TODO:  scrape values from web page.  Placeholders here:
+        values="('Name', 'Park', 'State', 'Country', 'Duration', 'Speed'," 
+        " 'Height', 'VertDrop', 'Length', 'Yr_Opened', 'Inversions')"
+        
+        
+        #UPDATE table_name (cols)  (vals) WHERE test_is_true
+        sql="UPDATE {} {}  {}WHERE {}={}".format(cls.table,
+                                                col_names,
+                                                values,
+                                                'id',row[0])
+        try:
+            cls.cursor.execute(sql)
+        except:
+            print("{} is not valid SQL.  Sorry, dude.").format(sql)
     
     @classmethod
     def delete_coaster(cls, name): # use primary 

@@ -83,11 +83,23 @@ class DB:
             print("{} is not valid SQL.  Sorry, dude.").format(sql)
     
     @classmethod
-    def delete_coaster(cls, name): # use primary 
+    def delete_coaster(cls, coaster): # use primary 
         """
         get the coaster by name, and delete it
         """
-        pass
+        if "'" in coaster:
+            coaster = coaster.replace("'", "''")
+        if "," in coaster:
+            coaster = coaster.replace(",", "%")
+            coaster=coaster[:coaster.index('%')+1]
+        if "%" not in coaster:
+            query = ("DELETE FROM Coasters "
+                     "WHERE name = '{}'".format(coaster))
+        else:
+            query = ("DELETE FROM Coasters "
+                     "WHERE name LIKE '{}'".format(coaster))
+        cls.cursor.execute(query)
+        cls.conn.commit()        
     
     @classmethod
     def save_coaster(cls, row):

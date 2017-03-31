@@ -11,6 +11,7 @@ from jinja2 import Environment, PackageLoader
 import sys
 import json
 
+
 import os
 #sys.path.append("/Users/kurner/Downloads/session10/")
 #sys.path.append("/home/pat/workspace/learninglab/kirby-course/session10/")
@@ -22,7 +23,6 @@ sys.path.append(parent_dir)
 
 print (os.getcwd())
 print(parent_dir)
-
 
 app = Flask(__name__)
 
@@ -61,9 +61,15 @@ def coaster(coaster):
 
     #if we're here, its a GET triggered by a link embedded
     #   in coaster.html
-    the_data = one_coaster(coaster)
-    template = env.get_template('update_coaster.html')
-    return template.render(the_data = the_data[0])
+
+    the_data = list(one_coaster(coaster)[0])
+    if "'" in the_data[0]:
+        the_data.append(the_data[0].replace("'","*"))
+    else:
+        the_data.append(the_data[0])
+    template = env.get_template('coaster.html')
+    return template.render(the_data = the_data)
+
 
 @app.route("/api/coaster/<coaster>")
 def json_coaster(coaster):
@@ -78,6 +84,12 @@ def edit_coaster(coaster):
     template = env.get_template('update_coaster.html')
     return template.render(the_data = the_data[0])
 
+@app.route("/delete/<coaster>")
+def delete_coaster(coaster):
+    with DB() as db:
+        db.delete_coaster(coaster)
+    return coasters()
+    
 def all_coasters():
     with DB() as db:
         query = ("SELECT name, park, yr_opened FROM Coasters "
@@ -101,6 +113,7 @@ def one_coaster(coaster):
         print("Seeking: ", query)
         db.get_coasters(query)
         return db.cursor.fetchall()
+
 
         
 if __name__ == "__main__":

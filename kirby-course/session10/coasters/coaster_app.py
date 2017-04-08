@@ -44,24 +44,16 @@ def coasters():
 @app.route("/coaster/<coaster>", methods=["POST", "GET"])
 def coaster(coaster):
     if request.method == "POST":
-        #triggered by Submit button on update_coaster.html
-        #the response.form is a dict-like object w/ keys
-        #the name of the input fields and values the user input
-        
-        x=1
-        #Kirby's original placeholder:
-        #print("POST DATA")#
-        
-        #the request.form
-        #update_coaster.html has editable content  
-        #should work but ...
-        template = env.get_template('update_coaster.html')
-        the_data = one_coaster(coaster)
-        return template.render(the_data = the_data[0])
+        data = {}
+        data['Name'] = coaster # disabled in form, so doesn't come through
+        data.update(request.form.to_dict(flat=True))
+        try:
+            with DB() as db:
+                db.update_coaster(data)
+        except:
+            print("NO CHANGES POSTED")
 
-    #if we're here, its a GET triggered by a link embedded
-    #   in coaster.html
-
+    # get Coaster, either just modified or coming in from the list
     the_data = list(one_coaster(coaster)[0])
     if "'" in the_data[0]:
         the_data.append(the_data[0].replace("'","*"))
@@ -69,7 +61,6 @@ def coaster(coaster):
         the_data.append(the_data[0])
     template = env.get_template('coaster.html')
     return template.render(the_data = the_data)
-
 
 @app.route("/api/coaster/<coaster>")
 def json_coaster(coaster):
@@ -79,8 +70,8 @@ def json_coaster(coaster):
 
 @app.route("/update/<coaster>")
 def edit_coaster(coaster):
+    print("Update: ", coaster)
     the_data = one_coaster(coaster)
-    print(the_data[0][1])
     template = env.get_template('update_coaster.html')
     return template.render(the_data = the_data[0])
 
@@ -101,6 +92,8 @@ def one_coaster(coaster):
     with DB() as db:
         if "'" in coaster:
             coaster = coaster.replace("'", "''")
+        if "*" in coaster:
+            coaster = coaster.replace("*", "''")
         if "," in coaster:
             coaster = coaster.replace(",", "%")
             coaster=coaster[:coaster.index('%')+1]

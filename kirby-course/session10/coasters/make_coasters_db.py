@@ -11,6 +11,7 @@ demo, we need delete and update. I am adding stubs
 in this commit.
 
 @author: Kirby Urner
+@co-author: Patrick Barton
 
 Consumes csv data put into a dictionary by rollercoasters.py
 Creates a SQL_Lite DB and inserts the data.
@@ -63,24 +64,29 @@ class DB:
         
         #invoked from coaster_app.py::coaster() by dint of SUBMIT
         #  button defined in coaster.html
+        print("Updating...")
+        print("Raw data:",row)
+        col_names= ('Park', 'State', 'Country', 'Duration', 'Speed', 'Height', 
+        'VertDrop', 'Length', 'Yr_Opened', 'Inversions')
         
-        col_names="('Name', 'Park', 'State', 'Country', 'Duration', 'Speed'," 
-        " 'Height', 'VertDrop', 'Length', 'Yr_Opened', 'Inversions')"
-        
-        ##TODO:  scrape values from web page.  Placeholders here:
-        values="('Name', 'Park', 'State', 'Country', 'Duration', 'Speed'," 
-        " 'Height', 'VertDrop', 'Length', 'Yr_Opened', 'Inversions')"
-        
-        
-        #UPDATE table_name (cols)  (vals) WHERE test_is_true
-        sql="UPDATE {} {}  {}WHERE {}={}".format(cls.table,
-                                                col_names,
-                                                values,
-                                                'id',row[0])
+        sql = (",\n".join(("UPDATE Coasters SET "
+                 "Park = '{Park}'",
+                 "State = '{State}'",
+                 "Country = '{Country}'",
+                 "Duration = {Duration}",
+                 "Speed = {Speed}",
+                 "Height = {Height}",
+                 "VertDrop = {VertDrop}",
+                 "Length = {Length}",
+                 "Yr_Opened = {Yr_Opened}",
+                 "Inversions = {Inversions}")).format(**row))
+                
+        sql += " WHERE Name = '{}'".format(row['Name'])
         try:
             cls.cursor.execute(sql)
+            cls.conn.commit() 
         except:
-            print("{} is not valid SQL.  Sorry, dude.").format(sql)
+            print("SQL {} is not valid.  Sorry, dude.".format(sql))
     
     @classmethod
     def delete_coaster(cls, coaster): # use primary 

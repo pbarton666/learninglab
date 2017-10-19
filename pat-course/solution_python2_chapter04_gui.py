@@ -1,3 +1,6 @@
+#solution_python2_chapter04_gui.py
+
+
 from tkinter import *
 class Application(Frame):
     """Application main window class."""

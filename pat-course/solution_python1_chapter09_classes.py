@@ -1,5 +1,6 @@
 #solution_python1_chapter09_classes.py
 
+"A module to support Vehicle classes"
 
 import inspect
 

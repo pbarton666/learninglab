@@ -3,8 +3,6 @@
 
 import random
 
-
-
 #here's a "pragma" to switch execution modes depending on circumstances
 LIVE_MODE=False
 if LIVE_MODE:

@@ -1,4 +1,5 @@
 #solution_python1_chapter08_functions.py
+
 """Demonstrates how to 'pass the buck' while handling exceptions. """
 import pickle
 import time

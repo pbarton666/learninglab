@@ -1,3 +1,5 @@
+#solution_python2_chapter03_array_extra.py
+
 from array import array
 
 #a rectangular array (easier to see what we're doing)

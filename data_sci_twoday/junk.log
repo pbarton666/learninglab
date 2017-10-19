@@ -1,0 +1,11 @@
+  File "C:\Program Files (x86)\Wing IDE 5.0\bin\wingdb.py", line 10, in <module>
+    """
+  File "C:\Program Files (x86)\Wing IDE 5.0\bin\wingdb.py", line 605, in main
+    def main():
+  File "C:\Program Files (x86)\Wing IDE 5.0\bin\wingdb.py", line 499, in DebugFile
+    def DebugFile(server, filename, err, fs_encoding, sys_path=None):
+  File "C:\src\ide\bin\3.4\src/debug/tserver\netserver.pyc", line 817, in Run
+  File "C:\src\ide\bin\3.4\src/debug/tserver\dbgserver.pyc", line 711, in RunFile
+  File "C:\src\ide\bin\3.4\src/debug/tserver\dbgserver.pyc", line 2924, in __RunFileInMain
+  File "C:\Users\pbarton\Desktop\junk2.py", line 9, in <module>
+    traceback.print_stack(file=fh)

@@ -12,7 +12,7 @@ import datetime
 import math
 from py_utils import printme 	#home-made formatting utilities
 
-live=False  #set True to show plots; False to supress
+live=True  #set True to show plots; False to supress
 
 """
 This module focuses on linear discriminant analysis (LDA).  Use LDA when the 
@@ -45,7 +45,60 @@ df=pd.read_csv(file_name)
 iv_names=['slength', 'swidth', 'plength', 'pwidth']
 dv_name='iclass'
 
-#Linear discriminant analyis assumes that the IVs are  normally.
+#the describe() method produces a new DataFrame
+printme( df.describe())               #basic descriptives, all cols
+printme( df.describe()['pwidth'])     #select only petal width
+
+#We can create categorical descriptions easily:
+auto_cats=pd.Categorical.from_array(df['iclass'])
+print(auto_cats.describe())
+
+#This adds a new DataFrame column w/ category designations
+df['iclass_ix']=auto_cats.codes
+printme(df.head(2))
+printme(df.tail(2))
+
+#Let's visualize the data so we can get our arms around it
+#  a bit better.
+
+#have a look at sepal / petal length scatter using pandas plot.scater() 
+ax=df[df.iclass=='Iris-versicolor'].\
+    plot.scatter(x='slength', y='swidth', 
+                 color='yellow', label='versicolor') 
+
+df[df.iclass=='Iris-setosa'].\
+    plot.scatter(x='slength', y='swidth', 
+                 color='red', label='setosa',
+                 ax=ax)   #use same axes object!
+
+df[df.iclass=='Iris-virginica'].\
+    plot.scatter(x='slength', y='swidth', 
+                 color='blue', label='virginica', 
+                 ax=ax)    #here, too.
+
+ax.set_title("scatter") 
+
+if live: 
+    ax.figure.show()
+
+#You can also "throw the spaghetti against the wall" and look
+#  at all the scatters and some summary data:
+if live:
+    pd.tools.plotting.scatter_matrix(df)
+    plt.show()
+
+#... and make it even prettier using seaborn (an alternative plotting
+#    library).
+if live:
+    sns.set()
+    sns.pairplot(df[['slength', 'swidth', 'plength', 'pwidth', 'iclass']],
+                 hue="iclass", 
+                 diag_kind="kde")
+    sns.plt.show()
+
+#####################
+
+#Linear discriminant analyis assumes that the IVs are normally.
 #   distributed technically, multivariate normal.
 #   Here's how to do both univariate normalicy tests
 
@@ -69,10 +122,10 @@ for iv in iv_names:
         result='FAILED. SAD!'
     else: result='passed'
     print("\tfeature: {:<10} {:<20} p={:<10}".\
-        format(iv, result, round(p,2)))
+          format(iv, result, round(p,2)))
 print()	
 
-#Let's "eyeball" them using a grid of plots
+#Let's "eyeball" normalicy asssumptions using a grid of plots
 
 #set up the rows/columns for our plot object
 cols=3
@@ -106,61 +159,6 @@ if live: plt.show()
 #  our data set is pretty large (n=150) so we've got a bit
 #  of slack due to the central limit theorum (lots of data ->
 #  mean close to population mean)
-
-#####################pandas_cluster_1.py
-#this uses describe() to create descriptive statistics
-printme(df.describe())
-print()
-
-#Have a look at the unique categorical values of the iris types
-#      pd.Categorical.from_array() provides 'one stop shopping'  
-
-auto_cats=pd.Categorical.from_array(df['iclass'])
-print(auto_cats.describe())
-
-#This adds a new DataFrame column w/ category designations
-df['iclass_ix']=auto_cats.codes
-
-#Let's visualize the data so we can get our arms around it
-#  a bit better.
-
-#have a look at sepal / petal length scatter using pandas plot() method
-ax=df[df.iclass=='Iris-versicolor'].\
-    plot.scatter(x='slength', y='swidth', 
-                 color='yellow', label='versicolor') 
-
-df[df.iclass=='Iris-setosa'].\
-    plot.scatter(x='slength', y='swidth', 
-                 color='red', label='setosa',
-                 ax=ax)
-
-df[df.iclass=='Iris-virginica'].\
-    plot.scatter(x='slength', y='swidth', 
-                 color='blue', label='virginica', 
-                 ax=ax)
-
-ax.set_title("scatter") 
-
-if live: 
-    ax.figure.show()
-
-#You can also "throw the spaghetti against the wall" and look
-#  at all the scatters and some summary data:
-if live:
-    pd.tools.plotting.scatter_matrix(df)
-
-#... and make it even prettier using seaborn (an alternative plotting
-#    library).
-if live:
-    sns.set()
-    sns.pairplot(df[['slength', 'swidth', 'plength', 'pwidth', 'iclass']],
-                 hue="iclass", 
-                 diag_kind="kde")
-    sns.plt.show()
-
-#####################
-
-
 
 #apply discrimint analysis to tease out contributions
 #    NB this import would typically go at the top of the module

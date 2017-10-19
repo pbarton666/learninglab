@@ -1,0 +1,9 @@
+#.pdbrc
+print("\n\n------------------\n")
+print ("printing from .pdbrc!")
+print ("DEBUG_MODE is {}.  Obviously :-)".format(DEBUG_MODE))
+print ("we'll just let the debugger continue and crash out.")
+print("\n------------------\n\n")
+
+
+continue

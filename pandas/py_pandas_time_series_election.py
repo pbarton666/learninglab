@@ -56,7 +56,7 @@ printme(df.index)
 #Let's say we want to look at one poll
 
 #This searches for Gallup polls
-gallup = df.query(df.poll=='Gallup')
+gallup = df.query("poll=='Gallup'")
 printme("Gallup only using query()", gallup)
 
 #... and this finds ones with a positive spread
@@ -93,8 +93,8 @@ formatPlot2(start=start, end=end, s=gspread, t=title)
 
 ########And here's how we might compare two polls
 #query the original dataframe
-qpoll = df.query(df.poll=='Quinnipiac')
-rpoll=df.query(df.poll=='Rasmussen Reports')
+qpoll = df.query("poll=='Quinnipiac'")
+rpoll=df.query("poll=='Rasmussen Reports'")
 
 #ensure the indices are datetime objects with to_datetime()
 qpoll.index=(pd.to_datetime(qpoll.index))

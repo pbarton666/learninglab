@@ -4,7 +4,6 @@
    using numpy arrays
 """   
 
-#$   pip install virtualenv  virtualenvwrapper
 
 #import the library:
 import numpy as np

@@ -74,6 +74,7 @@ def formatPlot2(start=None, end=None, s=None, t=None):
 	#add a title and some padding 
 	plt.title(t)
 	plt.tight_layout()
+	fig.autofmt_xdate()
 	
 	#et voila!
 	plt.show()
@@ -121,7 +122,7 @@ def formatPlotBar(**kwargs):
 	x_axis_label=kwargs.get('x_label', 'x-axis')
 
 	#general formatting	
-	minor_format='%d\n%a'
+	minor_format=kwargs.get('minor_format','%d\n%a')
 	major_format='\n\n\n%b\n%Y'	
 
 	#instance the plot and axes objects - they're fine with a shared y-axis
@@ -144,7 +145,8 @@ def formatPlotBar(**kwargs):
 	#tell the minor tick labels weekdays, then format
 	ax.xaxis.set_minor_locator(dates.WeekdayLocator(byweekday=(1),
 		                                            interval=1))
-	ax.xaxis.set_minor_formatter(dates.DateFormatter(minor_format))
+	if minor_format:
+		ax.xaxis.set_minor_formatter(dates.DateFormatter(minor_format))
 	
 	#tell major tick labels to be months, then format
 	ax.xaxis.set_major_locator(dates.MonthLocator())
@@ -162,7 +164,7 @@ def formatPlotBar(**kwargs):
 	fig.canvas.set_window_title(title)
 	plt.tight_layout()
 	plt.savefig(title+'.png')
-	
+	#fig.autofmt_xdate()
 	plt.show()
 
 

@@ -8,7 +8,7 @@ import csv
 import datetime
 from py_utils import printme 	#home-made formatting utilities
 
-live=False
+live=True
 
 #Create some data to be used in a time series
 data=[10, 20, 30, 40]

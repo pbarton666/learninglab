@@ -11,7 +11,7 @@ import datetime
 from py_utils import printme 	#home-made formatting utilities
 
 #set this to True to show all the plots; False for dev/debugging
-live=False
+live=True
 
 #a few marker codes cf. matplotlib.org/api/colors_api.html
 red='r'; blue='b'; green='g'; greenish='chartreuse'; magenta='m';black='b'
@@ -68,7 +68,7 @@ plt.close()
 #Both Series and DataFrame objects provide some wrapping of 
 #   matplotlib.  So you could go:
 
-mypic=s1.plot(kind='bar')
+mypic=s1.plot(kind='line')
 mypic.figure.show()
 
 #Series can be loaded into a Dataframe object
@@ -77,7 +77,7 @@ df['s2']=s2
 df['s3']=s3
 
 #... and data can be plotted from there
-bar=df.plot.bar()
+bar=df.plot.line()
 bar.xaxis.set_label_text("hey there!")
 bar.set_title("Who thought trig could be cool?")
 bar.figure.show()

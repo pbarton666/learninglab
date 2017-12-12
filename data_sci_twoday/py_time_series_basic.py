@@ -1,5 +1,6 @@
 #py_time_series_basic.py
 import datetime
+import pandas as pd
 
 index=pd.date_range(start='1/1/2017',   periods=5, freq='d')
 index=pd.date_range(start='Jan 1 2017', periods=5, freq='d')

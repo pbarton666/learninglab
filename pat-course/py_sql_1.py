@@ -1,4 +1,4 @@
-#py_sql_1
+#py_sql_1.py
 
 #import the python/sqlite3 connector;  
 #...there are others for postgresql, mysql, etc.
@@ -26,14 +26,9 @@ curs.execute(cmd)
 
 
 #add a row
-cmd = \
-"""
-INSERT INTO dogs ({}, {}, {}) 
-            VALUES ('{}','{}','{}')
-"""\
-       .format('name', 'toy', 'weight', "Fang", "bone", 90) 
-print(cmd)
-curs.execute(cmd)
+cmd = "INSERT INTO dogs ('name', 'toy', 'weight') VALUES (?, ?, ?)"
+vals= ('Fang', 'bone', 90)
+curs.execute(cmd, vals)
 
 
 cmd = "SELECT * from {}".format('dogs')
@@ -54,11 +49,11 @@ if result:
 cols=('name', 'toy','weight')
 tname='dogs'
 val_tuple=("Fluffy", "sock", "25")
+
 cmd=\
-    """INSERT INTO {} {} \nVALUES {} """\
-    .format(tname, cols, val_tuple)
-print(cmd)
-curs.execute(cmd)
+    "INSERT INTO {} {} VALUES (?, ?, ?) ".format(tname, cols)
+
+curs.execute(cmd, val_tuple)
 print()
 
 def print_rows():
@@ -149,9 +144,10 @@ print("Awesome, we've captured {} rows.".format (number_of_rows))
 
 #updates
 print()
-cmd="UPDATE {} SET weight=666 WHERE name='Snoopy'".format(tname)
-print(cmd)
-curs.execute(cmd)
+cmd="UPDATE {} SET weight=? WHERE name='Snoopy'".format(tname)
+weight=(666,)
+curs.execute(cmd, weight)
+
 cmd="SELECT * FROM {} WHERE name='Snoopy'".format(tname)
 print(cmd)
 curs.execute(cmd)
@@ -166,14 +162,16 @@ curs.execute(cmd)
 print_rows()
 
 
-cmd= "DELETE FROM {} WHERE toy = 'sock'".format(tname)
-curs.execute(cmd)
+cmd= "DELETE FROM {} WHERE toy = ? ".format(tname)
+toy = ('sock',)
+curs.execute(cmd, toy)
 cmd = "SELECT * FROM {}".format(tname)
 curs.execute(cmd)
 print_rows()
 
-cmd= "DELETE FROM {} WHERE toy LIKE '%el'".format(tname)
-curs.execute(cmd)
+cmd= "DELETE FROM {} WHERE toy LIKE ?".format(tname)
+toy_selector = ('%el',)
+curs.execute(cmd, toy_selector)
 cmd = "SELECT * FROM {}".format(tname)
 curs.execute(cmd)
 print_rows()

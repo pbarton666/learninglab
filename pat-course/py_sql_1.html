@@ -1,0 +1,46 @@
+<!--py_order_form_1.html-->
+
+<HTML>
+	<HEAD><TITLE>Tickets</TITLE></HEAD>
+	
+	<BODY>
+		<h3><center>Order Form</center></h3>
+		<center>
+		<form METHOD="get" ACTION="py_tix.py">
+			Please tell us who you are and what you'd like
+			<table>
+				<tr><td> First </td>  <td> <INPUT TYPE="text" NAME="firstname"> </td>  </tr>
+				<tr><td> Last </td>  <td> <INPUT TYPE="text" NAME="lastname"> </td>  </tr>
+				<tr><td> Fav Team </td>  <td> <INPUT TYPE="text" NAME="team"> </td>  </tr>
+			</table>
+
+			<br>
+			Seating Preference
+			<SELECT NAME="seating">
+							<OPTION SELECTED> Bleacher
+							<OPTION>Box
+							<OPTION>Concourse
+			</SELECT>			
+			
+			<br><br>
+			Payment Type 
+			<INPUT TYPE="radio" NAME="payment"
+				   VALUE="credit" CHECKED>Credit
+			<INPUT TYPE="radio" NAME="payment"
+				   VALUE="cash">Cash
+			<INPUT TYPE="radio" NAME="kid" VALUE="cash">First-born kid		
+			
+			<br><br>
+			I plan to consume lots of the following:   
+			<INPUT TYPE="checkbox" NAME="foodbev" VALUE="beer">Beer
+			<INPUT TYPE="checkbox" NAME="foodbev" VALUE="mystery">Mystery Meat
+			<INPUT TYPE="checkbox" NAME="foodbev" VALUE="ccorn">Carmel Corn
+			
+			<br><br>
+			<center>
+			<INPUT TYPE="submit" VALUE="Submit the Form">
+			<INPUT TYPE="reset" VALUE="Clear the Form">
+			</center>
+		</form>
+	</BODY>
+</HTML>

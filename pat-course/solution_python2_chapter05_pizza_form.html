@@ -1,0 +1,230 @@
+<!--solution_python2_chapter05_pizza_script-->
+
+
+
+<!--Remember we'll need to start a server, something like:-->
+
+<!--$python –m http.server –-bind localhost –-cgi 8000-->
+
+
+
+<HTML>
+
+    <HEAD><TITLE>Oasis Pizza Order Form</TITLE></HEAD>
+
+
+
+    <BODY>
+
+        <h3><center>Oasis Pizza is Health Food!</center></h3>
+
+        <center>
+
+        <form METHOD="get" 
+
+            ACTION="/cgi-bin/solution_python2_chapter05_pizza_script.py">
+
+            <br>  
+
+            Please choose from the following:
+
+            <!--crust choice, default=whole wheat-->
+
+            <br><br>
+
+            Please choose a crust
+
+            <SELECT NAME="crust">
+
+                <OPTION SELECTED> Whole wheat
+
+                <OPTION>Traditional (white)
+
+                <OPTION>Deep-dish (white)
+
+            </SELECT>    
+
+            <br><br>
+
+
+
+            <!--other options as table columns in a single row-->
+
+            <table>
+
+                <tr>
+
+                    <td> 
+
+                        <!--cheese in its own embedded table, 1 item/row-->
+
+                        <table>
+
+                           
+
+                            <tr><td>Cheese (as many as you want)</td></tr>
+
+                            <tr><td>
+
+                                    <INPUT TYPE="checkbox" 
+
+                                        NAME="cheese" 
+
+                                        VALUE="mozzarella"
+
+                                        checked> Mozzarella
+
+                             </td></tr>
+
+                             <tr><td>
+
+                                    <INPUT TYPE="checkbox" 
+
+                                        NAME="cheese" 
+
+                                        VALUE="cheddar"
+
+                                        > Cheddar
+
+                              </td></tr>
+
+                              <tr><td>
+
+                                    <INPUT TYPE="checkbox" 
+
+                                        NAME="cheese" 
+
+                                        VALUE="soy"
+
+                                        > Soy   
+
+                               </td></tr>
+
+                        </table>
+
+                       </td>
+
+                    
+
+                     <td> 
+
+                        <!--meat-->
+
+                        <table>
+
+                            <tr><td>Meat (as many as you want)</td></tr>
+
+                            <tr><td>
+
+                                <INPUT TYPE="checkbox" 
+
+                                    NAME="meat" 
+
+                                    VALUE="no meat"
+
+                                    checked> None (veggie)
+
+                            </td></tr>
+
+                            <tr><td> 
+
+                                <INPUT TYPE="checkbox" 
+
+                                    NAME="meat" 
+
+                                    VALUE="pepperoni"
+
+                                    > Pepperoni
+
+                            </td></tr>
+
+                            <tr><td>
+
+                                <INPUT TYPE="checkbox" 
+
+                                    NAME="meat" 
+
+                                    VALUE="ham"
+
+                                    > Ham                   
+
+                            </td></tr>
+
+                        </table>
+
+                    </td>
+
+                        
+
+                    <td>
+
+                        <table>
+
+                            <!--beverage-->
+
+                            <tr><td>Beverage (please choose one)
+
+                            <tr><td>
+
+                                <INPUT TYPE="radio"     
+
+                                    NAME="beverage"
+
+                                    VALUE="beer"   
+
+                                    CHECKED>Beer
+
+                            </td></tr>        
+
+                            <tr><td>
+
+                                <INPUT TYPE="radio" 
+
+                                    NAME="beverage"
+
+                                    VALUE="cola"
+
+                                    >Cola
+
+                            </td></tr>        
+
+                            <tr><td>
+
+                                <INPUT TYPE="radio" 
+
+                                    NAME="beverage" 
+
+                                    VALUE="orange"
+
+                                    >Orange
+
+                            </td></tr>        
+
+                        </table>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+
+
+        <!--buttons for the bottom of the form-->
+
+        <br><br>
+
+        <center>
+
+        <INPUT TYPE="submit" VALUE="Submit the Form">
+
+        <INPUT TYPE="reset" VALUE="Clear the Form">
+
+        </center>
+
+    </form>
+
+  </BODY>
+
+</HTML>
+

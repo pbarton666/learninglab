@@ -1,8 +1,11 @@
 #py_multiproc_3.py
 
+"Playing with the manager classes."
+
 from multiprocessing import freeze_support
 from multiprocessing.managers import BaseManager, BaseProxy
 import operator
+
 
 
 class Foo:

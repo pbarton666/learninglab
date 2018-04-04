@@ -1,4 +1,8 @@
-import cProfile
+try:	
+    import cProfile as profiler
+except:
+
+    import profile as profiler
 
 def fib(n):
     # from http://en.literateprograms.org/Fibonacci_numbers_(Python)
@@ -17,6 +21,7 @@ def fib_seq(n):
     return seq
 
 if __name__=='__main__':
-    print ('RAW')
+    print ('fib_seq')
     print ( '=' * 80)
-    cProfile.run('print (fib_seq(20)); print()')
+    profiler.run('print (fib_seq(20)); print()')
+  

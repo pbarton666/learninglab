@@ -10,7 +10,7 @@ def outer_space(outer_input):
 		return last_answer
 	return inner_space
 		
-MEANING_OF_LIFE=41
+MEANING_OF_LIFE=42
 original = outer_space(MEANING_OF_LIFE)
 print("The original meaning of life is {}".format(original(0)))
 tweak=3

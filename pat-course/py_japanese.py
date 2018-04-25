@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 """Experimenting with Japanese programming"""
 
+#NB to get this to play well with Wing, set encoding to UTF-8
+#      Edit.. Preferences..Debugger..IO
+
 #use assign a new name to a built-in function
 刷る =  print          #"tsuru"
 

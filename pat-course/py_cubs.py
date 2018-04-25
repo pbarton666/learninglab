@@ -1,11 +1,13 @@
-#py_misc_string_ops.py
+#py_cubss.py
 my_team="The Chicago Cubs"
 
-split_team=my_team.split(" ")
-print("splits:  {}".format(split_team))
+print("my team ends with an 's'?  {}".\
+     format(my_team.endswith('s')))
 
-join_string="!!!"
-together_again=join_string.join(split_team)
-print("together again: {}".format( together_again), end=join_string+"\n")
+print("my team starts with an 's'?  {}".\
+     format(my_team.startswith('s')))
 
+print("in caps:   {}".format(my_team.upper()))
+
+print("swapped-case:  {}".format(my_team.swapcase()))
 

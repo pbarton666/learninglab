@@ -4,7 +4,7 @@
 
 def sorter(key):
 	"simply returns the value"
-	return players[key]
+	return players[key][1]
 
 players={225:('Jake', 'Arrieta'),
          234:('Jake', 'Buchanan'),

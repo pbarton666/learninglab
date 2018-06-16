@@ -1,4 +1,4 @@
-#solution_dsci_chapter_02_diabetes.py
+#solution_dsci_chapter_02_physiology.py
 
 """Data from scikit-learn's traing data.  There are lots of other machine
    learning data sets here:

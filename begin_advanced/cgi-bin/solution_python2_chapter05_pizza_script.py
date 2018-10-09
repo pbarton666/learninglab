@@ -47,7 +47,7 @@ cal_dict={"crust":   {'Whole wheat':300,
 report="You ordered a pizza with:<br>"
 calories=0
 
-for group in ('crust', 'cheese','meat', 'beverage'):
+for group in ('crust', 'cheese', 'meat', 'beverage'):
     choices = fields.getlist(group)           #reads the value(s)
     for choice in choices:
         report += "<br>&nbsp{}<br>".format(choice)

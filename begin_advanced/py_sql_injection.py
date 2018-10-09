@@ -39,7 +39,7 @@ conn.commit()
 print("done\n")
 
 #check out the contents
-cmd="SELECT * from dogs"
+cmd="SELECT * FROM dogs"
 curs.execute(cmd)
 for row in curs.fetchall():
     print(row)
@@ -50,7 +50,7 @@ print("injecting malicious code", end=" ... ")
 #   DROP TABLE dogs;
 #   <this bit is a SQL comment> =='
 
-cmd = "SELECT * from dogs WHERE name='Diablo'; DROP TABLE dogs;--'"
+cmd = "SELECT * FROM dogs WHERE name='Diablo'; DROP TABLE dogs;--'"
 curs.executescript(cmd)
 print("done")
 
@@ -58,7 +58,7 @@ print()
 print ('trying to get table "dogs"', end=" ... ")
 print()
 try:
-    cmd="SELECT * from dogs"
+    cmd="SELECT * FROM dogs"
     curs.execute(cmd)
 except Exception as e:
     print(e)
@@ -94,7 +94,7 @@ print("done\n")
 #Now the injection attack:
 print("injecting malicious code", end=" ... ")
 name = "'Diablo'; DROP TABLE dogs;--'"
-cmd = "SELECT * from dogs WHERE name= ?; DROP TABLE dogs;--'"
+cmd = "SELECT * FROM dogs WHERE name= ?; DROP TABLE dogs;--'"
 try:
     curs.executescript(cmd, (name,))
 except Exception as e:
@@ -106,7 +106,7 @@ print()
 print ('trying to get table "dogs"', end=" ... ")
 print()
 try:
-    cmd="SELECT * from dogs"
+    cmd="SELECT * FROM dogs"
     curs.execute(cmd)
     for dawg in curs.fetchall():
         print(dawg)

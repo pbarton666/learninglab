@@ -1,0 +1,321 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Is This Thing Even Right?\n",
+    "\n",
+    "Spreadsheets are fraught with errors - by some estimates 80-90% (*) of all spreadsheets and around 1% of individual spreadsheet cells have at least one error.\n",
+    "\n",
+    "It's not hard to see why.  Spreadsheets, because they work with a GUI, introduce hundreds - or even thousands of independent chances to make a mistake.   Some of these are obvious and easily caught.  Others may produce reasonable-looking, but incorrect results that are very difficult to track down.\n",
+    "\n",
+    "Pandas absolutely won't keep you from screwing up.  But, you have a several things going for you:\n",
+    "\n",
+    "- Many mistakes are really big mistakes that are easy to find by inspection.  That's due to the fact that a few, powerful, operations are used instead of thousands of very local ones.\n",
+    "\n",
+    "- It's possible to bake quality assurance into the analytical process.  You can gain confidence that each set of operations is correct, and that everything works even as you improve your application.\n",
+    "\n",
+    "- It's easy to test against independently-developed benchmarks.\n",
+    "\n",
+    "- It's easy to make statistical checks to detect rogue, out-of-spec, or otherwise suspicious data.\n",
+    "\n",
+    "This section will show you how make quality the first ingredient in your analytical products.\n",
+    "\n",
+    "(*) http://panko.shidler.hawaii.edu/SSR/Mypapers/whatknow.htm"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<u>Check your individual algorithms</u>\n",
+    "\n",
+    "Any large analytical task is broken down into smaller ones.  Best practices will lead you to a high degree of isolation of your code.  This not only makes your code redeployable, but also makes it condusive to testing."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Pandas has built-in tools to compare pandas objects that are super-easy to use.  We'll start there.\n",
+    "\n",
+    "Let's suppose we need to build a system to determine whether older people do better than younger people on some test.  Let's say those born before 2000 are \"old\" and the rest are \"young\".  We'll build the tools to do the analysis and check them out.  \n",
+    "\n",
+    "Here's a few lines of the data we'll have to process:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#In Python, we let the system know what tools we'll need\n",
+    "import pandas as pd\n",
+    "from numpy import NaN\n",
+    "import sys\n",
+    "import os\n",
+    "\n",
+    "#This is a utility for displaying content side-by-side\n",
+    "from custom_utils.display_wide import  display_wide"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 57,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>DOB_y</th>\n",
+       "      <th>DOM_m</th>\n",
+       "      <th>DOB_d</th>\n",
+       "      <th>Score</th>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>Subject</th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>1966</td>\n",
+       "      <td>6</td>\n",
+       "      <td>6</td>\n",
+       "      <td>35</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>1984</td>\n",
+       "      <td>5</td>\n",
+       "      <td>16</td>\n",
+       "      <td>85</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>1995</td>\n",
+       "      <td>3</td>\n",
+       "      <td>15</td>\n",
+       "      <td>45</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>2001</td>\n",
+       "      <td>2</td>\n",
+       "      <td>23</td>\n",
+       "      <td>30</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>2005</td>\n",
+       "      <td>7</td>\n",
+       "      <td>30</td>\n",
+       "      <td>35</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "         DOB_y  DOM_m  DOB_d  Score\n",
+       "Subject                            \n",
+       "1         1966      6      6     35\n",
+       "3         1984      5     16     85\n",
+       "5         1995      3     15     45\n",
+       "2         2001      2     23     30\n",
+       "4         2005      7     30     35"
+      ]
+     },
+     "execution_count": 57,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "scores_dir = 'support_files'\n",
+    "testing_fn = 'test_scores.xlsx'\n",
+    "testing_tab = 'scores_testing'\n",
+    "df = pd.read_excel(os.path.join(scores_dir, testing_fn), \n",
+    "                   sheet_name = testing_tab,\n",
+    "                   index_col = 'Subject').sort_values(\"DOB_y\")\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "metadata": {},
+   "source": [
+    "Here's a function that may (or may not) produce the right evaluation.  This is decipherable,\n",
+    "but nearly-impenetrable for the uninitiated - therefore not necessarily good coding practice.\n",
+    "\n",
+    "But that's OK for this exercise because what matters is whether it produces the right results."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 58,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#We'll isolate calculations in a function.  You might think of it as something you'd \n",
+    "#  encounter as a cell formula in a spreadsheet.\n",
+    "\n",
+    "def determine_if_young_better(df, dob_cutoff=2000):\n",
+    "    \"\"\"Reports whether old or young people score better.  Accepts \n",
+    "         a DataFrame containing the birth year ('DOB_y') and a \n",
+    "         score ('Score').  Returns True of False.\"\"\"\n",
+    "    \n",
+    "    return (df[df['DOB_y'] <= dob_cutoff].loc[:,'Score'].mean() < \\\n",
+    "            df[df['DOB_y'] >  dob_cutoff].loc[:,'Score'].mean()\n",
+    "           )"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 59,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 59,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "determine_if_young_better(df)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "So is this right?   Who knows?  The data is complicated and the code is dense.  One approach might be to throw some easy-to-understand data at it and see how it performs.   Since it returns only binary data, the test itself will be straightforward.\n",
+    "\n",
+    "Here's some sample data (we can leave off the subject ID, day, and month of birth)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 60,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def test_determine_if_young_better():\n",
+    "    s1 = pd.DataFrame(\n",
+    "        [[1900, 10], [1900, 10], [1900, 10],  #old goats, low scores\n",
+    "         [2020, 90], [2020, 90], [2020, 90],   #young folk, hi scores\n",
+    "        ], columns = ['DOB_y', \"Score\"])\n",
+    "    \n",
+    "    #assert does nothing if the thing tested is True\n",
+    "    assert determine_if_young_better(s1)\n",
+    "    \n",
+    "test_determine_if_young_better()    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 61,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "55.0"
+      ]
+     },
+     "execution_count": 61,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "dob_cutoff=2000\n",
+    "df[df['DOB_y'] <= dob_cutoff].loc[:,'Score'].mean()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 62,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "32.5"
+      ]
+     },
+     "execution_count": 62,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df[df['DOB_y'] > dob_cutoff].loc[:,'Score'].mean()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "py37",
+   "language": "python",
+   "name": "py37"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

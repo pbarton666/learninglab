@@ -57,7 +57,10 @@ def display_wide(table_list, titles=None, spacing=0):
         
         #If it's a Series, make a dataframe out of it
         elif isinstance(i, pd.Series):
-            html += '<td >  {} </td>'.format( i.to_frame()._repr_html_())
+            fr = i.to_frame()
+            fr.columns=['']
+            html += '<td >  {} </td>'.format( fr._repr_html_())
+            #html += '<td >  {} </td>'.format( i.to_frame()._repr_html_())
             
         #If it's none of the above, try to make a single-element dataframe.  If that
         #  works, find.  If not, give up.  Row index value is 'value', col index is blank.

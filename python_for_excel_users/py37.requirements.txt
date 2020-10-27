@@ -12,7 +12,7 @@ chardet==3.0.4
 cloudpickle==1.2.1
 colorama==0.4.1
 confuse==1.0.0
-cryptography==2.7
+cryptography==3.2
 cycler==0.10.0
 cytoolz==0.10.0
 dask==2.3.0

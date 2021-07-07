@@ -1,0 +1,103 @@
+/*This file contains any manual css for this page that needs to override the global styles.
+This is only required when different pages style the same element differently. This is just
+a hack to deal with our current css styles and no new styling should be added in this file.*/
+
+#ipython-main-app {
+    position: relative;
+}
+#jupyter-main-app {
+    position: relative;
+}
+
+/*https://stackoverflow.com/questions/46510192/change-the-theme-in-jupyter-notebook/46561480#46561480*/
+
+/* Change outer background and make the notebook take all available width */
+.container {
+    *width: 99% !important; 
+    background: white !important;
+}   
+
+/* Change inner background (CODE) */
+div.input_area {
+    background: white !important;
+    font-size: 16px !important;
+}
+
+/* Change global font size (CODE) */
+.CodeMirror {
+    font-size: 16px !important;
+    font-family: monospace;
+}  
+
+/* Change output font size*/
+.rendered_html table{
+    font-size: 16px !important;
+    }
+    
+/* Prevent the edit cell highlight box from getting clipped;
+ * important so that it also works when cell is in edit mode */
+div.cell.selected::before {
+    border-left-width: 1px !important;
+} 
+
+/*Blue bar to left of code block to indicate edit mode (?)*/
+div.cell.selected.jupyter-soft-selected::before{
+     background: white !important;
+}
+
+/*Green bar to left of code block to indicate non-edit mode (?)*/
+.edit_mode div.cell.selected::before{
+     background: white !important;
+     }
+     
+/*Codemirror (codemirror.css) controls fonts in code box*/     
+/*Defaults (overrides follow)*/
+/*
+.edit_mode div.cell.selected::before.cm-s-default .cm-header {color: blue;}
+.cm-s-default .cm-quote {color: #090;}
+.cm-negative {color: #d44;}
+.cm-positive {color: #292;}
+.cm-header, .cm-strong {font-weight: bold;}
+.cm-em {font-style: italic;}
+.cm-link {text-decoration: underline;}
+.cm-strikethrough {text-decoration: line-through;}
+
+.cm-s-default .cm-keyword {color: #708;}
+.cm-s-default .cm-atom {color: #219;}
+.cm-s-default .cm-number {color: #164;}
+.cm-s-default .cm-def {color: #00f;}
+.cm-s-default .cm-variable,
+.cm-s-default .cm-punctuation,
+.cm-s-default .cm-property,
+.cm-s-default .cm-operator {}
+.cm-s-default .cm-variable-2 {color: #05a;}
+.cm-s-default .cm-variable-3, .cm-s-default .cm-type {color: #085;}
+.cm-s-default .cm-comment {color: #a50;}
+.cm-s-default .cm-string {color: #a11;}
+.cm-s-default .cm-string-2 {color: #f50;}
+.cm-s-default .cm-meta {color: #555;}
+.cm-s-default .cm-qualifier {color: #555;}
+.cm-s-default .cm-builtin {color: #30a;}
+.cm-s-default .cm-bracket {color: #997;}
+.cm-s-default .cm-tag {color: #170;}
+.cm-s-default .cm-attribute {color: #00c;}
+.cm-s-default .cm-hr {color: #999;}
+.cm-s-default .cm-link {color: #00c;}
+*/
+/* Overrides here*/
+edit_mode div.cell.selected::before.cm-s-default .cm-header {color: blue;}
+.cm-s-default .cm-quote {color: #090;}
+.cm-s-ipython span.cm-negative {color: black;}
+.cm-s-ipython span.cm-positive {color: black;}
+.cm-s-ipython span.cm-keyword{color: black;}
+.cm-s-ipython span.cm-comment{color: black;}
+.cm-s-ipython span.cm-string{color: black;}
+.cm-s-ipython span.cm-string-2{color: black;}
+.cm-s-ipython span.cm-punctuation{color: black;}
+.cm-s-ipython span.cm-number{color: black;}
+
+.cm-link {
+    text-decoration: 'none';
+    }
+
+

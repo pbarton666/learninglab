@@ -1,0 +1,4933 @@
+
+An immersive fast-track guide
+Patrick Barton
+Portland Energy Strategies Laboratories Courseware
+
+Welcome!
+--------
+
+This course will take you on a journey through the world of Python 3.0.  Whether you are new to programming or just new to Python, expect to come away with a solid understanding of:
+
+-   What the heck is Python and where did it come from?
+
+-   Interacting with Python at the command line (Python is really
+    gregarious!)
+
+-   Working effectively with an interactive debugging environment
+
+-   Utilizing professional code distributions and package managers
+
+-   Python objects including classes, methods, and collections
+
+-   Customizing your Python objects with your own code
+
+This might sound like a lot – and it is. But Python really is fun to work with and very forgiving to the beginner. You can’t break Python. It talks to you. In fact, it’s downright loquacious. You can ask it questions and it (usually) provides sensible answers. And when it doesn’t, there are hundreds of thousands of great resources available over the internet. We’ll show you how to access some of these, as well.  So roll up your sleeves and get ready to enjoy the ride!
+
+The Python Environment
+----------------------
+
+You should already have Python installed on your machine. If not, no worries. You could go ahead and install a fresh Python distribution and an IDE (integrated development environment).
+
+Yes, it’s possible to download, compile, and install Python. If you’re ever interested, downloads are available directly from the official Python web site:
+
+https://www.python.org/downloads.
+
+This being said, there are distributions such as EnThought and Anaconda which offer integrated package management that allows easy access to extended libraries and their sometimes extensive/tedious dependencies.  This is especially valuable when adding complex libraries such as NumPy, which can take hours to get right.
+
+For this course, we’ll use the Anaconda distribution. This supports all sorts of data science and visualization packages that we’ll touch on in the advanced course, along with Python virtual environments “right out of the box.” You can install it by browsing to this sight and following the instructions to get the 64-bit version for Python 3.
+
+https://www.anaconda.com/download/
+
+The “official” IDE for Python is called IDLE. It provides a rudimentary and very light weight debugger and file manager. IDLE works and works well, but for serious work I much prefer a more fully-functional environment such as PyCharm or WingIDE. If you’re accustomed to Eclipse, you could use the PyDev plug-in[1]. A light-weight debugger, Spyder, comes packaged with Anaconda. If you want to use Wing, you can download a full-on Professional version (free for 30 days)[2]. You have many options.
+
+Python uses environment variables to help it work and play well with the operating system (OS). The most important of these are PATH and PYTHONPATH.
+
+
+In order for Python to “just work” when you type:
+
+\$ python
+
+… you have to include Python’s binary (executable) directory in the PATH variable. That’s where python.exe lives. On a Windows system, you can do that by clicking:  **Start ... Control Panel... System ... Advanced System Settings ...  Environment Variables**
+
+Then edit PATH by appending the binary directory. You have to be a bit careful. Add a semicolon, no spaces, and the name of the new directory with no trailing slash. Something like:
+
+\<existing path\>;c:\\Path\\To\\Directory
+
+On a Linux system, you can simply add an export to \~/.bashrc:
+
+Export PATH = \$PATH:/path/to/directory
+
+PYTHONPATH works the same way PATH does, but it’s used internally by Python to search for modules (libraries, for instance) that you’ll want to import into your code’s namespace.
+
+Once you make the necessary changes to your environment variables, you’ll need to start a new terminal to apply them (or run source \~/.bashrc in Linux).
+
+Some Basics 
+-----------
+
+Let’s have a quick look at some Python concepts. We’ll cover all these in more depth later, but we’ll put them on the table early.
+
+Python is an amazingly simple language from a syntax perspective.  Believe it or not, there are only 33 keywords only a few of which are exotic. Here’s a list[3]:
+
+|        |          |         |          |        |
+|--------|----------|---------|----------|--------|
+| False  | class    | finally | is       | return |
+| None   | continue | for     | lambda   | try    |
+| True   | def      | from    | nonlocal | while  |
+| and    | del      | global  | not      | with   |
+| as     | elif     | if      | or       | yield  |
+| assert | else     | import  | pass     |        |
+| break  | except   | in      | raise    |        |
+
+Let’s have a quick look at some Python concepts. We’ll cover all these in more depth later, but we’ll put them on the table early.
+
+If you are ever uncertain about whether a variable name you’re considering is a keyword (or otherwise known to the interpreter), you can just type it into a command line. If the interpreter “yells at you”, you can choose another name.
+
+A few other things to know:
+
+-   Case matters – Python is case sensitive
+
+-   Indentation matters – Python doesn’t rely on brackets or braces
+
+-   Whitespace typically does not matter
+
+-   Help is just a few keystrokes away – just type “help”
+
+So, what is Python, anyway?
+
+-   A **high-level**, **object oriented** (each object has its own
+    repertoire of nouns and verbs, and they can borrow from and build on
+    each other) **interpreted** language (“just in time” compilation).
+
+-   You can think of it a giant wrapper around hundreds of thousands of
+    lines of C and C++ libraries, each providing consistent APIs
+    (Application Programming Interfaces) so everything has the same look
+    and feel.
+
+-   Created by **Guido van Rossum**, a great fan of **Monty Python**, in
+    the late 1990s as a successor to the ABC language, with significant
+    support from **DARPA**. (That’s Guido holding a beer in the photo
+    below.)
+
+-   Highly extensible to applications such as GIS (pyqgis), scientific
+    programming (numpy), visualization (matplotlib), and many other
+    domains.
+
+-   Python is operating system agnostic, and runs equally well on
+    Windows, Linux, Raspberry Pi, and Mac systems.
+
+Python has been around since 1994 and has undergone several transformations. Most notably, Python evolved from 2.7 to 3.0 in 2008, implementing Unicode characters and addressing some lingering structural concerns.
+
+There are plenty of solid applications written in 2.7 in the world, but most newer developments have shifted to Python 3. You should be aware that there are enough substantive differences between 2.x and 3.x that code written against one version is not wholly compatible with the other.
+
+By design Python is simple, clear, and transparent. Philosophical tenants (shown in abbreviated form here) are always available:
+
+> import this
+>
+> The Zen of Python, by Tim Peters
+>
+> Beautiful is better than ugly.
+> Explicit is better than implicit.
+> Simple is better than complex.
+> Complex is better than complicated.
+> Flat is better than nested.
+> Sparse is better than dense.
+> Readability counts.
+> Special cases aren't special enough to break the rules.
+> Although practicality beats purity.
+> Errors should never pass silently.
+> Unless explicitly silenced.
+> In the face of ambiguity, refuse the temptation to guess.
+> There should be one-- and preferably only one --obvious way to do it.
+> Although that way may not be obvious at first unless you're Dutch.
+> Now is better than never.
+> Although never is often better than \*right\* now.
+> If the implementation is hard to explain, it's a bad idea.
+> If the implementation is easy to explain, it may be a good idea.
+> Namespaces are one honking great idea -- let's do more of those!.
+
+OK. Let’s get started and have some fun!
+
+Basic Python Syntax
+===================
+
+Hello, Python
+-------------
+
+As you know, there’s an unwritten Cosmic Law stating all computer courses have to start with a “Hello World” application. Since we don’t want the Cosmic Police kicking the door down, let’s start with that.  Besides, it’s a great introduction to Python’s command line operations.
+
+To invoke the interpreter, type this from the command line (except the “\$”):
+
+\$ python3
+
+… which should get you something this:
+
+Python 3.9.0 (default, Sep 5 2021, 11:33:57)
+
+\[GCC 4.8.4\] on linux
+
+Type "help", "copyright", "credits" or "license" for more information.
+
+So what’s this? The first few lines let you know what “flavor” of Python you’re using, and how it was compiled. This can be important because you may well have several versions installed on the same machine. More on that later.
+
+The last line is the interpreter’s prompt to let you know you’re talking to Python. So let’s say “hello.”
+
+|                               |
+|-------------------------------|
+| \>\>\> print("Hello, Python") |
+| Hello, Python                 |
+
+In this command, we utilize one of Python’s top-level methods, the **print function,** and one of Python’s top-level objects, the string, known internally as a **str**. Note that the arguments to the function are enclosed in parentheses, and that the contents of the string are enclosed in quotes.
+
+Strings are ubiquitous, so it’s good to know a few ways to compose them.  Here are some examples. These are annotated using the **\#** character – that’s how you can make single line comments. Anything to the right of the \# will not compile, so you can embed your comments in-line.
+
+
+
+
+#you can use double quotes – useful with apostrophes
+print("Hello, Guido’s cool project")
+#you can also “escape” the apostrophe with a “\”
+print("Hello, Guido\’s cool project")
+
+Let’s try a few more strings. This time, we’ll assign them to names so wrangling them will be easier. So what are names? These are just tags you can associate with values. “Values” are simply the bits of information stored in the computer’s memory.
+
+#single quotes work just fine
+team = ‘Cubs’
+#you can also use triple double quotes
+year = """2018"""
+#... or triple single quotes
+outcome = ‘‘‘win’’’
+#these can be provided to print as arguments, separated by commas.
+print(team, year, outcome)
+
+You can provide a series of strings together and Python will automatically concatenate them (run them together):
+
+"and" "a" "one" "and" "a" "two"
+‘andaoneandatwo’
+
+If you ever want a multi-line string, you can use either of the triple quote styles.
+
+
+
+
+chant = """Cubs
+... 2018
+... win"""
+print(chant)
+
+If you study the above example carefully, you’ll notice a couple features. The interpreter will automatically allow a command to be broken up into several lines if there’s an unclosed control symbol. Since we had not yet included the terminating triple quote, it patiently waited. This feature also works for parentheses, braces, etc.
+
+Here is another example:
+
+
+
+
+#we’ll introduce the list object soon
+a_list = [99,
+... 33,
+... 40
+... ]
+a_list
+[99, 33, 40]
+exit() #returns to the OS command prompt
+
+
+You now know how to communicate with Python’s command line. You can execute functions, create objects, provide commands, and receive output.  Now, it’s time to roll your sleeves up.
+
+
+
+
+Exercise:
+Please write your own version of a “hello world”, working at the terminal. Practice using all four of the string composition methods, and with both single and multiple line versions.
+NOTE: The solutions appear in the course project folder, all beginning with “solution_python1”. You’re encouraged solve the challenge on your own – mistakes are part of the game, after all – but they are a resource if you need a hint.
+
+
+
+
+What’s Your Number?
+-------------------
+
+Do you remember when I said that Python is loquacious? I was not kidding. You can have an interactive conversation with the interpreter in which it will tell you about itself and all the objects it knows about. The best part is that you can ask it for help and get reliable information to guide your programming efforts.
+
+No course can teach you everything you need to know, not even this one.  Knowing how to efficiently get the help you need is perhaps the most important skill you can acquire. So the information in this chapter is the most critical bit of the course.
+
+The interpreter can tell you about itself. Sometimes you have to access built-in libraries by importing them into your local **namespace**. A namespace is all the names (“tags”), associated with the **values** stored in memory, your program has access to. By importing more names, we have access to more values and objects.
+
+Here, we’re asking the interpreter what version of Python we’re using, which release, and what operating system it finds itself operating within.
+
+Let’s have a conversation!
+
+import sys #tools for working with the Python environment
+sys.version
+sys.version_info
+
+
+sys.version_info(major = 3, minor = 3, micro = 0,
+releaselevel = ‘final’, serial = 0)
+
+import os #tools for working with the OS (Linux here)
+os.name
+
+‘posix’
+
+Now, this gets even better. Let’s say we have an object. “One is the loneliest number that there ever was”, or so the song goes. Maybe we can address the issue by engaging with 1 – or maybe we can’t, but let’s try.  To start with we’ll give it the name “one”, pull up a chair, then chat it up.
+
+
+
+
+one = 1 # hey, can I call you ‘one’?
+
+
+
+
+one # tell me a little about yourself
+
+
+1
+
+
+id(one) # where do you live?
+8961856
+type(one) #I like your type. What is it, anyway?
+&lt;class ‘int’
+isinstance(one, str) #Did you say you were a string?
+False
+isinstance(one, int) #Um. Right, then an integer?
+True
+
+
+
+
+Let’s step through this preliminary conversation. After we assigned it a name, we then called it by name and it responded. It happened to respond with its value, but not all objects do that. The response is built into the object as its **\_\_repr\_\_** method, which is executed when you type the name. When you make your own classes later on, you’ll be able to make it say something like “I’m 1, and I’m a Leo”, or anything else you like. The **int** object simply replies with a parsimonious string representation of itself.
+
+The next bit, invoking the top level function **id** provides a unique descriptor of the object. Under the hood, it’s just the location in memory where the object resides (that’s how it’s guaranteed to be unique – no two objects can occupy the same space at the same time).
+
+We’re pretty sure what type of object one is, but we can ask to be sure using the **type** method. In this case, we learn that it’s an **int** object (not an “integer”). In fact, **int** is the name of a built-in function and already reserved by Python. We can use it with the **isinstance** method to verify its type. This can become important – for instance, we might want to check whether an object is a number before attempting to do math with it.
+
+One of the really useful aspects of Python is that objects come to us already endowed with properties and already knowing how to do type-appropriate tricks. More properly these are called **attributes** and **methods** (“nouns” and “verbs”). We can discover some of these empirically, so let’s experiment:
+
+
+
+
+one+one #can you add?
+2
+one/ one #divide?
+1.0
+one* one #OK then, can you multiply?
+1
+one** one #do powers?
+1
+one% one #how about modulo operations?
+0
+
+
+
+
+This is pretty much as expected, since we’re already familiar with integers. But we’ll frequently encounter objects that we’re not familiar with, or need to know how they handle various operators. Sometimes things aren’t as expected. For instance, what happens if we do a “multiplication” or “addition” operation on a string?
+
+
+
+
+"go"+"cubs"
+‘gocubs’
+"cubs"*10
+‘cubscubscubscubscubscubscubscubscubscubs’
+
+
+
+
+Getting Help
+------------
+
+Though it’s interesting and really informative to experiment, you’ll typically be too busy to indulge. In these cases, the most straightforward way to engage is to ask for help. This is easy enough to accomplish as you can see below. (Note I’ve edited out most of the five pages of output, but I encourage you to browse through it).
+
+
+
+
+help(one)
+help(one)
+Help on int object:
+class int(object)
+| int(x = 0) - integer
+| int(x, base = 10) - integer
+| |
+&lt;snip
+
+
+
+
+Another way to get information quickly is to use the built-in **dir** method on the object. The output is a little harder to interpret, especially when you’re looking at it for the first time, but you can get a fairly compact look at the contents of the object’s **namespace**.  Let’s check it out, and I’ll explain some of the bits and pieces below.
+
+
+
+
+dir(one)
+[‘__abs__’, ‘__add__’, ‘__and__’, ‘__bool__’, ‘__ceil__’, ‘__class__’, ‘__delattr__’, ‘__dir__’, ‘__divmod__’, ‘__doc__’, ‘__eq__’, ‘__float__’, ‘__floor__’, ‘__floordiv__’, ‘__format__’, ‘__ge__’, ‘__getattribute__’, ‘__getnewargs__’, ‘__gt__’, ‘__hash__’, ‘__index__’, ‘__init__’, ‘__int__’, ‘__invert__’, ‘__le__’, ‘__lshift__’, ‘__lt__’, ‘__mod__’, ‘__mul__’, ‘__ne__’, ‘__neg__’, ‘__new__’, ‘__or__’, ‘__pos__’, ‘__pow__’, ‘__radd__’, ‘__rand__’, ‘__rdivmod__’, ‘__reduce__’, ‘__reduce_ex__’, ‘__repr__’, ‘__rfloordiv__’, ‘__rlshift__’, ‘__rmod__’, ‘__rmul__’, ‘__ror__’, ‘__round__’, ‘__rpow__’, ‘__rrshift__’, ‘__rshift__’, ‘__rsub__’, ‘__rtruediv__’, ‘__rxor__’, ‘__setattr__’, ‘__sizeof__’, ‘__str__’, ‘__sub__’, ‘__subclasshook__’, ‘__truediv__’, ‘__trunc__’, ‘__xor__’,
+‘bit_length’, ‘conjugate’, ‘denominator’, ‘from_bytes’, ‘imag’, ‘numerator’, ‘real’, ‘to_bytes’]
+
+
+
+
+The strange looking names that are surrounded by the “\_\_” characters (which some call “dunder”, for “double underscore”) are mostly methods that implement logic to make operational characters like “+” or “\<.” In general, any name beginning with one or more “\_” characters is intended for the object’s internal usage. You can access these, of course, but you’ve been warned.
+
+The plain-text names are designed for “public consumption.” You can learn more about them by slogging through the verbose help, asking for help on a more narrow topic, or just by typing them in at the command line, something like:
+
+
+
+
+one.denominator
+1
+one.real
+1
+one.from_bytes
+&lt;built-in method from_bytes of type object at 0x8685e0
+help(one.from_bytes)
+Help on built-in function from_bytes:
+from_bytes(...)
+int.from_bytes(bytes, byteorder, *, signed = False) - int
+Return the integer represented by the given array of
+bytes. &lt;snip
+
+
+
+
+You’ll recall that when you simply type the name of an object into the command line, you’re asking it to describe itself by invoking its **\_\_repr\_\_** method. This is one of Python’s so-called “magic methods” which are baked into the object with specific names that are meaningful to the interpreter. As another example, the **\_\_str\_\_** method is invoked when you use the object as an argument to the **print** method.
+
+Here’s a list of some of the other “magic methods”, along with their meanings. From the **dir** listing, we can see that most of these are baked into the **int** object. We’ll actually be writing our own versions of some these later in the course, but for now, here’s an overview of the math operations.
+
+| addition                | x + y       | x.\_\_add\_\_(y)      |
+|-------------------------|-------------|-----------------------|
+| bitwise and             | x & y       | x.\_\_and\_\_(y)      |
+| bitwise or              | x \| y      | x.\_\_or\_\_(y)       |
+| bitwise xor             | x ^ y       | x.\_\_xor\_\_(y)      |
+| division                | x / y       | x.\_\_truediv\_\_(y)  |
+| floor division          | x // y      | x.\_\_floordiv\_\_(y) |
+| floor division & modulo | divmod(x,y) | x.\_\_divmod\_\_(y)   |
+| left bit-shift          | x \<\< y    | x.\_\_lshift\_\_(y)   |
+| modulo (remainder)      | x % y       | x.\_\_mod\_\_(y)      |
+| multiplication          | x \* y      | x.\_\_mul\_\_(y)      |
+| raise to power          | x \*\* y    | x.\_\_pow\_\_(y)      |
+| right bit-shift         | x \>\> y    | x.\_\_rshift\_\_(y)   |
+| subtraction             | x - y       | x.\_\_sub\_\_(y)      |
+
+You’ll note that the **help** method is not within the namespace of the objects. That’s because **help** is a top-level method. It works by ransacking the object for what are called its **docstrings** – these are provided by the programmer. They survive compilation so are carried with the object itself, and can be whatever the programmer wants them to be.  By contrast, comments do not survive compilation and exist mostly as developer-to-developer notes.
+
+**Docstrings** are simply the first executable line(s) of code in an object, assuming a couple of things: the line(s) of code is a **str** object, and the **str** object is not associated with a name. A quick example should serve to clarify.
+
+
+
+
+def my_first_function():
+... "the most simple function on Earth"
+...
+help(my_first_function)
+Help on function my_first_function in module __main__:
+my_first_function()
+the most simple function on Earth
+(END)
+
+
+
+
+Here, the built-in **help** method simply picked off the docstring and served it up as content within its delivery system (which is just like **man** to deliver manual pages in a Posix system).
+
+Had this function been a method within a containing object like a class, the help system would provide all available docstrings in the containing object. That’s what happened when we used **help**(**one**) – we got all the docstrings for the methods and attributes within the **int** class.
+
+While the built-in functionality typically serves well, sometimes it’s necessary to go outside your code or use libraries that support introspection of your objects[4]. Python has exceptionally well-written official documentation that’s available at:
+
+<http://python.org/3>
+
+One word of caution – at the top-left of the Python docs web page, you’ll see a small scroll-down menu with a number in it. It will look something like this:
+
+<img src="attachment:media/image4.gif" style="width:4.66in;height:0.52in" />
+
+The number is the version of Python addressed by the main page’s contents. It’s quite easy to follow a link from a StackOverflow posting (say) that vectors into the wrong version. Among versions of Python3 it usually won’t matter, but there are significant differences between 2.x and 3.x and you could waste a lot of time trying to get the wrong material to work.
+
+Numbers and More Numbers
+------------------------
+
+There are only two other numeric types within the core Python language, the **float** and **complex** types. There are some exotic types in external libraries such as decimal, such as **Fraction** (for real numbers) and **Decimal** (for arbitrary levels of precision)[5].
+
+The **float** type is pretty much what you would expect – it’s anything with a decimal point. Here’s an example:
+
+
+
+
+root_beer = 1.0
+type(root_beer)
+&lt;class ‘float’
+
+
+
+
+Unless you’re an electrical engineer or a glutton for punishment, you probably have little to do with “complex numbers.” They’re not all that complex, but require two components. The first is “real” – an ordinary number that stands on its own feet – and the second is “imaginary” – a number that’s multiplied by the square root of -1. Yes, that’s where it gets weird, but it’s beyond the scope of this class. Here’s one way to specify a **complex** object:
+
+
+
+
+weirdness = (3 + 5j)
+type(weirdness)
+&lt;class ‘complex’
+
+
+
+
+Note that in Python “j” is used for the imaginary component (“i” is commonly used in physics and math textbooks).
+
+ Accuracy and Garbage
+--------------------
+
+Integers can be represented accurately in a computer because they are nicely discrete. Later versions of Python implement integers in such a way as they can be arbitrarily long, and don’t have to be explicitly specified as such.
+
+Floating point numbers are only so accurate (the default level of precision is 28 places). This can become an issue with numbers that never end, like 1/3, or numbers which are really large. Just for fun, you can try adding .1 + .1 + .1 to see what happens.
+
+A final point: floating point number can contain some “garbage bits” in the 1/1000000 decimal place and beyond, even if you’ve specified it as simply as 1.0 – something to be aware of when doing tests of equality.
+
+ Numeric Types as Methods
+------------------------
+
+We have seen numeric types like **int** and **float** used to describe objects, but they can also be used to convert data types (“type casting”) by invoking them as constructor methods. Here’s how you can convert an **int** to a **float**:
+
+
+
+
+one = 1
+one_float = float(one)
+type(one_float)
+&lt;class ‘float’
+and_back = int(one_float)
+type(and_back)
+&lt;class ‘int’
+
+
+
+
+Python will even try to convert strings to numeric types. If it can’t, you’ll get a **ValueError** exception.
+
+
+
+
+one_string = ("1")
+one_string_float = float(one_string)
+one_string_float
+1.0
+type(one_string_float)
+&lt;class ‘float’
+
+
+
+
+You can also directly specify variables invoking the constructor with appropriate arguments. Python will do its level best to whistle up the right object for you. Here are some examples:
+
+
+
+
+complex(1,2) complex(1)
+(1+2j) (1+0j
+float(1) int(‘333’)
+1.0 333
+int(1.3) str(123)
+1 ‘123’
+
+
+
+
+Getting User Input
+------------------
+
+Python has built-in method for getting information from the user using the standard input stream (think “keyboard” for now). You probably won’t be building applications using direct user input very often, but it’s handy to know how to use. The syntax is straightforward:
+
+input( \<some string\> ) Python produces this dialog possibility:
+
+
+
+
+answer = input("Hey, Pat, how’s it going? ")
+Hey, Pat, how’s it going? Awesome!
+answer
+‘Awesome!’
+
+
+
+
+The response will always be returned as a string, no matter what, as you can see here:
+
+
+
+
+one = input("Can I pleeese have a one? ")
+Can I pleeese have a one? 1
+one
+‘1’
+type(one)
+&lt;class ‘str’
+
+
+
+
+If you need an integer, you’ll have to use the **int** constructor to type-cast it.
+
+You now have the wisdom of the ages at your disposal – a good bit of it, anyway. Let’s see if you can put some of this to good use.
+
+
+
+
+Exercise:
+Use the help facility to learn about the modulo (%) operator, or simply experiment empirically.
+
+If it takes three buckets of water to put out a campfire (two just won’t do it), how many campfires can you extinguish with 50 buckets? Solve the problem using the modulo operator.
+Create a program that tests how “*”, ‘/’, “+” and “-“ are implemented for string, float, and complex numbers. Use a docstring to document it and make sure it works when calling help on it. Include some comments as a kindness to yourself and your teammates.
+Create a program that asks the user for their name, sign, and favorite beverage, then asks them to confirm that information.
+
+
+
+
+
+“String Theory” 
+---------------
+
+Now that you know how to create stings, let’s explore what how we can manipulate and interact with them.
+
+The first thing you should know that strings are **sequences**. We’ll discuss more complicated sequences later, but for now you should know you can iterate over them quite easily[6]. Check this out:
+
+
+
+
+some_string = "Hey!"
+for s in some_string:
+... print(s)
+...
+H
+e
+y
+!
+
+
+
+
+Here, we used the **for** statement to loop through each element of the string. The **for** statement is really simple to implement. The syntax is:
+
+> for \<the name of the index\> in \<some iterable\>:
+>
+> \<an indented suite\>[7]
+
+ String Methods
+--------------
+
+There’s a rich inventory of methods baked into the **str** object that makes text processing really easy[8]. As with any Python object, we can get a quick look using **dir**.
+
+
+
+
+dir(str)
+[&lt;snip, ‘capitalize’, ‘casefold’, ‘center’, ‘count’, ‘encode’, ‘endswith’, ‘expandtabs’, ‘find’, ‘format’, ‘format_map’, ‘index’, ‘isalnum’, ‘isalpha’, ‘isdecimal’, ‘isdigit’, ‘isidentifier’, ‘islower’, ‘isnumeric’, ‘isprintable’, ‘isspace’, ‘istitle’, ‘isupper’, ‘join’, ‘ljust’, ‘lower’, ‘lstrip’, ‘maketrans’, ‘partition’, ‘replace’, ‘rfind’, ‘rindex’, ‘rjust’, ‘rpartition’, ‘rsplit’, ‘rstrip’, ‘split’, ‘splitlines’, ‘startswith’, ‘strip’, ‘swapcase’, ‘title’, ‘translate’, ‘upper’, ‘zfill’]
+
+
+
+
+Most of these are self-explanatory, but we’ll discuss a few of the most commonly-encountered ones and how to use them here. You can test a string – or a bit of one – to see what type of characters are in it.  Note that in Python there is no “character” object *per se* – a single character is simply a really short string. We could apply these operations to the intact some\_string object just as easily.
+
+Also note that when we execute a method, we need the parentheses even if we’re not supplying any arguments[9]. The following script demonstrates some of the string methods and introduces the use of “{ }”. These serve as placeholders for arguments supplied to the **format** method. We’ll cover formatting in more detail later.
+
+
+
+
+#py_strings.py
+some_string = "$R5a "
+for s in some_string:
+print("{}&lt; is alphanumeric? {}.”.format(s, s.isalnum()))
+print("{}&lt; is alpha? {}.”.format(s, s.isalpha()))
+print("{}&lt; is numeric? {}.”.format(s, s.isnumeric()))
+print("{}&lt; is upper? {}.”.format(s, s.isupper()))
+
+
+There are lots of methods to query for, and change the case of, a string. Note that the queries return a Boolean (**True** or **False**) object.
+
+
+
+
+#py_cubs.py
+my_team = "The Chicago Cubs"
+print("my team ends with an ‘s’? {} \ #\ continues the line
+.”format(my_team.endswith("s")))
+print("my team starts with an ‘s’? {} \
+.”format(my_team.startswith("s")))
+print("in caps {} .” \
+.format(my_team.upper()))
+print("swapped-case {} .” \
+.format(my_team.swapcase()))
+
+ Breaking up and Getting Together Again
+--------------------------------------
+
+There are also methods to split up strings (returning a **list**[10] object) and to create a string by stitching together the elements of an **iterable**[11] object. In the example below, we can supply the **split** method a single argument – the string we’ll use to determine where to break the main string up[12]. Providing a single space (or calling it with no arguments) splits up the words into individual **list** elements.
+
+The reciprocal operation is **join**. With **join** we provide a string to insert between each element pulled from the list to reform the string. Though this example uses a **list**, this method works for any iterable object (such as a **tuple**[13] or even another string).
+
+
+
+
+#py_misc_strings.py
+my_team = "The Chicago Cubs"
+split_team = my_team.split(" ")
+print("splits: {}”.format(split_team))
+join_string = "!!!"
+together_again = join_string.join(split_team)
+print("together again: {}.” \
+.format( together_again), end = join_string+"\n")
+
+
+ Literals and Escape Sequences
+-----------------------------
+
+Sometimes, you need to insert a specific character into a string that you can’t type directly. There are a couple ways to handle this.  The first is using “escape sequences.” We’ve already seen that “\\n”
+
+produces a new line character, but there are many more. The idea here is that inclusion of a backslash “\\” tells the interpreter to do something special with (“escape”) the character that follows instead of taking it literally. Others include:
+
+> \\t tab
+>
+> \\r carriage return
+>
+> \\’ prints a single quote
+>
+> \\” prints a double quote
+>
+> \\\\ if you really want a backslash
+
+Another way to handle this is to figure out what the character code is.  You can do that easily enough for the first 128 (ASCII) characters by printing them out with the **chr** method[14], finding your character, then using the same method in your code . You could go something like:
+
+
+
+
+#py_ord_chars.py
+for i in range(33, 36): #yes, I’m cheating I know it’s 34
+print (i, chr(i))
+QUOTE = chr(34)
+print("I’m a double quote: {}.”.format(QUOTE))
+
+Cleaning House and Moving Furniture
+-----------------------------------
+
+Python’s string methods have an easy-to-use, and remarkably efficient, ways to do searches and replacements. “Under the hood” they wrap regular expressions (“regexes”) and, for many operations, deliver the same performance. Once we get into regexes later, you will really appreciate this implementation.
+
+Please study the sample code in py\_string\_manipulation.py – it demonstrates the **find**, **replace,** and **strip** methods, introduces the keywords **in** and **not**, and demonstrates the use of the **len** built-in method.
+
+Keep your eye out for the keyword **in** which returns a Boolean object – **True** if the iterable contains the object tested for, **False** otherwise. The keyword **not** can be used more generally and serves as the Boolean negation operator (flips the evaluation).
+
+Also observe how Python handles Boolean tests applied to things like strings. You might think this is pretty weird:
+
+dog = “Quinn the Husky”
+dog
+‘Quinn the Husky’
+not dog
+False
+
+Huh? How can Python possibly evaluate a string as a Boolean value? Well, it turns out that whenever we ask for a Boolean evaluation, Python will go ahead and serve one up. It will return **False** if the object is the number 0, the keyword **None**[15], a null string, an empty list, or any other empty object. The opposite is also the case. When a Boolean operation is applied against a non-zero number, a string with at least one character, etc., **True** will be returned. Here’s how one might use this behavior to test whether a user provided any input:
+
+
+
+
+dog = input(“What’s your dog’s name?  ”)
+What’s your dog’s name?  Quinn
+if dog:
+print(dog)
+Quinn
+
+
+
+
+Note the use of the **if** keyword for a simple logical branch. The syntax is straightforward:
+
+**if** \<condition\>:
+
+\<an indented suite\>
+
+Let’s take a tour of some of the methods built into the string object with some real code. Here we’ll learn ways to find and replace components of **str** objects. We’ll begin with a string containing some popular sins.
+
+
+
+
+#py_string_manipulation.py
+seven_deadly = " avarice envy wrath sloth \
+gluttony lust hubris "
+
+
+
+
+Here is how we can use the keyword **in**[16] to figure out if one string can be found within another. This is a very vague query that will yield a Boolean response. In Python we can use **not** in a logical expression for negation.
+
+
+
+
+#Do we have this sin? Note the use of lower()
+sin = ‘eNvY’
+print("{} in there? {}\n”\
+.format(sin.lower(), \
+sin.lower() in seven_deadly.lower()))
+envy in there? True
+#doesn’t exist (use not for Boolean negation)?
+print("try the key word not")
+print("{} NOT in there? {}\n” \
+.format(sin.lower(), \
+sin.lower() not in seven_deadly\
+))
+
+
+
+
+Note that we’re invoking the lower method when searching the string.  It’s not necessary, but not a bad idea because it lets you get away without trying every petty permutation of the word.
+
+A more surgical approach is to use **find**. This will attempt to locate the initial position of the string you’re looking for and return its findings. If it strikes out, **find** will return a -1.
+
+
+
+
+#Locate the position. Note the two-element tuple object.
+for sin in (‘envy’, ‘texting while driving’):
+sin_position = seven_deadly.find(sin.lower())
+if sin_position  = 0:
+print("Yup. We found ‘{}’ \
+starting in position {}\n.” \
+.format(sin.lower(), sin_position))
+else:
+print("Nope. Since find() returned {}, \
+‘{}’ wasn’t there\n.” \
+.format( sin_position, sin.lower()))
+Yup. We found 'envy' starting in position 9
+Nope. Since find() returned -1, no 'texting while driving'
+
+
+
+
+It’s possible to replace characters with new ones with the – you guessed it – **replace** method[17]. Here’s a simple example that shows a potential pitfall for a new Python programmer. Strings are “immutable” – not changeable. Running a replace operation doesn’t change the string.
+
+
+
+
+#Replace characters
+print("strings are immutable - compare these")
+seven_deadly.replace(‘avarice’, ‘greed’)
+print("no replacement: ", seven_deadly)
+no replacement: avarice envy wrath sloth gluttony lust hubris
+seven_deadly = seven_deadly.replace(‘avarice’, ‘greed’)
+print("replaced at last: ", seven_deadly + ‘\n’)
+replaced at last: avarice envy wrath sloth gluttony lust hubris
+
+
+
+
+You can remove leading and trailing whitespaces using various flavors of the **strip** method[18]. This is really handy when handling potentially-messy data like user inputs. The following example demonstrates this, along with one of Python’s top-level functions len.  Note that **len** is not built into the string method – it’s generally available for all objects.
+
+
+
+
+#Remove leading/trailing spaces. Note chained methods.
+print("original sin list is {} characters long".
+format(len(seven_deadly)))
+original sin list is 66 characters long
+print("with the white spaces removed it's {} long".
+format(len(seven_deadly.strip())))
+with the white spaces removed it's 60 long
+
+
+
+
+Python’s ability to have one function “swallow” the output of another so it’s possible to chain operations together. Here, the output from the **strip** method is fed into the **len** method. The combined result is fed to **format**. And the result of all that activity is rolled up into a single argument to **print**. You’ll see a lot of code like this as you explore Python.
+
+ Making Things Beautiful: the Format Mini-Language[19]
+-----------------------------------------------------
+
+You have already seen some basic applications of Python’s text formatting capabilities. If you place opposing curly braces in a string they serve as “catcher’s mitt” for any arguments you provide to **format**:
+
+
+
+
+#py_format.py
+#Basic usage
+stg = "{} {}".format("Hey","Joe")
+print(stg)
+Hey Joe
+
+
+
+
+Generally, you want to supply at least as many arguments as there are curly brace pairs, but other than that you can provide just about any kind of an object[20]. You can go upmarket with these in lots of ways.  For instance, you can “tag” the fields with index values. These both work:
+
+
+
+
+#numbered fields ('all or none' here)
+stg = "{0} {1} {2}".format("George", "Paul", "John")
+print(stg)
+“George Paul John”
+stg = "{2} {1} {0}".format("George", "Paul", "John")
+print(stg)
+“John Paul George”
+
+
+
+
+One don’t even need to use all the arguments provided, and can reuse any of them. You might experiment. Another way to “tag” the fields is to use names. This can make your code extremely readable and transparent – even if the format string and **print** function happen to be separated by several pages of code.
+
+
+
+
+#named fields ('all or none'; note no quotes around names)
+stg = """\
+Dear {donor},
+I'm running for {office} and would like to shake
+you down for a ${dollars} contribution.
+Sincerly,
+- {candidate}"""
+print(stg.format(donor = "SuperPAC", office = "President",
+dollars =100, candidate = 'Pat'))
+Dear SuperPAC,
+I'm running for President and would like to shake
+you down for a $100 contribution.
+Sincerly,
+Pat
+
+
+
+
+Note that the items provided, like donor and office, are not quoted.  They actually become names in Python’s namespace that become associated with the values like “SuperPAC” and “President”.
+
+It’s also easy to provide column width and justification specifications.  The general form of the specification is something like:
+
+{ \<field name\> : \<alignment\>[21] \<width\> }
+
+This example creates three columns of equal width, left justified in a
+format string, then “recycles” the string to build a nicely-formatted
+table.
+
+
+
+
+# This bit of code run in a script…
+stg = "{0:&lt;10} {1:&lt;10} {1:&lt;10}"
+print(stg.format("Presenting: Addition!!!", ''))
+print(stg.format("output", "input"))
+print(stg.format("=" * 6, "=" * 6))
+print(stg.format(4, 2))
+print(stg.format(8, 4))
+# …yields the following
+Presenting: Addition!!!
+output input input
+====== ====== ======
+4 2 2
+8 4 4
+
+
+
+
+A couple nuances are worth noting. The formatting string uses only two index values: 0 and 1. That means it only needs two input arguments even though there are three fields.
+
+You can also ask Python to temporarily cast variables into other forms for the purposes of output. Here, we’re printing out decimal, binary, and hex flavors of some numbers.
+
+
+
+
+fmt = "{0:6} = {0:#16b} = {0:#06x}"
+for i in 1, 23, 456, 7890:
+print(fmt.format(i))
+1 = 0b1 = 0x0001
+23 = 0b10111 = 0x0017
+456 = 0b111001000 = 0x01c8
+7890 = 0b1111011010010 = 0x1ed2
+
+
+
+
+Other options allow you to do things like represent add “+” and “-“ signs in front of values, to pad out columns, etc. Things can be much more complicated but Python’s official documentation is (fortunately) exceptional on this topic[22].
+
+Here’s one might apply combined format options on a small database of people in a study. Here, were applying numeric labels, justification, column width and numeric types – all in a succinct format string. You’ll note that we’re making a **list** of **tuples** (more on both these later), we’re unpacking[23] the **tuples**, then printing them in table format.
+
+
+
+
+#py_format_1.py
+"""List people’s names, ages and weights."""
+data = [
+("Steve", 59, 202),
+("Dorothy", 49, 156),
+("Simon", 39, 155),
+("David", 61, 135) ]
+for name, age, weight in data:
+print("{0:&lt;12s} {1:4d} {2:4d}.” \
+.format(name, age, weight))
+
+
+
+
+OK. You have learned a lot about string and numeric data types, how to work with strings, and how to make nicely formatted output. Now, let’s flex some Pythonic muscles and make something beautiful!
+
+
+
+
+Exercise:
+
+Please write an application that quizzes challenges the user to guess all of Python’s keywords, keeping track of the successes. When the user gives up (maybe by typing “help”), report the number of correctly-guessed keywords, then number not guessed, and a nicely-formatted table for each group.
+Hint: you’ll find some useful tools in the keyword library, which you can get by going:
+
+
+import keyword
+
+Hint: you just might find the in keyword useful to determine membership in keywords.
+Also, you’ll need to be able to use the for and if statements. Recall the general forms:
+for i in iterable_object: if condition:
+indented suite runs each loop indented suite runs if condition is True
+*conditions can be complex e.g., A and B
+… and if you need to test for equality, you can use the == operator like this:
+1 == 1
+True
+
+
+
+
+Language Components
+===================
+
+From a syntax perspective, Python is a simple language. As we’ve seen, there are only 33 keywords. While Python has data types, variables don’t need to be declared to be of some specific type before use. There’s no requirement to initialize variables. Objects generally come to us “batteries included.” Pretty slick, no?
+
+Indentation
+-----------
+
+We’ve seen the **for** statement before, but let’s take another look.
+
+
+
+
+myrange = range(2)1
+for value in myrange:
+... print(value)
+0
+1
+
+
+
+
+
+
+The range object is one of many Python objects that’s “lazily evaluated”. That means it merely has the capability to produce. It will not do so until asked. These two objects take about the same (small) amount of memory:
+range(2)
+range(0, 2)
+range(2000000000000000000000)
+range(0, 2000000000000000000000)
+These will make sequences of integers starting at 0 and ending one shy of the provided end point. More on how to specify ranges later.↩︎
+
+
+
+The first line is of the form:
+
+\<key word\> \<name for index\> **in** \<iterable object\>:
+
+That’s it – no fussing around with pointers, instancing index values, or running past the end of the object. The **for** statement “just works.”
+
+What follows is an “indented suite”, and it can comprise any number of lines of code. Indentation is extremely important in Python because that’s how the interpreter keeps track of how to group statements.  Unlike languages such as C and Java, it can’t rely on braces for that purpose – Python uses <span class="underline">only</span> indentation.  Statements at the same level of indentation are treated as a being in the same code block, and code blocks can be nested to any level.
+
+This further simplifies Python – it’s unburdened by the clutter of braces, statement terminating semicolons, and loop terminating keywords.  All this creates and enforces a high level of readability. The cost, of course, is the need to have attention to fine level of detail and a limited ability to write spatially-dense code.
+
+Strictly speaking, Python doesn’t care how much each statement in the same suite is indented, as long as all are the same. Some developers use tabs (each is seen by the interpreter as a single character), but four white spaces is the recommended convention per Python’s official style guide “PEP-8.” PEP-8 is a bit of a dry read, but well worth a quick look, especially if you’re planning to work as part of a team[24].
+
+The if Statement
+----------------
+
+We’ve touched on the **if** statement, the most basic of control statements. Let’s expand the discussion a bit. Its general form is:
+
+if \<condition\>:
+
+\<indented suite\>
+
+elif \<condition\>:
+
+\<indented suite\>
+
+…
+
+else:
+
+\<indented suite\>
+
+The first condition presented to the **if** is evaluated True or False.  If evaluated **True**, the indented suite immediately beneath is executed and it’s done. Execution drops out of the entire block of code.
+
+There can be any number of **elif** (“else if”) statements and they are evaluated in top-to-bottom order. If any is **True**, the associated indented suite of statement is evaluated and it’s done. Only when no **if** or **elif** condition is met will the **else** suite be executed[25].
+
+A couple notes of potential interest:
+
+The **elif** and **else** clauses are completely optional, and leaving them off is routine. Here, we perform an operation that only makes sense of we have user input. The **strip** operation will not be attempted otherwise.
+
+
+
+
+if user_input:
+user_input.strip()
+
+
+
+
+If the denominator is zero, the compiler won’t go on to attempt the impossible and you won’t experience a crash due to a **ZeroDivisionError**.
+
+.
+
+
+
+
+if denominator:
+print(numerator/denominator)
+
+
+
+
+Here’s a program to demonstrate a more complicated application. When this for statement executes, it iterates over the elements of a tuple-of-tuples object. The first time it picks off the tuple (1, 0) and the second time it grabs (9, 3). Here’s the twist: each time through, it assigns the name numerator to the first element of the tuple; and the name denominator to the second element.
+
+If you have a compound evaluation, the conditions are evaluated left to right. As soon as the interpreter knows whether the condition is **True** or **False**, it’s done. You can use this to your advantage to check for unsafe conditions. For instance, you might go:
+
+
+
+
+#py_compound_conditionals.py
+for numerator, denominator in ( (1, 0), (9, 3) ):
+if denominator and numerator/denominator == 3:
+print("yay! We have a {}!"\
+.format(numerator/denominator))
+
+
+
+
+The result, as expected, shows only results only for the valid input:
+
+|                     |
+|---------------------|
+| yay! We have a 3.0! |
+
+The while Statement
+-------------------
+
+The **while** statement is also pretty straightforward:
+
+while \<condition\>:
+
+\<indented suite\>
+
+else:
+
+\<indented suite\>
+
+The indented suite will be executed top-to-bottom forever until it’s asked to stop or the condition is no longer **True**. Here’s a simple example using a condition to halt execution. Note that the “sentinel condition” and counter are defined outside and before the loop[26].
+
+
+
+
+#py_while.py
+stop_me = False
+counter = 0
+while not stop_me:
+print("The counter is now: {}.”.format(counter))
+if counter1:
+stop_me = True
+counter = counter+1 #counter + = 1
+else:
+print("Yo. I’m done!")
+
+
+
+
+This works pretty well, as evidenced by its output.
+
+
+
+
+The counter is now: 0.
+The counter is now: 1.
+The counter is now: 2.
+Yo. I’m done!
+
+
+
+
+There are more elegant ways to proceed, however. A common idiom is to use the keyword **break** within the loop to terminate it immediately.  This can be combined with tautologically-true condition to streamline things. For instance, you could go:
+
+
+
+
+#py_while_1.py
+counter = 0
+while True:
+print("The counter is now: {}.”.format(counter))
+if counter1:
+break
+counter + = 1
+else:
+print("Yo. I’m done!")
+
+
+
+
+Not only is this simple to read, it doesn’t require much in the way of resources to evaluate. This is not at issue with a simple application, but if your project involves millions of iterations e.g., a polling routine for a web server, efficiency becomes relevant.
+
+You probably noticed that the **else** clause did not execute. The reason is that its indented suite runs only if the **while** statement terminates due to the condition becoming **False**. The **break** keyword causes the code that would do this to be bypassed.
+
+The philotic twin of the **break** statement is **continue**. When **continue** is encountered, execution is immediately passed to the top of the loop where the condition is reevaluated.
+
+The **else** clause is completely optional. Since we’re using **break**, we’ll get rid of the extra baggage and show how **continue** might be applied. Note the use of the comparative operator == (returns a Boolean evaluation of whether the two values are the same) and the shortcut way to increment the counter with the += operator[27].
+
+
+
+
+#py_while_2.py
+counter = 0
+while True:
+if counter == 1:
+print("One is the loneliest number \
+that there ever was.")
+counter += 1
+continue
+print("The counter is now: {}.”.format(counter))
+if counter1:
+break
+counter += 1
+
+
+
+
+The preceding program produces this output:
+
+
+
+
+The counter is now: 0.
+One is the loneliest number that there ever was.
+The counter is now: 2.
+
+
+
+
+Inner and Outer Loops
+---------------------
+
+The final point I would make here is that **break** and **continue** work on both **for** and **while** loops. And both work only on the inner-most loop (the one they reside inside of). Here’s an example of a program with both types of loops:
+
+
+
+
+#py_while_for.py
+stop_me = False
+counter = 0
+for i in range(10):
+if i%2: #odd numbers evaluate True:
+while True:
+if counter = = 1:
+print("One is the loneliest \
+number that there ever was.")
+counter + = 1
+continue
+print("the counter is now: {} \
+and i is now {}.".format(counter, i))
+if counter1:
+break #breaks out of the inner(while) loop
+counter+ = 1
+if i  5:
+print("I’m done - about to go on a break.")
+break #this breaks out of the outer (for) loop
+
+
+
+
+It produces this output:
+
+
+
+
+The counter is now: 0 and i is now 1.
+One is the loneliest number that there ever was.
+The counter is now: 2 and i is now 1.
+The counter is now: 2 and i is now 3.
+The counter is now: 2 and i is now 5.
+I’m done - about to go on a break.
+
+
+
+
+Some Useful Logical and Binary Operators
+----------------------------------------
+
+Python comes with a typical set of comparative operators. Here’s a quick
+summary:
+
+| ==  | Equal to              |
+|-----|-----------------------|
+| !=  | Not equal             |
+| \<  | Less than             |
+| \>  | Greater than          |
+| \<= | Less than or equal    |
+| \>= | Greater than or equal |
+
+There is also a set of bitwise operators. These operate on the 1s and 0s in a number represented in binary format. You can create a binary representation of a number in Python by using the keyword **bin**, something like:
+
+
+
+
+bin(128)
+‘0b10000000’
+
+
+
+
+You can see that the result’s first two characters are ‘0b’, flagging it as a binary representation. You’ll also note that the result is a string, which you can’t do much with mathematically – you need to do operations <span class="underline">before</span> it’s converted.
+
+The operators for bitwise shifts are **\>\>** and **\<\<** and here’s how you might apply them as you’re creating the binary number. These are like changing the power of 10 to which you raise a base 10 number.
+
+
+
+
+#py_binary_operations.py
+mybin_1000 = bin(1000)
+fmt = "{:30} {:&lt;30}"
+print("Base 2 operations:")
+print(fmt.format("mybin_1000: ", mybin_1000))
+print(fmt.format("mybin_1000 shifted left: ", bin(1000 &lt;&lt; 3)))
+print(fmt.format("mybin_1000 shifted right: ", bin(1000  5)))
+
+
+
+
+The output shows the result of a left shift is to pad the original with 0s to the right, and the right shift effectively truncates it[28].
+
+
+
+
+mybin_1000: 0b1111101000
+mybin_1000 shifted left: 0b1111101000000
+mybin_1000 shifted right: 0b11111
+
+
+
+
+There are other operators you can use to “mask” a binary number with another. A common use is IP address masking when setting up subnets.  These are:
+
+| a & b  | Both 1 -\> 1, otherwise -\>0                                        |
+|--------|---------------------------------------------------------------------|
+| a \| b | Both 0 -\> 0, otherwise -\>1                                        |
+| \~a    | “flips” each bit. 1 -\> 0 and 0 -\>1                                |
+| a ^ b  | if the bit in b is 0, use the bit in a; otherwise flip the bit in a |
+
+This is just an aside, but you can use the "exclusive or", a.k.a. XOR, implemented with the "^" operator, as a cheesy encryption tool. That's because sequential applications simply flip the results. The first application encrypts the original and the second application undoes the encryption. Just for fun, file "**py\_magic\_decoder\_ring.py"** has an example.
+
+
+
+
+
+Exercise:
+
+
+Create a program that asks the user to guess a number between 1 and 100 (whole numbers only). If the guess is wrong, let the user know if the guess is too high or too low. If the guess is right, offer hearty congratulations and exit the program. If, after five attempts, the user can’t get the number then offer deep condolences and invite him/her to try again. Be sure to check for valid input and remind the user if necessary.
+Hint: the random library has several handy pseudo-random number generator functions such as random.randrange(). You’ll need to import random in order to use it. A good way to start might be:
+
+
+import random
+help(random)
+
+
+Also, you might consider putting in some sort of logical that will “freeze” both the random number and the user’s guess while debugging. That gives you a stationary target.
+
+
+
+
+
+Collections
+===========
+
+Next, we’ll investigate several of the built-in Python **sequences.** Sequences are composite objects (that is they contain zero or more separate objects). Sequence objects are aware of their status as such and have built-in methods to take advantage of that fact. For instance, all sequences are **iterators** (they know how to loop over themselves), they know how long they are, and can be indexed.
+
+Creating Sequences 
+------------------
+
+In the code below, we will take a first-order look at several sequences, and how one might form them. Note that we can use data types such as **range** and **list** as methods to create new instances of said data types.
+
+
+
+
+#py_sequence_survey.py
+the_string = "strings are sequences with an encoding"
+the_bytes = bytearray(the_string, encoding = ‘UTF-8’)
+the_range = range(10)
+the_list = list(range(10))
+the_tuple = tuple(range(10))
+print("String: ", the_string)
+print("Bytes: ", the_bytes)
+print("List: ", the_list)
+print("Tuple: ", the_tuple)
+
+
+
+
+When you execute this code, you’ll get output something like:
+
+
+
+
+String : strings are sequences with an encoding
+Bytes1 : bytearray(b’strings are sequences
+with an encoding’)
+List : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Tuple : (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+
+
+
+
+
+Note that the bytearray’s string representation is proceeded by a “b”. That’s just a visual indicator that the object is stored as bytes. Other annotations you might encounter include :
+u (Unicode, in Python 2.x) r (asks Python to interpret \n \t, and other format characters literally)↩︎
+
+
+
+As is the case with strings, it’s possible to create several objects directly using the appropriate braces. This approach is called "duck typing" – from the interpreter's perspective, if it walks like a duck and quacks like a duck, it must be a duck. These all work:
+
+
+
+
+another_list
+["what’s", ‘up’, ‘doc?’]
+type(another_list)
+&lt;class ‘list’
+a_dict = {‘a’:’eh’, ‘b’:’bee’, ‘c’:’see’}
+a_dict
+{‘a’: ‘eh’, ‘c’: ‘see’, ‘b’: ‘bee’}
+type(a_dict)
+&lt;class ‘dict’
+my_tuple = (1,3,4)
+my_tuple
+(1, 3, 4)
+type(my_tuple)
+&lt;class ‘tuple’
+
+
+
+
+Naturally, any of objects can be directly created with a constructor (using the object name as a verb). This can take the guess work out of the situation. Here’s an example for the **set**[29] object:
+
+
+
+
+favorite_set = set()
+type(favorite_set)
+&lt;class ‘set’
+favorite_set.add(1)
+favorite_set
+{1}
+
+
+
+
+Python is not strongly typed (at first, anyway). Unlike many languages, Python does not enforce variable declaration and homogenous types within a collection structure. In fact, it’s very cavalier about use and reuse of variable names[30].
+
+
+
+
+reusable = "green"
+reusable = 1
+reusable = ["some", "list", "of", 4, "elements"]
+reusable
+[‘some’, ‘list’, ‘of’, 4, ‘elements’]
+reusable = None
+reusable1
+# (no answer means the value is None)
+
+
+
+
+
+
+The None object doesn’t return anything if asked to represent itself. If you need to check, you can go:
+a = None
+a is None
+True↩︎
+
+
+
+Creating Index Values with enumerate
+------------------------------------
+
+Although you don’t need to create index values for your loop, you can get some easily by using the built-in **enumerate** method. Here’s how you might apply it:
+
+
+
+
+#py_enumerate_1.py
+fruits = (‘apple’, ‘banana’, ‘kiwi’)
+for snack_and_index in enumerate(fruits):
+print(snack_and_index)
+
+
+
+
+
+
+
+#output
+(0, ‘apple’)
+(1, ‘banana’)
+(2, ‘kiwi’)
+
+
+
+
+Here, we created a tuple of fruits. Within the **for** statement we applied **enumerate**. For each element of the tuple, **enumerate (**returned a **tuple** of (index, element\_value) ).
+
+We can upgrade this a bit by applying some print formatting and by “unpacking” the **tuple** returned. Here’s how might work:
+
+
+
+
+py_enumerate_2.py
+fruits = ("apple", "banana", "kiwi")
+start_at = 1
+for index, snack in enumerate(fruits, start_at):
+print("fruit #{} is a(n) {}".format(index, snack))
+
+
+
+
+Here are the results:
+
+
+
+
+fruit #1 is a(n) apple
+fruit #2 is a(n) banana
+fruit #3 is a(n) kiwi
+
+
+
+
+The names “snack” and “index” have been successively associated with values contained within the **tuples** provided by **enumerate**, and are available within the indented suite. You can see that the names are “recycled” at each iteration. We provided an optional argument “start\_at” to select the first value of the index produced. If you don’t provide the argument, the first index value will be zero.
+
+Slices and Sequence Indexing
+----------------------------
+
+So far, we have looked at really small, manageable sequences where it’s easy and cheap enough to iterate through all the elements. However, in real-life situations we’re likely to encounter structures that contain millions of elements. If we have some *a priori* knowledge of where the element we’re looking for lives, or if we want to apply something better than a brute-force search algorithm, we would want a more clever way to approach sequences.
+
+Fortunately, Python supports the ability to “slice” a sequence using index values. For instance, you can go:
+
+
+
+
+the_list = list(range(0,10))
+the_list
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+the_list[0:6:2] # end at 6, stride = 2 grabs every other value
+[0, 2, 4]
+
+
+
+
+The general syntax is
+
+\<iterable\>\[ \<start\> : \<stop\> : \<stride\> \]
+
+The start, stop, and stride parameters are all optional. Be default start is the first element of the sequence, stop is the last element, and stride is 1. In the simplest form, the entire sequence will be produced:
+
+
+
+
+the_list[:] # [::] works the same
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+
+
+Let’s go back and look at the first slicing example. One might expect that the last element produced would be 6 – after all, isn’t that what we requested with the stop parameter? Not so – the last element produced is the one <span class="underline">before</span> the stop parameter … something to keep in mind to avoid surprises[31].
+
+Python also has a built-in **slice** object, which works just like the index specifications above. Note that it’s applied with \[square brackets\], just like the hard-coded slice.
+
+
+
+
+slicer = slice(0,6,2)
+type(slicer)
+&lt;class ‘slice’
+the_list[slicer]
+[0, 2, 4]
+
+
+
+
+Using the **slice** object can make your code much easier to maintain because you don’t have to fiddle with hard-coded index values. It can be especially useful if you’re parsing data whose format is likely to change and over which you have little control (like text scraped from a web site). A few **slice** objects at the top of your code could make adjustments / updates a snap. This being said, if its specification is too “distant” from where it’s being applied your code could become less transparent for human consumers.
+
+Here are a few additional examples of how you might use slices:
+
+
+
+
+#py_slicer.py
+the_string = "strings are sequences with an encoding"
+the_list = list(range(0,10))
+the_slice = slice(3, 10) # positions 3...9 inclusive
+print("Slice : ", the_slice)
+print("Slice a list: ", the_list[3:10]) # more typical
+print("Alt. syntax : ",
+the_list.__getitem__(the_slice)) # more verbose
+print("Slice a string: ", the_string[3:10])
+print("The whole string: ",the_string[:]) # all
+print("Skipping: ",the_string[::2]) # step by 2
+new_list = the_list[:] # same as the_list.copy()
+
+
+
+
+This should produce output something like:
+
+
+
+
+Slice : slice(3, 10, None)
+Slice a list: [3, 4, 5, 6, 7, 8, 9]
+Alt. syntax : [3, 4, 5, 6, 7, 8, 9]
+Slice a string: ings ar
+The whole string: strings are sequences with an encoding
+Skipping: srnsaesqecswt necdn
+
+
+
+
+Dictionaries in Python
+----------------------
+
+Python supports dictionary objects, known to some languages as “hash tables” or “hash mappings.” The basic object, **dict**, is built into the language and variants of it, such as the **OrderedDict** are available in the **collections** library[32].
+
+Basics
+------
+
+A **dict** object is another form of a collection – it has some important differences from sequence objects like the **list** and string. Among these:
+
+-   Since it’s a hash[33] (optimized for efficiency) the elements are
+    not in any guaranteed order. In other words, the act of adding an
+    element can change the order of the others.
+
+-   Operations like slicing, indexing, etc. are not available because
+    they’re dependent on the ordering of the elements.
+
+The **dict** is essentially a one-way lookup table. Given a unique key, one can efficiently find its associated value. However, since values are not necessarily unique you can’t go the other way (you can’t use a value to look up a key).
+
+Here’s some basic usage:
+
+
+
+
+#py_dict.py
+the_dict = {"key":"value", "A":2, "B":3}
+same_dict = dict(key = "value", A = 2, B = 3)
+print("Dict compare :", the_dict == same_dict)
+print("And here’s the dict:", the_dict)
+the_dict[‘C’] = 3
+print(.”.. and again:", the_dict)
+my_value = the_dict.get(‘D’, "some default value")
+print(.”.. and yet again:", the_dict)
+print(.”.. (and my_value is: {}).”.format(my_value))
+
+
+
+
+This will produce results as follows:
+
+
+
+
+Dict compare : True
+And here’s the dict: {‘A’: 2, ‘B’: 3, ‘key’: ‘value’}
+... and again: {‘A’: 2, ‘B’: 3, ‘C’: 3, ‘key’: ‘value’}
+... and yet again: {‘A’: 2, ‘B’: 3, ‘C’: 3, ‘key’: ‘value’}
+... (and my_value is: some default value)
+
+
+
+
+Using get
+---------
+
+There are several ways to retrieve elements from a dictionary. Of particular interest is the **get** method. While it’s completely OK to call a value out by name, if that value does not exist a **KeyError** exception will occur. The **get** method allows you to provide some default value in this case (or if you don’t, a valid **None** object will be returned). Here’s a quick example:
+
+
+
+
+#py_get.py
+"use the dict method get"
+plant_dict = {‘raspberry’: ‘rubus’,
+‘elm’ : ‘ulmus’,
+‘maple’ : ‘acer’
+}
+#create a format string
+fmt_str = "The {} is more properly called a {}."
+#get with no argument
+look_for = ‘raspberry’
+found = plant_dict.get(look_for)
+print(fmt_str.format(look_for, found))
+#get with a default value
+look_for = ‘alder’
+default = ‘SOMETHING. I dunno’
+found = plant_dict.get(look_for, default)
+print(fmt_str.format(look_for, found))
+#get with default None
+look_for = ‘sumak’
+default = None
+found = plant_dict.get(look_for, default)
+if found:
+print(fmt_str.format(look_for, found))
+else:
+print("Dude, I give up ;-)")
+
+
+
+
+This code will produce the following output:
+
+
+
+
+The raspberry is more properly called a rubus.
+The alder is more properly called a SOMETHING. I dunno.
+Dude, I give up ;-)
+
+
+
+
+Keys are Immutable
+------------------
+
+The keys of a **dict** need to be unique and hashable. As a result, one of the requirements of a key is that be immutable[34]. To determine whether a proposed key is hashable, “under the hood” the interpreter looks for the **\_\_hash\_\_** “magic method”, and uses the hash thus produced for internal bookkeeping. If there’s no **\_\_hash\_\_** method, the proposed key won’t qualify. As long as the key meets these requirements, it can be just about anything, though strings and integers are most commonly used.
+
+Useful Dictionary Methods
+-------------------------
+
+Here’s a little more code you can use to “kick the tires” on the **dict** object. Note the use of the **update** method of the **dict** object and the top-level **del**[35] method.
+
+
+
+
+#py_dict_1.py
+mydict = {}
+mydict[‘team’] = ‘Cubs’
+#another way to add elements us via update.
+# For input, just about any iterable that’s comprised of
+# 2-element iterables will work.
+mydict.update([(‘town’, ‘Chicago’), (‘rival’, ‘Cards’)])
+#we can print it out using the items method
+#(it returns a tuple)
+for key, value in mydict.items():
+print("key is {} and value is {}.” \
+.format(key, value))
+print("let’s get rid of a rival")
+print()
+#and evaluates left to right; this protects from crashes
+#if no ‘rival’
+if "rival" in mydict and mydict[‘rival’] = = ‘Cards’:
+#note that del is NOT a dict method
+del(mydict[‘rival’])
+print()
+print("by the grace of a top-level function, \
+the Cards are gone.\n")
+
+
+
+
+This code will print the following:
+
+
+
+
+key is rival and value is Cards
+key is town and value is Chicago
+key is team and value is Cubs
+let’s get rid of a rival
+by the grace of a top-level function, the Cards are gone.
+
+
+
+
+You can extract the keys and values by the cleverly-named **keys** and **values** methods. These return iterable objects containing the appropriate values.
+
+
+
+
+the_dict = {"key":"value", "A":2, "B":3}
+the_dict.keys
+dict_keys([‘A’, ‘key’, ‘B’])
+the_dict.values
+dict_values([2, ‘value’, 3])
+
+
+
+
+Another way to remove elements from a **dict** is to use its **pop** and **popitem** methods. These not only remove elements, but return the element removed. Here’s how you might employ these methods:
+
+
+
+
+#py_dict_2.py
+my_dict = {‘team’: "Cubs", "town": "Chicago", \
+"rival": "Cards"}
+print("dict is: {}\n”.format(my_dict))
+default = None
+#use popitem to get some (unknown) item.
+#Will crash if dict is empty.
+if my_dict:
+key, value = my_dict.popitem()
+print("we’ve removed: {}\n.”.format(value))
+print("dict is now: {}\n.”.format(my_dict))
+#with pop we can pick a key and use a default,
+# just in case
+for looking_for in ("house beer", ‘team’):
+key_value_tuple = my_dict.pop(looking_for, default)
+if key_value_tuple:
+print("{} is {}\n.”.format(looking_for, \
+key_value_tuple))
+else:
+print("sorry, no {} here.”.format(looking_for))
+
+
+
+
+This will produce output something like the following. Remember, though that a **dict** doesn’t guarantee any particular ordering of the information. Repeated runs of the code will (very likely) produce different results. You might try it.
+
+
+
+
+dict is: {‘team’: ‘Cubs’, ‘town’: ‘Chicago’, ‘rival’: ‘Cards’}
+town is: Cubs
+dict is now: {‘town’: ‘Chicago’, ‘rival’: ‘Cards’}
+sorry, no house beer here
+sorry, no team here
+
+
+
+
+Sorting a Dictionary
+--------------------
+
+Occasionally, you’ll want to sort the contents of a **dict**. Sorting by keys is a snap because they’re guaranteed to be unique and have a natural “sort order.” This can be accomplished succinctly by applying the built-in **sorted** method of the **list** object.
+
+
+
+
+my_dict = {‘team’: "Cubs", "town": "Chicago",
+"rival": "Cards"}
+print(sorted(list(my_dict.keys())))
+[‘rival’, ‘team’, ‘town’]
+
+
+
+
+This probably looks complicated at first glance, but it’s not so tough when you break it down. Nested functions can be best interpreted “inside out.”
+
+my\_dict.keys() \#gets an iterable of the keys
+
+list(my\_dict.keys()) \#converts the iterable to a list
+
+sorted(list(my\_dict.keys())) \#sorts alphabetically
+
+print(sorted(list(my\_dict.keys()))) \#feeds the sorted **list** to
+**print**
+
+Sorting by values is a little tougher, but here’s how you can do it. You need to provide a short routine that returns a value if you give it a key. If you provide it to the **list** object’s **sort** method[36], it will use the routine to guide its efforts. We’ll get into functions more later. For now, know that the general form is:
+
+> **def \<function\_name\>():**
+>
+> **\<indented suite\>**
+
+It can take zero or more arguments and optionally return an object of your choice.
+
+The **sort** command by default will sort the elements “naturally” – alphabetically if strings and numerically otherwise. You can influence that behavior by giving it something else besides the **list** elements to sort “naturally”. It could be anything – a random number, word count, the last letter of a word, etc. Things will be sorted by whatever is returned by the sorter routine you write.
+
+This is what a “null sorter” would look like (it returns exactly what we passed it):
+
+
+
+
+def sorter(key):
+"simply returns what’s provided i.e., contributes nothing"
+return key
+
+
+
+
+Here’s an example of routine that uses a custom sorter that returns the <span class="underline">value</span> associated with the **dict** key provided to it:
+
+
+
+
+#py_dict_3.py
+def sorter(key):
+"simply returns the value"
+return my_dict[key]
+my_dict = {‘team’: "Cubs", "town": "Chicago", \
+"rival": "Cards"}
+key_list = list(my_dict.keys())
+key_list.sort(key = sorter)
+for key in key_list:
+print(key, my_dict[key])
+
+
+
+
+And here are the results:
+
+
+
+
+#results
+rival Cards
+town Chicago
+team Cubs
+
+
+
+
+Miscellaneous Notes on dict Objects
+-----------------------------------
+
+You can use dictionaries to hold elements of sparse arrays by using **tuple**s as keys. Let's say you wanted to model movements of goldfish in a tank. You could account for each cubic centimeter of water and monitor each fish passage in and out – you might use a dense 3-D array for that. Perhaps more efficiently, you could monitor the fish themselves by providing a three-**tuple** to represent the current location of each. This **dict** uses **tuples** for keys:
+
+
+
+
+array_dict = {(0, 0, 0): 12, (2, 4, 98): 23}
+array_dict[(2, 4, 98)]
+23
+
+
+
+
+Keys can be heterogeneous, as can the values. This is a valid **dict**:
+
+
+
+
+hetero_dict = {‘a’: 1, (1,3,4): "x"}
+hetero_dict
+{‘a’: 1, (1, 3, 4): ‘x’}
+
+
+
+
+If a **dict** has a key named “a”, and you provide a new element who’s key is ‘a’, the original will be replaced.
+
+
+
+
+new_dict = dict( ( (‘a’, 3), (‘b’, 88) ) )
+new_dict
+{‘a’: 3, ‘b’: 88}
+new_dict[‘a’] = "Godzilla!"
+new_dict
+{‘a’: ‘Godzilla!’, ‘b’: 88}
+
+
+
+
+Adding elements one at a time can be expensive, especially as the **dict** grows. That’s because the entire object needs to be copied to a new patch of memory if it grows past its allocated space. It’s more efficient to use an *en masse* operation like **update**.
+
+The set Object and List Comprehension
+-------------------------------------
+
+The **set** object is a mighty useful arrow in your quiver. A **set** is essentially a collection of unique objects. The **set** is another hash object, making retrieval of objects very efficient, even when the **set** is large.
+
+The fact that a **set** contains only unique objects makes it great for an automatic de-duplicator. If you try to add an object that already exists, the attempted addition fails silently. Here’s a common idiom to de-dup a **list**:
+
+
+
+
+set([1,1,2,2,2,3,3,4,5])
+{1, 2, 3, 4, 5}
+
+
+
+
+Here’s a slightly more complicated example, this one using a “list
+comprehension” to create a set of random numbers using the random
+library:
+
+
+
+
+#py_list_comp.py
+import random
+values = 1000
+dedup = set([int(1000*random.random()) \
+for i in range(values)])
+print("we found {} unique values!”.format(len(dedup)))
+#sample output (YMMV)
+#we found 384 unique values from an initial sample of 1000
+
+
+
+
+The list comprehension[37] bit bears some explanation. It’s just a short-cut way to build a **list**. This bit does the heavy lifting:
+
+|                                                       |
+|-------------------------------------------------------|
+| \[int(1000\*random.random()) for i in range(values)\] |
+
+… broken down, it’s the same as this more verbose version:
+
+
+
+
+random_list = []
+for i in range(values):
+rand_num = random.random()
+rand_int = int(rand_num * 1000)
+random_list.append(rand_int)
+dedup = set(random_list)
+
+
+
+
+**Sets** have built-in methods for efficiently finding unions and intersections. A union is a **set** of every unique element from both sets combined. An intersection is a **set** of the elements found in both. This code serves to illustrate how you might apply them using the “**&**” and “**\|**” operators:
+
+
+
+
+#py_set_operations.py
+the_set = {"monkey", "gorilla", "dog", "cat"}
+print("Set: ", the_set)
+the_set.add("parrot")
+print("Set: ", the_set)
+other_set = {"gorilla", "elephant", "pig", "chicken"}
+print("Set intersection:", the_set &amp; other_set)
+print("Set union:", the_set | other_set)
+
+
+
+
+The code yields the following output:
+
+
+
+
+Set: {‘gorilla’, ‘monkey’, ‘cat’, ‘dog’}
+Set: {‘gorilla’, ‘monkey’, ‘parrot’, ‘cat’, ‘dog’}
+Set intersection : {‘gorilla’}
+Set union: {‘dog’, ‘gorilla’, ‘monkey’, ‘elephant’,
+‘pig’, ‘parrot’, ‘cat’, ‘chicken’}
+
+
+
+
+Note that although this example uses the "\|" and "&" operators with two **set** objects, there's no limit to the number of objects in play. If a, b, and c are all **sets**, you can go a&b&c or a\|b\|c.
+
+Named Tuples
+------------
+
+**The namedtuple** object is something of a hybrid between a **tuple** and a **dict**. Each **namedtuple** can be instantiated into your current namespace as a ‘normal’ **tuple**, but the wrinkle is that you can provide each element an alias (nickname) so you can refer to it easily. It’s not part of basic Python so you need to **import** it from the collections library.
+
+Here’s some code to play with which shows the basic functionality. Note that you can address these objects like dictionaries, but can also use them as **tuples**.
+
+
+
+
+#py_animals.py
+"""An introduction to the namedtuple object"""
+from collections import namedtuple
+#make a tuple with the tag ‘Animal’
+Animal = namedtuple(‘Animal’, (‘species’, ‘name’))
+#specify this animal by providing the species and name
+a1 = Animal(‘gorilla’, ‘magilla’)
+print(a1)
+Animal(species='gorilla', name='magilla')
+#... and specify another
+a2 = Animal(species = ‘gorilla’, name = ‘fred’)
+print(a2)
+Animal(species='gorilla', name='fred')
+#we can call out the specifics using dot notation
+print(a1.name, a2.name)
+magilla fred
+#... or, split the tuple containing the first animal
+myspecies, myname = a1
+print(myspecies, myname)
+gorilla, magilla
+
+
+
+
+Getting Fancier with the namedtuple Object
+------------------------------------------
+
+Here’s a slightly more complicated example – something you might use if you were developing a chess game in Python. We won’t elaborate this to completion – but it may be interesting practice. If you do the upgrade, you might look into using Unicode to represent your chess pieces[38] (Python 3 is Unicode-compliant[39]).
+
+This code develops a two-dimensional grid using a **list** of **namedtuple** objects. This is a simple way to whistle up a 2-d array-like structure using only basic Python tools.
+
+You can see that each of the **namedtuple** objects carries with several properties, nicely bundled, and transparently addressed. In this sense, the objects we’re creating here are a bit like the build-in Python objects – they’re already endowed with “out of the box” capabilities.
+
+
+
+
+#py_named_tuples.py
+from collections import namedtuple
+Piece = namedtuple(‘Piece’, ‘type color position symbol’)
+#a list of lists is a really useful data structure
+grid = []
+for r in range(8):
+grid.append([None, None, None, None,
+None, None, None, None])
+grid[7] = [
+Piece("Rook" , "black", [7,0], "R"),
+Piece("Knight" , "black", [7,1], "K"),
+Piece("Bishop" , "black", [7,2], "B"),
+Piece("Queen" , "black", [7,3], "Q"),
+Piece("King" , "black", [7,4], "K"),
+Piece("Bishop" , "black", [7,5], "B"),
+Piece("Knight" , "black", [7,6], "K"),
+Piece("Rook" , "black", [7,7], "R") ]
+grid[6] = [ ]
+for c in range(8):
+p = Piece("Pawn", "black", [6,c], "P")
+grid[6].append(Piece("Pawn", "black", [6,c], "P"))
+for p in grid[7]:
+print(p.symbol, end = "")
+print()
+for p in grid[6]:
+print(p.symbol, end = "")
+print()
+
+
+
+
+
+
+
+#output:
+RKBQKBKR
+PPPPPPPP
+
+
+
+
+Copying Sequences
+-----------------
+
+In Python, it’s possible to have multiple names associated with the same object. This can be really handy but the convenience comes with a cost: the only way to tell for sure is with the object’s **id**. Here are a couple trivial examples that show the potential pitfalls:
+
+
+
+
+one = 1
+one_prime = 1
+id(one)
+30396760
+id(one_prime) #same object !!!
+30396760
+
+
+
+
+You run into this with collections, too. This code will demonstrate:
+
+
+
+
+#py_list_copy.py
+def test_lists(first, second):
+test_result = (first = = second)
+print("same list, right? {}.”.format(test_result))
+if test_result = = False:
+print("first id is {} second id is {}.”\
+.format(id(first), id(second)))
+print(‘make a list, then create a copy’)
+a_list = ["Tony", "Sally", "George"]
+b_list = a_list
+print(a_list, b_list)
+test_lists(a_list, b_list)
+#update the first list, but not the second.
+print("\nadd someone to the a_list, \
+leaving the b_list alone")
+a_list.append("Sam")
+test_lists(a_list, b_list)
+print("Uh, what happened here?")
+
+
+
+
+
+
+
+#output:
+make a list, then create a copy
+[‘Tony’, ‘Sally’, ‘George’] [‘Tony’, ‘Sally’, ‘George’]
+same list, right? True
+add someone to the a_list
+same list, right? True
+Uh, what happened here?
+
+
+
+
+“What happened here” is that we have simply assigned two names to the same object (they have the same **id**). To get around this, you need to make a “deep” (true) copy. Here are some ways to do it:
+
+
+
+
+new = old[:] #forces the list to iterate over itself
+new = list(old) #list constructor creates new object
+new = old.copy() #uses the list object’s copy method
+
+
+
+
+
+
+
+Exercise:
+I just hired a new admin and it’s not working out so well. I asked her to organize my Cubs player database. It turned out to be a disaster. After she quit, I found two versions of the database. Can you help? One version of the database (stored as a dict) uses the players’ weights as the key. I’ll spare the details, but it looks like this:
+#py_cubs_players.py
+players = {185:(‘Tyler’, ‘Chatwood’),
+219:(‘Luke’, ‘Farrell’),
+190:(‘Kyle’, ‘Hendricks’)}
+Can you find a way, working only with code and this dictionary, to produce a nicely formatted table that’s sorted by the players’ last name?
+The other version was only a little better and organized by last name – sort of. There were lots of duplications caused by bad typing. Here’s a bit of it:
+players = {‘Hendricks’: (‘Kyle’, 225),
+‘HeNDricks’: (‘Kyle’, 225),
+‘Hendrix’: (‘Kyle’, 225) }
+Can you find a way to clean this version up working with the set object1?sort of organizing the data by player weightide it to te
+
+
+
+
+
+
+It’s beyond the scope of this class, but just for fun you might look at the code in py_fuzzy_lookup.py. For ways to further refine. It demonstrates a tool that will let you find and score “fuzzy” (inexact) matches.↩︎
+
+
+
+Functions
+=========
+
+Functions are just bits of code that encapsulate – you guessed it – functionality. We’ll explore them in some depth in this chapter.
+
+You’ve already used several of them like **print**, **input**, and **bin**. You’ve used them with commands like **list.sort** – though, technically when contained within classes, they’re called “methods.” And we’ve just written a small function to sort **dict** objects by value.  You’re already a getting to be a pro. You’ll become more so by rolling a few of your own.
+
+Scope of Names In a Module
+--------------------------
+
+Here are a couple example functions that each take a single, positional parameter. The first is pretty straightforward, and the second introduces the **global** keyword.
+
+In Python (and all languages) there’s a notion of “scope” – that’s the part of the code where a variable is visible. Indentation levels are a good gauge of scope within a module. The objects defined in the first column (setStar function and the variables STAR, Favorites and X) are visible throughout the module and are called “globals”[40]. Variables tucked away within a function e.g., title\_length in section are visible only within that function, normally. These are called “locals”[41].
+
+If you want to enhance the visibility of the variable and make it global to the module, you can employ the **global** keyword, as is done in SetStar for the variable STAR. Once you do that, you facilitate “two way communication” with that STAR object and allow the function to alter the value . If you don’t do that, the function can only alter the “local copy” of STAR[42].
+
+
+
+
+#py_function_1.py
+# Globals namespace
+STAR = "Sirius" # Polaris
+Favorites = [ ]
+X = 100
+def setStar(name):
+"Local namespace"
+#remove comment to map to global namespace
+#global STAR
+STAR = name
+Favorites.append(name)
+print("STAR: ", STAR)
+setStar("Polaris")
+print("STAR: ", STAR)#output
+
+
+
+
+Passing Information into a Function
+-----------------------------------
+
+You have a tremendous amount of flexibility around how, and whether, to pass information into functions. You can “roll your own” from some combination of fixed positional arguments (a contract between you and your function to provide a precise number or arguments); positional “wildcard” arguments (0 to a zillion arguments); specific key / value pairs; or “wildcard” key / value pairs (0 to a zillion). Here are some examples of the options available to you:
+
+The simplest of all functions can be constructed like this:
+
+
+
+
+def simple():
+“a docstring, or the keyword pass”
+
+
+
+
+You need the keyword **def**, some name, enclosing parentheses and a colon in the header; a nominal indented suite following. This function takes no arguments and returns **None**. Not so interesting, really, but syntactically-correct. You can upgrade in a variety of ways. If you have only named positional parameters as with this constructor:
+
+|                                               |
+|-----------------------------------------------|
+| def positional\_only(input1, input2, input3): |
+
+Here you promise three inputs – no more and no fewer. Sometimes, though, you really don’t know how many bits of information you’ll get and want to generalize. Python provides flexibility when the number of arguments is unpredictable. This constructor requires one positional argument then zero or more additional ones:
+
+|                                               |
+|-----------------------------------------------|
+| def positional\_plus(input1, \*more\_inputs): |
+
+The “\*” signals the interpreter to expect a tuple of unknown size, and to create a local name “more\_inputs” tied to a **tuple** object (you don’t use the \* inside the function). The **tuple** will scoop all the additional arguments provided beyond the first one (that’s assigned to input1). If only argument is provided the **tuple** will be empty.
+
+If you want to use a **dict** as input, you can construct the function
+like this:
+
+|                                     |
+|-------------------------------------|
+| def dict\_only(a = None, b = None): |
+
+This is a handy idiom because objects a and b are always created when the function is called. That makes them optional – neither, either, or both can be used when calling it. Another way to use a **dict** is to use a placeholder for one with a constructor that looks like this:
+
+|                                         |
+|-----------------------------------------|
+| def dict\_placeholder(\*\*input\_dict): |
+
+When you do this, you create a local name “input\_dict” that’s tied to the key:value pairs provided when the function is called (you don’t use the \*\* internally). Let’s take a look at a couple more examples.
+
+
+
+
+#py_function_2.py
+def eats(*foods): # gather positional args in a tuple
+print("foods: ", foods) # foods is a tuple now
+print("Tuple of positional arguments to eats():")
+# open-ended number of positional arguments passed in...
+eats("Spaghetti", "Oysters", "Chili", "Crackers", "Rice")
+def example(*args, **kwargs): # keyword args dict
+"""
+(* ) convert positionals -- tuple
+(**) convert keyword args -- dict
+"""
+for arg in args: # loop over the tuple
+print(arg, sep = ", ", end = "")
+print()
+for key, value in kwargs.items(): # ...now the dict
+print("Arg name:",key,"Value: ", value)
+# positional + keyword (named) arguments
+example( 1,2,3,4, on_vacation = True, at_work = False )
+# same thing using "exploders" * and **
+example( *(1,2,3,4), **dict(on_vacation = False,
+at_work = True) )
+
+
+
+
+As you can see, you’ve got plenty of options here. This being said, there are a couple of constraints. The order is important – the positional arguments need to come first, then the **tuple** of arbitrary size, then the dictionary. As soon as the interpreter hits the **tuple** argument, it’s game over for positional arguments. As soon as it hits the dictionary, it’s game over for both positional arguments and **tuples**.
+
+Returning Information From a Function
+-------------------------------------
+
+A function does not have to return anything. If it does return something, you don’t have to give the returned value a name or otherwise use it. All of these work[43]:
+
+
+
+
+def yowza():
+return "yowza"
+yowza()
+‘yowza’
+a = yowza()
+a
+‘yowza’
+def hiya():
+pass
+hiya()
+
+
+
+
+Personally, I think it’s a good idea to return something – even if it’s just the number 1 to show “Yup, I executed” or a -1 to show “Uh, there was a problem.” But it’s up to you – without instructions in this regard a function returns the **None** object.
+
+Finally, in Python you can only return one object. This isn’t necessarily an issue because the object can be as complex as it needs to be to fully “pass the baton” to the next routine. The **dict** is my “go to” object for complex returns – mostly because it can be as complex as it needs to and, properly done, completely self-documenting.
+
+First Class Objects
+-------------------
+
+Functions are known as “first class objects” because they can be used just as classes and other top-level objects in Python. For instance, they can be passed as arguments to other functions without issue[44].  This is really powerful because you can separate responsibilities cleanly between separate, isolated bits of code. As a result, different teams can work on the individual functions and atomic tests can be written against the capabilities promised by each function. All this makes a “divide and conquer” approach to development a snap and – perhaps more importantly – can keep code easy to maintain as requirements change.
+
+Here’s how you might use functions’ “first class” status Python to take a foray into functional programming. For this example, imagine we have the “F team” in Florida and that it’s never met the “G team” in Georgia.  Each has been working 24/7 on its task, has written tests, and otherwise has things dialed in. F has perfected the art of doubling a value and G has nailed adding 2 to a value.
+
+As consumers of these efforts, we can “stand on the shoulders of giants” and repurpose / combine the efforts into our own project. Here’s an example:
+
+
+
+
+#py_function_3.py
+def compose(g, f):
+"""Take two functions as inputs and return a
+function that’s their composition"""
+def newfunc(x):
+return g(f(x))
+return newfunc
+# input function
+def G(n):
+return n + 2
+# input function
+def F(n):
+return n * 2
+# compare:
+H = compose(G, F) # build a 3rd function from 1 &amp; 2
+print("G(F(x)):", H(100)) # G(F(x))
+# ... now with
+H = compose(F, G)
+print("F(G(x)):", H(100)) # F(G(x))
+#output
+# G(F(x)): 202
+#F(G(x)): 204
+
+
+
+
+Function Exotics
+----------------
+
+There are a few other ways that functions are used that may be of interest in your programming career. If you don’t master these applications right away – no worries. The idea is to show you they exist and how to interpret what may look like very funky code in the new libraries you’ll likely explore.
+
+ Inner Functions
+---------------
+
+It’s possible for a function to contain other functions called “inner functions.” In this case, not only is there an inner function, but that’s what gets returned. The object that gets returned is “loaded for bear”, retaining the information originally passed into **addLetters**.
+
+
+
+
+#py_function_4.py
+def addLetter(letters): # &lt;-- pass in a string
+"""
+A function factory builds and returns function objects.
+L is a function that will add whatever letters are passed
+in to be the ending letters.
+"""
+def L(s):
+return s + letters
+return L
+#these are functions (versions of the inner
+#function L() returned from addLetters()
+add_s = addLetter("s")
+add_ed = addLetter("ed")
+print(add_ed)
+#and we can execute these functions like any others
+print(add_s('Unhinged rant'))
+print(add_ed('In an unhinged fashion rant'))
+
+
+
+
+
+
+
+#output
+# &lt;function addLetter.&lt;locals.L at 0x000000000329AE18
+# Unhinged rants
+# In an unhinged fashion ranted
+
+
+
+
+Closures
+--------
+
+A closure is an inner function with a memory. Let’s say that you have on good authority that the meaning of life is 42. You want to stash that pearl of insight away and be prepared to tweak it as life gets more interesting and the universe evolves.
+
+You might want to create a Python function to which you can provide the original value. Then you might ask the main function to return another function that accepts your changes. Here’s how you might do it:
+
+
+
+
+#py_function_5.py
+def outer_space(outer_input):
+"outer-most function"
+last_answer=outer_input
+def inner_space(inner_input):
+"inner-most function"
+nonlocal last_answer
+last_answer += inner_input
+return last_answer
+return inner_space
+MEANING_OF_LIFE=42
+original = outer_space(MEANING_OF_LIFE)
+print("The original meaning of life is {}".format(original(0)))
+tweak=3
+new_meaning = original(tweak)
+print("But now we think it's a bit more: {}".format(new_meaning))
+next_new_meaning = original(tweak)
+print("... and now: {}".format(next_new_meaning))
+
+
+
+
+
+
+
+#output
+The original meaning of life is 42
+But due to reasons known only to me it is probably 45
+... and now 48
+
+
+
+
+As you can see, the inner function retained some “institutional memory”, encapsulated it, and made itself available for further interaction.
+
+The **nonlocal** keyword, introduced here, acts to make a variable in an inner function available to the outer one. This is precisely the relationship that the **global** keyword in the outer function has with the containing module.
+
+ Python’s Take on Map, Reduce and Filter
+---------------------------------------
+
+Python has some limited built-in capability to handle map/reduce operations. It can easily perform the same sort of analysis possible with big data analytical tools like Hadoop, but just not at the same scale. (Hadoop has its own way to manage workload and file systems – that’s where its real magic lies).
+
+In a nutshell, a map operation is one that iterates through a bunch of objects and does the same thing to each one. A reduce operation sifts through the mapped objects and filters out the “good stuff.” Generally speaking, the **map** function is run once then sifted through multiple times by different reducers.
+
+To implement mapping in python, we can use the **map** function. Its syntax is straightforward:
+
+mapped\_data = map (\<processing\_function\>, \<iterable\>)
+
+To filter data, we can call upon the **filter** function. It works pretty much like map, but the processing filter passed judgment on each element of the iterable objects by evaluating it **True** or **False**.  The result is another iterable of only those that have been deemed **True**. The syntax is identical to that of **map**:
+
+filtered\_data = filter(\<processing\_function\>, \<iterable\>)
+
+Here’s an example of how you might use **map** and **filter** to find even sums of integers provided as **tuples**. These methods are interesting because they each take two arguments: incoming data and the name of the routine to process the data. Each returns a generator-like object. This means they don’t process all the data at once. Instead, they proceed one step at a time through their task, then only when requested. This sort of “lazy execution” makes handling of even large data sets possible because only the bits of it that are being processed need be in the memory.
+
+Python also has a **reduce** method – it works pretty much like **map**, except the operations defined in the function are applied cumulatively.  Note that it’s implemented using a **lambda** expression[45] (an anonymous “one liner” function that can be used in place of a standard function).
+
+
+
+
+#py_function_6.py
+from functools import reduce
+def add_numbers(things_to_add):
+"adds two numbers"
+first, second=things_to_add
+return first+second
+def find_evens(thing_to_evaluate):
+"returns True if even"
+return not thing_to_evaluate % 2 #True if 0, False otherwise
+integers=[ (2,2), (4,4), (5,6), (7,8) ]
+mapped_data=map(add_numbers, integers)
+filtered_results=filter(find_evens, mapped_data)
+print("The even sums are {}".format(list(filtered_results)))
+cumulative_mult = reduce(lambda x, y: x*y, [1,2,3,4,5])
+print("reduce returned: {}".format(cumulative_mult))
+
+
+
+
+
+
+
+#output
+The even sums are [4, 8]
+reduce returned: 120
+
+
+
+
+ Function Dispatch
+-----------------
+
+Python doesn’t have a statement like **case** or **switch**, for better or worse. However, there are other ways to get the same functionality.  We’ve already seen that a complex **if** .. **elif** .. **else** structure can accommodate this. However, this can get unwieldy and hard to maintain.
+
+An alternative, and potentially more robust, approach involves mapping functions to a dictionary, which is then used to dispatch the function.  The following example shows how you might implement such a beast and, for good measure, introduces the **random.choice** method.
+
+As you review the code, imagine how much easier it would be to maintain than strictly branching logic. Let’s say your client suddenly asked you to add a new capability – **str**.**title** how could you add it while minimally touching the existing code[46]?
+
+
+
+
+#py_function_7.py
+from random import choice
+def f_upper():
+return str.upper
+def f_lower():
+return str.lower
+def f_swap():
+return str.swapcase
+function_mapper={'up': f_upper, 'lower': f_lower, 'swap': f_swap}
+choices = ['up', 'lower', 'swap']
+my_string='Lions and Tigers and Bears, Oh MY!'
+for i in range(3):
+mychoice=choice(choices)
+print(function_mapper[mychoice]()(my_string))
+#results will be something like (YMMV - it’s random)
+#lIONS AND tIGERS AND bEARS, oH my!
+#lions and tigers and bears, oh my!
+# LIONS AND TIGERS AND BEARS, OH MY!
+
+
+
+
+
+
+
+#output (YMMV due to random.choice())
+lIONS AND tIGERS AND bEARS, oH my!
+LIONS AND TIGERS AND BEARS, OH MY!
+LIONS AND TIGERS AND BEARS, OH MY!
+
+
+
+
+The **random**.**choice** method is a convenient way to make a (pseudo) random choice from a collection of options.
+
+The **print** is a bit of a mouthful, so let’s break it down:
+
+mychoice \#returns ‘up’
+
+function\_mapper\[‘up’\] \#f\_upper
+
+function\_mapper\[mychoice\]() \#str.upper function
+
+function\_mapper\[mychoice\]()(my\_string)) \#str.upper(my\_string)
+
+Note that most of what we’re doing is passing around the name of a function, like **f\_upper** or **str.upper** without actually executing it. This allows fairly succinct code because we can chain operations together in a single line. Is the virtue of being compact outweighed by the vice of being tough to decipher?
+
+Awesome job so far, guys! This has been a long session, but functions (and methods in classes) are one of the most important building blocks of any serious programming effort. Let’s try out your new skills on a couple of problems:
+
+
+
+
+Exercises:
+
+Python’s built-in title casing routine has much to be desired. Check this out:
+
+lst = ["shot in the dark",
+"guido van rossum",
+"monty python’s life of brian"]
+for item in lst:
+... print(item.title())
+Shot In The Dark
+Guido Van Rossum
+Monty Python’S Life Of Brian
+In the first instance, a really short word got capitalized. The second will drive much European nobility mad because “von” and “van” are generally lower case. And the first letter after an apostrophe is almost never capitalized.
+Please see if you can write a function to address these issues – I’m sure you can do better than str.title! While you’re about it, see you can break the task down into small, atomic bits. That’ll make it easier to test and maintain. You might use a series of functions something like:
+def process_list() - def process_title() - def process_word() - def process_apostrophe()
+
+- def process_royalty()
+
+Feel free to grab code from solution _python_1_chapter05_starter_code.py if you’d like. Many of the mechanics have been worked out, but it would benefit from reorganization.
+
+
+
+
+Modules and Libraries
+=====================
+
+Python has several built-in object types that provide a versatile and “off the shelf” collection of tools for handing information you’ll encounter in real-world situations. This chapter discusses and demonstrates a few of the libraries (modules) that you can **import** into your code. We’ll look at just how you can access these libraries while managing how they work and play with the applications you are developing.
+
+Importing Libraries
+-------------------
+
+As you’ve seen, the way to access libraries to extend Python’s core capabilities is to **import** them into your program’s namespace. Here are some examples:
+
+
+
+
+import time
+from decimal import Decimal, getcontext
+from fractions import Fraction as Q # rational number
+from datetime import datetime, timezone
+from collections import namedtuple
+
+
+
+
+ Basic Use of import
+-------------------
+
+If you examine these commands carefully, you’ll note several variants.  The first example adds the module **time** into your code. We can use the **dir** keyword to capture the namespace. If used without arguments, it grabs the global namespace; with an argument, it reports on the namespace of the object presented in the argument.
+
+
+
+
+dir()
+[‘__builtins__’, ‘__doc__’, ‘__loader__’, ‘__name__’, ‘__package__’]
+import time
+dir()
+[‘__builtins__’, ‘__doc__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘time’]
+
+
+
+
+The act of importing the new module doesn’t directly bring all the elements of the **time** module's namespace into your module – you only have access to **time**. The **time** module, however, has its own namespace. You can take a look at it using the **dir** function:
+
+
+
+
+dir(time)
+[‘CLOCK_MONOTONIC’, ‘CLOCK_MONOTONIC_RAW’, ‘CLOCK_PROCESS_CPUTIME_ID’, ‘CLOCK_REALTIME’, ‘CLOCK_THREAD_CPUTIME_ID’, ‘_STRUCT_TM_ITEMS’, ‘__doc__’, ‘__file__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘altzone’, ‘asctime’, ‘clock’, ‘clock_getres’, ‘clock_gettime’, ‘clock_settime’, ‘ctime’, ‘daylight’, ‘get_clock_info’, ‘gmtime’, ‘localtime’, ‘mktime’, ‘monotonic’, ‘perf_counter’, ‘process_time’, ‘sleep’, ‘strftime’, ‘strptime’, ‘struct_time’, ‘time’, ‘timezone’, ‘tzname’, ‘tzset’]
+
+
+
+
+ Dot Notation 
+------------
+
+While it’s isolated from that of your own namespace, you can still access the new elements. You can do this by using “dot notation.”
+
+
+
+
+time.timezone
+28800
+time.time
+&lt;built-in function time
+time.time()
+1474842731.612741
+
+
+
+
+The “dot” delimits namespaces, which may be configured hierarchically, and allows your code to be specific in terms of exactly which object it addresses. In the code above, you’ll see that within the **time** module there is a built in function of the same name. This creates no conflict for our own module because only the name of the newly-imported module is visible.
+
+Because of this separation it is completely safe to import several different modules without being concerned about whether object names from one can “overwrite” those of another.
+
+It’s also possible to reach into an external module and import only the bits we want into our local namespace. Observe the effects of importing the **Decimal** class and the **getcontext** function into a fresh instance of the Python interpreter. After the **import**, we now can access to the external objects on a “first name” basis.
+
+
+
+
+dir()
+[‘__builtins__’, ‘__doc__’, ‘__loader__’, ‘__name__’, ‘__package__’]
+from decimal import Decimal, getcontext
+dir()
+[‘Decimal’, ‘__builtins__’, ‘__doc__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘getcontext’]
+Decimal
+&lt;class ‘decimal.Decimal’
+getcontext
+&lt;built-in function getcontext
+
+
+
+
+ Renaming Object When Importing
+------------------------------
+
+A slight variant of this is to choose a name for the imported object that suits your purpose. Python is agnostic relative to the name you choose, within its basic rules.
+
+
+
+
+dir()
+[‘__builtins__’, ‘__doc__’, ‘__loader__’, ‘__name__’, ‘__package__’]
+from fractions import Fraction as Q
+dir()
+[‘Q’, ‘__builtins__’, ‘__doc__’, ‘__loader__’, ‘__name__’, ‘__package__’]
+
+
+
+
+It might make sense to import an object by a specific name to avoid a namespace collision, or to follow a conventions adapted by your teammates. For instance, it’s typical to use **numpy** by going:
+
+|                           |
+|---------------------------|
+| \>\>\> import numpy as np |
+
+This is done mostly for brevity. It’s much easier to type “np” than “numpy” - especially if you have to do it thousands of times.
+
+Avoid renaming imported objects unless you’ve got a good reason to do so because it could confuse your team. For instance, you can do one or both of these:
+
+
+
+
+import string
+string.ascii_uppercase
+‘ABCDEFGHIJKLMNOPQRSTUVWXYZ’
+import string as elephant
+elephant.ascii_uppercase
+‘ABCDEFGHIJKLMNOPQRSTUVWXYZ’
+
+
+
+
+… however, if you did the latter you could sow much confusion.
+
+ “Star Treatment”
+----------------
+
+Also, while it’s possible to import the entire namespace of a library into your code, you typically don’t want to do so. In this example we import the entire **string** module’s namespace using “star notation”:
+
+
+
+
+dir()
+[‘__builtins__’, ‘__doc__’, ‘__loader__’, ‘__name__’, ‘__package__’]
+from string import *
+dir()
+[‘ChainMap’, ‘Formatter’, ‘Template’, ‘__builtins__’, ‘__doc__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘ascii_letters’, ‘ascii_lowercase’, ‘ascii_uppercase’, ‘capwords’, ‘digits’, ‘hexdigits’, ‘octdigits’, ‘printable’, ‘punctuation’, ‘whitespace’]
+
+
+
+
+While this might be manageable, what if you were already using a variable called “digits”?
+
+
+
+
+digits = [‘thumb’, ‘pointer’, ‘middle’,
+‘ring’, ‘pinky’]
+digits
+[‘thumb’, ‘pointer’, ‘middle’, ‘ring’, ‘pinky’]
+from string import *
+digits
+‘0123456789’
+
+
+
+
+Sometimes it makes sense to use “star notation” when you’re importing only one outside library and using its tools exclusively. This is often the case when you are working with GUIs because all the components you need are included in the imported module – there almost no chance of namespace collisions, even when you’re part of a collaborative effort.
+
+File System Based Namespaces
+----------------------------
+
+Python has the ability to use the file system to create namespaces for modules and it works just like what we’ve seen for ordinary objects.  Building packages is beyond the scope of this course, but for now know that you can have a directory structure like:
+
+main\_application\\
+
+\_\_init\_\_.py
+
+subdir\_1\\
+
+\_\_init\_\_.py
+
+module.py
+
+subdir\_2\\
+
+\_\_init\_\_.py
+
+module.py
+
+If main\_application can be discovered by your app, then you can go:
+
+\>\>\> from main\_application import subdir\_1, subdir\_2
+
+… which gives you access to subdir\_1.module and subdir\_2.module. The two identically-named module names are each tucked in behind their directory name and will not present namespace conflicts in your app.
+
+On a related note, what makes main\_application discoverable by Python?  When you import a module, Python looks at the contents of **sys.path** – an ordered list of all the directories on its search path. It’s comprised of normal, default locations and whatever might be in your PYTHONPATH environment variable. The element, and the first place the interpreter looks, is in your current working directory. What this means – and this has caught many an unwary programmer – is that if you name your module the same as a system package, then when you try to import a Python module you will get your own instead. Then you will go insane trying to figure out why your imported module doesn’t work as expected.
+
+As a result, you’ll want to be a little careful about choosing names. If you’re considering ‘string.py’, for instance, you might first want to attempt to **import** **string**. If the operation succeeds, ‘string.py’ is already taken, if your get an **ImportError** then you’re safe. For now. Bear in mind that installation of new packages or editing the PYTHONPATH can change things.
+
+As you’ll see, the libraries available in Python’s standard library and general ecosystem provide highly-leveraged ways to extend the already-powerful capabilities. Let’s look at some ways to do effective “time management.”
+
+Time-related Objects: time, datetime, and calendar
+--------------------------------------------------
+
+Since we’re on the topic of using imported libraries, let’s take a look at Python’s three principle libraries providing dealing with time. Each has its own strengths, weaknesses and capabilities. We’ll go through some of the capabilities of each here.
+
+Before we jump in, there are some things to be aware of:
+
+-   Computers “think” of time in terms of the elapsed seconds since an
+    agreed-upon point in time called an “epoch.” For most POSIX
+    (Linux-like) systems, the epoch began on January 1, 1970. For
+    Windows, it’s January 1, 1601[47]. Typically, this won’t matter
+    because Python is OS-agnostic.
+
+-   Since different parts of the world are in different time zones, we
+    often think of what time it is in Greenwich (London), England. This
+    is known by various names such as GMT, UTC and Zulu.
+
+-   However, your computer (or AWS slice, or server) may “think” in
+    local time. Local time is a little weird. Time zones can shift
+    because of local decisions. Daylight savings time can vary
+    county-by-county, and state-by-state. “Summer time” in Europe and
+    elsewhere doesn’t necessarily synch with U.S. daylight savings time.
+    UTC is reliable.
+
+-   There are two “flavors” of elapsed time available. One is told by
+    the clock on your wall – it’s an objective measure of the time you
+    experience. The other is the elapsed time the CPU works on your
+    program. You’ll want to be sure of which you’re using when it’s
+    material (such as when your application is running on a busy machine
+    the clock time isn’t a great measure of how efficient your program
+    is.
+
+Time Objects
+------------
+
+Here are a few lines of code that use some of the basic functionality of time. This code grabs both the clock time and CPU time and demonstrates use of the **sleep** method. You’ll note that these are reported to different levels of precision and produce slightly different results.  **time**.**clock** reports how long this script has been running while **time**.**time** reports the number of seconds that have elapsed since the dawn of time.
+
+
+
+
+#py_time.py
+import time
+print(time.clock(), time.time())
+time.sleep(1) #seconds
+print(time.clock(), time.time())
+#results:
+#7.602588377238914e-07 1475008594.969013
+#1.0000152051767546 1475008595.96914
+
+
+
+
+ Datetime Objects
+----------------
+
+For most purposes, you’ll be working with **datetime** objects provided from the library of the same name. A **datetime** object is a fairly easy-to-read tuple-like structure, and it’s straightforward to extract information. Here’s an example:
+
+
+
+
+#py_time_1.py
+from datetime import datetime
+d = datetime.now()
+print(d)
+print("the hour is: {}\n.”.format(d.hour))
+print("the year is: {}\n.”.format(d.year))
+#result (of course, yours will vary)
+#2016-09-27 14:01:15.357498
+#the hour is: 14
+#the year is: 2016
+
+
+
+
+The **datetime** object has built in functionality to do things like differences in time, report in terms of different time zones, etc. [48]
+
+Here are some examples:
+
+
+
+
+#py_time_2.py
+from datetime import datetime, timezone
+now_here = datetime.now()
+print("Now, this timezone: ", now_here)
+now_uk = datetime.now(timezone.utc)
+print("Now, in England: ", now_uk)
+the_date = now_uk
+print("Days since 01-01-0001: ", the_date.toordinal())
+epoch = datetime(1970,1,1, tzinfo = timezone.utc)
+print("01/01/1970 timestamp : ", epoch.timestamp())
+print("Now in English timestamp: ", now_uk.timestamp())
+delta = now_uk - epoch
+print("Time delta in seconds: ", delta.total_seconds())
+
+
+
+
+If you run this code, you’ll get something like:
+
+
+
+
+Now, in England: 2016-09-30 00:17:07.847688+00:00
+Days since 01-01-0001: 736237
+01/01/1970 timestamp: 0.0
+Now in English timestamp: 1475194627.847688
+Time delta in seconds: 1475194627.847688
+
+
+
+
+For all its charms, **datetime** produces fairly ugly output, left to its own devices. Fortunately, there’s an easy way to customize is using the “string from time” functionality, known as **strftime**[49]. The basic syntax is:
+
+\<datetime object\>.strftime(\<format string\>)
+
+A simple example might be:
+
+
+
+
+#py_time_3.py
+from datetime import datetime
+date_format = "%d, %b %Y"
+now = datetime.now()
+print("Hello! Today is {}..” \
+.format(now.strftime(date_format)))
+#result:
+Hello! Today is 27, Sep 2016.
+
+
+
+
+If you want, you can include other characters in the format string. In the next example, we provide punctuation (“:” and “-“ characters) to make something like we’d see in a log file (easy to sort chronologically).
+
+
+
+
+#py_time_4.py
+from datetime import datetime
+now = datetime.now()
+exact_format = "%Y-%m-%d %H:%M"
+print("Or, more precisely, {}." \
+.format(now.strftime(exact_format)))
+#result
+Or, more precisely, 2016-09-27 14:26.
+
+
+
+
+There are many formatting strings available. You can download a “cheat sheet”[50] in the likely event you don’t want to memorize them; some of the more useful codes appear below:
+
+
+
+
+
+
+
+Code
+Meaning
+Example
+
+
+
+
+%a
+Weekday as locale’s abbreviated name.
+Mon
+
+
+%A
+Weekday as locale’s full name.
+Monday
+
+
+%B
+Month as locale’s full name.
+September
+
+
+%m
+Month as a zero-padded decimal number.
+9
+
+
+%y
+Year without century as a zero-padded decimal number.
+13
+
+
+%Y
+Year with century as a decimal number.
+2013
+
+
+%p
+Locale’s equivalent of either AM or PM.
+AM
+
+
+%x
+Locale’s appropriate date representation.
+9/30/2013
+
+
+%X
+Locale’s appropriate time representation.
+7:06:05
+
+
+%%
+A literal ‘%’ character.
+%
+
+
+
+
+
+
+
+Working with Calendar
+---------------------
+
+Python also has a time-related function that knows how to print nicely-formatted calendars, figure out the day of week, keep track of leap days, etc.[51] Here’s a brief flyover of some of its capabilities[52].
+
+
+
+
+#py_calendar.py
+import calendar
+#create a TextCalendar instance
+cal = calendar.TextCalendar()
+print("We just produced a {}.\n.”.format(type(cal)))
+print("Let’s check out the calendar for April, 2016\n")
+#note that we don’t need to call print() –
+# it’s baked into prmonth()
+calendar.prmonth(2016,4)
+print()
+#what day of the week was I born?
+birthday_year = 1957
+birthday_month = 5
+birthday_day = 10
+birthday_day_of_week = calendar.weekday(birthday_year,
+birthday_month,
+birthday_day)
+birthday_dict = {0:’Mon’, 1:’Tue’, 2:’Wed’,
+3:’Thur’, 4:’Fri’, 5:’Sat’, 6:’Sun’}
+print("I was born on a {}.”\
+.format(birthday_dict[birthday_day_of_week]))
+
+
+
+
+If you run this code, you’ll find out that the author arrived just in time for the weekend a long, long time ago (but you might try it for your own birthday):
+
+
+
+
+We just produced a &lt;class ‘calendar.TextCalendar’.
+Let’s check out the calendar for April, 2016.
+April 2016
+Mo Tu We Th Fr Sa Su
+1 2 3
+4 5 6 7 8 9 10
+11 12 13 14 15 16 17
+18 19 20 21 22 23 24
+25 26 27 28 29 30
+I was born on a Fri!
+
+
+
+
+Introduction to Python’s “Middleware” Libraries
+-----------------------------------------------
+
+In the spirit of continuing a discussion of adding capability beyond Python’s core repertoire, we might consider some of Python’s built-in modules **sys** and **os**. We’ll discuss their basic contributions here. I would encourage you to explore these on your own using **dir** and **help** as your investigation tools.
+
+-   The **sys** module contains information about the particular Python
+    installation you’re working with and how it’s installed on your
+    local OS. This is where **sys.path** (the **list** of directories
+    the interpreter uses to find imported modules).
+
+-   The **os** module contains a large repertoire of “middleware” that
+    operates between Python and your local OS. It keeps track of things like
+    the correct path separator to use.
+
+Here are a couple examples from my systems. This is what I get from a Windows box:
+
+
+
+
+Python 3.4.1 (v3.4.1:c0e311e010fc, May 18 2014, 10:45:13) [MSC v.1600 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+import os
+os.name
+‘nt’
+os.path.sep
+‘\\’
+os.path.join(‘path’,’to’, ‘file’)
+‘path\\to\\file’
+
+
+
+
+
+And this is the same information from one of my Linux virtuals:
+
+
+
+
+Python 3.3.0 (default, Sep 5 2016, 11:33:57)
+[GCC 4.8.4] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+import os
+os.name
+‘posix’
+os.path.sep
+‘/’
+os.path.join(‘path’, ‘to’, ‘file’)
+‘path/to/file’
+
+
+
+
+The tools in **os** are really important if you want to maximize the portability of your code from platform-to-platform. The last thing you want to do is put in conditional statements to do things like construct file paths[53]. Or – worse yet – having your code work only on the “flavor” of development platform you’re using.
+
+
+
+
+Exercises:
+
+Starting with a text representation of your birthday e.g., “May 5, 1970” please create a routine that produces a report describing how long you’ve been alive (to the nearest day) and what day of the week you were born.
+Print out a calendar showing the month you were born without using the built in TextCalendar tool. You might consider using methods like calendar.weekday and calendar.monthrange to help out.
+
+
+You might use a list of lists to create a month. Each internal list object might hold week. The tricky part here is to get the first week right. If the first falls on a Wednesday, say, you’ll want to “pad out” the first few elements with blanks before assigning “1” to the Wednesday slot.
+Feel free to use any of the other tools you find in calendar to help out.
+
+
+
+
+
+Exceptions
+==========
+
+Things sometimes don’t go as planned – especially when you’re dealing with user input, content captured “from the wild”, or integrating code written by others into your own. In these situations you need a way to gracefully handle surprises without crashing your code.
+
+Sometimes things do go as expected and you want to set up “sentinels” to identify specific, anticipated situations and act accordingly.
+
+You’ll find Python’s built-in exceptions model to be useful in both of these situations. This chapter will explore how you can put it to use.
+
+Basic Usage
+-----------
+
+­The easiest form of an exception is the **assert** statement. Its syntax is pretty easy:
+
+assert \<some statement\>
+
+
+
+
+assert True #nothing happens
+assert False
+Traceback (most recent call last):
+File "&lt;stdin", line 1, in &lt;module
+AssertionError
+
+
+
+
+As you can see, the interpreter generates an **AssertionError** (which is a type of exception) when statement evaluated is **False**. This sort of a blunt approach that doesn’t yield much actionable information, but it is a “quick and dirty” way to identify a problem during execution.
+
+As this stands, finding a **False** condition basically crashes your program – something you usually don’t want to happen. So how can you handle this more smoothly? You can tell the interpreter what to do in specific circumstances using a **try** / **except** block. Here’s how:
+
+
+
+
+#py_except.py
+try:
+assert False
+except AssertionError:
+print("Sorry, pal")
+print("I’m gonna keep running.")
+#result:
+#Sorry, pal
+#I’m gonna keep running.
+
+
+
+
+Much better, right? The general form of a try/except block is:
+
+try:
+
+\<an indented suite of statements\>
+
+except \<some exception\>:
+
+\<an indented suite of statements \>
+
+except \<some exception\>:
+
+\<an indented suite of statements \>
+
+finally:
+
+\<an indented suite of statements\>
+
+Multiple Exceptions
+-------------------
+
+You can “stack” exceptions handled much like **elif** statements in an **if**..**then**..**else** block. Exception handling stops at the first one found. The **finally** block gets executed no matter what.
+
+Here’s an example:
+
+
+
+
+#py_except_1.py
+def bad_int():
+int(‘a’)
+def bad_not_defined():
+int(a)
+def bad_div():
+1/0
+def good():
+print("Hi!")
+for func in (bad_int, bad_not_defined, bad_div, good):
+try:
+func()
+except ValueError:
+print("you have no values")
+except TypeError:
+print("Learn how to type")
+except NameError:
+print("You have a horse with no name")
+except ZeroDivisionError:
+pass
+finally:
+print("I’m done.\n")
+
+
+
+
+The output is shown below so you can see how the interpreter stepped through the various issues presented to it:
+
+
+
+
+you have no values
+I’m done.
+You have a horse with no name
+I’m done.
+I’m done.
+Hi!
+I’m done.
+
+
+
+
+One important point to note here is that, like an **if .. elif ..elif** stack of code only one exception handler’s indented suite can be executed. The implication is that you want to catch the most general exceptions at the top of the stack and the most general ones at the bottom. More on this in a moment, but it’s an important design consideration.
+
+The Exception Class
+-------------------
+
+In Python, exceptions are all derived from the same parent (called **Exception**) and specified to handle individual problems[54]. This presents the possibility to create your own if none of the built-in ones fit. Here’s how you might create simple custom exception and a more elaborate one to handle the potentially-serious Wombat condition:
+
+
+
+
+#py_except_2.py
+#a minimal custom exception
+class MinimalException(Exception):
+pass
+class WombatException(Exception):
+def __str__(self):
+return("Wombat!")
+def wombat():
+raise WombatException
+wombat()
+#result
+#__main__.WombatException: Wombat!
+
+
+
+
+We’ll get into classes later in the course. For now, know that we took a **class** object already part of the language, inherited from, and redefined part of it.
+
+Because all exceptions are inherited from the same parent, there’s a complex “family tree” of available ones. Here’s part of it:
+
++-- BaseException
+
++-- Exception
+
++-- StopIteration
+
++-- StopAsyncIteration
+
++-- ArithmeticError
+
+\| +-- FloatingPointError
+
+\| +-- OverflowError
+
+\| +-- ZeroDivisionError
+
+You don’t need an encyclopedic understanding of all this but it’s important to know that the interpreter will catch exceptions closest to the “root” of the family tree. To put it another way, if you have a line of code like this:
+
+|                         |
+|-------------------------|
+| except ArithmeticError: |
+
+… it will catch the **FloatingPointError**, **OverFlowError**, and
+**ZeroDivisionError**. If you do this:
+
+|                   |
+|-------------------|
+| except Exception: |
+
+… it will catch any exception.
+
+Python has many built-in exception types that handle specific problems encountered during execution. Some of the more common ones include:
+
+-   **KeyboardInterrupt** (the user hits cntl-c)
+
+-   **TypeError** (the wrong type of object was provided)
+
+-   **ValueError** (an invalid argument was supplied)
+
+The entire “family tree” of exceptions is in the official docs[55] and could make a valuable addition to your personal library.
+
+Miscellaneous
+-------------
+
+If you want to capture the message that normally comes with the exception in your own **except** clause, you can create a handle to it and print it out. You can also print out the call stack and specific lines of code that caused the problem (what you normally get when you make a mistake at the keyboard) using **traceback**.
+
+Also, you can ask the interpreter to pass handling of the exception to a handler higher up in the call stack (one of the routines that called your current routine) with the keyword **raise**. If that error was handled higher up, it will be handled there. Here’s an example:
+
+
+
+
+#py_except_3.py
+import traceback
+def another_bad_int():
+try:
+int(‘b’)
+except:
+raise
+for func in (another_bad_int, ):
+try:
+func()
+except ValueError as ve:
+print("you have no values\n\n", ve, "\n")
+traceback.print_stack()
+raise
+
+
+
+
+Here, we set up a handler in the for block – a fancier one this time because we have named our error handler “ve” and printed it out. We also have chosen one of the methods of the **traceback** module to give detailed information about the source of the problem[56].
+
+Note that the function **another\_bad\_int** does not have any of the handling logic. If a problem is detected there, it “passes the buck” to the handler we just set up[57].
+
+Here’s what the more refined output will look like:
+
+
+
+
+you have no values
+invalid literal for int() with base 10: ‘b’
+File "C:\Program Files (x86)\Wing IDE 5.0\
+bin\wingdb.py", line 10, in &lt;module
+"""
+File "C:\Program Files (x86)\Wing IDE
+5.0\bin\wingdb.py", line 605, in main
+def main():
+&lt;snip
+File c:\Users\pbarton\Desktop\_kirby_python\
+py_except_3.py",
+line 15, in &lt;module
+traceback.print_stack()
+
+
+
+
+Strategies
+----------
+
+-   You want to get a good match between the exception(s) you looking
+    for and the exceptions you’re handling. Make the **except**
+    statements as narrow as possible (furthest out on the branch of the
+    “family tree” as possible).
+
+-   Know what you’re looking for and why. You can try to break it at the
+    keyboard first to figure out what could go wrong.
+
+-   Keep it “local” – check a line or two at a time.
+
+-   Worst case scenario:
+
+
+
+
+try:
+&lt;1,000 lines of code you don’t understand
+except Exception:
+pass
+
+
+
+
+
+
+
+Exercise:
+
+Create a custom exception that reports a problem when an integer is unexpectedly encountered, but otherwise fails silently.
+Create a second exception that reports a problem when a complex number is unexpectedly encountered and prints out a polite message.
+Create a function that requests that the user input a number. If the number is a floating point type, return its square. Otherwise raise the appropriate exception.
+
+
+
+
+
+Input and Output
+================
+
+So far, we’ve been working with programs and data that exist only in memory. This is fine unless you want the information produced to persist between sessions. To accomplish this, you’ll want to learn how to store information in files of some type. These could be text files, databases, or (if you want to store intact objects) **JSON**, **pickle**, or **shelve** files.
+
+To accomplish any of these we need to establish a pipe to move information to another system resource and the necessary system object to receive it. Let’s start with simple file object and the built-in **open** directive. The syntax is:
+
+\<file handle name\> = open(\<file name\>, \<mode\>)
+
+Basic File i/o
+--------------
+
+To open a new file and establish a handle to it, we can go:
+
+
+
+
+f = open(‘afile’, ‘w’)
+f
+&lt;_io.TextIOWrapper name = ‘afile’ mode = ‘w’ encoding = ‘UTF-8’
+
+
+
+
+This creates a file called ‘afile’ in the write only mode. If another file of the same name already exists it will get overwritten silently, so be careful.
+
+Once the file is open, we can write something to it using the file handle’s **write** method. When done we can execute the **close** method.
+
+
+
+
+f.write("Hello, afile")
+12
+f.close()
+
+
+
+
+Reading a file is equally straightforward. The only difference is that we’ll want to use some variant of the ‘r’ mode[58]. If you open a file for reading, Python expects the file to exist. If it doesn’t you’ll get a **FileNotFoundError**.
+
+
+
+
+f = open(‘afile’, ‘r’)
+f.read()
+‘Hello, afile’
+f.close()
+
+
+
+
+We can use the file handle object to tell us about the file. This code sample shows you some of the things you can learn.
+
+
+
+
+#py_files_1.py
+f = open(‘afile’, ‘w’)
+f.write("Hello afile!")
+print("What’s up with {}?\n.”.format(f.name))
+print("readable?", f.readable())
+print("writable?", f.writable())
+print("encoding:", f.encoding)
+print("closed?", f.closed)
+print("Closing Now!")
+f.close()
+print("closed?", f.closed)
+#results
+#What’s up with afile?
+#readable? False
+#writable? True
+#encoding: cp1252
+#closed? False
+#Closing Now!
+#closed? True
+
+
+
+
+There are different modes for opening text files. Besides read “r” and write, “w” you can open it an append mode “a.” This allows you to open a file for writing without destroying any existing file. Instead, any new write operations add material to the end. If you include a “+” with any of these, you get both read and write access.
+
+The modes we’ve seen so far are for text files – these all involve some sort of encoding operation to convert human-readable characters to raw bytes. If the file is storing binary data, you have to let the compiler know by using a “b directive.” These take the form “r+b”, “w+b” and “a+b.” For instance, you can go:
+
+|                                  |
+|----------------------------------|
+| \>\>\> f = open (‘junk2’, ‘w+b’) |
+
+ Creating a Context
+------------------
+
+In the examples above, we closed the files when done with them. This is considered a best practice because, although Python’s built in garbage collection will probably take care of things, it works on its own schedule. Some operating systems (Windows) have a limit on the number of open files you’re allowed, and with large applications – like file-based database systems you could get into trouble.
+
+An easier way to handle closing files IMHO is to create a context using the **with** keyword. A context is like a temporary sandbox for a block of code to run in. When the code is done, the context is automatically terminated and all the objects are eligible for garbage collection.  Here’s how you might use it:
+
+
+
+
+with open(‘junk2’, ‘w’) as f:
+f.write(‘hey there junk2’)
+f
+&lt;closed file ‘junk2’, mode ‘w’ at 0x7fc159b596f0
+
+
+
+
+ File Pointers
+-------------
+
+Internally the file has a pointer – sort of like a sticky note – to tell it what line it’s on. When you **open** a file in a read or write mode, the pointer starts at the top. If it’s open in the append mode, the pointer starts at the bottom.
+
+You can move the file pointer around using the file handler’s **seek** method, invoked with a single argument for the position you want to move it. Here’s an example:
+
+
+
+
+f = open(‘afile’, ‘a+’)
+f.read()
+‘‘
+f.seek(0)
+0
+f.read()
+‘Hello, afile’
+f.seek(6)
+6
+f.read()
+‘ afile’
+f.tell()
+12
+f.seek(0)
+0
+f.tell()
+0
+
+
+
+
+You’ll note that the first time we read it, nothing was reported. That’s because the file pointer was already at end of the file. With seek we put the pointer to the top of the file and **read** performed as expected. The **tell** method simply reports the position of the pointer. Here we’re verifying that **seek** did its job.
+
+I would point out that using **seek** against a text file is a dicey proposition – unless you’re simply going to the top. The reason is that the width of a binary character is predictable but the width of a character is not. If it's only the bottom half of ASCII, the characters are one byte long, but you never know. This all depends on the encoding.  For instance, the ubiquitous UTF -8 can hold all 1MM + Unicode code points, but individual characters only consume the required "space" – anywhere from one to four 8-bit bytes.
+
+ Working with the File System
+----------------------------
+
+The easiest way to work with the file system is to use the **os** library[59]. Here is where you can find all sorts of tools that you might use at the command line of a shell program. We’ll use the following example to take some of the methods for a spin around the block while exploring your file system and the repertoire of the library.
+
+
+
+
+#py_files_2.py
+import os
+import tempfile
+#get the name of the current directory
+original_dir = os.getcwd()
+print(‘we started in’)
+print(original_dir)
+#go to the parent directory
+os.chdir(‘..’)
+print("\nnow we’re in")
+print(os.getcwd())
+#get the original directory contents
+dir_contents = os.listdir(original_dir)
+#classify the first few objects
+print("\nexamining the contents of {}.” \
+.format(original_dir))
+for _ in range(5):
+fs_object_name = dir_contents.pop()
+fs_object = os.path.join(original_dir, fs_object_name)
+label = ‘‘
+if os.path.isdir(fs_object):
+label = ‘dir’
+if os.path.isfile(fs_object):
+label = ‘file’
+if os.path.islink(fs_object):
+label = ‘link’
+print(label, fs_object_name)
+#checking for a directory, creating if it’s not there
+look_for = ‘junk’
+look_in = original_dir
+print("\nIf you don’t have a junk directory, \
+let’s make one\n")
+if not os.path.exists(os.path.join(look_in,
+look_for)):
+os.mkdir(os.path.join(look_in, look_for))
+#another way, using exceptions
+try:
+os.mkdir(os.path.join(look_in, look_for))
+except:
+pass
+#print out the methods in the os module
+print("\nGee, lookee at all the stuff we can \
+do with os!\n")
+for obj in dir(os):
+first_char = obj[0]
+#filter out the internal methods and CONSTANTS
+if not first_char = = "_" and not first_char.isupper():
+print(obj)
+
+
+
+
+File Metadata
+-------------
+
+You can retrieve file metadata using the **os.stat** method.
+
+
+
+
+meta = os.stat(‘junk2’)
+meta
+os.stat_result(
+st_mode = 33206, st_ino = 24206847997486860,
+st_dev = 3193733530, st_nlink = 1, st_uid = 0, st_gid = 0,
+st_size = 0, st_atime = 1475253311, st_mtime = 1475253311,
+st_ctime = 1475253311)
+
+
+
+
+The output is pretty horrible to look at, and poorly-labeled, but here’s
+a list of a few of the ones you’ll need most:
+
+st\_ctime time of creation
+
+st\_gid group ID of owner
+
+st\_mode protection bits
+
+st\_mtime time of last modification
+
+st\_size total size, in bytes
+
+st\_uid user ID of owner
+
+You can access an individual element using its index or name. For instance, if you wanted the file size you could go:
+
+
+
+
+meta.st_size
+15
+meta[6]
+15
+
+
+
+
+Serializing Objects
+-------------------
+
+Python supports object serialization with a couple libraries called **json**[60] and **pickle.** Both do roughly the same thing in that they can encode and decode intact objects like functions and classes into a form that can be saved to the hard drive. The **pickle** methods work in byte streams while the **json** methods work in plain text.
+
+Why would you want to work with bytes? For one thing, you can store your code very compactly. More importantly, you can stream byte code between applications or computers whereas you can’t do that with Python objects.
+
+Another advantage is that serialized data is in a very predictable format. That makes life very easy on the interpreter. Let’s say you have a huge data file that you read into a Python array for processing. If the file starts out life as a comma-delimited file, say, reading it is expensive because the interpreter has to figure out how large every piece is, convert it to a numeric data type, and put it into memory.
+
+If, on the other hand, the interpreter knows the geometry of the data and can “mechanically” ingest the pieces of it, very little processing has to happen – it just needs to be loaded into memory.
+
+In my experience a 2MB, csv-formatted file takes around 30 seconds to load on a decent laptop; a serialized version takes only about 0.5 seconds. Your mileage may vary, but you can bet on seeing some real performance differences[61].
+
+So how do we work this magic? Let’s find out.
+
+
+
+
+#py_files_3.py
+"""quite a pickle"""
+import pickle
+#make an object
+obj = [ [1, 2, 3],
+[4, 5, 5],
+[7, 8, 9]
+]
+print("hey, we’ve got an object")
+print(obj)
+#open a binary file (remember, we’re writing bytes)
+pickle_file = "brine"
+with open(pickle_file, ‘wb’) as f:
+pickle.dump(obj, f)
+#let’s kill the object to prove this works
+obj = None
+if not obj:
+print("\nno object here!")
+with open(pickle_file, ‘rb’) as f:
+recovered_obj = pickle.load(f)
+#now, take a look
+print("\nPresto, chango, here’s our recovered object!")
+print(recovered_obj)
+
+
+
+
+Here are the results:
+
+
+
+
+hey, we’ve got an object
+[[1, 2, 3], [4, 5, 5], [7, 8, 9]]
+no object here!
+Presto, chango, here’s our recovered object!
+[[1, 2, 3], [4, 5, 5], [7, 8, 9]]
+
+
+
+
+You can **pickle** multiple objects, but you have to do so individually.
+Here’s how you might do it:
+
+
+
+
+#py_files_4.py
+"""quite a crowed pickle barrel"""
+import pickle
+#make a couple objects
+obj = [ [1, 2, 3],
+[4, 5, 5],
+[7, 8, 9]
+]
+obj1 = "howdy doody"
+obj2 = set([33,43,53])
+#open a binary file (remember, we’re writing bytes)
+pickle_file = "spicy"
+with open(pickle_file, ‘wb’) as f:
+pickle.dump(obj, f)
+pickle.dump(obj1, f)
+pickle.dump(obj2, f)
+#let’s kill the objects to prove this works
+obj = None; obj1 = None; ojb2 = None # not recommended
+with open(pickle_file, ‘rb’) as f:
+recovered_obj = pickle.load(f)
+recovered_obj1 = pickle.load(f)
+recovered_obj2 = pickle.load(f)
+#now, take a look
+print("our objects survived!")
+print(recovered_obj)
+print(recovered_obj1)
+print(recovered_obj2)
+
+
+
+
+While this works, sometimes it’s more convenient to organize objects to be pickled in a **dict** object – this makes tracking them much easier.  Here is how you might apply this strategy while potentially positioning ourselves for a really big mistake. Can you spot it?
+
+
+
+
+#py_files_5.py
+import pickle as pickle
+from junk import JUNK
+pickle_file="dill"
+#make a couple objects
+obj = [ [1, 2, 3],
+[4, 5, 5],
+[7, 8, 9]
+]
+obj1="howdy doody"
+obj2=set([33,43,53])
+#another (better) way:
+to_pickle={'obj' : obj,
+'obj1': obj1,
+'obj2': obj2,
+'junk': JUNK
+}
+with open(pickle_file, 'wb') as f:
+pickle.dump(to_pickle,f)
+to_pickle=None
+with open(pickle_file, 'rb') as f:
+to_pickle=pickle.load(f)
+
+
+
+
+The “big mistake” here involves the inclusion of JUNK in our file system object. The issue is that it’s a value imported from another routine.  Safe enough if working alone, I imagine, but what if junk.py were being maintained by another team working long and hard on perfecting the value? Today it might be 777, but what if later it were refined to become 888? Our persistent object would have stale information and we might never know it. In fact, the pickle file does not even a path back to find where 777 came from in the first place. We certainly won’t get warnings or error messages. Anyway, you can do this, but be careful.
+
+Pickle Caveats
+--------------
+
+You can’t **pickle** everything. The objects have to be discrete and available globally to the module. Here’s what can be pickled, strait from the docs[62]:
+
+-   **None**, **True**, and **False**
+
+-   integers, long integers, floating point numbers, complex numbers
+
+-   normal and Unicode strings
+
+-   **tuples**, **lists**, **sets**, and dictionaries containing only
+    picklable objects
+
+-   functions defined at the top level of a module
+
+-   built-in functions defined at the top level of a module
+
+-   **class** objects that are defined at the top level of a module
+
+**pickle** is a Python-specific tool – pickled objects can’t be deserialized on other platforms. If this is a concern, consider using **JSON**. You don’t get the efficiency of a serialized object, but it’s pretty close to Esperanto.
+
+Finally, since pickled objects can contain malicious code they are potentially vectors for infection. You don’t want to accept persisted objects from any source you don’t trust.
+
+
+
+
+Exercises:
+
+Please create three functions in the same module (file). Each will take two inputs. One file will add the numbers, another will multiply and the third will subtract them.
+Destroy the three functions then recreate them from the serialized files. Verify that they still work as well as the original ones.
+You can use either json or pickle to handle the serialization.
+
+
+
+
+
+Classes in Python
+=================
+
+Classes are where the rubber meets the road. It’s here that all the concepts we’ve discussed to date coalesce in to useful, reusable programming product. The real power of class objects stems from the fact that Python (like most modern languages) is designed to be “object oriented.” But what does that really mean?
+
+Object-oriented languages are built on three tenants:
+
+-   Polymorphism
+
+-   Inheritance
+
+-   Encapsulation
+
+… all of which we’ll now discuss in more detail.
+
+Polymorphism
+------------
+
+This is the notion that there can be one interface to the world which, from the user’s perspective, is the same for accomplishing many things.  The question of just what gets performed and how happens “under the hood” with the user blissfully unaware. We’ve already encountered that with respect to the “+” operator.
+
+
+
+
+"abc" + "bcd"
+‘abcbcd’
+1 + 2
+3
+complex(3,4) + complex(4,4)
+(7+8j)
+[3,4,5] + [7,8,9]
+[3, 4, 5, 7, 8, 9]
+
+
+
+
+Google is another example, writ large. A single input window unleashes unbelievable computing horsepower, access to petabytes of indexed information (and targeted ads, but oh well). And who knows what happens when you hit the “Search” button?
+
+Inheritance
+-----------
+
+Inheritance is the idea that you can create related objects by separating what they have in common from how they differ. That way, all the common elements can exist in one and only one place. And the differentiating element can exist more locally – again in one and only one place.
+
+We’ve already encountered this in examining the exception hierarchy, repeated here:
+
++-- BaseException
+
++-- Exception
+
++-- StopIteration
+
++-- StopAsyncIteration
+
++-- ArithmeticError
+
+\| +-- FloatingPointError
+
+\| +-- OverflowError
+
+\| +-- ZeroDivisionError
+
+All **Exception** objects “inherit” the characteristics of the **BaseException** – that’s where all the boilerplate and housekeeping lives. All the exceptions e.g., **ArithmeticError** inherit the characteristics of **Exception** and add their own special sauce.  Further down the line, the **OverflowError** inherits everything that the **ArithmeticError** has and further specializes.
+
+We’ve seen this already in a really simple form we created a custom class:
+
+
+
+
+class WombatException(Exception):
+def __str__(self):
+return("Wombat!")
+
+
+
+
+In so doing, we inherited from Exception then overrode any existing
+**\_\_str\_\_** method – that’s the one that **print** uses – to make it
+print out the message.
+
+I recognize that all this is a bit abstract so far, so let’s jump into some code and see what we can do. We can start with something simple.  Here's how we can make a class, inherit from it (create a "subclass"), and create a specific instance.
+
+
+
+
+class SuperSimple:
+a = 1
+class SuperSimpleSubclassed(SuperSimple):
+pass
+s = SuperSimpleSubclassed()
+print("free variable 'a' is {}".format(s.a))
+
+
+
+
+As you can see the instance **SuperSimpleSubclassed**, 's', contains the object 'a' which came along for the ride from **SuperSimple**. It's a common practice to have a base class of some sort – this will contain fundamental functionality and boilerplate code that will become available to all subordinate classes. Here's a slightly more complicated example of a base class:
+
+
+
+
+#A base class
+class BaseClass:
+def __init__(self):
+print("BaseClass __init__()")
+def shout_out(self):
+print('Yo! from BaseClass\n')
+def print_something(self, thing):
+print("{} from BaseClass \n".format(thing))
+base = BaseClass()
+base1 = BaseClass()
+base.shout_out()
+Yo! from BaseClass
+
+
+
+
+Here, we've created two subclasses, **base** and **base1**. These are independent objects which have their own namespaces. The result is that each has its own copy of **shout\_out** and **print\_something**. Now, if we want to extend this class the process is simple. We inherit from it and add a new method **hello\_child**. We also replace the parent class' **\_\_init\_\_** method by including a new method of the same name. In case like this, we may well want to retain access to the parent class' method. We can do so easily by invoking the **super** method. In **ChildClass** we execute it to ensure anything introduced into the namespace by the parent class is also available to the child class.
+
+
+
+
+class ChildClass(BaseClass):
+"simple inheritance, executing parent class __init__()"
+def __init__(self):
+print("ChildClass __init__()")
+super().__init__()
+#BaseClass.__init__()
+def hello_child(self):
+print("hello from ChildClass")
+kid = ChildClass()
+ChildClass __init__()
+BaseClass __init__()
+kid.hello_child()
+hello from ChildClass
+
+
+
+
+Unlike many languages Python supports multiple inheritance. This makes it easy to "cherry pick" objects from already-developed code, even from disparate sources. Here's an example:
+
+
+
+
+class AnotherClass:
+def print_something(self, thing):
+print("AnotherClass is printing {}\n".format(thing))
+class ComboClass1(BaseClass, AnotherClass):
+def __init__(self):
+#when methods have same name, leftmost is preferred
+self.print_something('something')
+class ComboClass2(AnotherClass , BaseClass):
+def __init__(self):
+self.print_something('something')
+
+
+
+
+Python automatically resolves any conflict between methods of the same name which may exist in multiple inherited classes. The left-most method trumps the others, so to change the behavior all one has to do is switch the order.
+
+
+
+
+combo = ComboClass1()
+something from BaseClass
+combo = ComboClass2()
+AnotherClass is printing something
+
+
+
+
+It's possible to "overload" arithmetic operators by replacing built-in methods like **\_\_add\_\_** and **\_\_mul\_\_**. Just for fun, here's how you could create a new version of the **str** object to override how it handles the "+" sign[63]:
+
+
+
+
+class newStr(str):
+def __init__(self, value):
+self.value = value
+def __add__(self, other):
+return "{}+{}".format(str(self.value), str(other ))
+s = newStr('hello')
+s
+'hello'
+news = s+444
+news*4
+'hello+444hello+444hello+444hello+444'
+
+
+
+
+Only the '+' operator is overridden – the new object retains all of the other behaviors associated with the built-in **str** object.
+
+Let's put all this together, examining some issues around variable scoping and "ownership" among the different objects. Here's some intact code, followed by a breakdown of the important bits of it:
+
+
+
+
+#py_animal_class.py
+class Animal:
+#class variable (in class namespace)
+tricks = ["jumping", "playing dead",
+"rolling over", "walking backwards"]
+def __init__(self, name, species, age, fav_food):
+"sets instance variables (begin with self.)"
+self.name = name
+self.species = species
+self.__dict__["age"] = age # alternative to self.age = age
+self.fav_food = fav_food
+self.stomach = [ ]
+def __str__(self):
+fstr="Hi, I'm {}, a {} who loves {}!\n"\
+"And I know how to all these things: {}!\n"
+return fstr.format(self.name, self.species,
+self.fav_food,
+" and ".join(self.tricks))
+def __repr__(self):
+return "Animal(name={}, species={})".
+format(self.name, self.species)
+#make us a dawg and create an introduction
+mypet=Animal("Fang", "dog", 10, "steak")
+print(mypet)
+#create a cat
+neighbor_cat=Animal("Fluffy", "cat", 1, "mice")
+print(neighbor_cat)
+#override an inherited attribute
+neighbor_cat.tricks=['tangling yarn', 'throwing kitty litter']
+#Change parent then make new child
+Animal.tricks=["barf on floor", "shed on your clothes"]
+another_cat=Animal("Snarly", "cat", 100, "rats")
+print(another_cat)
+print("*****")
+#check in on a child with overridden attributes
+print(neighbor_cat)
+#check in on child with no overrides
+print(mypet)
+
+
+
+
+We created Animal by using the keyword **class**.
+
+|               |
+|---------------|
+| class Animal: |
+
+Because “Animal” is not followed by any arguments it has not inherited from any other **class** –we’re starting with a clean slate.
+
+Next, we have a “top level”, global-to-**Animal** variable defined.
+
+
+
+
+tricks = ["jumping", "playing dead",
+"rolling over", "walking backwards"]
+
+
+
+
+This variable’s scope is such that it’s visible to any of the class methods (“functions” when standing alone) within **Animal**.
+
+Right below, we see the first instance of a method beginning with a “dunder.”
+
+
+
+
+def __init__(self, name, species, age, fav_food):
+self.name = name
+self.species = species
+self.__dict__["age"] = age # same as self.age = age
+self.fav_food = fav_food
+self.stomach = [ ]
+
+
+
+
+The special name **\_\_init\_\_** signals the interpreter that this method needs to run when a new instance of the class is created.
+
+Note that the constructor (and the constructors for all the methods) have “self” as the first argument. That’s a stand-in for “this particular instance of **Animal** – having nothing to do with any other instance of **Animal**.” In other words “self” refers a specific manifestation of the general class **Animal**[64]. You can see it in use in each of the next several statements.
+
+Variables like **self.name** and **self.species** are assigned for this particular instance based on the input arguments provided when an instance is created, as it might be with a statement like:
+
+|                                              |
+|----------------------------------------------|
+| my\_pet = Animal(“Fang”, “dog”, 10, “steak”) |
+
+As names like “**species**”, “**age**”, and “**fav\_food**” are added to the instance’s namespace, they build up an internal **dict**, **self**.**\_\_dict\_\_** that contains name: value pairs. While **self.\_\_dict\_\_** contains references to instance-level objects , **mypet** also has access to objects referenced Animal.**\_\_dict\_\_**.  So, for instance, **mypet** knows all about the tricks **Animal** can do. That’s inheritance at work.
+
+When we ask **Fang** about himself:
+
+
+
+
+fstr = "Hi, I’m {}, a {} who loves {}!"
+print(fstr.format(mypet.name, mypet.species, \
+mypet.fav_food))
+print("And I know how to all these things: {}!"\
+.format(" and .”join(mypet.tricks)))
+print()
+#... we get this:
+# Hi, I’m Fang, a dog who loves steak!
+#And I know how to all these things: jumping and playing
+#dead and rolling over and walking backwards!
+
+
+
+
+Remember, we didn’t discuss **tricks** when we created **mypet**. So we could go on creating all sorts of **Animal** instances – each having the same repertoire of entertainment options. We can see that if we create **neighbor\_cat** object.
+
+
+
+
+#create a cat
+neighbor_cat = Animal("Fluffy", "cat", 1, "mice")
+print(fstr.format(neighbor_cat.name, \
+neighbor_cat.species, \
+neighbor_cat.fav_food))
+print("And I know how to all these things: {}!\n.”\
+.format(" and .”join(neighbor_cat.tricks)))
+#results
+#Hi, I’m Fluffy, a cat who loves mice!
+#And I know how to all these things: jumping and
+#playing dead and rolling #over and walking backwards!
+
+
+
+
+We can override the tricks **Fluffy** knows, and these changes affect only **Fluffy**.
+
+
+
+
+neighbor_cat.tricks = [‘tangling yarn’,
+‘throwing kitty litter’]
+#...and we can make a change to this instance
+print(fstr.format(neighbor_cat.name,
+neighbor_cat.species,
+neighbor_cat.fav_food))
+print("And I know how to all these things: {}!.”\
+.format(" and .”join(neighbor_cat.tricks)))
+#results:
+#Hi, I’m Fluffy, a cat who loves mice!
+#And I know how to all these things: tangling yarn
+#and throwing kitty litter!
+
+
+
+
+As we can see, instances, and their internal variables are atomic. But what if we change the parent class **Animal**, then create a new instance of it? Let’s see.
+
+
+
+
+Animal.tricks = ["barf on floor", "shed on your clothes"]
+#... create new instance
+another_cat = Animal("Snarly", "cat", 100, "rats")
+#...and observe the change to this instance
+print()
+print(fstr.format(another_cat.name, \
+another_cat.species, \
+another_cat.fav_food))
+print("And I know how to all these things: {}!"\
+.format(" and .”join(another_cat.tricks)))
+#results
+# Hi, I’m Snarly, a cat who loves rats!
+#And I know how to all these things: barf on floor
+# and shed on your clothes!
+
+
+
+
+The changes to the **Animal** class have now propagated to a newly-instanced child class. If we checked in on **Fang** and **Fluffy**, we would get the following results:
+
+
+
+
+Hi, I’m Fang, a dog who loves steak!
+And I know how to all these things: barf on floor and shed on your clothes!
+Hi, I’m Fluffy, a cat who loves mice!
+And I know how to all these things: tangling yarn and throwing kitty litter!
+
+
+
+
+As you can see, **Fang** has now picked up some very bad habits, and **Fluffy** still has her instance-level tricks. This points out an important regarding inheritance. If you explicitly override something present in the parent class in an instance, that change is persistent in the instance. However, if you don’t, then the instance will take on that “something” if the parent class changes. That’s due to the fact that the instance only looks to the **\_\_dict\_\_** object of the parent if it needs to (can’t look up the value locally).
+
+Encapsulation
+-------------
+
+This is the notion that there is one and only one way to access an object. (OK, Python takes a “responsible adults” approach - there is usually more than one way, but there’s only one correct way).
+
+The idea is that objects are atomic, but they have a specific context – and you’re supposed to interact with them “by the rules.” For example, some languages use getters and setters to interact with a class’ attributes and enforce that interaction. That way there are specific points of contact that serve as gateways. As another example, methods (“verbs”) within a class are only accessible within the context of the class.
+
+Python naturally supports encapsulation by "hiding" variables within the namespaces of different structures like functions, inner functions, classes, and modules. A further level of control can be exercised by employing "getters" and "setters" to control access to instance variables. Note that Python has no such requirement but sometimes it's a good idea to lock things down further.
+
+To accomplish this, Python employs a special "decorator[65]" called **property**. Decorators are methods that take the decorated object as an argument – essentially swallowing the decorated object, much as the print function can swallow another function using its output as an argument as in this example:
+
+print("hello world".upper())
+
+In the following example we define two methods, both named after a variable we want to manage **val**. The idea is that if **val** is requested the method under **@property** is executed. If there's an attempt to change **val** the method under **@val.setter** is executed.  Here, we're using the **setter** to screen out assignment of inappropriate object types – we're accepting only integer values.
+
+
+
+
+class GetSet:
+def __init__(self):
+self._val = None
+@property
+def val(self):
+return self._val
+@val.setter
+def val(self, value):
+if isinstance(value, int):
+self._val = value
+print("OK. Thanks for giving me " + str(value))
+else:
+print("Sorry, I'm looking for an integer \
+but you gave me " + str(value))
+gs = GetSet()
+gs.val = 3
+OK. Thanks for giving me 3
+gs.val = "aardvark!"
+Sorry, I'm looking for an integer but you gave me aardvark!
+
+
+
+
+This is pretty detailed, and well beyond what you’ll find in most beginner classes. Hopefully, though, it will give you great background as you wade in.
+
+Let’s put some of this to work and build some classes as an exercise (nothing too detailed, I promise!)
+
+
+
+
+Exercise:
+Please build a hierarchal class structure to represent some transportation. Your code should include the following:
+Vehicle (has a wheels attribute to keep a count)
+MotorVehicle (inherits from Vehicle, adds a motor)
+Car (inherits from MotorVehicle, has four wheels, adds has_AC attribute)
+MotorCycle (inherits from Motor Vehicle, two wheels,
+adds has_fairing attribute)
+Please include a __str__ method for each.
+
+
+
+
+Regular Expressions
+===================
+
+Regular expressions (also known as REs or regexes) offer a very low-level way to process text, very efficiently. You’ll run into them as a matter of course in Perl, Linux command line search tools, Django URL resolvers, etc.) While powerful, the offer some of the least transparent, horrifically-hard-to-read statements ever. IMHO, anyway. So we’ll build up gradually and your confidence in using them should materialize quickly.
+
+Python support is contained in the **re** library, and in the normal **help** facility. A really excellent online resource can be found at https://regex101.com/\#python[66]. It provides an interactive way to build your regex, test it against a string, view matches and – best of all – provides a breakdown of exactly what each step of your regex is doing.
+
+Begin at the beginning
+----------------------
+
+For starters, let’s just look for a string inside another string. For this you need a regex string to describe what you’re looking for and another string to search.
+
+
+
+
+#py_regex_1.py
+import re
+regex = r‘x’ #what we’re looking for
+target = r‘Texas’
+result = re.search(regex, target)
+if result:
+print("Yay! {} found..”.format(regex))
+print("The found object is: {}.”.format(result))
+#result
+#Yay! x found.
+#The found object is: &lt;_sre.SRE_Match object;
+span = (2, 3), match = ‘x’
+
+
+
+
+As you can see, this returned a **SRE\_Match** object. The fact that it returned anything means that we hit pay dirt by finding at least one match.
+
+Character Sets
+--------------
+
+If you want to look for any one of a bunch of characters, you can use what’s known as a “character set.” It’s just a string that includes surrounding square brackets. Any of these work: ‘\[abc\]’ ; ‘\[12345\]’; ‘\[1-4\]’. Here are some examples:
+
+
+
+
+#py_regex_2.py
+import re
+regex = ( r"[0123456789]" , #all digits
+r"[0-9]", #shorthand for all digits
+r"[abc]" , #any of a, b, or c
+r"[abc] [abc] [abc]", #3 consecutive letters,
+# a or b or c
+r"[^0-9]", #NOT a digit (the ^ in
+#first position negates
+)
+target = (r‘Texas’, r‘123’, r"a", r"abc")
+for r in regex:
+for t in target:
+result = re.search(r, t)
+if result:
+print("{:10} matched with {:10}.”.format(t, r))
+result = None
+
+
+
+
+Special Symbols
+---------------
+
+This is pretty easy so far, right? Regular expressions use a lot of special characters which are shorthand for matching rules. You’ve got to escape them with the “\\” if you intend to use them literally. We’ll visit them pretty soon, but for now, here they are:
+
+|                                |
+|--------------------------------|
+| \[ \] ( ) { } + \*/ ? \$ ^. \| |
+
+Shortcuts
+---------
+
+Since people are looking for the same strings all the time there are some clichés / shortcuts available. The general form is a slash followed by a letter. If the letter is lower case, it’s an “affirmative” search; if upper case, it’s a “negative” search. Here are a few:
+
+| \\d any digit             | \\D anything but a digit           |
+|---------------------------|------------------------------------|
+| \\w any digit or letter   | \\W anything but a digit or letter |
+| \\s any whitespace        | \\S anything but a whitespace      |
+| . (a dot) anything        |                                    |
+| ^ match only at beginning | \$ match only at the end           |
+
+Additionally, there are shortcuts that keep you from repeating bits of your regex string when you’re looking for multiple instances of the same thing. Here are some short hand expressions for specific quantities:
+
+
+
+
+*
+0 or more
+
+
+
+
+?
+0 or 1
+
+
++
+1 or more
+
+
+{x}
+Exactly x
+
+
+{x,y}
+
+Between x and y, inclusive of x and y
+
+
+
+{x, }
+X or more
+
+
+
+
+Here are some examples:
+
+
+
+
+#py_regex_3.py
+import re
+regex = ( r"cu" , #’cu’
+r"0{\d4}", #4 digits
+r"x{1,3}" , #1,2, or 3 ‘x’
+r"0{2,}", #2 or more zeros
+r"\W+", #contains at least one
+#non alphanumeric
+)
+target = (r‘Chicago Cubs’, r‘1000000 dollars’,
+r"xxxooo", r"$2500K")
+for r in regex:
+for t in target:
+result = re.search(r, t)
+if result:
+print("{:10} matched with {:10}"\
+.format(t, r))
+result = None
+"""
+results
+xxxooo matched with x{1,3}
+1000000 dollars matched with 0{2,}
+$2500K matched with 0{2,}
+Chicago Cubs matched with \W+
+1000000 dollars matched with \W+
+$2500K matched with \W+
+"""
+
+
+
+
+Match objects and compiled regexes
+----------------------------------
+
+It’s possible to compile your regex to increase performance – this is especially useful if you plan to use it thousands of times because it doesn’t have to happen “on demand” each time.
+
+You can query the match objects to find starting and ending positions.  This is useful if you want to use indices to retrieve content around particular phrases.
+
+The following example demonstrates some of the information you can retrieve and the use of **re.compile**:
+
+
+
+
+#py_regex_4.py
+import re
+regex = r"Cubs"
+target = r‘Chicago Cubs’
+compiled = re.compile(regex)
+result = compiled.search(target)
+if result:
+print("{:10} matched with {:10}.” \
+.format(target, regex))
+print("span", result.span())
+print("start", result.start())
+print("end", result.end())
+
+
+
+
+Finally, I’d like to point out that re has a **VERBOSE** mode that allows you to stretch complicated expressions (yes, they can get really complicated) across several lines. When you do so, it’s possible to provide comments to help your teammates decipher just what it’s intended to do.
+
+Here’s an example borrowed from *Dive into Python*[67], to illustrate its use. This regex is used to validate Roman numerals.
+
+
+
+
+#py_roman_regex.py
+Pattern = “””
+^ # beginning of string
+M{0,4} # thousands - 0 to 4 M’s
+(CM|CD|D?C{0,3}) # hundreds - 900 (CM), 400 (CD),
+# 0-300 (0 to 3 C’s), or 500-800
+# (D, followed by 0 to 3 C’s)
+(XC|XL|L?X{0,3}) # tens - 90 (XC), 40 (XL), 0-30
+# (0 to 3 X’s),
+# or 50-80 (L, followed by 0 to 3
+# X’s)
+(IX|IV|V?I{0,3}) # ones - 9 (IX), 4 (IV), 0-3
+# (0 to 3 I’s), or 5-8 (V,
+# followed by 0 to 3 I’s)
+$ # end of string
+"""
+re.search(pattern, ‘M’, re.VERBOSE)
+
+
+
+
+Substitution
+------------
+
+You can use regexes to do string substitutions using the **re.sub** method. Here’s an example:
+
+
+
+
+#py_regex_5.py
+import re
+re.sub
+regex = ‘cubs’
+change_to = "CUBS"
+target = ‘If the cubs actually win again, \
+will they still be the cubs?’
+result = re.sub(regex, change_to, target)
+if result:
+print(result)
+#result
+# If the CUBS actually win again, will they still be the CUBS?
+
+
+
+
+
+
+
+Exercise
+Please write a regex that will convert credit card numbers from their original form (4-four digit numbers) to a safer form like xxxx-xxxx-xxxx-3423. Use regex101.com to guide your efforts and test your work.
+
+
+
+
+1.  ####### 
+
+2.  ####### . (Really) Brief Introduction to Unit Testing
+
+Strictly speaking, unit testing is outside the scope of this introductory course. But it’s a really important topic and I’d like you to have at least a rudimentary understanding of it.
+
+You now know how to write Python code and make sure it works. You can use debug **print** statements to keep track of what your project is doing. This is all fine and good, but how do you know that your latest enhancement hasn’t broken a bit of your already-tested code? How can your teammates, who may be applying a bit of healthy skepticism, know that it works as advertised without a lot of digging around? That’s where unit testing comes into play.
+
+Here are the basics:
+
+-   import **unittest**
+
+-   subclass **unittest**.**TestCase**
+
+-   within the subclass, write assertions about what your code should
+    produce
+
+Pretty easy, right? You can create your unit tests within the module you’re testing so everything is conveniently in one place. More commonly, though, you’ll create a separate module for the tests and import the bits of code that the tests will evaluate.
+
+Here’s a concrete example. You’ll remember that we can use the **get** method of the **dict** object to return a valid object even if we query the **dict** with an invalid key. Part of the code we looked at appears below:
+
+
+
+
+#py_get.py
+"use the dict method get()"
+plant_dict = {‘raspberry’: ‘rubus’,
+‘elm’ : ‘ulmus’,
+‘maple’ : ‘acer’ }
+fmt_str = "The {} is more properly called a {}."
+#get() with a default value
+look_for = ‘alder’
+default = ‘SOMETHING. I dunno’
+found = plant_dict.get(look_for, default)
+print(fmt_str.format(look_for, found))
+
+
+
+
+We used a simple **print** statement to see what **get** returned, and that worked just fine. You’ll recall that we tested **get** with a **None** default value, a string default, and no value at all when we were sure the **dict** knew about the key we tried. Using **unittest**, we could have done something like:
+
+
+
+
+#py_basic_unittest.py
+import unittest
+plant_dict = {‘raspberry’: ‘rubus’,
+‘elm’ : ‘ulmus’,
+‘maple’ : ‘acer’
+}
+look_for = ‘alder’
+default = ‘SOMETHING. I dunno’
+class tester(unittest.TestCase):
+def test_found_OK(self):
+self.assertEqual(plant_dict.get(‘elm’),’ulmus’)
+def test_not_found_None(self):
+self.assertEqual(plant_dict.get(‘sumak’, None),\
+None)
+def test_not_found_string(self):
+self.assertEqual(plant_dict.get(‘ash’, ‘no_ash’),\
+‘no_ash’)
+unittest.main()
+
+
+
+
+If you look at the methods found in the class tester, you’ll see that we’ve been able to accomplish precisely the same verification of the **get** function that we saw in the example code. The difference now is that these tests run automatically and ensure that **get** works just as expected.
+
+This is a trivial example. As a matter of course you probably won’t be spending time writing your own tests against built-in functionality. You can rest assured that that the developers of the Python core did exactly that already. But with your own code … well, that’s a different story altogether.
+
+Let’s try something more realistic. Say you got a task to write a function that tried to figure out whether the user provided something that looks like an integer. If possible, it will test the input to check if it’s odd, and if so return twice the value. Otherwise it will return a **None** object.
+
+
+
+
+#py_basic_unittest_1.py
+def odd_man_out(inp):
+"""If input looks like an odd integer, return
+twice its value; otherwise, return None"""
+try: #Is it a number at all? If not, give up.
+inp/1
+except:
+return None
+try: #If it’s a number, can we cast as an integer?
+inp = int(inp)
+except:
+return None
+#If it’s a number, is it odd?
+if inp % 2: #returns 0 if even
+return(inp*2)
+if __name__ = = ‘__main__’:
+import unittest
+class tester(unittest.TestCase):
+def test_odd_integer(self):
+self.assertEqual(odd_man_out(3), 6)
+def test_even_integer(self):
+self.assertEqual(odd_man_out(4), None)
+unittest.main()
+
+
+
+
+This yields the following output, showing that it works as expected:
+
+
+
+
+..
+------------------------------------------------------
+Ran 2 tests in 0.008s
+OK
+
+
+
+
+Anyway, that’s what it looks like at first glance. However, we haven’t really checked any “corner conditions”, have we? Since we’re accepting user input, anything can happen and it’s worth prodding our function a bit. When we use unit tests, that becomes easy – all we need to do is add a few more tests. Here are some we might investigate:
+
+
+
+
+#py_basic_unittest_2.py
+#&lt;snip
+def test_odd_string(self):
+self.assertEqual(odd_man_out(‘123’), 246)
+def test_odd_float(self):
+self.assertEqual(odd_man_out(30.0), 60.0)
+def test_list(self):
+self.assertEqual(odd_man_out([1,2,3]), None)
+def test_complex(self):
+self.assertEqual(odd_man_out(complex(1,2)), None)
+
+
+
+
+Now we can check if the function did what it could to type-cast input into an **int** type, and whether it did well with a **list** object which it probably won’t be able to convert, and a **complex** type which it might.
+
+When we run the intact routine, we’ll see that our new tests have blown up, revealing weaknesses in our code. While that might seem like a bad thing, it’s really not. We’ve spared ourselves an angry late-night phone call from a client (or worse). More importantly, we get some solid information about what the issues are and exactly where to track them down. Here’s the output:
+
+
+
+
+...F.F
+FAIL: test_odd_float (__main__.tester)
+------------------------------------------------------
+Traceback (most recent call last):
+File "/home/pat/workspace/python_course_pat/
+py_basic_unittest_2.py",
+line 28, in test_odd_float
+self.assertEqual(odd_man_out(30.0), 60.0)
+AssertionError: None ! = 60.0
+FAIL: test_odd_string (__main__.tester)
+------------------------------------------------------
+Traceback (most recent call last):
+File "/home/pat/workspace/python_course_pat/
+py_basic_unittest_2.py",
+line 26, in test_odd_string
+self.assertEqual(odd_man_out(‘123’), 246)
+AssertionError: None ! = 246
+------------------------------------------------------
+Ran 6 tests in 0.013s
+FAILED (failures = 2)
+
+
+
+
+Unit testing is (or can be) much more complex than presented here – and the library gives you myriad options to customize testing to fit your code like a glove. Some of the things you can do are:
+
+-   choose all kinds of **TestCase** tests like **assertIsInstance**,
+    **assertGreater**, **assertDictContainsSubset** and dozens more.
+
+-   specify methods to run before and after each test to set up the
+    right environment;
+
+-   specify ‘negative tests’ that will test out-of-specification
+    conditions without crashing your test suite.
+
+Full documentation is available here:
+
+<https://docs.python.org/3.9/library/unittest.html>
+
+… and is highly recommended.
+
+
+
+
+Exercise:
+
+Please use these unit tests to guide your efforts to debug and otherwise perfect the py_basic_unittest_2.py code. Add any other tests that you think will be useful to make it reliable.
+Please write some unittests against the screener method from the solution to Chapter 7 (solution_python1_chapter07_screener.py). Then try to streamline the code, testing frequently as you do so.
+
+
+
+
+
+Congratulations!!!
+
+You have now completed Introduction to Python 3. You’re well-equipped to take on the pleasant challenge of reinforcing your understanding with hands-on projects.
+
+My friendly advice at this point would be to do just that. Get your hands dirty working with some real code, optimally with some seasoned Python programmers. Courses are great because they provide a lot of information over a short period of time. But it’s not until you apply the information, bang your head against the wall, iteratively ask and answer questions, and finally succeed, that you will really understand it.
+
+Don’t have a coding project at work? You might check out your local Python user’s group. Many of them have “adopted” a charity for whom they do *pro bono* development. Others organize sprints to enhance open source projects (don’t worry – beginners are always welcome). Still others have meet-ups designed precisely to get seasoned programmers together with new ones, quite often involving electrolytic replacement liquids.
+
+If you’re a lady, or know one who’s interested, you might check out PyLadies:, a group focused upon helping women become engaged with Python and the open-source community generally. They hang out at pyladies.com.
+
+Best of luck to you in what I hope will be an enjoyable programming career!
+
+Acknowledgements
+
+I would like to thank Kirby Urner of 4D Solutions (4dsolutions.net) for his valuable support, for contributing some of the material presented here, and always wise council. In particular, I would like to thank him for introducing me to Python lo, so many years ago.
+
+I would also like to thank Steve Holden, past president of the Python Software Foundation for his moral support, code contributions and his wise council.
+
+Thanks, especially to the thousands of people who have gifted Python to a grateful world.
+
+About the Author
+
+<img src="attachment:media/image5.png" style="width:1.62292in;height:1.64931in" />Patrick Barton has been wrangling Python since 2010, applying it mostly to mathematical modeling and machine learning projects. He was the Lead Instructor at the O’Reilly School of Technology, where he was also a full-course Python instructor.
+
+In past lives, he has served as a National Laboratory energy scientist, VP of research and development for a psychometric research organization, and inventor of the first artificially-intelligent trapping system for Burmese pythons (Python-based, naturally).
+
+He makes his home in Portland, Oregon. You can connect with him on LinkedIn: https://www.linkedin.com/in/patbartonpdx
+
+[1] www.pydev.org/manual\_101\_install.html
+
+[2] http://wingware.com/downloads This is a commercial product. If you decide to buy it, this discount code will get a substantial savings: PJBD50A1.
+
+[3] No need to memorize these – we’re just showing how simple the underlying language is.
+
+[4] You may want to familiarize yourself with the **inspect** library.  It has dozens of tools like **getargspec** (finds arguments accepted by a function with their default values), **getmodule** (returns the module an object was defined in), and **getsource** (returns the source code).  If you’re using an IDE, you might find that some of these are wrapped up and made available via the IDE’s graphical interface. It’s easy enough to go:
+
+\>\>\> import inspect
+
+\>\>\> help(inspect)
+
+[5] If you’re interested in exploring these ../experimental/py\_precision.py has examples. If you go on to use elements from Python’s scientific stack e.g., **numpy**, you’ll be using the numeric types supported by your C compiler. These will typically be limited to 64 bits in modern machines. Cf.  https://docs.scipy.org/doc/numpy-1.13.0/user/basics.types.html
+
+[6] Note all the things we did NOT have to do: declare the looping variable s; find the length of the object; move the pointer along the sequence; ensure we don’t run the pointer “off the edge” of the object.  This is all handled by methods defined as part of the object.
+
+[7] An “indented suite” is just a \$20 word for all the lines of code beneath a header (the **for** statement in this case) that’s indented the same number of spaces. This is considered the “code block” associated with the header.
+
+[8] We’re going into quite a bit of detail on string objects here – partly because they’re might useful and partly because they are exemplars of all other Python objects you’ll encounter.
+
+[9] You can think of opposing parentheses as the “execution operator”, much as + is (usually) the “addition operator”. Note that the function won’t execute without the ():
+
+\>\>\>'777'.isalnum
+
+\<built-in method isalnum of str object at 0x000002575B764998\>
+
+\>\>\> '777'.isalnum()
+
+True
+
+[10] A **list** is a built-in Python object. It’s an ordered sequence that may contain heterogenous elements, something like: \[ ‘one’, 2, 3.0, (4 + 5j) \] Note the square brackets. More on the **list** object later.
+
+[11] An “iterable object” is something you can use a for or next operation on – it knows how to loop over itself.
+
+[12] With no arguments, it splits on anything in the same time zone as a white space (tabs, new line characters, and white spaces).
+
+[13] A **tuple** is the same as a list except it’s “immutable” (unchangeable). It has parenthesis, something like:
+
+( ‘one’, 2, 3.0, (4 + 5j) )
+
+[14] The opposite of **chr** is **ord**. Thus **chr**(90) is ‘Z’ and **ord**(‘Z’) is 90.
+
+[15] **None** is an honest-to-goodness Python object. It doesn’t do much, but you can assign a name to it and use the name as you would that of any other variable.
+
+[16] You’ll find **in** used in several contexts (as with the **for** statement). It invokes the **\_\_contains\_\_** method to determine membership.
+
+[17] **replace** changes all occurrences by default. If you provide an optional parameter count, you can limit the number of replacements:
+
+\>\>\> 'aaa'.replace('a', 'A', 2)
+
+'AAa'
+
+[18] The **lstrip** method removes whitespaces on the left, **rstrip** on the right, and **strip** from both ends.
+
+[19] This section can be skipped without loss of continuity, but may be worth a quick glance.
+
+[20] Back in the day, one had to provide more specific placeholders like %s, %i, and %f for strings, integers and floating point numbers. In fact, Python will still accept these “legacy” specifications. This works:
+
+\>\>\> "%s %s" %('Hey', 'Joe!')
+
+'Hey Joe!
+
+[21] The most common alignment choices are left (\<), right (\>), or center(^).
+
+[22] <https://docs.python.org/3/library/string.html#format-string-syntax> It may be well worth your while to take a moment with the docs to get an idea for the breadth of options available. Dozens of examples appear at the bottom that will serve as recipes for complex formatting chores.
+
+[23] “Unpacking” is a common Python idiom – you can create new names and assign members of a sequence as their values using this sort of shorthand (works on lists, tuples, strings, etc.):
+
+\>\>\> first, second = "AB"
+
+\>\>\> print(first, second)
+
+A B
+
+[24] https://www.python.org/dev/peps/pep-0008
+
+[25] As a consequence, be sure to put general “catch all” tests at the bottom of your block – otherwise they could block execution of the contents of more specific tests.
+
+[26] You might want to step through this **while** loop a line at a time in a debugger, as well as the others encountered in this chapter, to observe which lines get executed – and in what order.
+
+[27] Python supports lots of permutations of this including -= \*= /= and %=.
+
+[28] You can think of a binary shift as increasing or decreasing a binary number by a power of 2. In the base 10 world it’s like going 1.2 \* 10\*\*2 = 120 … 1.2 \* 10\*\*3 = 1200 … 1.2 \* 10\*\*4 = 12000. As you increase to power of 10, you just tack on a zero because you’re shifting the “1.2” by increasing orders of magnitude.
+
+[29] A **set** is a collection of zero or more unique objects. More on the **set** object later.
+
+[30] This is convenient, but has performance issues at scale – the interpreter has to be prepared to constantly adjust things, and that means lots of relatively expensive memory allocation operations. If you’re considering a project that could deal with large amounts of data consider using immutable sequences (**tuples** and **strings**) where possible and/or objects that impose heterogenous elements e.g., **array.array** or **numpy.ndarray** objects.
+
+[31] It’s helpful to think of the “stop” parameter like a real-world stop sign. You don’t roll through it, but stop before it. Though a bit strange at first, this specification is handy because iterable\[:2\] and iterable\[2:\] are complementary “halves” of the entire object.
+
+[32] The collections library contains some great tools not covered here including **defaultdict** (a **dict**-like object that automatically installs a new key:default\_value pair if the key doesn’t exist) and **deque** (a double-ended queue useful for managing processes and threads).
+
+[33] Generally a hash is a computer science term for the eponymous data structure. There’s a very approachable article in Wikipedia, in case you’re interested: https://en.wikipedia.org/wiki/Hash\_function
+
+[34] If you accidentally use a mutable (changeable) object you’ll get a nearly-indecipherable error message, something like: builtins.TypeError: unhashable type: 'list'
+
+[35] You may have noted that Python objects don’t have destructor methods, as you find in many other languages. The **del** method is a general purpose tool for destroying unwanted objects. You typically don’t need to worry about this because Python has built-in “garbage collection”. Objects that are dereferenced get destroyed automatically.
+
+[36] NB **sort** is a method belonging to the **list** object. It’s an “in-place” operation – that means that the elements are simply shifted around and no new object is created. As a result, it returns a **None** object. The **sorted** function is a built-in that will work on any iterable. It creates and returns a new **list** object.
+
+[37] It’s easy to build a list comprehension if you do it in stages:
+
+\>\>\> \[ \] \#empty list
+
+\[ for i in range(3) \] \#add an iterating expression
+
+\[ i for i in range(3) \] \#add the thing that goes into the list
+
+\[ i for i in range(3) if i %2 \] \#add a filter (anything that produces a Boolean)
+
+\[1\]
+
+[38] Cf. https://en.wikipedia.org/wiki/Chess\_symbols\_in\_Unicode
+
+[39] Python 2.x can use Unicode, but it’s “by request only”.
+
+[40] You can view the global namespace (really a **dict** mapping names and values) using **globals()**. In some IDEs the function names are not shown in stack data.
+
+[41] You can view the local namespace using **locals()**. The local namespace will change as the execution moves from function to function.
+
+[42] You may want to experiment by removing and replacing the comment in **setStar**.
+
+[43] Note the use of the keyword **pass**. This is a placeholder whose only job is to take up space – enough to establish indentation.
+
+[44] In some languages, like Java, functions don’t really have a meaning outside the context of a containing class; they’re known as “class methods”.
+
+[45] Simple **lambda** functions can add readability to your code because they can be defined geographically close to where they’re being applied. Though they’re only “one liners” they can be arbitrarily complex and really difficult for your teammates to figure out. Sometimes it’s much more transparent to use a traditional function.
+
+[46] You can check an annotated version to find out: py\_function\_7\_upgraded.py
+
+[47] As an aside (just for fun) the epoch “odometer” will “roll over” for 32 bit Linux systems on January 19, 2038. This could be interesting if any of these machines still exist. If you have a 64-bit system, you can relax. The rollover won’t happen until sometime in the year 292,277,026,596.
+
+[48] Cf. https://docs.python.org/3/library/datetime.html
+
+[49] There is also an “opposite” method that will convert a string into a **datetime** object using the same codes – it’s called **strptime.**
+
+[50] http://strftime.org/
+
+[51] If you get serious about wrangling dates you’ll want to consider using **pandas**. The basic **pandas** object Series is essentially a **list** on steroids. Like a **list** it has a 0-based integer index.  But you can “bolt on” an index of any other data type, including dates.  When you do, pandas knows how to “stretch” it from days to weeks, interpolate missing values any way you ask, etc. It is aware of business days, holidays, etc. Well worth the investment to learn, IMHO.
+
+[52] You might want to use help() on the **TextCalendar** object produced in this script. It knows how to return specific months, week, or years as printable calendar snippets, as iterators, or as lists of **datetime** objects.
+
+[53] The **os.path** package has several useful methods for teasing apart path names, joining them with the correct separators, determining if specific file system objects exist, etc. The **shutil** library has several methods for working with macro-scale file system manipulations like moving entire directory trees.
+
+[54] If you’re running this code in a debugger like WingIDE, the debugger may stop execution inappropriately when an exception is encountered. If this happens, ask the debugger to ignore this exception.  In Wing, there’s a checkbox in the Exceptions tab for this purpose.
+
+[55] https://docs.python.org/3/library/exceptions.html\#exception-hierarchy
+
+[56] It’s worthwhile taking a quick look at the namespace of the traceback library – it has many tools you can use when doing text-only debugging (these get wrapped up in tools like Exceptions and Call Stack when using an IDE).
+
+[57] There is a more elaborate example in py\_handler\_practice.py, in case you’re interested in playing around with it.
+
+[58] The ‘r’ mode is the default. Strictly speaking you don’t need to specify it.
+
+[59] Alternatively, you can use the **subprocess** library. This give you the ability to spawn new processes with which you can invoke bash scripts, execute system programs, and anything else you might do at the command line. For instance, you can go:
+
+\>\>\> import subprocess
+
+\>\>\> subprocess.call('dir', shell=True) \#subprocess.call(‘ls -l’, shell=True)
+
+… but you can paint yourself into a corner vis-à-vis OS portability.  Complete docs are here:
+
+https://docs.python.org/3/library/subprocess.html
+
+[60] Java Script Object Notation – an XML like, human-readable format.
+
+[61] You can use **time.time** or, with a bit more effort use **timeit** if you want to experiment. The official docs for the latter can be found here: https://docs.python.org/3/library/timeit.html)
+
+[62] https://docs.python.org/3/library/pickle.html
+
+[63] NB: You would likely never do this in practice. Just because you can, doesn’t mean you should :-)
+
+[64] You don’t have to use ‘self’. You could use ‘aardvark’ if you wanted, but people would look at you funny ;-)
+
+[65] You’ll find some more examples of decorators and their uses in your course file director, all with names beginning with py\_decorators.
+
+[66] Be sure to set it to the Python dialect of regex (there are several). The “cheat sheet” at the bottom right – shows what all the tokens mean. As you build your regex, a complete explanation of it shows up in the upper right. It’s not so easy to see, but on the left there’s a button that will produce syntactically-correct Python code based on your explorations. This is my “go to” tool for all things regex.
+
+[67] diveintopython.net – an awesome, well-documented, open source book
+designed for advanced programmers. It’s a good read as you advance along
+the path of becoming one.

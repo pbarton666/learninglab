@@ -1,0 +1,5515 @@
+
+
+**An immersive fast-track guide**
+
+Patrick Barton
+
+**<span
+class="smallcaps">Portland Energy Strategies Laboratories
+Courseware**
+
+Table of Contents
+
+Chapter I Preliminaries I-1
+
+Your Python Development Environment I-1
+
+Python fundamentals I-3
+
+Keywords I-3
+
+Namespaces I-4
+
+Directing Content to STDOUT I-4
+
+Identifying Objects I-5
+
+Operation Overloading I-5
+
+Numeric Operator Support I-6
+
+Numeric Types as Methods I-7
+
+Typecasting I-7
+
+Getting information from stdin I-8
+
+Using Strings I-9
+
+String Methods I-9
+
+String Literals I-10
+
+Style I-10
+
+Process Control and Code Blocks I-10
+
+Indentation I-10
+
+Process control I-11
+
+The while Statement I-11
+
+Operators I-12
+
+Logical Operators I-12
+
+Bitwise I-13
+
+Sequences I-13
+
+Index Values I-14
+
+Slices and Sequence Indexing I-14
+
+Dictionary Objects I-15
+
+Basic Usage I-15
+
+Using get() I-16
+
+Keys and Values I-16
+
+Sets I-17
+
+Functions I-17
+
+Basics I-17
+
+Anonymous Functions (lambda) I-18
+
+External Libraries I-19
+
+Imports I-19
+
+Access to elements I-19
+
+File Operations I-20
+
+Classes I-20
+
+Exceptions I-21
+
+Chapter II Unit Testing II-1
+
+Test-Driven Development II-1
+
+The Unittest Library II-2
+
+Basics II-2
+
+SetUp, TearDown and “Negative Tests” II-4
+
+TestCase test methods II-7
+
+If You Make a Mess, Clean It Up II-10
+
+Separation of Responsibilities II-13
+
+Chapter III Data Structures III-1
+
+List Comprehensions III-1
+
+Dict Comprehensions III-3
+
+Nested lists III-4
+
+Nested dicts III-4
+
+Arrays III-6
+
+Chapter IV GUIs IV-1
+
+Basics IV-1
+
+A First GUI IV-2
+
+Creating interactive GUIs IV-5
+
+Checkboxes IV-6
+
+Radio Buttons IV-8
+
+Wrangling Widgets with Frames IV-9
+
+Building Menus IV-11
+
+Text and Entry Widgets IV-13
+
+Built in Coolness IV-15
+
+Parting Thoughts IV-18
+
+Chapter V Working With the Web V-1
+
+HTML Tools V-7
+
+Templating Tools V-11
+
+Chapter VI Working With Databases VI-1
+
+Basics VI-2
+
+Lazy Evaluation VI-8
+
+Choosing Data with WHERE VI-8
+
+Updating and Deleting Data VI-9
+
+SQL Injection Attacks VI-11
+
+Object-Relational Mapping VI-12
+
+Chapter VII Logging VII-1
+
+Basics VII-1
+
+Logging Levels VII-2
+
+Dynamically Changing the Level VII-3
+
+Customizing Your Logging VII-4
+
+Logging From Multiple Modules VII-7
+
+Logging to Multiple Destinations VII-8
+
+Final Notes VII-12
+
+Chapter VIII Introduction to Scientific Programming VIII-1
+
+Basics VIII-2
+
+Array Operations VIII-3
+
+Creating Masks VIII-5
+
+More Built-in Array Operations VIII-6
+
+A Real-World Application VIII-7
+
+Chapter IX Other Cool Tools IX-1
+
+Persistent Storage IX-1
+
+Shelve IX-1
+
+Pickle IX-2
+
+Iterators IX-4
+
+Generators IX-6
+
+Threading IX-7
+
+Getters and Setters IX-9
+
+Decorators IX-12
+
+Welcome!
+
+This course will take you on a journey through the world of Python 3.0.
+Expect to come away with an enhanced understanding of:
+
+-   Unit testing in Python
+
+-   Working with Python’s logging system
+
+-   Elements of Python’s scientific computing ecosystem
+
+-   GUI applications using **tkinter**
+
+-   Python generators and iterators
+
+-   **list** and **dict** comprehensions
+
+-   Writing CGI web apps in Python
+
+-   Database operations with Python
+
+-   … and much more.
+
+At the end of this course you should be comfortable using Python to
+tackle complicated projects at a professional level. To become truly
+facile, you’ll need to practice, make mistakes, learn, and do it again.
+As experienced programmers you’ll expect that – but this material will
+get you off to a great start.
+
+So, prepare to dig in and enjoy!
+
+Preliminaries
+=============
+
+The purpose of this chapter is to check in and make sure you have a
+working development environment and know how to get one if you don’t. It
+also provides an overview of the information you’ll need before we dive
+into the meat of this course. It’s provided in synopsis / “cheat sheet”
+form, just in case.
+
+Your Python Development Environment
+-----------------------------------
+
+You’ll need a Python distribution and an IDE (integrated development
+environment) on your machine. Instead of compiling one, I would
+recommend that you use the Anaconda distribution.
+
+Anaconda supports all sorts of data science and visualization packages,
+along with Python virtual environments, “right out of the box.” You can
+install it by browsing to this site and following the instructions to
+get the appropriate version for your machine. You’ll want the Python 3
+flavor, even if you plan to do some work in 2.7 (Anaconda bundles up
+several versions).
+
+https://www.continuum.io/downloads
+
+The “official” IDE for Python is called IDLE and comes with most Python
+distributions. It provides a rudimentary and very light weight debugger
+/ file manager. IDLE works and works well, but for serious work I much
+prefer a more fully-functional environment such as PyCharm or WingIDE.
+
+If you want to use Wing, you can download a free trial from their web
+site\[1\].
+
+http://wingware.com/downloads
+
+Python uses environment variables to help it work and play well with the
+operating system (OS). The most important of these are PATH and
+PYTHONPATH.
+
+PATH contains the directories your OS will search when looking for a
+particular application. In order for Python to “just work” when you
+execute it from the command line you have to include Python’s binary
+(python.exe) directory in the PATH variable. On a Windows system, you
+can access the environment variables by clicking:
+
+Start .. Control Panel .. System .. Advanced System Settings ..
+Environment Variables
+
+Then edit PATH by appending the binary’s directory to the existing
+content. You have to be a bit careful here. Add a semicolon, no spaces,
+and the name of the new directory with no trailing slash. Something
+like:
+
+existing path;c:\\Path\\To\\Directory
+
+On a Linux system, you can simply add an export to \~/.**bashrc**:
+
+export PATH=$PATH:/path/to/directory
+
+PYTHONPATH works the same way PATH does, but it’s used internally by
+Python to search for modules that you import into your code’s namespace.
+Once you make the necessary changes to your environment variables,
+you’ll need to start a new terminal to apply them (or run **source**
+\~/.**bashrc** in Linux).
+
+Python fundamentals
+-------------------
+
+Let’s have a quick review of some Python concepts. You should be
+familiar with these already, but just in case here is some “cheat sheet
+level” information.
+
+Keywords
+--------
+
+Here’s a list of Python’s keywords:
+
+| False  | class    | finally | is       | return |
+|--------|----------|---------|----------|--------|
+| None   | continue | for     | lambda   | try    |
+| True   | def      | from    | nonlocal | while  |
+| and    | del      | global  | not      | with   |
+| as     | elif     | if      | or       | yield  |
+| assert | else     | import  | pass     |        |
+| break  | except   | in      | raise    |        |
+
+If you need a reminder, you can always go:
+
+
+
+
+ import keyword
+ keyword.kwlist
+['and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'exec', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'not', 'or', 'pass', 'print', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+
+
+
+Namespaces
+----------
+
+Here’s how to find out what’s in the global namespace, the built-ins,
+and an arbitrary object’s namespace:
+
+
+
+
+ dir() #global
+['__builtins__', '__doc__', '__name__', '__package__']
+ dir(__builtins__) #built-ins
+['ArithmeticError', 'AssertionError', 'AttributeError', snip
+ myobject=[]
+ dir(myobject)
+[snip, 'append', 'count', 'extend', 'index', 'insert',
+'pop', 'remove', 'reverse', 'sort']
+
+
+
+
+Directing Content to STDOUT
+---------------------------
+
+The **print**() function takes objects as arguments, does any
+type-casting necessary, and writes to the terminal.
+
+
+
+
+ print("Hello, Python")
+Hello, Python
+ print('hello python', "hello python", """hello python""",
+'''hello python''', 'hello' ' python')
+'hello python', 'hello python', 'hello python',
+'hello python', 'hello python')
+ print(4, {1,2,3})
+4 {1, 2, 3}
+
+
+
+
+You also can employ the **format**() method to upgrade output.
+
+
+
+
+ for _ in range(3):
+... print("{:^10} {:^10} {:^10} {:^10}".
+format(123,132,54,123))
+123 132 54 123
+123 132 54 123
+123 132 54 123
+
+
+
+
+Identifying Objects
+-------------------
+
+Objects are identified internally by their location in memory,
+accessible by using the built-in function id(). Their variable types are
+accessible via **type**() and **isinstance**():
+
+
+
+
+ my_fav_object = []
+
+
+
+
+ id (my_fav_object)
+
+
+140506891623528
+
+
+ type(my_fav_object)
+class 'list'
+ isinstance(my_fav_object, list)
+True
+
+
+
+
+Operation Overloading
+---------------------
+
+Several operators are overloaded “right out of the box.”
+
+
+
+
+ " aye " + " bee"
+' aye bee'
+ [666, 666] + [23, 23]
+[666, 666, 23, 23]
+ "xOx" * 20
+'xOxxOxxOxxOxxOxxOxxOxxOxxOxxOxxOxxOxxOxxOxxOxxOxxOxxOxxOxxOx'
+ 10*20
+200
+ [1] *20
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+
+
+
+Numeric Operator Support
+------------------------
+
+Python operationalizes numeric (and other) operations using
+specially-named class methods a.k.a. “magic methods”. For instance the
+\_\_**add**\_\_() method is executed in response to the “+” operator.
+These are ordinary methods that can be overridden, though caution is
+advised\[2\].
+
+| addition           | x + y        | x.\_\_add\_\_(y)      |
+|--------------------|--------------|-----------------------|
+| bitwise and        | x & y        | x.\_\_and\_\_(y)      |
+| bitwise or         | x \| y       | x.\_\_or\_\_(y)       |
+| bitwise xor        | x ^ y        | x.\_\_xor\_\_(y)      |
+| division           | x / y        | x.\_\_truediv\_\_(y)  |
+| floor division     | x // y       | x.\_\_floordiv\_\_(y) |
+| left bit-shift     | x  y | x.\_\_lshift\_\_(y)   |
+| modulo (remainder) | x % y        | x.\_\_mod\_\_(y)      |
+| multiplication     | x \* y       | x.\_\_mul\_\_(y)      |
+| raise to power     | x \*\* y     | x.\_\_pow\_\_(y)      |
+| right bit-shift    | x  y | x.\_\_rshift\_\_(y)   |
+| subtraction        | x - y        | x.\_\_sub\_\_(y)      |
+
+Numeric Types as Methods
+------------------------
+
+We have seen numeric types like **int** and **float** used to describe
+objects, but they can also be used to convert data types (“type
+casting”). You can use them as methods (“verbs”). Here’s how you can
+convert an **int** to a **float**:
+
+
+
+
+ one=1
+ one_float=float(one)
+ type(one_float)
+class 'float'
+ and_back=int(one_float)
+ type(and_back)
+class 'int'
+
+
+
+
+Typecasting
+-----------
+
+When possible Python will do typecasting if you use an object’s type as
+a method.
+
+
+
+
+ int(1.0)
+1
+ int("111")
+111
+ float(1)
+1.0
+ complex(1)
+(1+0j)
+
+
+
+
+Getting information from stdin
+------------------------------
+
+You can get input from the terminal using **input**(). The returned
+value is a **str** object.
+
+|                                                           |
+|-----------------------------------------------------------|
+|  answer = input("Hey, Pat, how's it going? ") |
+
+It produces the possibility of this dialog:
+
+
+
+
+ answer = input("Hey, Pat, how's it going? ")
+Hey, Pat, how's it going? Awesome!
+ answer
+'Awesome!'
+
+
+
+
+The response will always be returned as a string, no matter what, as you
+can see here:
+
+
+
+
+ for _ in range(3):
+you_typed = input("Can you type something please? ")
+print("OK. I'm thinking this is a}."
+.format(type(you_typed)))
+Can you type something please? hi
+OK. I'm thinking this is a class 'str'.
+Can you type something please? 123
+OK. I'm thinking this is a class 'str'.
+
+
+
+
+Using Strings
+-------------
+
+String Methods
+--------------
+
+Here’s a listing of the “baked in” methods of the **str** object.
+
+
+
+
+dir(str)
+[snip, 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+
+
+
+
+Most of these are self-explanatory and you can always use **help()** to
+get details. By inspection you’ll note that there are several methods
+that introspect the strings for their case (**isupper()**, etc.) create
+new objects with specific casing (**lower()**, etc.), and clean up
+leading / trailing white spaces (**strip()** and its kin). You can split
+up a string to make a **list** using the **split()** method) and knit
+together elements of an iterable to create a string with the **join()**
+method.
+
+A couple other things are worth remembering. On Python there is no
+“character” object *per se* – a single character is just a really short
+string. Also, the **str** object is immutable (unchangeable) so
+operations like changing the case may appear to generate new objects
+when commands are run in the REPL\[3\], but really don’t.
+
+String Literals
+---------------
+
+The escape character is “\\”. Combined with certain characters, you can
+get:
+
+> \\n new line
+>
+> \\t tab
+>
+> \\r carriage return
+>
+> \\’ prints a single quote
+>
+> \\” prints a double quote
+>
+> \\\\ if you really want a backslash
+
+Style
+-----
+
+Python’s style guide contains conventions employed by most (but
+certainly not all) people in the Python community. As with many laws,
+it’s a good idea to know what’s on the books before you break them. You
+can get a copy of PEP-8 here:
+
+[<span
+class="underline">https://www.python.org/dev/peps/pep-0008](https://www.python.org/dev/peps/pep-0008)
+
+Process Control and Code Blocks
+-------------------------------
+
+Indentation
+-----------
+
+Python uses only indentation to specify
+related bits of code. Statements at the same level of indentation are
+treated as a being in the same code block, and code blocks can be nested
+to any level. Here’s an example:
+
+
+
+
+ myrange=range(2)
+ for value in myrange:
+... print(value)
+0
+1
+
+
+
+
+Process control
+---------------
+
+The **if** statement is the most basic of control statements. Its
+general form is:
+
+> if condition:
+>
+> indented suite
+>
+> elif condition:
+>
+> indented suite
+>
+> …
+>
+> else:
+>
+> indented suite
+
+The **elif** and **else** clauses are optional and are often omitted.
+Only one of the indented suites can get executed, and the conditions are
+evaluated top to bottom. This implies that you have to think through how
+your statements are ordered, ensuring that the most specific are closer
+to the top and the more general ones closer to the bottom – otherwise
+some may be logically unreachable.
+
+The while Statement
+-------------------
+
+The **while** statement is also pretty straightforward. The condition
+evaluated in the header can be anything that will yield a Boolean value.
+You can even use a tautologically-true expression. Here’s a simple
+example of the former:
+
+> while condition:
+>
+> indented suite
+>
+> else:
+
+indented suite
+
+The indented suite will be executed top-to-bottom forever\[4\] until
+it’s asked to stop or the condition is no longer **True**.
+
+
+
+
+counter=0
+while True:
+print("The counter is now: {}.".format(counter))
+if counter1:
+break
+counter +=1
+else:
+print("Yo. I'm done!")
+
+
+
+
+The **break** and **continue** statements work on both any flavor of
+loop. When a **break** is encountered, execution of the loop execution
+halts immediately. When **continue** is encountered, execution moves
+immediately to the top of the loop. If the loop terminates due to a
+**break** statement, as in the example above, the **else** clause is
+ignored.
+
+Operators
+---------
+
+Logical Operators
+-----------------
+
+Python comes with a typical set of comparative operators. Here’s a quick
+summary:
+
+| ==    | Equal to              |
+|-------|-----------------------|
+| !=    | Not equal             |
+|   | Less than             |
+|   | Greater than          |
+| = | Less than or equal    |
+| = | Greater than or equal |
+
+Bitwise
+-------
+
+
+
+
+a &amp; b
+Both 1 - 1, otherwise -0
+
+
+
+
+a | b
+Both 0 - 0, otherwise -1
+
+
+~a
+“flips” each bit. 1 - 0 and 0 -1
+
+
+a ^b
+if the bit in b is 0, use the bit in a; otherwise
+flip the bit in a
+
+
+
+
+Sequences
+---------
+
+Python sequences can contain heterogenous elements. They may be formed
+by directly by their associated variable type as a constructor method.
+Here’s how:
+
+
+
+
+#py_sequence_survey.py
+the_string = "strings are sequences with an encoding"
+the_bytes = bytearray(the_string, encoding='UTF-8')
+the_range = range(10)
+the_list = list(range(10))
+the_tuple = tuple(range(10))
+print("String : ", the_string)
+print("Bytes : ", the_bytes)
+print("List : ", the_list)
+print("Tuple : ", the_tuple)
+
+
+
+
+When you execute this code, you'll get output something like:
+
+
+
+
+String : strings are sequences with an encoding
+Bytes : bytearray(b'strings are sequences
+with an encoding')
+List : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Tuple : (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+
+
+
+Index Values
+------------
+
+Although you don't need to create indices in order to address the
+elements of a sequence, sometimes they’re useful to have around. You can
+generate index values by applying the built-in function **enumerate**().
+
+
+
+
+#py_enumerate_1.py
+fruits=('apple', 'banana', 'kiwi')
+for snack_and_index in enumerate(fruits):
+print(snack_and_index)
+
+
+
+
+
+
+#output
+(0, 'apple')
+(1, 'banana')
+(2, 'kiwi')
+
+
+
+
+Slices and Sequence Indexing
+----------------------------
+
+For slice operations, the general syntax is:
+
+iterable\[ start : stop : stride \]
+
+The start, stop, and stride parameters are all optional. By default,
+**start** is the first element of the sequence, **stop** is the last
+element, and **stride** is 1. In the simplest form, the entire sequence
+will be produced:
+
+
+
+
+ the_list[:] # [::] works the same - we don't even need the
+# stride placeholder
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+
+
+Python also has a built-in **slice** object, which works has the same
+index specifications above provided in the same order. Note that the
+specifications are provided as arguments (between parentheses and
+separated by commas) .
+
+
+
+
+ slicer=slice(0,6,2)
+ type(slicer)
+class 'slice'
+ the_list[slicer]
+[0, 2, 4]
+
+
+
+
+Dictionary Objects
+------------------
+
+The **dict** object is a hash table\[5\] with unique, immutable keys and
+associated, arbitrary values.
+
+Basic Usage
+-----------
+
+
+
+
+#py_dict.py
+#note the different syntax here
+the_dict = { "key":"value", "A":2, "B":3 }
+same_dict = dict(key = "value", A = 2, B = 3 )
+print("Dict compare :", the_dict == same_dict)
+print("And here's the dict:", the_dict)
+the_dict['C']=3
+print("... and again:", the_dict)
+my_value=the_dict.get('D', "some default value")
+print("... and yet again:", the_dict)
+print("... (and my_value is: {})".format(my_value))
+
+
+
+
+This will produce results as follows:
+
+
+
+
+Dict compare : True
+And here's the dict: {'A': 2, 'B': 3, 'key': 'value'}
+... and again: {'A': 2, 'B': 3, 'C': 3, 'key': 'value'}
+... and yet again: {'A': 2, 'B': 3, 'C': 3, 'key': 'value'}
+... (and my_value is: some default value)
+
+
+
+
+Using get()
+-----------
+
+Note that there are several ways to create a **dict** object and add
+elements to it. Of particular interest is the **get**() method. While
+it's completely OK to call a value out by name, if that value does not
+exist a **KeyError** exception will be raised. The **get**() method
+allows you to provide some default value just in case ( if you don’t
+supply a default value, a **None** object will be returned).
+
+Keys and Values
+---------------
+
+
+
+
+ the_dict = {"key":"value", "A":2, "B":3}
+ the_dict.keys()
+dict_keys(['A', 'key', 'B'])
+ the_dict.values()
+dict_values([2, 'value', 3])
+
+
+
+
+You can use its **pop**() to remove a (key: value) pair if you know the
+name of the key; it returns the associated value. Alternatively, you can
+use **popitem**() to remove and return a random (key:value) pair.
+
+Sets
+----
+
+A **set** is a hash containing immutable **collection** of unique
+objects. They support **add**() and **pop**() methods for changing
+content. Additionally, they have methods for **union** and
+**intersection** that will functionally do “outer joins” and “inner
+joins” respectively.\[6\] Alternatively, if you’re working only with
+**set** objects you can use the operators **&** and **\|**. In any
+event, all these operations return a **set** object, so operations can
+easily be chained\[7\].
+
+Functions
+---------
+
+Basics
+------
+
+Functions constructors have the general form:
+
+def function\_name(positional\_2, \*args, \*\*kwargs):
+
+If positional parameters are provided, then the calling routine must
+provide the appropriate number of arguments. The specifically-identified
+positional parameters can be followed by a  
+“star parameter” that stands in for zero or more additional positional
+parameters. These are stored as a local (to the function) **tuple**.
+Optionally a function can also be specified with a “double star
+parameter” that serves as a placeholder for zero or more (key, value)
+pairs. These are stored locally as a **dict** object.
+
+Variables created at the outermost level of indentation(the left margin)
+are global to the module i.e., part of the global namespace. Those
+created within a function are local to that function. The latter can
+become linked to the global namespace with the **global** keyword.
+
+Functions can return zero or one objects. By default they return the
+**None** object.
+
+Anonymous Functions (lambda)
+----------------------------
+
+Anonymous functions are simple, one-line functions that do not require a
+name (though you can provide one, if you want). They are created with
+the use of the keyword **lambda**. The syntax is:
+
+**lambda** comma separated parameter(s) : operations
+
+Here is a simple example:
+
+
+
+
+ result = lambda first, second: first + second
+ result(33, 55)
+88
+
+
+
+
+You can provide a **lambda** expression anywhere a function is required
+as an argument. Here is an example using the built-in **map**
+function\[8\].
+
+
+
+
+ for result in map(lambda a: a ** 3 + 2, [100, 200, 300]):
+print(result)
+1000002
+8000002
+27000002
+
+
+
+
+External Libraries
+------------------
+
+Imports
+-------
+
+Access to external libraries is accomplished using the **import**
+keyword. Here are some examples:
+
+
+
+
+import time
+from decimal import Decimal, getcontext
+from fractions import Fraction as Q # rational number
+from datetime import datetime, timezone
+from collections import namedtuple
+
+
+
+
+Access to elements
+------------------
+
+Once imported, the elements of the external module’s namespace are
+accessible with “dot notation”. The dots delimit the hierarchal layers
+of namespaces beneath.
+
+
+
+
+ import time
+ time.time()
+1474842731.612741
+
+
+
+
+File Operations
+---------------
+
+Files are opened with the **open**() built-in method and closed with the
+resulting file handler’s **close**(). Text files can be opened for read,
+write, and append operations using the modes “r”, “w”, and “a”. The same
+modes for binary files are “rb”, “wb”, and “ab”. Adding a “+” to any of
+these enables both reading and writing. The basic syntax is:
+
+> file\_handle = open(file name, mode)
+>
+> file\_handle.close()
+
+The internal file pointer may be moved and located with the appropriate
+methods of the file handler\[9\]:
+
+> file\_handle.seek(N) \#N is an integer specifying the location
+>
+> file\_handle.tell() \#reports the current file pointer location
+
+Classes
+-------
+
+We’ll be working with classes in this course, particularly when using
+**unittest**. If you want a refresher beyond what we’ll cover, you might
+investigate the “First Look at Classes” section in the official
+docs\[10\].
+
+Exceptions
+----------
+
+Exceptions are derived the **Exception** class\[11\]. They can be raised
+with the **raise** keyword. They can be handled within a
+**try**/**except** block.
+
+> try:
+>
+> suite to be tested
+>
+> except: exception name:
+>
+> suite
+>
+> except: exception name:
+>
+> suite
+>
+> finally:
+>
+> suite
+
+The **finally** clause executes regardless of the outcome. Only the
+first qualifying **except** suite executes, so the same caveats apply
+here as did for the if blocks. You want to test for the most specific
+exceptions at the top of the stack and more general ones at the bottom.
+The docs contain a listing of the exception hierarchy in case you’re not
+sure\[12\].
+
+Custom exceptions subclass the **Exception** class. A minimal example
+might be:
+
+> class CustomException (Exception):
+>
+> pass
+
+OK. If you’re comfortable with the content in this chapter, you’re in
+good shape for the rest of the course. If not, this might be a great
+time to get whatever clarifications are needed, resolve lingering
+doubts, etc. If everything’s a “GO”, let’s move on to unit testing!
+
+Unit Testing
+============
+
+Unit testing is, aside from learning how to work with Python’s **help**
+utility, the most important topic to take away from this course, IMHO.
+In this world of agile development, globally-distributed development
+teams, and collaborative maintenance of large open source projects, you
+really need to having clean, reliable, working code available 24/7. The
+material presented here will teach you the fundamentals of test driven
+development and Pythons’ unit testing implementation\[13\].
+
+Test-Driven Development
+-----------------------
+
+In its purest form, test-driven development (TDD) demands that the first
+step in any project is to write the tests needs to pass before it’s
+deemed complete. In other words, the tests form a contract between the
+product owner and the programming team. The code passes all the tests or
+it doesn’t. Programmers write code to the tests and nothing more.
+
+The world is a messy place, of course. In practice all the “corner
+conditions” won’t be known ahead of time. Responsible programmers will
+try to anticipate future requirements and avoid painting themselves into
+a corner. As a practical matter, often times the process of writing
+tests and code is iterative, and sometimes shortcuts are taken.
+Notwithstanding the ideas behind TDD are sound, and there are rich tools
+to support the process.
+
+The Unittest Library
+--------------------
+
+Python’s standard library includes the **uniittest** module\[14\]. It’s
+derived from the **JUnit** suite used by the Java community. Sometimes
+you’ll hear people refer to Python’s implementation as “PyUnit” as a tip
+of the hat to its origins.
+
+Basics
+------
+
+Let’s get started with a simple example. We import the **unittest**
+library and create an instance of **unittest**.**TestCase**. Within the
+instance, we draw upon the **assertEqual**() method of **TestCase** to
+compare two numbers.
+
+Note that we’ve included an informative message. This is optional, and
+if you don’t provide one, the system will do its best (with iffy
+results).
+
+Also note that the data used by the test is within the test method. This
+is typically a good idea because the scope is managed, and all the
+information you need is “right there”. You want to avoid using variables
+that are global to the module, or even global to the instance to avoid
+one test “stepping on” a variable used by another.
+
+
+
+
+#py_unit_1.py
+import unittest
+class FirstTest(unittest.TestCase):
+def test_me(self):
+first=1
+second=2
+msg="Sorry, Charlie, but {} is not the same as {}."
+self.assertEqual(first,1, msg=msg.format(first, second))
+if __name__=='__main__':
+unittest.main()
+
+
+
+
+Let’s break it down.
+
+|                     |
+|---------------------|
+| def test\_me(self): |
+
+The test method **test**\_**me**() constructor uses the parameter “self”
+to refer to this instance of the **TestCase** class\[15\]. The name of
+the test method begins with “test” to let **unittest** know that it’s
+intended to be a test, as opposed to a helper method.
+
+|                                                          |
+|----------------------------------------------------------|
+| self.assertEqual(first,1, msg=msg.format(first, second)) |
+
+Construction of this test (and most others) takes the form:
+
+test method(argument\_1, argument\_2,
+message)
+
+At the bottom of the code, you’ll see this bit:
+
+
+
+
+if __name__=='__main__':
+unittest.main()
+
+
+
+
+That’s what actually runs the tests. Why, you might wonder, do we run
+this only conditionally? When we import a module like **unittest**, it’s
+known inside our program as  you guessed it  “unittest.” But what is
+our program called internally? It’s known as “\_\_**main**\_\_” because
+we’re running it directly (as opposed to importing it)\[16\]. So, this
+statement will only execute the code in the indented suite if we run
+from our program. If our program is imported into another module, the
+**unittest** won’t run automatically (usually a very good thing).
+
+Here are the results of the first test:
+
+
+
+
+Results:
+.
+------------------------------------------------------------------
+Ran 1 test in 0.000s
+OK
+
+
+
+
+The dot represents the successful of a single test method (you “earn” a
+dot for each one that passes)\[17\]. You can also see that it’s blazing
+fast.
+
+SetUp, TearDown and “Negative Tests”
+------------------------------------
+
+Now, let’s take a look at a slightly more complicated version.
+
+
+
+
+#py_unit_2.py
+import unittest
+class FirstTest(unittest.TestCase):
+def setUp(self):
+"setUp() runs before every test"
+self.msg="Sorry, Charlie, but {} is not the same as {}."
+def tearDown(self):
+"tearDown runs after every test"
+def test_me(self):
+"this test should pass"
+first=1
+second=2
+self.assertEqual(first,1, \
+msg=self.msg.format(first, second))
+def test_failing(self):
+"this test should fail"
+first=1
+second=2
+self.assertEqual(second,1,
+msg=self.msg.format(first, second))
+def test_passing(self):
+"this test should pass, too"
+self.assertEqual("b", "b")
+def test_passing_a_failing_test(self):
+"this test should pass, even though it 'fails'"
+self.assertNotEqual("a", "b")
+if __name__=='__main__':
+unittest.main()
+
+
+
+
+This test suite adds a couple more test methods (beginning with “test”),
+along with the new methods **setUp**() and **tearDown**().
+
+This version has several enhancements:
+
+-   **setUp**() clears the deck between tests and otherwise creates what
+    the tests need to run. Here it’s trivial, but it might create a
+    database, set environment variables, or even spin up a new AWS
+    slice.
+
+
+
+-   **tearDown**() cleans up any mess the testing may have created – it
+    might get rid of file system artifacts generated by the tests,
+    terminate the AWS slice, delete database tables, etc. We haven’t
+    implemented it here (so, strictly speaking we could leave it out)
+    but we’ve got a placeholder.
+
+-   The test methods have **docstrings** – always a good idea.
+
+-   The message is moved to an instance variable. That’s OK because
+    we’re not really doing anything with it and it does reduce the
+    clutter.
+
+Most of the new tests included simply to demonstrate the resulting
+output, but I’d like to draw your attention to the
+**test**\_**passing**\_**a**\_**failing**\_**test**() method.
+
+
+
+
+def test_passing_a_failing_test(self):
+"this test should pass, even though it 'fails'"
+self.assertNotEqual("a", "b")
+
+
+
+
+It introduces a new test  **assertNotEqual**(). Use of a “negative”
+test like this can let you run a test that produces unexpected results
+(fails) but still “passes” without creating an explosion of failure
+output. Most of the **TestCase** tests have a negative form, and some
+developers use them in “negative test suites” to keep them cleanly
+isolated from the affirmative ones.
+
+Let’s have a look at the output and see if we can decode it.
+
+
+
+
+F...
+=================================================================
+FAIL: test_failing (__main__.FirstTest)
+this test should fail
+-----------------------------------------------------------------
+Traceback (most recent call last):
+File "c:\Users\pbarton\Desktop\_kirby_python\py_unit_2.py",
+line 20, in test_failing
+self.assertEqual(second,1, msg=self.msg.format(first, second))
+AssertionError: 2 != 1 : Sorry, Charlie, but 1 is not the
+same as 2.
+-----------------------------------------------------------------
+Ran 4 tests in 0.002s
+FAILED (failures=1)
+
+
+
+
+At the top we see that three tests have passed and only one failed. Yea!
+
+At the bottom, we get the statistics and a reminder of our failings. The
+text in the middle directs us to the issue and reports the message we
+provided, pinpointing the source of the problem.
+
+You’ll also notice that, while we get the **traceback** message, we
+didn’t actually crash the program\[18\]. That’s because the **TestCase**
+methods build a sandbox for themselves and execute the code there. If a
+test “crashes” the system, it simply captures the message and moves on.
+
+TestCase test methods
+---------------------
+
+You have many choices when deciding what sort of test to run. Here’s a
+list of “assert-like” tests available:
+
+| assertAlmostEqual        | assertIsNone          | assertNotIsInstance |
+|--------------------------|-----------------------|---------------------|
+| assertAlmostEquals       | assertIsNot           | assertNotRegex      |
+| assertCountEqual         | assertIsNotNone       | assertRaises        |
+| assertDictContainsSubset | assertLess            | assertRaisesRegex   |
+| assertDictEqual          | assertLessEqual       | assertRaisesRegexp  |
+| assertEqual              | assertListEqual       | assertRegex         |
+| assertEquals             | assertLogs            | assertRegexpMatches |
+| assertFalse              | assertMultiLineEqual  | assertSequenceEqual |
+| assertGreater            | assertNotAlmostEqual  | assertSetEqual      |
+| assertGreaterEqual       | assertNotAlmostEquals | assertTrue          |
+| assertIn                 | assertNotEqual        | assertTupleEqual    |
+| assertIs                 | assertNotEquals       | assertWarns         |
+| assertIsInstance         | assertNotIn           | assertWarnsRegex    |
+
+The tests that look like assertobjectEqual, for instance
+**assertDictEqual**(), are not really intended to be run directly\[19\].
+The **assertEqual**() method serves a wrapper and calls the right
+“flavor” of the test depending on what sort of objects you’re trying to
+compare.
+
+As usual, you can learn about these by invoking something like:
+
+|                                      |
+|--------------------------------------|
+|  help(unittest.TestCase) |
+
+This being said, I would call out a couple of these.
+**assertAlmostEqual**() and **assertNotAlmostEqual**() are used to
+compare floating point numbers where there could be garbage bits or
+imprecise results of operations\[20\]. Its constructor looks like this:
+
+
+
+
+assertAlmostEqual(first, second, places=None,
+msg=None, delta=None)
+
+
+
+
+The optional keyword argument ‘places’ determines how many decimal
+places to look out to determine equality (the default is 7 places). The
+optional keyword ‘delta’ allows you to set a specific difference (amount
+of slop) you’ll allow.
+
+There’s also a method that will allow you to ensure that a particular
+exception gets raised. The syntax is a bit different from the rest.
+Here’s its constructor.
+
+|                                                              |
+|--------------------------------------------------------------|
+| assertRaises(excClass, callableObj=None, \*args, \*\*kwargs) |
+
+You pass it the name of the exception and the object that’s supposed to
+raise the exception. Then you provide the arguments expected by the
+object that’s going to raise the exception. Here’s an example:
+
+
+
+
+#py_unit_3.py
+import unittest
+def raise_somthing(input1, input2):
+raise ZeroDivisionError
+class RaiseTest(unittest.TestCase):
+def test_raise(self):
+"demonstrates AssertRaises"
+self.assertRaises(ZeroDivisionError,
+raise_somthing, "input1", "input2")
+if __name__=='__main__':
+unittest.main()
+
+
+
+
+The idea is you don’t want the function to actually execute until its
+safely in the care of **unittest**, which will run it in a safe
+“sandbox” shielding your test script from crashing. As you can see, this
+test passes with flying colors.
+
+
+
+
+.
+---------------------------------------------------------------
+Ran 1 test in 0.000s
+OK
+
+
+
+
+If You Make a Mess, Clean It Up
+-------------------------------
+
+Many times, you’ll be opening files, creating directories, etc., with
+your application. How do you manage to go through all the debugging
+without completely trashing your file system? The last thing you want is
+your file system (or your client’s!) cluttered with hundreds of scratch
+files.
+
+Fortunately, Python has some tools available to help out. The
+**tempfile** library has several methods for creating temporary
+directories, files, etc. It will set these up in a directory
+(OS-appropriate) intended for scratch files, and for which your program
+will have sufficient permissions to work with.
+
+There’s a library called **shutil** that contains methods similar to
+those in the **os** library (with some overlap) that allow you to
+execute “macro scale” commands, just as you might a shell environment,
+to operate on large chunks of your file system. Because Python is
+OS-agnostic, it will automatically select the right “flavor” of shell
+command to use. Here’s a partial listing of its methods.
+
+
+
+
+ dir(shutil)
+abspath', 'chown', 'collections', 'copy', 'copy2', 'copyfile', 'copyfileobj', 'copymode', 'copystat', 'copytree', 'disk_usage', 'errno', 'fnmatch', 'get_archive_formats', 'get_terminal_size', 'get_unpack_formats', 'getgrnam', 'getpwnam', 'ignore_patterns', 'make_archive', 'move', 'nt', 'os', 'register_archive_format', 'register_unpack_format', 'rmtree', 'stat', 'sys', 'tarfile', 'unpack_archive', 'unregister_archive_format', 'unregister_unpack_format', 'which'
+
+
+
+
+Here is a **unittest** application that performs file system operations
+in a super-polite way:
+
+
+
+
+#py_unit_4.py
+import unittest
+import tempfile
+import os
+import shutil
+class RaiseTest(unittest.TestCase):
+def setUp(self):
+self.original_dir=os.getcwd()
+self.test_dir=tempfile.mkdtemp()
+os.chdir(self.test_dir)
+def test_tempfiles(self):
+"demonstrates creating temporary files"
+files_to_write=5
+for filenum in range(files_to_write):
+open("file"+str(filenum), 'w').close()
+myfiles=os.listdir()
+#do I have the right number of files
+self.assertEqual(len(myfiles), files_to_write)
+#check a name to be sure it's right
+lookfor="file0"
+self.assertTrue(lookfor in myfiles)
+def tearDown(self):
+os.chdir(self.original_dir)
+shutil.rmtree(self.test_dir)
+if __name__=='__main__':
+unittest.main()
+
+
+
+
+Let’s look at the pieces. In setup we “remember” the current
+directory\[21\], create a throwaway directory with
+**tempfile**.**mkdtemp**(), then make the new directory the current one.
+The last operation lets us avoid path specifications – we can operate on
+files in the current directory on a “first name basis” without further
+formalities.
+
+
+
+
+def setUp(self):
+self.original_dir=os.getcwd()
+self.test_dir=tempfile.mkdtemp()
+os.chdir(self.test_dir)
+
+
+
+
+The test simply writes a bunch of files to the current directory\[22\]
+and grabs a listing of the directory using the **os** library method
+**listdir**().
+
+
+
+
+files_to_write=5
+for filenum in range(files_to_write):
+open("file"+str(filenum), 'w').close()
+myfiles=os.listdir()
+
+
+
+
+Then it runs a couple test to see if the operation succeeded.
+
+
+
+
+#do I have the right number of files
+self.assertEqual(len(myfiles), files_to_write)
+#check a name to be sure it's right
+lookfor="file0"
+self.assertTrue(lookfor in myfiles)
+
+
+
+
+Here, we’re using the wrapper method **assertEqual**() this time to
+compare integers. We also introduce **assertTrue**() which does just
+what you think it does. Its philatic twin is **assertFalse**().
+
+Finally, we sweep the floor and take out the trash in **tearDown**():
+
+
+
+
+def tearDown(self):
+os.chdir(self.original_dir)
+shutil.rmtree(self.test_dir)
+
+
+
+
+Using **os**.**chdir**(), we change the current directory back to the
+one we started with (no surprises for the user this way). Using
+**shutil**.**rmtree**(), we delete the temporary directory and all its
+contents.
+
+Two words about **rmtree**() are in order. BE CAREFUL. This command will
+delete whatever directory you ask it to. And all its subdirectories. And
+all the files. Silently. Forever. That being said, it’s like a chain saw
+– while potentially dangerous it saves a lot of work. You don’t have to
+delete the files or subdirectories first, or any of that. It performs
+well when you use it safely\[23\].
+
+Separation of Responsibilities
+------------------------------
+
+So far we’ve physically located our unit testing with the code that’s
+being tested. That’s OK, but not typical – tests usually sit in
+dedicated modules and import the bits of code being tested. This is
+usually a good idea. The main code isn’t cluttered with tests so is
+easier to read. You don’t want tests running with your production code
+because it wastes resources. It’s also not unusual to ask one team to
+write tests and another to write the code to pass them – in this case
+physical separation is actually required.
+
+Here’s a small example of two files with such a separation of
+responsibility\[24\].
+
+
+
+
+#py_unit_4_test.py
+import unittest
+from py_unit_4_code import add_numbers
+class AnotherTest(unittest.TestCase):
+def test_addition(self):
+"can we add?"
+self.assertEqual(add_numbers(2,2), 4)
+if __name__=='__main__':
+unittest.main()
+
+
+
+
+
+
+#py_unit_4_code.py
+def add_numbers(first, second):
+return first + second
+
+
+
+
+As you can see, there’s an arm’s length between the two, and we’ve got
+really solid “code coverage” (the term used to figure out what fraction
+of the code is getting tested).
+
+Whew! I know that’s a lot of new material for you, but you’re hanging in
+there. We’ll get more practice as the course progresses, but let’s put
+together some tests.
+
+
+
+
+Exercise:
+Please improve on the code in the last example:
+
+Add some tests to ensure that test_addition() works for float, complex, dict, list, and None types.
+Likely, you’ll find that it’s not too robust. So add logic to filter inappropriate values. You won’t want it to fail silently, though. If it does, how is the calling routine going to know there’s a problem?
+
+Instead, raise a custom exception. In the case of an inappropriate data type, raise a WrongDataTypeError. In the case that one of the inputs is None, raise a NoneTypeError. You’ll find an example of a custom exception in Chapter 1.
+
+Be sure to write tests to ensure the correct exceptions are being raised.
+
+
+
+
+
+Data Structures
+===============
+
+So far we’ve covered Python objects that handle numeric data, *e.g*.,
+**str** and **float**. We’ve also looked at collections, *e.g*., the
+**list** and **dict** objects. Now, we’ll turn to more complicated data
+structures, functionality to create them, and how to put them to work.
+
+List Comprehensions
+-------------------
+
+In Python, it’s possible to build a list “on the fly” very succinctly
+using a list comprehension. These look a lot like **lambda** functions
+in that they are (usually) one line functions.
+
+Here’s the basic syntax:
+
+\[ object **for** object **in** iterable \]
+
+The entire expression is enclosed in square brackets and it utilizes the
+keywords **for** and **in**. If we wanted a **list** of integers, we
+might go:
+
+
+
+
+ [ x for x in range(10) ]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+
+
+We can amp this up a bit and do operations on the left side. Let’s say
+we wanted to multiply everything by 10.
+
+
+
+
+ [ x*10 for x in range(10) ]
+[0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+
+
+
+
+We can also include logic on the right side. Let’s say we only wanted
+even numbers.
+
+
+
+
+ [ x for x in range(10) if not x%2 ]
+[0, 2, 4, 6, 8]
+
+
+
+
+These list comprehensions can even be nested as deeply as you like.
+Here’s an example:
+
+
+
+
+ [str(x)+"!" for x in [y for y in range(10)]]
+['0!', '1!', '2!', '3!', '4!', '5!', '6!', '7!', '8!', '9!']
+
+
+
+
+You want to read these right to left. This bit is a **list**
+comprehension in its own right, returning an iterable:
+
+|                          |
+|--------------------------|
+| \[y for y in range(10)\] |
+
+Which is the iterable looped over by this bit of it:
+
+|                                                           |
+|-----------------------------------------------------------|
+| \[ str(x)+"!" for x in the list we just created\] |
+
+As you can appreciate, while these things are compact there’s a price to
+pay in terms of readability  especially as they get complex. If you
+feel overwhelmed by what looks like a spew of gobbledygook, don’t worry.
+Anything you can do with comprehensions, you do in a more verbose, and
+sometimes more transparent, fashion.
+
+Dict Comprehensions
+-------------------
+
+A close cousin to the **list** comprehension is the **dict**
+comprehension\[25\]. It’s set up exactly the same way except you use
+curly braces and something that looks like a key: value pair. The
+general syntax is:
+
+{ key : value for object in iterable }
+
+If we wanted to assign index numbers to characters, we could accomplish
+it with this short routine:
+
+
+
+
+#py_dict_comp_1.py
+chars="abcde"
+fstr="The letter {} is in position #{}"
+index_dict= { key: value for value, key in enumerate(chars) }
+print(index_dict)
+for some_char in "cda":
+print(fstr.format(some_char, index_dict[some_char]))
+
+
+
+
+
+
+Results:
+{'e': 4, 'b': 1, 'a': 0, 'c': 2, 'd': 3}
+The letter c is in position #2
+The letter d is in position #3
+The letter a is in position #0
+
+
+
+
+Nested lists
+------------
+
+It’s possible to make nested **dict** and **list** objects. Nested lists
+behave a lot like arrays in that you can address them by row, column
+elements. Here we create a **list** of **list** objects:
+
+
+
+
+#py_nested_list.py
+"how to use lists like arrays"
+one=[11, 12, 13]
+two=[21, 22, 23]
+three=[31, 32, 33]
+#make a list of lists
+arr=[one, two, three]
+print(arr)
+row=1
+col=2
+print("The value of the element of row {}, col {} is {}"\
+.format(row, col, arr[row][col]))
+
+
+
+
+
+
+Result:
+[[11, 12, 13], [21, 22, 23], [31, 32, 33]]
+The value of the element of row 1, col 2 is 23
+
+
+
+
+Nested dicts
+------------
+
+Nested **dict** structures are a really handy, intuitive, and
+transparent way to pass complicated bundles of information around your
+programs. The idea is that you can search for information based on some
+key. The associated value is another **dict** object, which can also be
+searched with a key, and whose associated value might be still another
+**dict**. And so on.
+
+This gives you the capability to index your information hierarchy. This,
+in turn, allows you to “drill down” into it using easy-to-understand
+code. This is the way setup files for many projects work. At the outer
+level you’ll have keys like ‘security’ and ‘font’. At the next level you
+might have access to ‘font-type’, ‘font-size’, etc.
+
+Here’s a quick example of how you might set up and use one:
+
+
+
+
+#py_nested_dict.py
+"how to use nested dicts"
+names = ['Snarky', 'Fang', 'Sara', ‘Barfy’]
+toys = ['bone', 'squrrel', 'squeaker']
+weights = [23,30,40]
+mydict = {}
+index =0
+for name, toy, weight in zip(names, toys, weights):
+mydict["dog_"+str(index)] = {'name': name,
+'toy': toy,
+'weight': weight}
+index+=1
+for key, value in mydict.items():
+print("{} : {}".format(key, value))
+fav_toy=mydict['dog_1']['toy']
+print("\nThe first dog's fav toy is: {}".format(fav_toy))
+
+
+
+
+Here are the results. I wonder what happened to “Barfy”\[26\]?
+
+
+
+
+dog_2 : {'toy': 'squeaker', 'weight': 40, 'name': 'Sara'}
+dog_1 : {'toy': 'squirrel', 'weight': 30, 'name': 'Fang'}
+dog_0 : {'toy': 'bone', 'weight': 23, 'name': 'Snarky'}
+The first dog's fav toy is: squirrel
+
+
+
+
+Arrays
+------
+
+We have seen that **list** objects can serve as arrays and are pretty
+easy to work with. From an efficiency perspective they have limitations.
+You’ll recall that a **list** can contain a real mixed bag of objects 
+it might have a **str**, then a **dict**, then another **list**.
+Moreover, you can swap any element of a **list** with any other object
+at any time.
+
+This is mighty darn convenient for the programmer, but a nightmare for
+the compiler because the size and shape of the **list**, and each of its
+elements is in real flux. It’s hard to make efficient use of memory,
+especially with large lists.
+
+Python does not have a native array object, but there’s one in the
+standard library. It behaves quite a bit like the **list** object but
+the elements all have to be the same. You can access it from any “garden
+variety” installation of Python without the need to have complicated
+math libraries like **sciPy** and **numPy** installed. Let’s take a
+look:
+
+
+
+
+#py_array.py
+"how to use arrays"
+from array import array
+#create an array
+arr=array('i', [11, 12, 13] )
+print("building an array")
+print(arr)
+#insert an element
+to_insert=666
+insert_pos=3
+arr.insert(insert_pos, to_insert)
+print("\ninserted {} at position {}".
+format(to_insert, insert_pos))
+print(arr)
+to_nuke=to_insert
+arr.remove(to_nuke)
+print("\ngot rid of {}".format(to_insert, insert_pos))
+print(arr)
+
+
+
+
+Here we access the **array**.**array** object, importing it into our
+namespace as simply ‘array’. To use it, we create an instance of
+**array**.**array**  explicitly telling it what variable type it will
+contain. Inserting and deleting elements is as easy as using a list.
+Here are the results:
+
+
+
+
+building an array
+array('i', [11, 12, 13])
+inserted 666 at position 3
+array('i', [11, 12, 13, 666])
+got rid of 666
+array('i', [11, 12, 13])
+
+
+
+
+The **array**.**array** object doesn’t accept an intact **list**  just
+its elements. That’s exactly how the information is stored in memory 
+as a linear sequence of objects\[27\]. As a result, they’re a little
+trickier to work with because you have to “roll your own” pointers.
+Here’s what I mean:
+
+
+
+
+#py_array_1.py
+"more on arrays"
+from array import array
+#create a new array
+rows=3; cols=3; index=0 #poor practice, by the way
+print("\nadding elements to a new array")
+new_arr=array('i')
+for row in range(rows):
+for col in range(cols):
+new_arr.insert(index,row*10+col)
+index+=1
+print(new_arr)
+print("the first row is: {}".format(new_arr[0:cols]))
+print("the second row is: {}".format(new_arr[cols:2*cols]))
+print("the sum of elements is {}".format(sum(new_arr)))
+
+
+
+
+Here we had to create and manage a pointer to load the **array**. Then
+to pick off rows we had to stride through in chunks of cols and
+grab cols elements.
+
+Here are the results:
+
+
+
+
+adding elements to a new array
+array('i', [0, 1, 2, 10, 11, 12, 20, 21, 22])
+the first row is: array('i', [0, 1, 2])
+the second row is: array('i', [10, 11, 12])
+the sum of elements is 99
+
+
+
+
+Here, we’ve created an **array** of integers, but there are lots of
+other options. Exactly which other data types are supported depends on
+your C compiler (or the one against which your python.exe was compiled
+against). These will take several flavors of integers (signed, unsigned,
+and of different widths), floating points, and characters.
+
+It’s also possible to build them directly from file system objects with
+the **fromfile** method. Other constructors allow creating them from
+strings or raw bytes and extend them using an iterable object (just as
+you would a **list**). . The docs\[28\] provide all the specifics.
+
+Nice job so far. Now let’s try some of this out.
+
+
+
+
+Exercise:
+
+Working with the array code you’ve just seen, find a way to identify the data in each column print it out (hint: think in terms of the stride).
+Create a dict of the columns that looks like this:
+
+{0: (0, 10, 20), 1: (1, 11, 21), 2: (2, 22, 32)}
+Using a dict comprehension.
+Extra credit: find a way to transpose this array (swap rows and columns so that the element of (row 1 col 0) ends up at (row 0 col 1)).
+Hint: it may be a good idea to create an array with element values chosen systematically to reflect their (row, column) position. That can be much easier to debug. Feel free to use any of the code from the examples or from elsewhere in the project code file.
+
+
+
+
+GUIs
+====
+
+Python has a graphical user interface (GUI) tool, **tkinter**, as part
+of most standard installations. It’s good at creating “quick and dirty”
+user interfaces without reliance on outside tools. In this chapter,
+we’ll explore how to create some basic functionality\[29\].
+
+If you’re using an IDE, take an appreciative moment to study its
+components (or have a look at your OS’ GUI). You’ll likely see a bunch
+of rectangular containers. Some you can type into, others display
+information, and still others do both. They may other objects visible
+within the containers. These containers are generally called **frames**.
+Likely, you also have commands you can invoke by clicking on a
+**button** and **menus** that expand and fold on demand. You can
+probably make selections about what you want your code to do.
+
+Basics
+------
+
+A GUI works in its own sandbox called a master frame. The master frame
+contains objects called **widgets**  things like **buttons**, **text
+boxes**, and other **frame** objects. The **widgets** provide
+functionality and a **geometry manager** places them spatially within
+the **frame**(s).
+
+This will make more sense shortly. Let’s get started with a skeletal
+framework which we’ll flesh out with an example taken from the tkinter
+docs.
+
+A First GUI
+-----------
+
+
+
+
+#py_gui.py
+"gui basics"
+from tkinter import *
+class Application(Frame):
+pass
+root = Tk()
+app = Application(master=root)
+app.mainloop()
+
+
+
+
+Here, we’re teeing up a master container object by loading it up with an
+instance of the main **tkinter** app, **Tk**\[30\]. The last line sets
+up the main **tkinter** app to poll the widgets continuously to see if
+they need to be updated, are asking to trigger an action, etc. If we run
+this, we won’t see anything but an empty frame  we’ll want to add some
+content to make it a bit more interesting\[31\]. Perhaps the most boring
+GUI ever.
+
+But there are many things we can do to upgrade. Let’s check some of
+these out.
+
+
+
+
+#py_gui_1.py
+from tkinter import *
+class Application(Frame):
+def say_hi(self):
+print("Hi there, everyone!")
+def createWidgets(self):
+self.QUIT = Button(self)
+self.QUIT["text"] = "Quit"
+self.QUIT["fg"] = "red"
+self.QUIT["command"] = self.quit
+self.QUIT.pack({"side": "left"})
+self.hi_there = Button(self)
+self.hi_there["text"] = "Hello",
+self.hi_there["command"] = self.say_hi
+self.hi_there.pack({"side": "left"})
+def __init__(self, master=None):
+Frame.__init__(self, master)
+self.pack()
+self.createWidgets()
+root = Tk()
+app = Application(master=root)
+app.mainloop()
+
+
+
+
+You’ll notice that we’ve added three methods to our master **frame**.
+Let’s start with \_\_**init**\_(). This does three things. First, it
+calls the \_\_**init**\_\_() method on its parent object  there’s no
+need to reinvent any of its functionality here. Next, it invokes a
+geometry manager **pack**() – think of this as the guy who moves all the
+furniture (widgets). Finally, we call the **createWidgets**() method to
+customize the contents of the master **frame**.
+
+The **createWidgets**() method creates two instances of the **Button**
+and use the pack geometry manager to load it into the master **frame**.
+This happens for the “hi\_there” **button** with these commands:
+
+
+
+
+self.hi_there = Button(self)
+self.hi_there.pack({"side": "left"}) #same as pack (side=LEFT)
+
+
+
+
+The **widgets** have a breath-taking number of methods and attributes
+that allow us customize their appearance, behavior in response to
+mouse-clicks, when to take focus, which geometry manager to use, etc.
+You can discover all these using **help**().
+
+Typically, you set **widget** attributes, etc., by providing them as
+keyword arguments. An easy way to review the keywords is by using
+calling the **keys**() method\[32\] on the widget instance by going
+something like:
+
+|                       |
+|-----------------------|
+| self.hi\_there.keys() |
+
+For the **Button** object, just to give you an idea, here are some of
+your choices:
+
+| activebackground | Disabledforeground  | pady           |
+|------------------|---------------------|----------------|
+| activeforeground | Fg                  | relief         |
+| anchor           | Font                | repeatdelay    |
+| background       | Foreground          | repeatinterval |
+| bd               | Height              | state          |
+| bg               | Highlightbackground | takefocus      |
+| bitmap           | Highlightcolor      | text           |
+| borderwidth      | Highlightthickness  | textvariable   |
+| command          | Image               | underline      |
+| compound         | Justify             | width          |
+| cursor           | Overrelief          | wraplength     |
+| default          | Padx                |                |
+
+For the “hi\_there” button, we’ll address only a few of these and accept
+the default values for the others.
+
+
+
+
+self.hi_there["text"] = "Hello",
+self.hi_there["command"] = self.say_hi
+self.hi_there.pack({"side": "left"})
+
+
+
+
+The middle line references the **say**\_**hi**() method we’ve introduced
+and tells **tkinter** to run the method when the **button** is clicked.
+
+When we run this code, we get a dialogue window something like the one
+below. You might have to hunt around for it if you’re using multiple
+screens or have lots of windows open.
+
+> 
+
+Creating interactive GUIs
+-------------------------
+
+This first GUI is fully functional, but not so interesting to interact
+with. We’d really like to create a situation where the widgets can talk
+to one another, trigger some intelligent behavior behind the scenes, and
+interact with the user. Let’s start with user interaction.
+
+**Tkinter** has several widgets that facilitate this including:
+
+-   Entry – allows user to type input
+
+-   Text - display text
+
+-   Radiobutton – exclusive selection among options
+
+-   Listbox – nonexclusive selection among options
+
+-   Menu – just what you think
+
+-   …. as well as several “canned” dialogue boxes (Yes/No, etc.)
+
+Checkboxes
+----------
+
+The next sample application demonstrates the use of check boxes to
+gather user input. Here, we’re trying to create something like:
+
+> 
+
+
+
+
+#!/usr/bin/env python3
+#py_gui_2.py
+from tkinter import *
+class Application(Frame):
+def report(self):
+status = [self.status1.get(), # a list of results
+self.status2.get(),
+self.status3.get()
+]
+print("Checkbox states:", status)
+if not sum(status):
+print("Please select a team.")
+return
+if status[0]:
+print(self.ck1["text"], "GO CUBS!")
+self.ck1.deselect()
+if status[1]:
+print(self.ck2["text"])
+self.ck2.deselect()
+if status[2]:
+print(self.ck3["text"])
+self.ck3.deselect()
+def createWidgets(self):
+"populate master frame"
+Label(text="Select Favorite Team").pack() #returns None
+self.b1 = Button(text="List Teams", command=self.report)
+self.b1.pack(side=TOP)
+#tkinter IntVar objects are integer-like objects
+self.status1, self.status2, self.status3 = \ #tuple created on
+IntVar(), IntVar(), IntVar() #right, unpacked left
+self.ck1 = Checkbutton(text="Cubs", variable=self.status1)
+self.ck2 = Checkbutton(text="Cards", variable=self.status2)
+self.ck3 = Checkbutton(text="Mets", variable=self.status3)
+self.ck1.pack(side=LEFT)
+self.ck2.pack(side=LEFT)
+self.ck3.pack(side=LEFT)
+def __init__(self, master=None):
+Frame.__init__(self, master)
+self.pack()
+self.createWidgets()
+root = Tk()
+app = Application(master=root)
+app.mainloop()
+
+
+
+
+In this app, each **Checkbutton** object is instanced with a command
+like:
+
+|                                                            |
+|------------------------------------------------------------|
+| self.ck1 = Checkbutton(text="Cubs", variable=self.status1) |
+
+The “variable” parameter associates the state of this box with an
+**IntVar** object (**tkinter’s** version of an integer)\[33\]. When
+checked, this takes on a value of 1; otherwise it’s 0.
+
+In **report**(), the **get**() method is executed to read its value. The
+**get**() method is generally how you interrogate any widget’s
+user-provided value.
+
+Radio Buttons
+-------------
+
+Radio buttons are exclusive – each collection of them\[34\] can only
+have one active at a time. Here’s a version of the previous example,
+refactored a bit. Here, we’ve “flattened” the app – everything is within
+‘master’ (which is an instance of **Tk**). This is not particularly good
+practice for real apps – you will typically use **frames** and
+frames-within-frames to discretize the widgets.
+
+
+
+
+#!/usr/bin/env python3
+#py_gui_3.py
+from tkinter import *
+def report():
+print(txt[status1.get()])
+master = Tk()
+status1 = IntVar()
+Label(master, text="What's your favorite team?").pack()
+b1 = Button(master, text="Display", command=report)
+b1.pack(side=TOP)
+txt = ["Cubs", "Cards", "Mets"]
+radios = [Radiobutton(master, value=0),
+Radiobutton(master, value=1),
+Radiobutton(master, value=2)]
+for radio, s in zip(radios, txt):
+radio["text"] = s
+radio["variable"] = status1
+radio.pack(side=LEFT)
+master.mainloop()
+
+
+
+
+If you run the app, you should see something like this:
+
+
+
+Wrangling Widgets with Frames
+-----------------------------
+
+It’s generally desirable to herd related widgets into their own
+**frame** containers to separate functionality and to ease maintenance.
+Here’s an example of how this might be accomplished.
+
+
+
+
+#!/usr/bin/env python3
+#py_gui_4.py
+from tkinter import *
+#!/usr/bin/env python3
+from tkinter import *
+#root container object
+root = Tk()
+root.geometry("400x300")
+root.title("Play with frames")
+#a frame as 'child object' to root
+f1 = Frame(root, bg="grey")
+Label(f1, text="frame 1", bg="grey").pack(side=LEFT)
+f1.pack(expand = True, fill=BOTH)
+f2 = Frame(root, bg="yellow")
+Label(f2, text="frame 2", bg="yellow").pack(side=BOTTOM)
+f2.pack(expand=True, fill=BOTH)
+f3 = Frame(root, bg="#00ffff") #alternative specification
+Label(f3, text="frame 3", bg="#00ffff").pack(side=RIGHT)
+f3.pack(expand=True, fill=BOTH)
+f3a = Frame(f3, bg="white") #alternative specification
+Label(f3a, text="subframe 3a", bg="white").pack(side=RIGHT)
+f3a.pack(expand=True, fill=BOTH)
+root.mainloop()
+
+
+
+
+Note that the **pack**() statements include values for the ‘expand’ and
+‘fill’ parameters. These describe the behavior of the objects as the
+outermost container is resized. In order to get the expected behavior
+(everything expanding / contracting uniformly), you need to remember to
+set both.
+
+When you run the program, you should see something like this:
+
+
+
+Building Menus
+--------------
+
+Did you ever wonder how they make drop down menus used to run GUI apps
+like Wing? Wonder no more — in this section we’ll learn how to build a
+simple menu from scratch.
+
+The first step is to construct a “root menu” upon which we’ll build
+child objects to control the content displayed and actions performed.
+
+
+
+
+root = Tk() #an instance of the main Tk class
+menubar = Menu(root) #add a Menu widget to it
+root.config(menu=menubar) #... and let the main class know about it
+
+
+
+
+Each individual member of the root menu is another **Menu** widget. To
+make a single element (like File on the Wing menu) we create an instance
+of **Menu** then add each bit of the drop-down list as its own
+component. Something like:
+
+
+
+
+filemenu = Menu(menubar)
+filemenu.add_command(label="New", command=file_new)
+
+
+
+
+The **add**\_**command()** identifies the listener (the routine that
+runs when the component is selected and provides the label the user
+sees). When the main menu is fully loaded, it’s added to the root menu
+with the root menu’s **add**\_**command()** method:
+
+|                                                  |
+|--------------------------------------------------|
+| menubar.add\_cascade(label="File",menu=filemenu) |
+
+Here’s an example of a complete (albeit sparse) menu implementation:
+
+
+
+
+#py_gui_5.py
+from tkinter import *
+def placeholder(): print("placeholder event")
+file_new=file_close=file_close_all=refactor_rename=\
+refactor_move=placeholder
+root = Tk()
+menubar = Menu(root)
+root.config(menu=menubar)
+filemenu = Menu(menubar)
+filemenu.add_command(label="New", command=file_new)
+filemenu.add_separator()
+filemenu.add_command(label="Close", command=file_close)
+filemenu.add_command(label="Close All",command=file_close_all)
+menubar.add_cascade(label="File",menu=filemenu)
+editmenu = Menu(menubar)
+editmenu.add_command(label="Rename Symbol",
+command=refactor_rename)
+editmenu.add_command(label="Move Symbol",
+command=refactor_move)
+menubar.add_cascade(label="Refactor",menu=editmenu)
+root.mainloop()
+
+
+
+
+
+
+Text and Entry Widgets
+----------------------
+
+You will often need to update information displayed to the user on the
+basis of some user interaction. Text boxes provide one way to do so.
+
+You can create a text widget by going something like:
+
+|                                       |
+|---------------------------------------|
+| text = Text(root, height=6, width=50) |
+
+Working with the text within is a bit weird, but OK once you get the
+hang of it. To add text, you use the **insert**() command, providing an
+insertion point and some text. For instance, to add a few baseball teams
+you can go:
+
+|                                           |
+|-------------------------------------------|
+| text.insert("end", "Cubs\\nCards\\nMets") |
+
+Here, the “end” positional argument is already known to the Text widget,
+as is the alias **END**. To get information out, you need to specify
+both the beginning point and end point using this syntax:
+
+line number.position within line
+
+… unless you’re using an alias. This reads all the contents into the
+variable ‘data’.
+
+
+
+
+line = entry_line.get()
+data = text.get(line + ".0", END)
+
+
+
+
+To delete content, you can use the **delete**() method of the **Text**
+widget using the same syntax as **get**(). Here’s an example that ties
+some of these concepts together:
+
+
+
+
+#py_gui_6.py
+from tkinter import *
+def find_text():
+line = entry_line.get()
+look_for = entry_find.get()
+data = text.get(line + ".0", END)
+if look_for in data:
+print("Yay, we found {}!".format(look_for))
+else:
+print("Sorry, no {} here.".format(look_for))
+def delete_text():
+line = entry_line.get()
+all_text=text.get(line + ".0", END)
+look_for = entry_find.get()
+all_text=all_text.replace(look_for + '\n', '')
+text.delete(line + ".0" , 'end')
+text.insert("end", all_text)
+root = Tk()
+Label(root, text="Starting In This Line:").pack()
+entry_line = Entry(root)
+entry_line.pack()
+Label(root, text="Find this text").pack()
+entry_find = Entry(root,)
+entry_find.pack()
+b1 = Button(root, text="Find", command=find_text)
+b1.pack()
+b2 = Button(root, text="Delete", command=delete_text)
+b2.pack()
+b3 = Button(root, text="Quit", command=root.destroy)
+b3.pack()
+text = Text(root, height=6, width=50)
+text.insert("end", "Cubs\nCards\nMets")
+text.pack()
+root.mainloop()
+
+
+
+
+Here’ s the resulting GUI:
+
+
+
+Built in Coolness
+-----------------
+
+**Tkinter** has several compound widgets already built into the system.
+I’ll show you a couple here so you know about them and leave further
+exploration to you.
+
+There are several really routine interactions your GUI will have with
+the user – things like asking Yes or No, displaying a warning that he’s
+about to destroy his root directory. Many of these are already baked in.
+Here’s an example
+
+
+
+
+if askyesno('Check chocolate', 'Sure you want chocolate'):
+print("OK. Chocolate it is.")
+else:
+print("I didn't think so.")
+
+
+
+
+This code grabs the **tkinter**.**messagebox**.**askyesno**() tool. The
+two arguments specify the dialogue box’s header and the second poses the
+question. The return is **True** (yes) or **False** (no). Right out of
+the box, it gives you a professional-looking dialogue box like this:
+
+
+
+Here’s the complete app:
+
+
+
+
+#py_gui_7.py
+from tkinter import *
+from tkinter.messagebox import *
+def double_check_vanilla():
+print("You want vanilla and I trust you.")
+def double_check_chocloate():
+if askyesno('Check chocolate', 'Sure you want chocolate'):
+print("OK. Chocolate it is.")
+else:
+print("I didn't think so.")
+root = Tk()
+root.geometry("200x50")
+b1 = Button(root, text="Chocloate", command=double_check_chocloate)
+b1.pack(side=TOP)
+b2 = Button(root, text="Vanilla", command=double_check_vanilla)
+b2.pack(side=TOP)
+root.mainloop()
+
+
+
+
+You can explore these other **tkinter**.**messagebox** options at your
+leisure:
+
+| askokcancel    | showerror   |
+|----------------|-------------|
+| askquestion    | showinfo    |
+| askretrycancel | showwarning |
+| askyesnocancel |             |
+
+Here are couple more libraries of interest:
+
+-   **tkinter**.**colorchooser** – great color selection dialogs
+
+-   **tkinter**.**filedialog** – all sort of GUI file system exploration
+    tools
+
+These, too, work right out of the box:
+
+
+
+
+(rgb_color,hex_color) = askcolor()
+file_to_open = askopenfilename()
+
+
+
+
+… that’s it! Here’s some code that demonstrates:
+
+
+
+
+#py_gui_8.py
+from tkinter import *
+from tkinter.colorchooser import askcolor
+from tkinter.filedialog import askopenfilename
+def set_color():
+(rgb_color,hex_color) = askcolor()
+if ( hex_color ):
+print(hex_color, rgb_color)
+btn_color.config(background=hex_color)
+def read_file():
+file_to_open = askopenfilename()
+f = open(file_to_open, "r")
+lines = f.readlines()
+for line in lines: text.insert(END, line)
+def delete_text(): text.delete(1.0,END)
+root = Tk()
+btn_color = Button(root, text="Choose a Color",
+command = set_color)
+btn_color.config(height=1, font=("Cambria", 10, 'italic'))
+btn_color.pack(expand=YES, fill=BOTH)
+Button(text="Open File", command=read_file).pack()
+Button(text="Clear", command=delete_text).pack()
+text = Text(height=10, width=70)
+text.pack()
+root.mainloop()
+
+
+
+
+Parting Thoughts
+----------------
+
+We’ve only covered the **pack**() geometry manager here – mostly because
+it’s the easiest to use. If you really want granular control over the
+layout, you’ll want to consider using the **grid**() instead. This gives
+you control over what row and column of an imaginary grid that your
+objects should live in. You can read all about it when you get
+time\[35\].
+
+You may be tempted to combine the ease of use of **pack**() and the
+accuracy of **grid**(). You can do that, but don’t create a situation
+where you’ve got two different geometry managers controlling objects in
+the same container. This will produce highly unpredictable results which
+are nigh-near impossible to debug.
+
+Finally, **tkinter** is not your only choice when selecting a GUI tool,
+it’s just Python’s official set of bindings to **Tcl** (pronounced
+“tickle”, believe it or not). Others include **PyQt**, **wxPython**, and
+**PyGTK**. Wikipedia has great article that summarizes your
+choices\[36\].
+
+OK. Now you’re ready to get some GUI dirt under your fingernails! You’ve
+seen how to use the required widgets, so let’s put them in harness.
+
+
+
+
+Exercise:
+Please create a GUI that produces this interface:
+
+… and the promised functionality.
+Extra credit: Add info dialogs to warn the user of the dire consequences of changing the case on their choices.
+Hint: you’ll probably find it useful to use internal Frame objects to organize your widgets.
+
+
+
+
+Working With the Web
+====================
+
+Your Python career will very likely involve at least some web-based
+content delivery. While this class is not focused on front-end
+development, it’s a good idea to understand the basics. Whether you’re
+using Python tools like Django\[37\] and Flask\[38\] or even poking
+around with an Apache web server working in Java all the same things
+need to happen.
+
+This chapter will show you how to build a simple, but complete, web
+server app from the ground up.
+
+So, what do we need to build a web server? We need a way to produce
+content, a way to get it to the user, a way to get information from the
+user, and a way for the user to display the content nicely. That’s it.
+
+Naturally, there are other issues like security, load balancing,
+database interactions, etc. but these are all built on the basics we’ll
+work through here.
+
+For this topic, let’s start in the “middle” – an HTML (web) page that
+will load into a browser and handle the content. Then we’ll work
+“outwards” to build the page using Python within a context that can
+interrogate it and process information\[39\].
+
+Here’s some HTML code to get started with:
+
+
+
+
+!--py_order_form.html--
+HTML
+HEADTITLETickets/TITLE/HEAD
+BODY
+h3centerOrder Form/center/h3
+center
+form METHOD="get" ACTION="/cgi-bin/py_tix.py"
+Please tell us who you are and what you'd like
+brFirst Name INPUT TYPE="text" NAME="firstname"
+brLast Name INPUT TYPE="text" NAME="lastname"
+brFav Team INPUT TYPE="text" NAME="team"
+br
+center
+INPUT TYPE="submit" VALUE="Submit the Form"
+INPUT TYPE="reset" VALUE="Clear the Form"
+/center
+/form
+/BODY
+/HTML
+
+
+
+
+I expect that you’re familiar with HTML generally, but here are a few
+“highlights”:
+
+-   Tags demark code blocks look like this h1 /h1. Most
+    need to be opened and closed for the page to work reliably. Some
+    tags, like br don’t have a “close” version – they’re
+    free-standing.
+
+-   Whitespace doesn’t matter – except for readability.
+
+-   HTML serves as the outermost code block. The BODY is
+    what the user sees in the main part of the page.
+
+-   A form is the interactive bit. It might contain
+    INPUT fields for the user to type into (or radio buttons,
+    check buttons, etc.)
+
+Note that you will never see HTML this simple “in the wild.” Real web
+pages are orders of magnitude more complicated, use javascript, style
+sheets, and employ other tools well out of the scope of this course.
+
+If you open this file in your browser, you’ll see something like this:
+
+
+
+The buttons on this form won’t do anything – they haven’t a clue what to
+do, and there’s nobody to tell them. What we need to do is link this up
+to an app that will establish a communications link. For this we will
+use a network connection using a tool called a “Common Gateway
+Interface” (CGI)\[40\]. It will work with the program referenced in the
+form tag in the above example:
+
+|                                                        |
+|--------------------------------------------------------|
+| form METHOD="get" ACTION="/cgi-bin/py\_tix.py" |
+
+Here, the “get” method means that the server will retrieve information
+the user has provided to the form. It will be processed by the script
+“py\_tix.py” from a subdirectory of the current working directory\[41\].
+The CGI app (whatever it is) will have logic to understand that the HTML
+input fields will each have their own, addressable name (“firstname” in
+the example below) and will associate it with a user-provided value.
+Here’s one of the input tags:
+
+|                                                                 |
+|-----------------------------------------------------------------|
+| brFirst Name INPUT TYPE="text" NAME="firstname" |
+
+The CGI app can’t do much with the HTML page we’ve just viewed as a file
+in the browser. It needs to be “served” by some sort of app that has
+“listeners” for actions.
+
+So let’s build a server. This is absolutely not a server for the
+ages\[42\], but we can make one easily. First, open a command window and
+navigate to the directory where “py\_order\_form.html” resides. This
+will be the root directory for our server – file names and paths will be
+specified relative to this directory. Next, type this command (without
+the “$”)\[43\]:
+
+|                                                     |
+|-----------------------------------------------------|
+| $ python –m http.server –-bind localhost –-cgi 8000 |
+
+This will start a request handler on port 8000\[44\], binding it to
+whatever your platform uses as “localhost”\[45\]. When it’s running,
+you’ll get a play-by-play color commentary on server’s activities. This
+is where you can check for any errors caused by HTML pages not found,
+Python back-end scripts, etc.
+
+Now that we have a server, we can talk to it. So let’s do it. Instead of
+opening the HTML as a file, we’ll open it through our server by typing
+this URL into the browser:
+
+|                                                                                                                 |
+|-----------------------------------------------------------------------------------------------------------------|
+| http://localhost:8000/py\_order\_form.html |
+
+Et voilà! Here’s the form as it appeared in the browser window after
+filling in the fields but before clicking “Submit the Form”. Yes, it
+looks the same as before – the only difference is the back end.
+
+
+
+Now we can expect something to actually happen because the buttons are
+connected to some logic. The logic lives in the /cgi-bin/py\_tix.py
+file. Here’s what it looks like:
+
+
+
+
+#!/usr/bin/env python3
+import cgi
+fields = cgi.FieldStorage()
+html = “new HTML code discussed below”
+if "firstname" in fields: firstname = fields['firstname'].value
+if "lastname" in fields: lastname = fields['lastname'].value
+if "team" in fields: team = fields['team'].value
+print(html.format(firstname, lastname, team))
+
+
+
+
+The real magic happens in the first two lines:
+
+
+
+
+import cgi
+fields = cgi.FieldStorage()
+
+
+
+
+Here, we’re importing the **cgi** library and executing its
+**FieldStorage**() method. This effectively ransacks your HTML page for
+all the data in your named fields and create a dictionary-like object
+you can work with using code like this:
+
+|                                         |
+|-----------------------------------------|
+| firstname = fields\['firstname'\].value |
+
+You’ll note that we first test for the existence of the key ‘firstname’
+– that’s probably unnecessary here, but a reasonable way to make the
+code resilient to changes in the web page. These CGI parsing routines
+are not so easy to debug since you’re not directly executing them.
+
+To complete the routine, we’ll provide enough HTML code to render
+returned content. We can do that with an ordinary string:
+
+
+
+
+html = ‘’’\
+HTML
+BODY
+h3centerLet's make sure I've got it right/center/h3
+center
+form METHOD="post" ACTION="/index.cgi"
+And you are:
+br{}
+br{}
+br... and you like the {}
+br
+/BODY
+‘’’
+
+
+
+
+Note that the form header’s method used here is “post”. That signals
+that it’s returning information to the calling object.
+
+In the last line of the Python script we use **print** to produce a
+formatted version of the HTML string. This works a little differently
+than normal. Instead of printing to the console, we’re streaming it back
+over the network connection to the browser.
+
+The browser dutifully renders the page, using the new information
+gleaned from the form fields, yielding:
+
+
+
+HTML Tools
+----------
+
+Although this is not a course in front-end development, there are a few
+things you will want to know about. The next script introduces tables
+and several additional forms of user input.
+
+The user inputs are similar to what you’ve already seen working with
+GUIs, so I won’t elaborate except to show you the HTML tags to use. For
+aesthetics and ease of organization we can use an HTML table object.
+Tables bear a little explanation.
+
+-   They’re enclosed by TABLE/TABLE tags
+
+-   Rows are delimited by tr and /tr tags
+
+-   Columns (row elements) are delimited by td and /td
+    tags
+
+-   It’s possible to span rows or columns using span tags
+
+-   Tables can be nested for reasonably granular control over the
+    layout. Many web pages are built as giant tables …of tables … of
+    tables.
+
+Let’s now upgrade our form to incorporate some of HTML’s version of the
+**tkinter** input widgets. Using off-the-shelf HTML fields, we can
+easily produce this form:
+
+
+
+This can be accomplished by adding a bit more code to our order form.
+Here’s how to construct a drop-down list using the **SELECT** object:
+
+
+
+
+!--py_order_form_1.html--
+form METHOD="get" ACTION="py_tix_1.py"
+SELECT NAME="seating"
+OPTION SELECTED Bleacher
+OPTIONBox
+OPTIONConcourse
+/SELECT
+
+
+
+
+Here, we’ve provided the general object a name (“seating”) but haven’t
+explicitly named the individual objects. As you’ll see later, we can
+simple query the general object for values like “Bleacher” or “Box” when
+it’s returned. **SELECTED** is optional and provides the default value.
+
+Radio button clusters are specified with an **INPUT** object of type
+“**radio**”. These work pretty much like the radio buttons in the GUI in
+that they’re within the same group they are exclusive – only one can be
+“on” at a time. If you want to create a default, use the optional
+**CHECKED** parameter. Here’s how to make some:
+
+
+
+
+INPUT TYPE="radio" NAME="payment"
+VALUE="credit" CHECKEDCredit
+INPUT TYPE="radio" NAME="payment"
+VALUE="cash"Cash
+INPUT TYPE="radio" NAME="payment"
+VALUE="kid"First-born kid
+
+
+
+
+Membership in a cluster of buttons is done with **NAME** – each element
+with the same name is part of the same group. When interrogated, the
+field “payment” will yield up the associated **VALUE** e.g., “credit” or
+“kid”.
+
+Checkboxes work just like radio buttons except choices are
+non-exclusive. You can make them using an **INPUT** object of type
+“**checkbox**”. Here, we’ve provided each individual object the name
+“foodbev”. To set defaults, you can use **CHECKED** on one or more of
+the options.
+
+
+
+
+INPUT TYPE="checkbox" NAME="foodbev"
+VALUE="beer"Beer
+INPUT TYPE="checkbox" NAME="foodbev"
+VALUE="mystery meat"Mystery Meat
+INPUT TYPE="checkbox" NAME="foodbev"
+VALUE="caramel corn"Caramel Corn
+
+
+
+
+When interrogated, the “foodbev” objects will yield a list-like object
+of the **VALUE**s provided such as “beer” or “caramel corn”.
+
+The back-end processing for this page is contained in
+./cgi-bin/py\_tix\_1.py. This compares, much more than contrasts, with
+the first script. The principal difference is in the way we access the
+checkbox object. You’ll recall that, since checkboxes are non-exclusive,
+they can have multiple values. You can access them by using their
+**getlist** method. This bit of code simply knits them together into a
+string:
+
+
+
+
+if "foodbev" in fields:
+foodbev =" and ".join(fields.getlist('foodbev'))
+
+
+
+
+The HTML page returned is specified as a formatted multi-line string as
+before:
+
+
+
+
+html=\
+"""
+HTML
+BODY
+h3centerOK, You're going to have fun!/center/h3
+center
+form METHOD="post" ACTION="/index.cgi"
+Your name is {} {}.
+br
+You're going to pay by {}.
+br
+And you're going to see the {} play in {} seats.
+br
+You plan to consume {}.
+brbr
+Enjoy the game!
+/form
+/BODY
+/HTML
+"""
+
+
+
+
+With some sensible outputs, it will yield something like:
+
+
+
+
+OK, You're going to have fun!
+Your name is Pat Barton.
+You're going to pay by credit.
+And you're going to see the Cubs play in Bleacher seats.
+You plan to consume beer and mystery meat and caramel corn.
+
+
+
+
+Templating Tools
+----------------
+
+If you get serious about building HTML sites, you’ll likely use a tool
+like Django\[46\]. One of its many virtues is its built-in templating
+tool. Django is beyond the scope of this class, but here I’ll highlight
+some of what you can do.
+
+Templates provide you with the ability to maintain bits of your HTML as
+separate code blocks and reuse them. Let’s suppose you wanted a
+“boilerplate” web page into which you wanted to insert different content
+depending on the circumstances. You could build it something like:
+
+
+
+
+!--boilerplate.html--
+html body
+{% block content %}
+{% endblock %}
+/body /html
+
+
+
+
+Here, we’ve defined a section of the HTML as “content”. To use the code
+in another HTML page you can simply “extend” it . When run it through
+Django’s templating engine (sort of a pre-processor that knows about the
+“tags” - the stuff inside curly braces) the necessary substitutions will
+be made automatically. To implement, you could do something like:
+
+
+
+
+!—-new_content.html--
+html body
+{% extends “boilerplate.html” %}
+{% block content %}
+My new bawesome /b content here.
+{% endblock %}
+/body /html
+
+
+
+
+Django also allows insertion of tags to serve as placeholders for
+logical branching, looping, and insertion of dynamically-generated
+content. The templating engine provides is the ability to take intact
+Python objects and render them into automatically-generated HTML code.
+
+In a typical application, you may want to query a database and display
+all its results in a table. Since you usually don’t know how many rows
+will be returned, you’ll want to be flexible about the table’s size.
+Here is an example, taken from a web page that renders contents from a
+database of snake images\[47\].
+
+
+
+
+{% if snakes %}
+table
+{%for snake, id, species, filename in snakes %}
+tr
+td colspan='2'  {{species}} /td
+td colspan='6'  {{filename}} /td
+/tr
+{%endfor%}
+/table
+{%else%}
+Sorry, no snakes
+{% endif %}
+
+
+
+
+By inspection, you might note that you can insert logical branching with
+{% if %}, {% else %} and {% endif %} tags. A **for** loop is constructed
+with {% for %} and {% endfor %} tags. Individual values are inserted
+between {{double braces}}.
+
+The name “snakes” refers an iterable Python object constructed from a
+database query that produces one row of data each iteration. The column
+values “snake”, “id”, “species”, and “filename”, are available within
+the loop by references such as {{species}}. The templating system does
+not inhibit inclusion of more complex encoding. It could be enhanced
+with style components, div tags, etc.
+
+From a 10,000 foot perspective, if the database contains any snakes, the
+web page will contain a TABLE to represent them, otherwise it’ll report
+“Sorry no snakes”. The TABLE will contain a row for each snake; and each
+row will contain the species and name of the file that contains its
+image. Since the TABLE is dynamically generated, it will contain exactly
+the number of rows required. All with about 10 lines of code. Not bad,
+right?
+
+OK, now you’re ready to rock ‘n roll with your own web app.
+
+
+
+
+Exercise:
+Please make your own form for on-line ordering from your favorite pizza place. Allow the user to select which meat (if any), type of cheese, crust type, and beverage.
+Assign some reasonable, but made up calories for each ingredient. Assuming 800 calories/hour on a Stairmaster, report back to the user what you think they ordered and how long they’ve got to spend at the gym to work it off.
+
+
+
+
+Working With Databases
+======================
+
+Python works and plays well with many of the most popular relational
+databases including PostgreSQL, Oracle and MySQL. The standard library
+even has a light-weight product, SQLite, capable of either running in
+memory or using the file system for persistent storage.
+
+For this chapter, we’ll work with Python’s **sqlite3** module. It
+requires no setup, definition of an administrator, or anything else – it
+comes “batteries included”. Also, since it’s part of standard Python you
+can rely on it working on any system with Python installed. If you later
+choose to use another database – no worries. You’ll need to find and
+install a piece of middleware called a “connector” and, of course, the
+database software. What you learn here will most apply to the
+alternative tools. and your interactions with the objects it provides
+will be nearly-identical those you have with **SQLite**. Switching
+should be easy\[48\].
+
+For the record, here are some popular connectors\[49\] (which you may
+have to install using a package manager if they’re not in your Python
+installation).
+
+MySQL: import mysql.connector
+
+Oracle: import cx\_Oracle
+
+PostgreSQL: import psycog3
+
+Basics
+------
+
+Let’s get started with importing **sqlite3** and connecting to a
+database. If we want to store it on the file system we provide the name
+of the file; if we just want it in memory, we can use the special name
+“:**memory**”.
+
+
+
+
+#py_sql_1.py
+ import sqlite3
+ conn=sqlite3.connect('mydb')
+ conn
+sqlite3.Connection object at 0x7f4310d8a2e8
+
+
+
+
+The **connect** object is our gateway into the database. We can access
+its methods to change users, commit/roll back changes etc. and otherwise
+perform high-level operations at the database level\[50\]. For now,
+we’ll get a **cursor** object from the **connection** object which we’ll
+use for most of our interactions.
+
+
+
+
+ curs = conn.cursor()
+ curs
+sqlite3.Cursor object at 0x7f4310dc2dc0
+
+
+
+
+OK, we’ve got what we need to talk, so let’s have a conversation. The
+primary object in a database is a table. A table has rows and columns of
+information, and knows about relationships with other tables and their
+rows and columns. You can create a table using the CREATE keyword,
+something like:
+
+
+
+
+ cmd = """CREATE TABLE dogs (name CHAR(10),
+... toy CHAR(10),
+... weight INT(4))"""
+sqlite3.Cursor object at 0x7f4310dc2dc0
+
+
+
+
+Here, this command creates a table named ‘dogs.’ It has three columns:
+name, toy, and weight. We’ve assigned each column a data type. The
+numbers in (parentheses) indicate the size of the data. For instance
+‘name’ is specified to hold a maximum of 10 characters\[51\].
+
+**SQLite** supports other data types like TINYINT, BLOB, TEXT, and
+DOUBLE. You can read more about them in the sqlite.org docs\[52\].
+
+Data table names are unique – they have to be. So what happens if we try
+to create the table ‘dogs’ and one already exists? **SQLite** will whine
+miserably:
+
+
+
+
+Traceback (most recent call last):
+File "stdin", line 1, in module
+sqlite3.OperationalError: table dogs already exists
+
+
+
+
+So, it’s often a good idea to clear the decks first (if you’re sure you
+don’t need the table) by going:
+
+
+
+
+ cmd = "DROP TABLE IF EXISTS dogs"
+ curs.execute(cmd) #this runs the SQL command
+sqlite3.Cursor object at 0x7f4310dc2dc0
+
+
+
+
+When we’re done adding the new table, we can ask that the change be
+committed by using the connector method **commit**().\[53\]
+
+|                            |
+|----------------------------|
+|  conn.commit() |
+
+Now, let’s populate the kennel. The way to add a row is to use the
+INSERT command. The general syntax\[54\] is:
+
+INSERT INTO table ( column names) (values)
+
+Here’s an example. We’re telling the database that a 90-pound dog named
+Fang has a toy bone\[55\]:
+
+
+
+
+ cmd = "INSERT INTO dogs ('name', 'toy', 'weight') \
+VALUES (?, ?, ?)"
+ vals= ('Fang', 'bone', 90)
+ curs.execute(cmd, vals)
+
+
+
+
+Let’s make sure things are working by retrieving results. To do that you
+use the SELECT command. SELECT \* asks for all rows. Generally the
+syntax is:
+
+SELECT \* FROM table WHERE some conditions
+
+… if you don’t provide a WHERE clause, you get everything, as we do
+here:
+
+
+
+
+ cmd = "SELECT * from {}".format('dogs')
+ print(cmd)
+SELECT * from dogs
+
+
+
+
+If the database finds rows matching your request, it passes that
+information to the cursor object. In order to actually extract data, you
+have to ask for it using one of the “fetch” methods which are:
+**fetchall**(), **fetchone**(), and **fetchmany**(). (You need to
+provide **fetchmany** an integer to let it know how many rows you want).
+
+
+
+
+ result=curs.fetchall()
+ print(result)
+[('Fang', 'bone', 90)]
+
+
+
+
+As you can see we get a **list** of **tuples**. If the query didn’t
+return anything, we’d get an empty **list**. We can now unpack the
+results using logic like:
+
+
+
+
+if result:
+print("congrats, you've got some dawgs")
+for row in result:
+name, toy, weight=row
+print(name, toy, weight)
+
+
+
+
+
+
+congrats, you've got some dawgs
+Fang bone 90
+
+
+
+
+Here’s an alternative way to add information using the **executemany**()
+method. Note that the first argument is the SQL command and the second
+is a **list** of **tuples** to be executed against it:
+
+
+
+
+curs.executemany('INSERT INTO dogs VALUES(?,?,?)',
+[('Biscuit', 'towel', '70'),
+('Snoopy', 'squirrel', '60')])
+print_rows()
+
+
+
+
+
+
+name = Fang toy = bone weight = 90
+name = Fluffy toy = sock weight = 25
+name = Biscuit toy = towel weight = 70
+name = Snoopy toy = squirrel weight = 60
+
+
+
+
+We can make things a little more transparent by creating a name for the
+both the column **tuple** and table. If we want to do so, the following
+code might work nicely:
+
+
+
+
+cols=('name', 'toy','weight')
+tname='dogs'
+val_tuple=("Fluffy", "sock", "25")
+cmd=\
+"INSERT INTO {} {} VALUES (?, ?, ?) ".format(tname, cols)
+
+
+
+
+Now we can recycle the “cols” for subsequent processing. Here’s an
+example (which might be consider adding to your personal collection of
+useful Python utilities).
+
+
+
+
+def print_rows():
+"a utility function you may want to keep"
+cmd = "SELECT * from {}".format(tname)
+print(cmd)
+curs.execute(cmd)
+result=curs.fetchall()
+if result:
+for r in result:
+nice_output=''
+for label, res in zip(cols, r):
+nice_output +="{:10} = {:10}".format(label, res)
+print (nice_output)
+
+
+
+
+If we don’t already know the column names, we can always ask the cursor
+using its description attribute\[56\]:
+
+
+
+
+cmd="SELECT * FROM {}".format(tname)
+curs.execute(cmd)
+for ix, name in enumerate(curs.description):
+print("column {} is called {}".format(ix, name[0]))
+
+
+
+
+
+
+column 0 is called name
+column 1 is called toy
+column 2 is called weight
+
+
+
+
+If we want to know how many rows in the database table we can use
+COUNT(\*).
+
+
+
+
+md="SELECT COUNT(*) FROM {}".format(tname)
+curs.execute(cmd)
+result=curs.fetchone()
+number_of_rows, = result
+print("Awesome, we've captured {} rows.".format (number_of_rows))
+
+
+
+
+… which reports:
+
+|                                 |
+|---------------------------------|
+| Awesome, we've captured 4 rows. |
+
+Lazy Evaluation
+---------------
+
+The cursor objects fetch methods are “lazily evaluated”. Like **range**
+objects and generators, they don’t actually produce information until
+requested to do so. This is an awesome feature because, even if your
+query returns a million rows, the cursor object has a minimal
+“footprint” in memory. You can, if you want, iterate through the entire
+thing a row at a time using the **fetchone**() method:
+
+
+
+
+curs.execute('SELECT * FROM dogs')
+while True:
+row = curs.fetchone()
+if not row:
+break
+print(row)
+print('*'*20)
+
+
+
+
+… to produce something like:
+
+
+
+
+('Fang', 'bone', 90)
+('Fluffy', 'sock', 25)
+('Biscuit', 'towel', 70)
+('Snoopy', 'squirrel', 60)
+********************
+
+
+
+
+One of the implications of all this is that you can’t “rewind” the
+cursor – it’s only looking forward. And when they’re done, they’re done
+once you’ve run through the catch, if you want another look you’ve got
+to execute the query again.
+
+Choosing Data with WHERE
+------------------------
+
+Often you don’t want all the data available, but only that which meets
+certain criteria. We can upgrade our SELECT directive to choose only
+certain rows and columns.
+
+
+
+
+cmd = 'SELECT name, weight FROM dogs WHERE weight = 60'
+print(cmd)
+curs.execute(cmd)
+print(curs.fetchall())
+
+
+
+
+… which produces:
+
+
+
+
+SELECT name, weight FROM dogs WHERE weight = 60
+[('Fang', 90), ('Biscuit', 70), ('Snoopy', 60)]
+
+
+
+
+If you would prefer that the data be sorted, you can use the ORDER BY
+directive:
+
+
+
+
+cmd = '’’SELECT
+name, weight
+FROM
+dogs
+WHERE
+weight = 60
+ORDER BY \
+name'’’’
+
+
+
+
+And this provides:
+
+|                                                   |
+|---------------------------------------------------|
+| \[('Biscuit', 70), ('Fang', 90), ('Snoopy', 60)\] |
+
+Updating and Deleting Data
+--------------------------
+
+To update fields in data already contained in the database, we can use
+the UPDATE keyword. The general syntax is:
+
+UPDATE table SET column value WHERE
+condition
+
+So, if we wanted Snoopy to put on a bit of weight, we could go something
+like:
+
+
+
+
+UPDATE dogs SET weight=666 WHERE name='Snoopy'
+SELECT * FROM dogs WHERE name='Snoopy'
+('Snoopy', 'squirrel', 666)
+
+
+
+
+We can selectively delete data rows using the DELETE command. Its basic
+syntax is:
+
+DELETE FROM table WHERE condition
+
+These examples show how to winnow down our pack of dogs using variants
+of DELETE. In the first example we’ll delete all rows where the “toy”
+column has a specific value. Next we’ll use a wildcard to find values
+vaguely like the toy we’re looking for\[57\]. Finally, we execute DELETE
+without any conditions to eliminate all the data, but leaving any
+metadata (column specifications, keys, relationships, etc.) intact.
+
+
+
+
+print("Dog Table")
+cmd = "SELECT * FROM {}".format(tname)
+curs.execute(cmd)
+print_rows()
+cmd= "DELETE FROM {} WHERE toy = 'sock'".format(tname)
+curs.execute(cmd)
+cmd = "SELECT * FROM {}".format(tname)
+curs.execute(cmd)
+print_rows()
+cmd= "DELETE FROM {} WHERE toy LIKE '%el'".format(tname)
+curs.execute(cmd)
+cmd = "SELECT * FROM {}".format(tname)
+curs.execute(cmd)
+print_rows()
+cmd= "DELETE FROM {}".format(tname)
+curs.execute(cmd)
+cmd = "SELECT * FROM {}".format(tname)
+curs.execute(cmd)
+print_rows()
+
+
+
+
+Here are the results:
+
+
+
+
+SELECT * from dogs
+name = Fang toy = bone weight = 90
+name = Fluffy toy = sock weight = 25
+name = Biscuit toy = towel weight = 70
+name = Snoopy toy = squirrel weight = 666
+SELECT * from dogs
+name = Fang toy = bone weight = 90
+name = Biscuit toy = towel weight = 70
+name = Snoopy toy = squirrel weight = 666
+SELECT * from dogs
+name = Fang toy = bone weight = 90
+SELECT * from dogs
+#nothing to report
+
+
+
+
+There’s much more to working with databases, naturally, but you now know
+the basics. And you can integrate them into your apps without having to
+leave the Python environment.
+
+SQL Injection Attacks
+---------------------
+
+If you plan to build a database that’s client-facing or otherwise
+exposed to the world you will want to devote some thought to security.
+With an internal network, likely everyone has their access credentials
+handled by the IT shop and users are all (relatively) trusted. But if
+you embed one in your public web site – watch out!
+
+Databases are vulnerable to something called “SQL injection attacks”.
+These occur when you’re taking data provided by an outsider and storing
+it in your database and the “data” proves to be malicious SQL code.
+They’re surprisingly easy to execute, even by a 14-year-old in his mom’s
+basement. A command like:
+
+SELECT \* FROM users WHERE name='Joe'; DROP TABLE users;--'"
+
+… typed into an input field and submitted to a web site can be enough.
+
+This is why data should be provided as **tuples** specified with
+placeholders like (?, ?, ?) – the database will not treat information so
+provided as executable SQL. It’s defenseless against ordinary strings.
+There’s an full example in py\_sql\_injection.py, in case you’re
+interested.
+
+Object-Relational Mapping
+-------------------------
+
+If you get serious about working with databases, especially in the
+context of a web application, you might look into ORM tools\[58\].
+Generally, these create Python objects that serve as proxies for actual
+database components. They provide an abstraction layer than can keep you
+away from the raw SQL code and greatly simplify both your coding task
+and maintenance chores.
+
+To give you a flavor of what these beasts have to offer, here’s some
+code from the same Django project referenced in the context of HTML
+templates.
+
+
+
+
+from django.db import models
+class SnakeId(models.Model):
+id = models.AutoField(unique=True, primary_key=True)
+thumb = models.CharField(max_length=80, blank=True, null=True)
+species = models.CharField(max_length=50, blank=True,
+null=True)
+img_file = models.CharField(max_length=80, blank=True,
+null=True)
+r = models.IntegerField(blank=True, null=True)
+b = models.IntegerField(blank=True, null=True)
+g = models.IntegerField(blank=True, null=True)
+def __str__(self):
+return "snake_{}".format(self.id)
+class Meta:
+managed = True
+db_table = 'snake_id'
+
+
+
+
+Here, we create classes based on the a general Django ORM class called
+**Django**.**db**.**models**.**Model**. Each class stands in for a
+database table. Each class attribute, like “species”, stands in for a
+column in that table. Instead of specifying columns within a SQL “CREATE
+TABLE …” command, all the information about the columns is specified in
+the constructors. A **models**.**CharField** instance creates a text
+field, for instance. Refinements like maximum width, whether they
+autoincrement, can be blank, or are part of a foreign key relationship,
+etc. are provided as key word arguments.
+
+Miscellaneous table-level metadata can be provided in an internal class
+**Meta**. Here we are controlling the name of the database table (it
+will default to a permutation of the class name “SnakeId” otherwise) and
+whether or not we want Django to manage the table.
+
+By “manage the table” I mean that we can run a simple command line
+operation that synchronizes the database to what we’ve specified here.
+If we comment out a class attribute, the corresponding database column
+goes away. If we add a new Python class, a new table gets added to the
+database.
+
+By using Python objects (and some magic provided by Django) we can do
+database queries, pass the query results to a Django HTML template, and
+render a complete web page. Here’s an example:
+
+
+
+
+from django.shortcuts import render
+from .models import SnakeInfo,SnakeColors
+def make_view(render)
+snakes = SnakeInfo.objects.order_by('species', 'id')
+objs_to_render=[]
+for s in snakes:
+colors=SnakeColors.objects.filter(snake=s.id).
+order_by('-pct')
+objs_to_render.append(colors.all())
+context={'snakes': objs_to_render}
+return render(request, 'snakes/index.html', context)
+
+
+
+
+Here, we import the Python object representing one of our snake-related
+tables, **SnakeInfo**. The function **make**\_**view** takes care of the
+rest. The first line executes a SELECT command, requesting all rows, and
+including an ORDER BY clause. The **for** loop iterates through the
+returned rows and creates a SELECT statement against a second
+snake-related table **SnakeColors**, this time using the **id** column
+as a primary key, and applying a SORT directive. The **render**
+directive in the last row is sufficient to produce an intact web page
+using the specified template file and the database query result.
+
+
+
+
+Exercise:
+Please write some Python code that will:
+
+Read the data from py_baseball_data.csv. Column names are in the first row. Dates represent recent no-hitters. Create a new database table and load this data.
+Write SQL statements that will let your code figure out how many no-hitters were pitch after June by NL teams.
+Write unittests to determine that your code works. Hint, you can execute the database creation code in setUp() and destroy the database in tearDown. Individual tests might INSERT or DELETE data and ensure your count stays correct.
+
+
+
+
+
+Logging
+=======
+
+Python’s standard library comes with a comprehensive **logging** utility
+which is powerful yet easy to use. Logging allows you to get away from
+relying on **print**() statements to track the progress of your apps. It
+also allows you to selectively choose what to log, and to dynamically
+update your choice from within your script.
+
+Basics
+------
+
+The easiest way to get logging going is to use the logging module’s
+**basicConfig**() method. This tees up essential logging functionality
+and produces a **logging**.**logger** that you can access later. Let’s
+begin with a simple example:
+
+
+
+
+#py_log_1.py
+import logging
+logging.basicConfig(filename="py_log_output.log",
+level=logging.DEBUG)
+#this writes a line to the file
+logging.debug("Yup, I'm debugging")
+
+
+
+
+When we look at the output file “py\_log\_output.log”, we see the
+following entry:
+
+|                               |
+|-------------------------------|
+| DEBUG:root:Yup, I'm debugging |
+
+By default, the logger reports the debug level (DEBUG), the name of the
+**logger** (root) and our message. We can change this behavior (along
+with many other things) either with **basicConfig** or by addressing the
+**logger** object.
+
+Logging Levels
+--------------
+
+The logger comes with five logging levels “baked in”. It’s possible to
+add custom levels, but these work for most situations.
+
+
+
+
+import logging
+LOG_FILENAME = "py_log_output.log"
+LEVELS = {'debug': logging.DEBUG,
+'info': logging.INFO,
+'warning': logging.WARNING,
+'error': logging.ERROR,
+'critical': logging.CRITICAL
+}
+logging.basicConfig(filename=LOG_FILENAME, level=LEVELS['debug'])
+
+
+
+
+When we set up the logger, we have gone ahead and set the logging level.
+So what do we mean by “logging level”? Here’s a way to think about it.
+When we log an event, we do so with commands like:
+
+
+
+
+logging.debug(“Some in-the-weeds-information”)
+logging.critical(“Western Civilization As We Know It Is Ending!”)
+
+
+
+
+Unlike the familiar **print** function, these will not necessarily
+create a logging event every time the code is run. They will only fire
+if they are “worse” than the level we’ve assigned.
+
+Under the hood, the logger assigns “points” to each level:
+
+logging.DEBUG=10
+
+logging.INFO=20
+
+logging.WARNING=30
+
+logging.ERROR=40
+
+logging.CRITICAL=50
+
+**logging**.**info**() creates a logging event worth 20 “points”. If the
+default level is set to a “point value” less than or equal to that
+(DEBUG or INFO) the log event fires.
+
+The idea is that you can sprinkle your code with messages at a variety
+of logging levels. During debugging, you might want really verbose
+output so you can monitor what’s going on. In production you might only
+want to know when the wheels are coming off. If you’re logging network
+traffic, you might want to differentiate between (potentially) benign
+anomalies and intrusion signatures.
+
+Dynamically Changing the Level
+------------------------------
+
+You can change the logging level dynamically by accessing the **logger**
+object. Here’s a short app to demonstrate how:
+
+
+
+
+#py_log_2.py
+import logging
+LOG_FILENAME = "py_log_output.log"
+LEVELS = {'debug': logging.DEBUG,
+'info': logging.INFO,
+'warning': logging.WARNING,
+'error': logging.ERROR,
+'critical': logging.CRITICAL
+}
+logging.basicConfig(filename=LOG_FILENAME, level=LEVELS['debug'])
+def shout_out():
+logging.debug("shouting out at debug level")
+logging.info("shouting out at info level")
+logging.warning("shouting out at warning level")
+logging.error("shouting out at error level")
+logging.critical("shouting out at critical level")
+#log at all levels with level set to DEBUG
+shout_out()
+logging.debug("*" * 30)
+#log at all levels again, this time with level at ERROR
+logging.getLogger().setLevel(logging.ERROR)
+shout_out()
+
+
+
+
+The second-to-last line is where a **logger** instance is retrieved and
+the default error reset from DEBUG to ERROR. Here’s the output as it
+appears in the log file:
+
+
+
+
+#py_log_output.log
+DEBUG:root:shouting out at debug level
+INFO:root:shouting out at info level
+WARNING:root:shouting out at warning level
+ERROR:root:shouting out at error level
+CRITICAL:root:shouting out at critical level
+DEBUG:root:******************************
+ERROR:root:shouting out at error level
+CRITICAL:root:shouting out at critical level
+
+
+
+
+Customizing Your Logging
+------------------------
+
+You’re not stuck with the default levels. Internally, the system knows
+the “point value” for all these, but you can assign your own.
+
+Let’s say that you have identified a situation that raises a
+WombatException. You might decide that its criticality is something
+between WARNING and ERROR and want to adjust accordingly\[59\]. You can
+create a logging message by grabbing an instance of the logger and
+utilize its **getlogger**() method, something like:
+
+
+
+
+class WombatException(Exception):
+logger=logging.getLogger()
+logger.log(WOMBAT, "Wombat!")
+
+
+
+
+You can also customize what your logging message looks like, borrowing
+system object like the name of the module, the name of the function, and
+time of day. You can do this as part of the **basicConfig**() setup by
+going something like:
+
+
+
+
+logging.basicConfig(filename=LOG_FILENAME,
+level=logging.DEBUG, format=LOG_FORMAT)
+
+
+
+
+The LOG\_FORMAT is sort of like the format string that you’d feed to
+**str**.**format**(). The main difference is that you can tap into
+predefined “wildcard” characters that are associated with system-level
+information like the module name, time of day, function name, etc.
+
+A format string defined thusly:
+
+
+
+
+LOG_FORMAT = "%(asctime)s called from %(module)s: \
+%(lineno)d %(message)s"
+
+
+
+
+… will produce a message like this one:
+
+|                                                            |
+|------------------------------------------------------------|
+| 2016-10-04 08:31:55,113 called from py\_log\_3: 11 Wombat! |
+
+Here are some of the more commonly-used format string options:
+
+
+
+
+%(asctime)s default: 2003-07-08 16:49:45
+%(created)f time created
+%(filename)s filename only
+%(pathname)s full path
+%(funcName)s function called from
+%(levelname)s level (DEBUG, etc.)
+%(levelno)s level (10, etc.)
+%(lineno)d line number
+%(module)s module name
+%(message)s message
+%(name)s logger name
+
+
+
+
+You can find a complete listing of them in the official docs\[60\].
+
+Here’s how one might implement a logger with a custom level, which might
+be triggered in the event of whatever special circumstances would
+trigger a Wombat emergency.
+
+
+
+
+#py_log_3.py
+import logging
+WOMBAT=logging.WARNING + 1
+LOG_FILENAME = "py_log_output.log"
+LOG_FORMAT = "%(asctime)s called from %(module)s: \
+%(lineno)d %(message)s"
+logging.basicConfig(filename=LOG_FILENAME,
+level=logging.DEBUG,
+format=LOG_FORMAT)
+class WombatException(Exception):
+logger=logging.getLogger()
+logger.log(WOMBAT, "Wombat!")
+def do_raise_wombat():
+raise WombatException
+do_raise_wombat()
+
+
+
+
+Logging From Multiple Modules
+-----------------------------
+
+serious application will likely be split into several modules for
+delegation of functionality and developer sanity. You’ll probably want
+to implement **logging** in all of them, but how do you do that?
+
+Under the hood there’s what’s called a “root logger” that runs
+application-wide. The idea is that if you have established logging in
+one module, all the other modules automatically can access that
+**logger**. The next two apps will show you what I mean. The “main”
+program will write a single log entry when run stand-alone.
+
+
+
+
+#py_logging_main.py
+import logging
+LOG_FILENAME = "py_log_output.log"
+LOG_FORMAT = "%(asctime)s called from %(filename)s: %(message)s"
+logging.basicConfig(filename=LOG_FILENAME,
+level=logging.DEBUG,
+format=LOG_FORMAT)
+logging.getLogger("logger")
+logging.debug('started logging')
+
+
+
+
+… and will produce a log entry like this:
+
+
+
+
+2016-10-04 08:52:31,268 called from py_logging_main.py:
+started logging
+
+
+
+
+You’ll note that we gave this logger a name in the **getLogger**() call,
+but this is not optional. We can now create another module that imports
+the original one.
+
+
+
+
+#py_logging_secondary.py
+import logging
+import py_logging_main
+#from main import logger_object
+logging.getLogger("logger")
+logging.debug("secondary here")
+
+
+
+
+You’ll note that, while we imported the **logging** at the top, we
+didn’t configure it in any way. Instead, we got a handle to the system
+logger established when we imported the main module with this command:
+
+|                             |
+|-----------------------------|
+| logging.getLogger("logger") |
+
+When we run the secondary program we can see two logging messages one
+from each module in the system.
+
+
+
+
+2016-10-04 08:54:51,411 called from py_logging_main.py:
+started logging
+2016-10-04 08:54:51,412 called from py_logging_secondary.py:
+secondary here
+
+
+
+
+Logging to Multiple Destinations
+--------------------------------
+
+You might find yourself needing to separate logging traffic into
+something like a “log of record” which records every bit of minutia.
+Maybe you’re cataloguing all the IP traffic on a site and hanging onto
+it for a week for potential forensic analysis. Vital stuff, but not
+intended for humans. You might want to have, in addition, a way to send
+only critical messages to human responders – maybe via a text message or
+phone call. Python’s **logging** library can handle that, too.
+
+**Logger** objects are endowed with “handlers” which manage the traffic
+from the logging system. Each logger can have multiple handlers, which
+can be configured separately. The default, which we’ve implicitly been
+using, is a **FileHandler**. As you’ve seen, it dutifully updates a
+designated log file with each event.
+
+Let’s say we want to send only critical messages to the console and log
+all messages in a file. Here’s how we might set up an extra handler for
+the critical messages:
+
+
+
+
+#py_logging_multiple.py
+# adapted from docs/python.org/howto/logging-cookbook.html
+import logging
+LOG_FILENAME = "py_log_output.log"
+# set up logging to file - see previous section for more details
+logging.basicConfig(
+level=logging.INFO,
+format='%(asctime)s %(name)-12s %(levelname)-8s’ ‘%(message)s',
+datefmt='%m-%d %H:%M',
+filename=LOG_FILENAME)
+# define a new Handler object to write messages to sys.stderr
+console = logging.StreamHandler()
+#... set its level
+console.setLevel(logging.ERROR)
+#... create a formatter for the output
+formatter = logging.Formatter('%(name)-12s: \
+%(levelname)-8s %(message)s')
+#... add the formatter to the handler
+console.setFormatter(formatter)
+#...and attach the handler the logger
+logging.getLogger('').addHandler(console)
+# Let's try it out.
+logging.critical('Wombats have been detected!')
+logging.debug('just more boring log content')
+
+
+
+
+The key bit of this code is the creation of a **StreamHandler** object
+and asking the root logger to use it. This may remind you a bit of
+building **tkinter** widgets – you configure, then add to a containing
+object. Here, we configure the console object and add it to the system
+**logger** object.:
+
+
+
+
+console = logging.StreamHandler()
+console.setLevel(logging.ERROR)
+logging.getLogger('').addHandler(console)
+
+
+
+
+When we run this app, we see two different outputs. Here’s the log file:
+
+
+
+
+#py_log_output.log
+10-04 09:37 root CRITICAL Wombats have been detected!
+10-04 09:37 root WARNING just more boring log content
+
+
+
+
+And here’s what shows up on the console (which displays both **stderr**
+and **stdout** by default):
+
+|                                             |
+|---------------------------------------------|
+| root : CRITICAL Wombats have been detected! |
+
+Another new wrinkle in this demo is the use of a time format. If the
+string “%(asctime)s” appears as part of the **logging**.**Formatter**
+specification, the system produces a **datetime** object. As such, you
+can use any of the normal **datetime** format strings\[61\] with it.
+Here, we’ve specified our choice with the “datefmt” keyword provided to
+**basicConfig.**
+
+Several “flavors” of handlers are available for different tasks. The
+**SocketHandler** will stream log output across a network (perhaps to a
+remote database). **SMTPHandler** can be used to send critical text
+message or email assuming, of course, you’ve got the capabilities set up
+already. The different “Rotating” handlers help manage large volumes of
+log traffic by archiving old files as necessary. The details are beyond
+the scope of this class, but here’s a list, for your reference.
+
+| StreamHandler            | DatagramHandler   |
+|--------------------------|-------------------|
+| FileHandler              | SysLogHandler     |
+| NullHandler              | NTEventLogHandler |
+| WatchedFileHandler       | SMTPHandler       |
+| BaseRotatingHandler      | MemoryHandler     |
+| RotatingFileHandler      | HTTPHandler       |
+| TimedRotatingFileHandler | QueueHandler      |
+| SocketHandler            | QueueListener     |
+
+More details are available from the docs\[62\]:
+
+Final Notes
+-----------
+
+A few tips:
+
+-   Keep logs as “simple as possible but not simpler”.
+
+-   Use customized log levels with caution.
+
+-   Keep your audience in mind – is it for humans, ad-hoc queries,
+    addition to a searchable database? All have different needs in terms
+    of detail and layout.
+
+
+
+
+Exercise:
+The file py_log_english_brewery_data.csv is a text file containing all the breweries and their counties reported by Wikipedia. https://en.wikipedia.org/wiki/List_of_breweries_in_England
+Please create a app that:
+
+De-duplicates the list
+Identifies those with “Ale” in their name
+Stores them in a database with (beer, is_ale, county) columns
+Provides a simple GUI that lets users search the database for “Ale”/”non-Ale” breweries, and by county (they can type it in).
+Log the key events as your app steps through the process.
+
+
+
+
+
+Introduction to Scientific Programming
+======================================
+
+For real number-crunching Python offers the **numpy** library which
+includes all sorts of optimized array operations, and integrates well
+with other components of Python’s scientific stack\[63\].
+
+When working with **numpy**, you have to sacrifice some of the
+convenience of objects like **lists** and work with clearly-defined,
+single-type objects (as is the case when working with the **array**
+library). **numPy** is strongly typed – you have to declare everything
+as **float**, **int**, or some other C-type. It is not optimized for
+non-numeric types like strings\[64\].
+
+But if you’re serious about data, **numpy** is the right tool. It’s a
+very thin Python API (application program interface) written on top of
+compiled byte-code – which makes it blazing fast. It also has quite a
+bit of statistical and array manipulation capability baked right in, so
+is “one stop shopping” for most garden-variety projects (and some
+serious ones too).
+
+Note: a “file format version” of these examples is available as
+py\_numpy.py.
+
+Basics
+------
+
+The **ndarray** is the basic building block of everything **numpy**
+does. It’s easy enough to simply create an instance of one:
+
+
+
+
+# py_numpy.py
+ import numpy as np
+ arr = np.array([1, 2, 3])
+ arr
+array([1, 2, 3])
+ type(arr)
+class 'numpy.ndarray'
+
+
+
+
+As you can see, a **numpy** array is not an **array**.**array** object
+or anything we’ve seen before. It is its own dog. Let’s chat it up a
+bit. The shape here is a **tuple** with a single element showing us the
+number of elements in its first (and only) dimension. You can use
+indexing and slicing operations, just as you would a **list** object.
+
+
+
+
+ arr.shape
+(3,)
+ arr[-1]
+3
+ arr[1:3]
+array([2, 3])
+
+
+
+
+Let’s make it more interesting and add another dimension. Notice that we
+can define it with the same syntax we used to compose a **list** of
+lists.
+
+
+
+
+ arr2d = np.array([[1,2,3],[4,5,6], [7, 8, 9]])
+ print(arr2d)
+[[1 2 3]
+[4 5 6]
+[7 8 9]]
+ print (arr2d.shape)
+(3, 3)
+ print(arr2d[2, 1])
+8
+
+
+
+
+You can use slicing operations to create a new array based on the old
+one by giving a “slice” object a new name. This “lops off” all but the
+last two rows and last two columns.
+
+
+
+
+ new2d=arr2d[1:, 1:]
+ print(new2d)
+[[5 6]
+[8 9]]
+
+
+
+
+Note that because we now have two dimensions, we need to separate the
+slicing operation on the first dimension from the operation on the
+second with a comma.
+
+Stripping off “rows” and “columns” is also really compact – here we’re
+creating new objects based on the middle row and middle column or the
+original 2d object.
+
+
+
+
+ new1d_row=arr2d[1,]
+ print(new1d_row)
+[4 5 6]
+ new1d_col=arr2d[:,1]
+ print(new1d_col)
+[2 5 8]
+
+
+
+
+Array Operations
+----------------
+
+**Numpy** array math is really easy because the operators work
+“element-wise” i.e., on the entire array, all at once. Some examples:
+
+
+
+
+ double=arr2d*2
+ print(double)
+[[ 2 4 6]
+[ 8 10 12]
+[14 16 18]]
+ square=arr2d**2
+ print(square)
+[[ 1 4 9]
+[16 25 36]
+[49 64 81]]
+
+
+
+
+You can also do some operation to a slice of an array, then combine the
+results with the original. Here’s how you might double the values of a
+single row. Note that you make a copy of a **numpy** array just as you
+would a **list**.
+
+
+
+
+ #...and you can target them
+copy_arr2d=arr2d[:]
+ copy_arr2d[1,]=copy_arr2d[1,]*2
+ #copy_arr2d[1,]=arr2d[1,]*2
+... print(copy_arr2d)
+[[ 1 2 3]
+[ 8 10 12]
+[ 7 8 9]]
+
+
+
+
+Other operations like +, -, and / all work the same way - performing
+calculations element-wise over the entire data structure.
+
+You can also perform analysis on all the elements to gather statistics.
+Here’s how, you can get the minimum, maximum, and other values.
+
+
+
+
+ print("max", arr2d.max())
+max 12
+ print("mean", arr2d.mean())
+mean 6.66666666667
+ print("min", arr2d.min())
+min 1
+ print("sd", arr2d.std())
+sd 3.59010987142
+ print("sum", arr2d.sum())
+sum 60
+ print("transpose\n", arr2d.T)
+transpose
+[[ 1 8 7]
+[ 2 10 8]
+[ 3 12 9]]
+
+
+
+
+Creating Masks
+--------------
+
+Along the same lines, here’s how you might use vectors to create a
+“mask” to extract the diagonal elements:
+
+
+
+
+ row_mask=np.array([0,1,2])
+ col_mask=np.array([0,1,2])
+ diagonal=arr2d[row_mask, col_mask]
+ print(diagonal)
+[ 1 10 9]
+
+
+
+
+… although you could do the same much easier with the built-in
+**diagonal**() method if all you really wanted is the diagonal:
+
+
+
+
+ print(arr2d.diagonal())
+[ 1 10 9]
+
+
+
+
+You create what’s called a “Boolean index” – basically a logical
+operation run against each element of the array. For instance, if you
+wanted to get the even numbers, you could go:
+
+
+
+
+ boolean_ix=arr2d % 2 == 0
+ print(boolean_ix)
+[[False True False]
+[ True True True]
+[False True False]]
+
+
+
+
+You can now use the multiplication operator to “mask out” the odd
+numbers. You could do that in situ, “zeroing out” the odd numbers, or
+extract them into a new array using the mask as an index operator.
+
+
+
+
+ evens=arr2d*boolean_ix
+ print(evens)
+[[ 0 2 0]
+[ 8 10 12]
+[ 0 8 0]]
+ just_evens=arr2d[boolean_ix]
+ print(just_evens)
+[ 2 8 10 12 8]
+
+
+
+
+More Built-in Array Operations
+------------------------------
+
+**numpy** has dozens of other operations built into the **numpy**
+namespace. These include inner products, trigonometric and operations
+involving intact arrays. Here, we’ll look at some scalar and matrix math
+possibilities:
+
+
+
+
+a_arr = np.array([[1,2],[3,4]])
+b_arr = np.array([[5,6],[7,8]])
+c_arr = np.array([9,10])
+d_arr = np.array([11, 12])
+# Scalar Products
+print("scalar product of:\n", c_arr, "\nand\n", d_arr, '\n')
+print (c_arr.dot(d_arr))
+print (np.dot(c_arr, d_arr))
+# Matrix Products
+print("matrix product of:\n", a_arr, "\nand\n", c_arr, '\n')
+print (a_arr.dot(c_arr))
+print (np.dot(a_arr, c_arr))
+print("matrix product of:\n", a_arr, "\nand\n", b_arr, '\n')
+print (a_arr.dot(b_arr))
+print (np.dot(a_arr, b_arr))
+
+
+
+
+A Real-World Application
+------------------------
+
+I have a special interest in Pythons. So much so that I’m trying to help
+get rid of Burmese Pythons and have designed a trap to do just that.
+With software written in Python, of course, and using **numpy** and
+Python’s image processing library **PIL**.
+
+Below, you’ll find some code to do chromatic reduction, pixel-wise on
+images of pythons within the trap. It’s long so we’ll walk through the
+code “live” but here’s the intact listing.
+
+
+
+
+#py_numpy_1.py
+"""a snake-charming application"""
+from PIL import Image
+import numpy as np
+import os
+idir =os.getcwd()
+iname= 'im3.png'# 'white_snake.PNG'
+saveas='new_snake.PNG'
+#sets up an array for pixel processing
+white=np.array([255,255,255,0]) #r, g, b, a
+transparent = np.array([0, 0, 0, 0])
+background = white
+#open the image and convert it
+raw_image = Image.open(iname)
+converted_image = raw_image.convert('RGBA')
+raw_image.close()
+h, w = converted_image.size
+converted_histo=converted_image.histogram()
+converted_colors=converted_image.getcolors(w*h)
+#dump the data into a numpy array and split the channels "bands"
+data = np.array(converted_image) # h * w * 4 array (rgba)
+r, g, b, a = data.T
+#this sets the masking condition and replaces the background color
+replace = (r == background[0]) &amp;
+(b == background[1]) &amp;
+(g == background[2])
+data[replace.T] = (0,0,0,0)
+#generate a new image, grab some stats, and save it.
+new_image = Image.fromarray(data, 'RGBA')
+h, w = new_image.size
+new_histo=new_image.histogram()
+new_colors=new_image.getcolors(w*h) #a list of (rgba) tuples
+new_image.save(saveas)
+recovered_image = Image.open(saveas)
+h, w = recovered_image.size
+recovered_histo=recovered_image.histogram()
+recovered_colors=recovered_image.getcolors(w*h)
+#strategy: make a list of color bins we expect to find.
+# These will have pixel ranges that are human-friendly e.g.,
+# 'brownish', 'gold'. Each spec within the bin can be
+# additively applied to a mask - functionally reducing the
+# color palette.
+reduced_image = recovered_image.convert('P',
+palette=Image.ADAPTIVE, colors=10)
+reduc1 = reduced_image = recovered_image.convert('P',
+palette=Image.ADAPTIVE, colors=10)
+reduc2 = reduc1.convert('RGB') #turns it to rgb
+#save the image in a couple formats
+reduc_fn = 'scratch.BMP'
+reduc2.save(reduc_fn)
+reduced_histo=reduced_image.histogram()
+reduced_colors=reduced_image.getcolors(w*h)
+reduced_image.save(saveas+'reduced.BMP')
+#now show them
+recovered_image.show()
+reduced_image.show()
+recovered_image.close()
+
+
+
+
+This only scratches the surface of what you can do with **numpy**.
+Working out real applications, plotting libraries like **matplotlib**,
+image processing tools like **PIL**, etc. could easily take up a whole
+course. Or semester. Or career. But at least you’ve gotten your feet
+wet.
+
+
+
+
+Exercise:
+
+Please create a short application that performs the following operations:
+Produce a 3x3 numpy integer array any way you’d like.
+Multiply each element by 7
+Count the elements
+Count the elements evenly divisible by 3
+Create a routine that delivers a vector (1-d array) of the top-right to bottom-left “diagonal” that will work on any size of 2-d vector.
+Create unit tests to make sure that that the last routine works as advertised.
+
+
+
+
+
+Other Cool Tools
+================
+
+Python has lots of useful capabilities that don’t fit neatly under any
+topic heading. This chapter introduces you to a few of them with the
+hopes that they’ll save you time and bandwidth down the road.
+
+Persistent Storage
+------------------
+
+We’ve already seen two ways to store information between runs of your
+code. We can store files on the file system or data in a database. In
+addition, Python has ways to store intact Python objects. Let’s take a
+quick look at a couple of these.
+
+Shelve
+------
+
+The shelve module provides a way to store a **dict**-like object
+representing one or more python objects in the file system. To use it,
+one simply uses **shelve.open()** instead of the built-in version to
+create a file handle object. Then you can use the file handler just as
+you’d use a **dict**. Here’s an example
+
+
+
+
+#py_persistent.py
+"""immortalize your stuff"""
+import shelve
+treasured_object={
+'team': 'Cubs',
+'place': 'Wrigley',
+'f_and_b': {'food': 'red hots', 'bev': 'Old Style'}
+}
+print("Original")
+print("treasured object is {}".format(treasured_object))
+shelve_file='persistent_shelve.shlv'
+with shelve.open(shelve_file, writeback=True) as my_shelf:
+my_shelf['treasure']=treasured_object
+with shelve.open(shelve_file, writeback=True) as my_shelf:
+print("Shelve here!")
+print("treasured object is {}".
+format(my_shelf['treasure']))
+
+
+
+
+There are just a couple of idiosyncrasies with **shelve**:
+
+-   You don’t use a file open mode like “r” or “w”
+
+-   You need the “**writeback**=**True**” bit if you want changes to
+    stick.
+
+Pickle
+------
+
+The **pickle** module can be used to store a serialized (binary) version
+of most types of Python objects. You don’t have quite the same
+transparent access to the objects as you do with JSON files, nor do you
+have “random access” to specific objects as you do with **shelve**. But
+this is pretty slick for a couple of reasons beyond persistence: the
+object is stored compactly; and it’s in a form that can be transported
+readily; and pickle files are a at least an order of magnitude faster to
+load than text files.
+
+The major downside is that **pickle** is a Python-only implementation.
+Here’s an example of how you might apply it:
+
+
+
+
+#py_persistent_1.py
+"""pickle your stuff for a long winter's nap"""
+import pickle
+treasured_object={
+'team': 'Cubs',
+'place': 'Wrigley',
+'f_and_b': {'food': 'red hots', 'bev': 'Old Style'}
+}
+pickle_file='persistent_pickle.pkl'
+print("Original")
+print("treasured object is {}".format(treasured_object))
+with open(pickle_file, 'wb') as f:
+pickle.dump(treasured_object, f)
+with open(pickle_file, 'rb') as f:
+recovered_obj=pickle.load(f)
+test=treasured_object==recovered_obj
+if not test:
+print('whoops, pickle failed for {}'.
+format(treasured_object))
+else:
+print("pickle here!")
+print("recovered object is {}".format(recovered_obj))
+
+
+
+
+There are some caveats with using **pickle**. Although you can pickle
+object imported from other modules, you probably don’t want to do so.
+The reason is that your app is not necessarily in control of the other
+module’s objects. So let’s say you had this module in your file system:
+
+
+
+
+#py_persistent_3.py
+THIS_YEAR=1908
+
+
+
+
+Then let’s say you pickled the object:
+
+
+
+
+#py_persistent_2.py
+"""pickle your stuff for a long winter's nap"""
+import pickle
+from py_persistent_3 import THIS_YEAR
+print("imported THIS_YEAR, which is {}".format(THIS_YEAR))
+pickle_file='this_year.pkl'
+with open(pickle_file, 'wb') as f:
+pickle.dump(THIS_YEAR, f)
+
+
+
+
+You will have “immortalized” a snapshot of the contents of the imported
+file. If, in a few months you used the object in another app, it may (or
+may not) still be in synch with the original.
+
+Iterators
+---------
+
+You’ve already seen several objects that know how to iterative
+themselves. For instance, you can loop over a string easily:
+
+
+
+
+ for character in "This year is next year":
+... print(character, end="")
+This year is next year
+
+
+
+
+How does the **str** object figure out how to do this? The magic is
+“under the hood” and contained in two magic methods \_\_**iter**\_\_()
+and \_\_**next**\_\_(). Let’s check out a concrete example:
+
+
+
+
+#py_iteraror1.py
+class FibonacciNumbers:
+'''iterator that creates the Fibonacci sequence
+(starting with 0 and 1, adds them up to get the next: 1
+then adds 1 1 to get 2
+then adds 1 2 3
+then adds 2 3 to get 5 and so on)
+'''
+def __init__(self, max=6):
+self.max = max
+def __iter__(self):
+self.a = 0
+self.b = 1
+return self
+def __next__(self):
+fib_num = self.a
+if fib_num  self.max:
+raise StopIteration
+self.a, self.b = self.b, self.a + self.b
+return fib_num
+myfib=FibonacciNumbers()
+for number in myfib:
+print(number, end = “ “)
+
+
+
+
+This, as expected, generates the first few elements of the Fibonacci
+series:
+
+|             |
+|-------------|
+| 0 1 1 2 3 5 |
+
+The \_\_**iter**\_\_() method returns an instance of the object the
+first time it’s called.
+
+The \_\_**next**\_\_() method is invoked on subsequent calls. It’s job
+is to keep track of the bookkeeping and ensure there are no overruns.
+When it’s finished it raises the special-purpose **StopIteration**
+exception, which serves to inform the **for** statement of the fact.
+
+Any object with both the \_\_**iter**\_\_() and \_\_**next**\_\_()
+methods are called **iterators.**
+
+Generators
+----------
+
+Generators are close cousins of iterators in that they are persistent
+objects that gin up returned values on demand. They’re a bit easier to
+implement (they don’t require a class). And you can spot one a mile away
+because instead or using **return** to pass values, they use the keyword
+**yield**.
+
+Here’s how you might implement the Fibonacci series functionality using
+a generator.
+
+
+
+
+#py_iterator_1.py
+def fib(max=8):
+a, b = 0, 1
+while a  max:
+yield a
+a, b = b, a + b
+f = fib()
+for i in range(10) :
+try:
+print(next( f), end = " ")
+except StopIteration:
+pass
+print("\nDone!")
+
+
+
+
+As you can see, we had to be on the lookout for the **StopIteration**
+exception if you expect to “empty” the generator.
+
+Of course, you don’t really need to set a stopping point. This app will
+print out a random color every little while from now until the meteorite
+strikes.
+
+
+
+
+#py_iterator_2.py
+import time
+COLORS=('red', 'blue', 'green', 'orange',
+puce', 'off-mauve', 'silver',
+'white', 'black', 'pavement pizza orange')
+def random_choice():
+while True:
+index=int(str(time.time())[-1])
+yield COLORS[index]
+my_colors=random_choice()
+for _ in range(10):
+print( next (my_colors) , sep = '|')
+time.sleep(.01)
+
+
+
+
+Threading
+---------
+
+It’s possible to ask Python to multitask by giving autonomous bits of
+code things to do. A good use case is web scraping … you never know how
+long a server will take to respond to a query – if it responds at all.
+You don’t want to have your app sit on its hands while this happens.
+
+One solution is to use the threading library to set up and deploy “bots”
+to do the job. To do this, you need to:
+
+Subclass the **threading**.**Thread** class. Each instance will be given
+a task, specified in the run() method you provide.
+
+Launch the threads using the **threading**.**Thread**.**start**() method
+
+It’s pretty easy. You can keep track of how many threads are out there
+using the **threading**.**active**\_**threads**() method. You can also
+check on any individual using the thread’s **is**\_**alive**() method.
+If, for any reason, you want a thread to complete its task before
+letting the interpreter turn its attention to another thread, you can
+invoke the thread’s **join**() method.
+
+Here’s a simple application that allows you to set a swarm of threads
+loose and monitor their activities.
+
+
+
+
+#py_threads.py
+import threading
+import time
+class MyThread(threading.Thread):
+def __init__(self, sleep_seconds, *args, **kw):
+threading.Thread.__init__(self, *args, **kw)
+self.sleep_seconds = sleep_seconds
+def run(self):
+print("{} started".format(self.name))
+time.sleep(self.sleep_seconds)
+for i in range(self.sleep_seconds):
+for j in range(100000):
+k = j+5 #some arbitrary calculation
+print("{} working ... done with pass {}"\
+.format(self.name, i))
+print("{} finished - only took {} seconds"\
+.format(self.name, self.sleep_seconds))
+running_threads = threading.active_count()
+#a list of thread object instances
+thread_list = [MyThread(i+1) for i in range(6)]
+for thread in thread_list:
+thread.start()
+print("{} thread(s) are running"\
+.format(threading.active_count()))
+while threading.active_count() :
+time.sleep(1)
+print("z"*50)
+a=1
+
+
+
+
+Getters and Setters
+-------------------
+
+Python doesn’t enforce applying getters and setters to work with
+attribute values. In fact, it’s really easy simply to address class or
+instance variables by name.
+
+
+
+
+#py_getters_and_setters.py
+class SomeClass():
+def __init__(self, some_value):
+self.some_value=some_value
+cls=SomeClass(41)
+print("value is: {} ".format( cls.some_value))
+cls.some_value=666
+print("value is: {} ".format( cls.some_value))
+
+
+
+
+
+
+value is: 41
+value is: 666
+
+
+
+
+While this works, it’s not particularly good hygiene – the attributes
+within the class are not well protected (encapsulated). One good way
+around this is to use Python’s version of getters and setters – these
+are called property decorators. Here’s how they can be implemented:
+
+
+
+
+#py_getters_and_setters_1.py
+class SomeClass():
+def __init__(self, some_value):
+self.some_value=some_value
+@property
+def some_value(self):
+print("returning a value")
+return self.__some_value
+@some_value.setter
+def some_value(self, some_value):
+print('checking for a valid value here')
+self.__some_value=some_value
+cls=SomeClass(41)
+print("value is: {} ".format( cls.some_value))
+cls.some_value=666
+print("value is: {} ".format( cls.some_value))
+
+
+
+
+If you look at the code carefully, you’ll see that the internal name of
+the variable \_\_**some**\_**value** is different that the name directly
+addressed by the user. This is called “name mangling” and used as a
+warning to other programmers – any name beginning with one or more “\_”
+characters signals that it’s meant to be used only within the routine.
+
+As this output shows, these methods get invoked whenever there’s an
+attempt to update the value:
+
+
+
+
+checking for a valid value here
+returning a value
+value is: 41
+checking for a valid value here
+returning a value
+value is: 666
+
+
+
+
+You can put any logic you want in either method. For instance, you might
+check for a valid value with the \#variable.setter-decorated
+property and authenticate a user’s right to view the information with
+the @property-decorated method.
+
+Here is an example of the former:
+
+
+
+
+#py_getters_and_setters_2.py
+class SomeClass():
+def __init__(self, some_value):
+self.some_value=some_value
+@property
+def some_value(self):
+return self.__some_value
+@some_value.setter
+def some_value(self, some_value):
+if isinstance(some_value, int) and \
+some_value  0 and \
+some_value = 100:
+self.__some_value=some_value
+else:
+msg = "Sorry, Charlie, this \
+needs to be between 1 and 10."
+print(msg)
+cls=SomeClass(41)
+print("value is: {} ".format( cls.some_value))
+cls.some_value=666
+print("value is: {} ".format( cls.some_value))
+
+
+
+
+And here’s the output:
+
+
+
+
+value is: 41
+Sorry, Charlie, this needs to be between 1 and 10.
+value is: 41
+
+
+
+
+I would point that Python takes a “responsible adults” policy. Even with
+the use of getters and setters, it’s still possible for outside routines
+to address the mangled variable.
+
+Decorators
+----------
+
+Python supports a variety of function and class decorators. The
+@**property** getter is an example of a built-in one. Their basic
+function is to identify a function that essentially “swallows” the
+decorated function. This example will server to clarify what I mean.
+
+
+
+
+#py_decorators.py
+def big_fish(input_function):
+print ("Yum. I just ate a {}".format(input_function()))
+@big_fish
+def little_fish():
+user_input=input("Please type something: ")
+return user_input
+
+
+
+
+
+
+Please type something: rats
+Yum. I just ate a rats
+
+
+
+
+What happened here? The big\_fish() function took on the little\_fish()
+as its input function (not knowing/caring that it’s little\_fish() or
+anything else.
+
+
+
+
+Exercise:
+
+Create two generators. One produces an array of 100 random integers (between 0 and 9) using the time.time() – based logic from above. The other uses the random library. You might find random.randint() useful.
+Load both into numpy arrays and compare the means and standard deviations.
+Print out your results and a quick assessment regarding which is better.
+
+
+
+
+
+Congratulations!
+
+If you’ve gotten this far and you still have a pulse, you are doing
+great! You have now graduated Advanced Python.
+
+Three words of advice moving forward: **unit** **tests** and **help –**
+master these tools and you hold the keys to mastering Python and writing
+beautiful code.
+
+The appendix that follows has a list of some of my favorite books, in
+case you’re interested.
+
+**Thank you and good luck in all you do!**
+
+Appendix I Recommended Reading
+
+Fluent Python (Ramalho, O'Reilly) - great
+intermediate book.
+
+Python Cookbook (Beazley and Jones,
+O'Reilly) - tons of recipes.
+
+Black Hat Python (Seitz, No Starch Press)
+
+-   for the hacker in all of us lots of content on netcat, etc.
+
+Python Web Programming (Holden, New
+Riders) - \*very\* outdated but extremely lucid; OK because many basics
+have not changed much.
+
+Doing Math With Python (Saha, No Starch
+Press) - solid intro for numeric processing / graphics.
+
+Test-Driven Development for Python
+(Percival, O'Reilly) - considered a classic by some.
+
+Effective Python Penetration Testing
+(Rehim, O'Reilly) - pretty good if you have an adolescent spirit!
+
+Data Science Essentials in Python
+(Ainoviev, Pragmatic Bookshelf) - decent beginners guide; spares reader
+horrific arcane detail.
+
+Mastering Natural Language Processing With
+Python (Chopra et al., Packt ) - Not for the faint of heart, but
+pretty good.
+
+Introduction to Machine Learning with
+Python (Muller and Guido) - great beginner/intermediate book, but
+you gotta like AI.
+
+About the Author
+
+Patrick
+Barton has been wrangling Python since 2010, applying it mostly to
+mathematical modeling and machine learning projects. He teaches Python
+internationally and is the author of several Python-related texts. His
+background includes Dean of Faculty / Lead Instructor at the O’Reilly
+School of Technology, where he was also a full-course Python instructor.
+
+In past lives, he has served as a National Laboratory energy scientist,
+VP of R&D for a psychometric research organization, business systems
+strategist, mathematical modeler, and IT director. He is a serial
+inventor, currently refining the first artificially-intelligent trapping
+system for Burmese pythons (Python-based, naturally).
+
+He makes his home in Portland, Oregon.
+
+You can connect with him on LinkedIn:
+
+https://www.linkedin.com/in/patbartonpdx
+
+Special thanks to Steve Holden and Kirby Urner, my personal Python
+mentors, friends, and colleagues, without whom this book would not have
+been possible.
+
+\[1\] You want to get the Professional version, at least for the trial.
+You can downgrade later to the free version (Wing 101). If you want to
+keep using Wing Professional feel free to use this discount code:
+PJBD50A1.
+
+\[2\] Just for fun, there’s an example of how you might write your own
+**\_\_add\_\_**() method in py\_override.py.
+
+\[3\] REPL is the read, execute, print loop – it’s what makes a Python
+terminal session interactive.
+
+ word = “bird”; word.upper() \#the semicolon allows multiple
+lines of Python code on the same line
+
+BIRD
+
+ word
+
+‘bird’
+
+\[4\] Python has only one “flavor” of **while** – it doesn’t have a
+choice between do..while and while..do .
+
+\[5\] A hash table is an associative array. Hash tables are optimized to
+minimize the resources required to retrieve a value, given a key.
+There’s a really approachable article here:
+https://en.wikipedia.org/wiki/Hash\_table.
+
+\[6\] Union and intersection methods even work if the other object is
+not a **set**.
+
+ a = {2, 3, 4}; b = \[3, 4, 5\]
+
+ a.intersection(b)
+
+ {3, 4}
+
+\[7\] This will produce a new **set** – assuming all these are **set**
+objects:
+
+ a & b \| (c \| d) & e
+
+\[8\] **map** takes a function and one or more iterable object(s) as
+arguments. It returns a iterator expression (a map object) capable of
+computing the function against the iterable object(s) lazily. The docs
+are here:
+https://docs.python.org/3/library/functions.html\#map
+
+\[9\] For character files the only reliable location is obtained with
+**seek**(0) – unless you’re sure that the file is encoded to fixed-width
+characters and you know what the width is.
+
+\[10\]
+https://docs.python.org/3.5/tutorial/classes.html
+- a-first-look-at-classes
+
+\[11\] Technically the **Exception** class is a child of the
+**BaseException**. But when you create your own custom classes you’ll
+want to inherit from **Exception**.
+
+\[12\]
+https://docs.python.org/3/library/exceptions.html\#exception-hierarchy
+
+\[13\] Harry Percival has written an outstanding book on the topic if
+you want to explore further. Test-Driven Development with Python.
+ISBN-13: 978-149195870.
+
+\[14\] We cover **unittest** here, but there are others in Python’s
+ecosystem. These include **pytest**
+(https://docs.pytest.org/en/latest/contents.html)
+and **doctest**
+(https://docs.python.org/2/library/doctest.html).
+
+\[15\] You’ll note that all the tests are use “self” as in
+self.AssertEqual. That’s your entrée to the namespace of the
+unittest.TestCase methods.
+
+\[16\] It can be instructive to run a debugger a line at a time as you
+import one script into another, keeping an eye on the **\_\_main\_\_**
+attribute as you do so..
+
+\[17\] Even if you have several tests e.g., you apply
+**self**.**AssertEqual** against each element of an iterable within a
+test method, you get only earn one “.”
+
+\[18\] Some IDEs will flag the line of code within **case.py** where the
+exception was raised. If you don’t want that behavior, you can turn it
+off. In Wing, there’s a check box in the Exceptions tab “Ignore
+Exceptions”.
+
+\[19\] You can run them directly if you wish, but there’s really no
+need.
+
+\[20\] You might try this in your console:
+
+ .1 + .1 + .1
+
+0.30000000000000004
+
+\[21\] Typically the original directory will be the one that the script
+you initially launched resides in.
+
+\[22\] Note that we did not even have to create a name for the file
+handler object produced with **open().**
+
+\[23\] Be aware that your Python script might be running under your
+normal user name with normal permissions. Alternatively, if you have
+given yourself sudo / admin privileges before running the script or
+switched to another user, the script will run with those powers and that
+user.
+
+\[24\] Yes, this code is pretty fragile. We’ll be enhancing this script
+for the end-of-chapter exercise.
+
+\[25\] There is also a **set** comprehension – the same as a **dict**
+comprehension but with a single value on the left instead of a key:value
+pair.
+
+\[26\] Poor Barfy. **zip** only produces intact **tuples** – one from
+each interable. So it can only produce as many **tuples** as there are
+elements in the shortest iterable.
+
+\[27\] The notion of “rows” and “columns” is a purely human construct. A
+very convenient one, to be sure, but irrelevant to the interpreter’s
+“way of thinking”. Numpy and pandas have more intuitive methods to work
+with array-like objects. Besides introducing you to a tool available in
+the standard library (therefore available to most systems your app may
+run on), the idea here is provide you an opportunity to think a little
+more like a computer.
+
+\[28\]
+https://docs.python.org/3/library/array.html\#array.array
+
+\[29\] There are lots of others to chose from, but **tkinter** is the
+only one bundled in the basic library and reliably available anywhere
+your code goes. There’s a list of other choices available here:
+
+http://docs.python-guide.org/en/latest/scenarios/gui/
+
+\[30\] Technically an instance of the **Tk** class a top level
+**widget** to serve as the main container.
+
+\[31\] You might find it useful to arrange your screen to have your
+debugger take up 75-80 percent of the screen real estate. That way you
+can view your GUI and the code side-by-side without one covering the
+other.
+
+\[32\] Each widget will have its own “bag of tricks”; exploration is
+encouraged.
+
+\[33\] **Tkinter** came to Python from the outside. It’s not written in
+Python – what you see are the Python bindings installed to make it “look
+and feel” like native code. As you can see here, the fit isn’t perfect.
+
+\[34\] You can have several collections within the same GUI. An easy way
+to do that is to put each in its own **Frame** and providing it as the
+first argument to its constructor.
+
+\[35\]
+http://effbot.org/tkinterbook/grid.htm
+
+\[36\]
+https://en.wikipedia.org/wiki/Tkinter
+
+\[37\]
+https://www.djangoproject.com/download/
+
+\[38\]
+http://flask.pocoo.org/
+
+\[39\] As with the GUI code, you might find it useful to display the
+browser and code side-by-side so it’s easy to do a cross-walk.
+
+\[40\] There are lots of other ways to skin this cat including PHP,
+Erlang, Ruby and Perl – Python doesn’t have a lock by any means. There’s
+a good survey article here:
+https://www.pixelcrayons.com/blog/web/php-vs-python-vs-ruby-comparison/
+
+\[41\] CGI scripts normally go in ./cgi-bin/ but you can put them
+anywhere with some extra effort. The root directory (called the “web
+root”) is to your web app as c:\\ a Windows file system. It’s typically
+owned by a low-privileged user for security reasons.
+
+\[42\] In fact, there’s ZERO security built into this – it’s for local
+dev purposes only. Of course there are some penetration testing
+possibilities if you like hacking ;-)
+
+\[43\] The **-m** directive specifies a module; **--bind** ties the
+server to localhost; **--cgi** is the protocol; 8000 is the port. The
+**http**.**server** module bundles low-level libraries like
+**socketserver** and provides other useful tools like
+**http**.**client**. Full docs are here:
+https://docs.python.org/3/library/http.html\#server
+
+\[44\] You can use any port you want, but want to pick one that isn’t
+“well-known” – anything larger than 1024 should do well.
+
+\[45\] You don’t need to care exactly what port is chosen locally. Using
+“localhost” will make this code transportable.
+
+\[46\] This section can be skipped without loss of continuity.
+
+\[47\] A more complete example is available at:
+https://github.com/pbarton666/snakes/blob/master/
+django\_site/snakes/templates/snakes/color\_swatches.html. Feel free to
+poke around – it contains some of my Python code behind an AI project
+designed to ID real-world pythons by their visual elements.
+
+\[48\] This being said different dialects of SQL exist and database
+products do vary in how to access metadata, etc. You’ll need to learn
+the differences if you switch unless you’re using a tool like Django
+that handles the translation.
+
+\[49\] The SQLite, while an independent project from Python, is part of
+the standard library and “just works”. The others, not necessarily so.
+Since you may be getting Python, the connector and the database from
+different sources they may not fit together perfectly. Be prepared to
+dive into the configurations and look for things like the expected
+location of the socket file system object.
+
+\[50\] You might find it useful to have a quick look at the namespace of
+the cursor and connector objects to get the “lay of the land” of the
+separation of responsibilities.
+
+\[51\] The character width fields are provided here for portability. In
+fact, **SQLite** will ignore these and dynamically expand the width as
+needed.
+
+\[52\]
+https://www.sqlite.org/datatype3.html.
+Notably, there is not a DATETIME column type, but there are
+work-arounds. There’s an excellent StackOverflow post by Alex Martelli
+here:
+https://stackoverflow.com/questions/1829872
+
+\[53\] SQLite automatically commits changes by default, so strictly
+speaking this is not necessary. This is not the case with most other
+database products.
+
+\[54\] Databases work with **tuples**, generally. Column names and
+values are always provided as such.
+
+\[55\] Note that we’ve included the VALUES as (?, ?, ?). We could have
+used a formatted string, but that invites a SQL injection attack. Here,
+we’re providing a **tuple** as a second argument to **execute**.
+
+\[56\] Databases can all introspect (their metadata is typically stored
+in internal database tables). Each has its own way of going about it.
+This example will only work for SQLite.
+
+\[57\] The % character can be used in several configurations e.g., %el,
+el%, %el%. You might experiment.
+
+\[58\] This section can be skipped without loss of continuity. But it is
+good stuff to know about.
+
+\[59\] A potential use case might be that you’ve defined several “out of
+spec” conditions around your network traffic, each requiring a different
+level of forensic data collection.
+
+\[60\]
+https://docs.python.org/3/library/logging.html
+- formatter-objects
+
+\[61\] Cf. strftime.org for a complete list.
+
+\[62\]
+https://docs.python.org/3/library/logging.handlers.html
+
+\[63\] These include: **scipy** (linear algebra, differential equation,
+optimization, etc.), **matplotlib** (visualization), **pandas** (data
+structures), etc.
+
+\[64\] You can make an array comprised of the primitive Python
+**object** type. The elements serve as pointers to other objects, which
+can be just about anything.
+
+
+
+
+
+``` python
+```
+
+</div>

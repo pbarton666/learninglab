@@ -4258,3 +4258,2136 @@ DEBUG:root:started logging
 2021-07-09 15:31:38,192 called from diff.py: -> code[replace] old[8:8] new[8:8]
 2021-07-09 15:31:38,192 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
 2021-07-09 15:31:38,192 called from diff.py: diff parser end
+2021-07-09 15:31:40,582 called from diff.py: diff parser start
+2021-07-09 15:31:40,582 called from diff.py: line_lengths old: 8; new: 8
+2021-07-09 15:31:40,582 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-09 15:31:40,582 called from diff.py: copy old[1:7] new[1:7]
+2021-07-09 15:31:40,582 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-09 15:31:40,582 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-09 15:31:40,582 called from diff.py: diff parser end
+2021-07-09 15:31:40,841 called from diff.py: diff parser start
+2021-07-09 15:31:40,841 called from diff.py: line_lengths old: 8; new: 8
+2021-07-09 15:31:40,841 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-09 15:31:40,841 called from diff.py: copy old[1:7] new[1:7]
+2021-07-09 15:31:40,841 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-09 15:31:40,841 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-09 15:31:40,841 called from diff.py: diff parser end
+2021-07-09 15:31:41,175 called from diff.py: diff parser start
+2021-07-09 15:31:41,175 called from diff.py: line_lengths old: 8; new: 8
+2021-07-09 15:31:41,175 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-09 15:31:41,175 called from diff.py: copy old[1:7] new[1:7]
+2021-07-09 15:31:41,175 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-09 15:31:41,175 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-09 15:31:41,175 called from diff.py: diff parser end
+2021-07-09 15:31:41,534 called from diff.py: diff parser start
+2021-07-09 15:31:41,534 called from diff.py: line_lengths old: 8; new: 8
+2021-07-09 15:31:41,534 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-09 15:31:41,534 called from diff.py: copy old[1:7] new[1:7]
+2021-07-09 15:31:41,534 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-09 15:31:41,534 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-09 15:31:41,534 called from diff.py: diff parser end
+2021-07-09 15:31:41,880 called from diff.py: diff parser start
+2021-07-09 15:31:41,880 called from diff.py: line_lengths old: 8; new: 8
+2021-07-09 15:31:41,880 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-09 15:31:41,880 called from diff.py: copy old[1:7] new[1:7]
+2021-07-09 15:31:41,880 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-09 15:31:41,880 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-09 15:31:41,880 called from diff.py: diff parser end
+2021-07-09 15:31:42,114 called from diff.py: diff parser start
+2021-07-09 15:31:42,114 called from diff.py: line_lengths old: 8; new: 8
+2021-07-09 15:31:42,114 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-09 15:31:42,114 called from diff.py: copy old[1:7] new[1:7]
+2021-07-09 15:31:42,114 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-09 15:31:42,114 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-09 15:31:42,114 called from diff.py: diff parser end
+2021-07-09 15:31:47,433 called from diff.py: diff parser start
+2021-07-09 15:31:47,433 called from diff.py: line_lengths old: 8; new: 8
+2021-07-09 15:31:47,433 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-09 15:31:47,433 called from diff.py: copy old[1:7] new[1:7]
+2021-07-09 15:31:47,433 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-09 15:31:47,433 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-09 15:31:47,433 called from diff.py: diff parser end
+2021-07-09 15:31:50,500 called from PngImagePlugin.py: STREAM b'IHDR' 16 13
+2021-07-09 15:31:50,500 called from PngImagePlugin.py: STREAM b'IDAT' 41 65536
+2021-07-10 10:14:25,033 called from <ipython-input-102-9004de870204>: Yup, I'm debugging
+2021-07-10 10:15:12,991 called from diff.py: diff parser start
+2021-07-10 10:15:12,991 called from diff.py: line_lengths old: 8; new: 1
+2021-07-10 10:15:12,991 called from diff.py: -> code[replace] old[1:8] new[1:1]
+2021-07-10 10:15:12,991 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:12,991 called from diff.py: diff parser end
+2021-07-10 10:15:13,272 called from diff.py: diff parser start
+2021-07-10 10:15:13,272 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:13,272 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:13,272 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:13,272 called from diff.py: diff parser end
+2021-07-10 10:15:13,609 called from diff.py: diff parser start
+2021-07-10 10:15:13,609 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:13,609 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:13,609 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:13,609 called from diff.py: diff parser end
+2021-07-10 10:15:13,735 called from diff.py: diff parser start
+2021-07-10 10:15:13,735 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:13,735 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:13,735 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:13,735 called from diff.py: diff parser end
+2021-07-10 10:15:14,048 called from diff.py: diff parser start
+2021-07-10 10:15:14,048 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:14,048 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:14,048 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:14,048 called from diff.py: diff parser end
+2021-07-10 10:15:14,454 called from diff.py: diff parser start
+2021-07-10 10:15:14,454 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:14,454 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:14,454 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:14,454 called from diff.py: diff parser end
+2021-07-10 10:15:14,815 called from diff.py: diff parser start
+2021-07-10 10:15:14,815 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:14,815 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:14,815 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:14,815 called from diff.py: diff parser end
+2021-07-10 10:15:15,137 called from diff.py: diff parser start
+2021-07-10 10:15:15,137 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:15,137 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:15,137 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:15,137 called from diff.py: diff parser end
+2021-07-10 10:15:15,293 called from diff.py: diff parser start
+2021-07-10 10:15:15,293 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:15,293 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:15,293 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:15,293 called from diff.py: diff parser end
+2021-07-10 10:15:15,544 called from diff.py: diff parser start
+2021-07-10 10:15:15,544 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:15,544 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:15,544 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:15,544 called from diff.py: diff parser end
+2021-07-10 10:15:15,966 called from diff.py: diff parser start
+2021-07-10 10:15:15,966 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:15,966 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:15,966 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:15,966 called from diff.py: diff parser end
+2021-07-10 10:15:16,184 called from diff.py: diff parser start
+2021-07-10 10:15:16,184 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:16,184 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:16,184 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:16,184 called from diff.py: diff parser end
+2021-07-10 10:15:20,178 called from diff.py: diff parser start
+2021-07-10 10:15:20,178 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:15:20,178 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:15:20,178 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:15:20,178 called from diff.py: diff parser end
+2021-07-10 10:16:18,092 called from diff.py: diff parser start
+2021-07-10 10:16:18,092 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:18,092 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:18,092 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:18,092 called from diff.py: diff parser end
+2021-07-10 10:16:18,310 called from diff.py: diff parser start
+2021-07-10 10:16:18,310 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:18,310 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:18,310 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:18,310 called from diff.py: diff parser end
+2021-07-10 10:16:18,468 called from diff.py: diff parser start
+2021-07-10 10:16:18,468 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:18,468 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:18,468 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:18,468 called from diff.py: diff parser end
+2021-07-10 10:16:28,203 called from diff.py: diff parser start
+2021-07-10 10:16:28,203 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:28,203 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:28,203 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:28,203 called from diff.py: diff parser end
+2021-07-10 10:16:30,178 called from diff.py: diff parser start
+2021-07-10 10:16:30,178 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:30,178 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:30,178 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:30,178 called from diff.py: diff parser end
+2021-07-10 10:16:30,553 called from diff.py: diff parser start
+2021-07-10 10:16:30,553 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:30,553 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:30,553 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:30,553 called from diff.py: diff parser end
+2021-07-10 10:16:30,851 called from diff.py: diff parser start
+2021-07-10 10:16:30,851 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:30,851 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:30,851 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:30,851 called from diff.py: diff parser end
+2021-07-10 10:16:31,117 called from diff.py: diff parser start
+2021-07-10 10:16:31,117 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:31,117 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:31,117 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:31,117 called from diff.py: diff parser end
+2021-07-10 10:16:31,424 called from diff.py: diff parser start
+2021-07-10 10:16:31,424 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:31,424 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:31,424 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:31,424 called from diff.py: diff parser end
+2021-07-10 10:16:31,707 called from diff.py: diff parser start
+2021-07-10 10:16:31,707 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:31,707 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:31,707 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:31,707 called from diff.py: diff parser end
+2021-07-10 10:16:31,848 called from diff.py: diff parser start
+2021-07-10 10:16:31,848 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:31,848 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:31,848 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:31,848 called from diff.py: diff parser end
+2021-07-10 10:16:32,348 called from diff.py: diff parser start
+2021-07-10 10:16:32,348 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:32,348 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:32,348 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:32,348 called from diff.py: diff parser end
+2021-07-10 10:16:32,742 called from diff.py: diff parser start
+2021-07-10 10:16:32,742 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:32,742 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:32,742 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:32,742 called from diff.py: diff parser end
+2021-07-10 10:16:32,808 called from diff.py: diff parser start
+2021-07-10 10:16:32,808 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:32,808 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:32,808 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:32,808 called from diff.py: diff parser end
+2021-07-10 10:16:33,029 called from diff.py: diff parser start
+2021-07-10 10:16:33,029 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:33,029 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:33,029 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:33,029 called from diff.py: diff parser end
+2021-07-10 10:16:33,611 called from diff.py: diff parser start
+2021-07-10 10:16:33,611 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:33,611 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:33,611 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:33,611 called from diff.py: diff parser end
+2021-07-10 10:16:33,871 called from diff.py: diff parser start
+2021-07-10 10:16:33,871 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:33,871 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:33,871 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:33,871 called from diff.py: diff parser end
+2021-07-10 10:16:33,936 called from diff.py: diff parser start
+2021-07-10 10:16:33,936 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:33,936 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:33,937 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:33,938 called from diff.py: diff parser end
+2021-07-10 10:16:34,198 called from diff.py: diff parser start
+2021-07-10 10:16:34,198 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:34,198 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:34,198 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:34,198 called from diff.py: diff parser end
+2021-07-10 10:16:34,433 called from diff.py: diff parser start
+2021-07-10 10:16:34,433 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:34,433 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:34,433 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:34,433 called from diff.py: diff parser end
+2021-07-10 10:16:34,637 called from diff.py: diff parser start
+2021-07-10 10:16:34,637 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:34,637 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:34,637 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:34,637 called from diff.py: diff parser end
+2021-07-10 10:16:34,793 called from diff.py: diff parser start
+2021-07-10 10:16:34,793 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:34,793 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:34,793 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:34,793 called from diff.py: diff parser end
+2021-07-10 10:16:35,360 called from diff.py: diff parser start
+2021-07-10 10:16:35,360 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:35,360 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:35,360 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:35,360 called from diff.py: diff parser end
+2021-07-10 10:16:35,454 called from diff.py: diff parser start
+2021-07-10 10:16:35,454 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:35,454 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:35,454 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:35,454 called from diff.py: diff parser end
+2021-07-10 10:16:35,547 called from diff.py: diff parser start
+2021-07-10 10:16:35,547 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:16:35,547 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:16:35,547 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:16:35,547 called from diff.py: diff parser end
+2021-07-10 10:20:24,627 called from diff.py: diff parser start
+2021-07-10 10:20:24,627 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:20:24,627 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:20:24,627 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:20:24,627 called from diff.py: diff parser end
+2021-07-10 10:20:24,860 called from diff.py: diff parser start
+2021-07-10 10:20:24,860 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:20:24,860 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:20:24,860 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:20:24,860 called from diff.py: diff parser end
+2021-07-10 10:20:25,088 called from diff.py: diff parser start
+2021-07-10 10:20:25,088 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:20:25,088 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:20:25,088 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:20:25,088 called from diff.py: diff parser end
+2021-07-10 10:20:25,314 called from diff.py: diff parser start
+2021-07-10 10:20:25,314 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:20:25,314 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:20:25,314 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:20:25,314 called from diff.py: diff parser end
+2021-07-10 10:20:25,520 called from diff.py: diff parser start
+2021-07-10 10:20:25,520 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:20:25,520 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:20:25,520 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:20:25,520 called from diff.py: diff parser end
+2021-07-10 10:20:25,817 called from diff.py: diff parser start
+2021-07-10 10:20:25,817 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:20:25,817 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:20:25,817 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:20:25,817 called from diff.py: diff parser end
+2021-07-10 10:20:26,062 called from diff.py: diff parser start
+2021-07-10 10:20:26,062 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:20:26,062 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:20:26,062 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:20:26,062 called from diff.py: diff parser end
+2021-07-10 10:20:42,162 called from diff.py: diff parser start
+2021-07-10 10:20:42,162 called from diff.py: line_lengths old: 1; new: 3
+2021-07-10 10:20:42,162 called from diff.py: -> code[replace] old[1:1] new[1:3]
+2021-07-10 10:20:42,162 called from diff.py: parse_part from 1 to 3 (to 2 in part parser)
+2021-07-10 10:20:42,162 called from diff.py: diff parser end
+2021-07-10 10:20:42,381 called from diff.py: diff parser start
+2021-07-10 10:20:42,381 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:42,381 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:42,381 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:42,381 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:42,381 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:42,381 called from diff.py: diff parser end
+2021-07-10 10:20:42,538 called from diff.py: diff parser start
+2021-07-10 10:20:42,538 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:42,538 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:42,538 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:42,538 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:42,538 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:42,538 called from diff.py: diff parser end
+2021-07-10 10:20:42,976 called from diff.py: diff parser start
+2021-07-10 10:20:42,976 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:42,976 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:42,976 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:42,976 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:42,976 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:42,976 called from diff.py: diff parser end
+2021-07-10 10:20:43,335 called from diff.py: diff parser start
+2021-07-10 10:20:43,335 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:43,335 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:43,335 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:43,335 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:43,335 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:43,335 called from diff.py: diff parser end
+2021-07-10 10:20:43,642 called from diff.py: diff parser start
+2021-07-10 10:20:43,642 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:43,642 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:43,642 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:43,642 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:43,642 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:43,642 called from diff.py: diff parser end
+2021-07-10 10:20:43,846 called from diff.py: diff parser start
+2021-07-10 10:20:43,846 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:43,846 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:43,846 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:43,846 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:43,846 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:43,846 called from diff.py: diff parser end
+2021-07-10 10:20:43,986 called from diff.py: diff parser start
+2021-07-10 10:20:43,986 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:43,986 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:43,986 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:43,986 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:43,986 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:43,986 called from diff.py: diff parser end
+2021-07-10 10:20:45,192 called from diff.py: diff parser start
+2021-07-10 10:20:45,192 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:45,192 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:45,192 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:45,192 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:45,192 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:45,192 called from diff.py: diff parser end
+2021-07-10 10:20:45,395 called from diff.py: diff parser start
+2021-07-10 10:20:45,395 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:45,395 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:45,395 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:45,395 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:45,395 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:45,395 called from diff.py: diff parser end
+2021-07-10 10:20:45,564 called from diff.py: diff parser start
+2021-07-10 10:20:45,564 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:45,564 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:45,564 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:45,564 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:45,564 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:45,564 called from diff.py: diff parser end
+2021-07-10 10:20:46,245 called from diff.py: diff parser start
+2021-07-10 10:20:46,245 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:46,245 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:46,245 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:46,245 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:46,245 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:46,245 called from diff.py: diff parser end
+2021-07-10 10:20:46,401 called from diff.py: diff parser start
+2021-07-10 10:20:46,401 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:46,401 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:46,401 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:46,401 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:46,401 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:46,401 called from diff.py: diff parser end
+2021-07-10 10:20:46,495 called from diff.py: diff parser start
+2021-07-10 10:20:46,495 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:20:46,495 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:46,495 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:46,495 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:20:46,495 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:20:46,495 called from diff.py: diff parser end
+2021-07-10 10:20:50,950 called from diff.py: diff parser start
+2021-07-10 10:20:50,950 called from diff.py: line_lengths old: 3; new: 4
+2021-07-10 10:20:50,950 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:20:50,950 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:50,950 called from diff.py: parse_part from 2 to 4 (to 3 in part parser)
+2021-07-10 10:20:50,950 called from diff.py: -> code[replace] old[3:3] new[3:4]
+2021-07-10 10:20:50,950 called from diff.py: diff parser end
+2021-07-10 10:20:51,434 called from diff.py: diff parser start
+2021-07-10 10:20:51,434 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:20:51,434 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:20:51,434 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:51,434 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:20:51,434 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:20:51,434 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:20:51,434 called from diff.py: diff parser end
+2021-07-10 10:20:52,805 called from diff.py: diff parser start
+2021-07-10 10:20:52,805 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:20:52,805 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:20:52,805 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:52,805 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:20:52,805 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:20:52,805 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:20:52,805 called from diff.py: diff parser end
+2021-07-10 10:20:52,977 called from diff.py: diff parser start
+2021-07-10 10:20:52,977 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:20:52,977 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:20:52,977 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:52,977 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:20:52,977 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:20:52,977 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:20:52,977 called from diff.py: diff parser end
+2021-07-10 10:20:53,133 called from diff.py: diff parser start
+2021-07-10 10:20:53,133 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:20:53,133 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:20:53,133 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:53,133 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:20:53,133 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:20:53,133 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:20:53,133 called from diff.py: diff parser end
+2021-07-10 10:20:53,454 called from diff.py: diff parser start
+2021-07-10 10:20:53,454 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:20:53,454 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:20:53,454 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:53,454 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:20:53,454 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:20:53,454 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:20:53,454 called from diff.py: diff parser end
+2021-07-10 10:20:53,454 called from cache.py: pickle loaded: C:\Users\pat\AppData\Roaming\Python\Python39\site-packages\jedi\third_party\typeshed\stdlib\2and3\time.pyi
+2021-07-10 10:20:53,611 called from diff.py: diff parser start
+2021-07-10 10:20:53,611 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:20:53,611 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:20:53,611 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:53,611 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:20:53,611 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:20:53,611 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:20:53,611 called from diff.py: diff parser end
+2021-07-10 10:20:54,018 called from diff.py: diff parser start
+2021-07-10 10:20:54,018 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:20:54,018 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:20:54,018 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:54,018 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:20:54,018 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:20:54,018 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:20:54,018 called from diff.py: diff parser end
+2021-07-10 10:20:54,237 called from diff.py: diff parser start
+2021-07-10 10:20:54,237 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:20:54,237 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:20:54,237 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:54,237 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:20:54,237 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:20:54,237 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:20:54,237 called from diff.py: diff parser end
+2021-07-10 10:20:54,502 called from diff.py: diff parser start
+2021-07-10 10:20:54,502 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:20:54,502 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:20:54,502 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:54,502 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:20:54,502 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:20:54,502 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:20:54,502 called from diff.py: diff parser end
+2021-07-10 10:20:54,691 called from diff.py: diff parser start
+2021-07-10 10:20:54,691 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:20:54,691 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:20:54,691 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:54,691 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:20:54,691 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:20:54,691 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:20:54,691 called from diff.py: diff parser end
+2021-07-10 10:20:55,472 called from diff.py: diff parser start
+2021-07-10 10:20:55,472 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:20:55,472 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:20:55,472 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:20:55,472 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:20:55,472 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:20:55,472 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:20:55,472 called from diff.py: diff parser end
+2021-07-10 10:21:09,816 called from diff.py: diff parser start
+2021-07-10 10:21:09,821 called from diff.py: line_lengths old: 4; new: 6
+2021-07-10 10:21:09,821 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:21:09,821 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:21:09,822 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:21:09,822 called from diff.py: parse_part from 3 to 4 (to 5 in part parser)
+2021-07-10 10:21:09,822 called from diff.py: -> code[replace] old[4:4] new[4:6]
+2021-07-10 10:21:09,822 called from diff.py: parse_part from 5 to 6 (to 5 in part parser)
+2021-07-10 10:21:09,822 called from diff.py: diff parser end
+2021-07-10 10:21:10,141 called from diff.py: diff parser start
+2021-07-10 10:21:10,141 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:10,141 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:10,141 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:10,141 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:10,141 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:10,141 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:10,141 called from diff.py: diff parser end
+2021-07-10 10:21:10,485 called from diff.py: diff parser start
+2021-07-10 10:21:10,485 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:10,485 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:10,485 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:10,485 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:10,485 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:10,485 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:10,485 called from diff.py: diff parser end
+2021-07-10 10:21:10,778 called from diff.py: diff parser start
+2021-07-10 10:21:10,778 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:10,778 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:10,778 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:10,778 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:10,778 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:10,778 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:10,778 called from diff.py: diff parser end
+2021-07-10 10:21:13,970 called from diff.py: diff parser start
+2021-07-10 10:21:13,970 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:13,970 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:13,970 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:13,970 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:13,970 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:13,970 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:13,970 called from diff.py: diff parser end
+2021-07-10 10:21:14,354 called from diff.py: diff parser start
+2021-07-10 10:21:14,354 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:14,354 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:14,354 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:14,354 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:14,354 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:14,355 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:14,355 called from diff.py: diff parser end
+2021-07-10 10:21:14,561 called from diff.py: diff parser start
+2021-07-10 10:21:14,561 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:14,561 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:14,561 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:14,561 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:14,561 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:14,561 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:14,561 called from diff.py: diff parser end
+2021-07-10 10:21:14,735 called from diff.py: diff parser start
+2021-07-10 10:21:14,735 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:14,735 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:14,735 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:14,735 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:14,735 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:14,735 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:14,735 called from diff.py: diff parser end
+2021-07-10 10:21:15,130 called from diff.py: diff parser start
+2021-07-10 10:21:15,130 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:15,130 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:15,130 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:15,130 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:15,130 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:15,130 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:15,130 called from diff.py: diff parser end
+2021-07-10 10:21:15,348 called from diff.py: diff parser start
+2021-07-10 10:21:15,348 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:15,348 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:15,348 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:15,348 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:15,348 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:15,348 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:15,348 called from diff.py: diff parser end
+2021-07-10 10:21:15,473 called from diff.py: diff parser start
+2021-07-10 10:21:15,473 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:15,473 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:15,473 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:15,473 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:15,473 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:15,473 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:15,473 called from diff.py: diff parser end
+2021-07-10 10:21:15,674 called from diff.py: diff parser start
+2021-07-10 10:21:15,674 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:15,674 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:15,674 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:15,674 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:15,674 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:15,674 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:15,674 called from diff.py: diff parser end
+2021-07-10 10:21:15,846 called from diff.py: diff parser start
+2021-07-10 10:21:15,846 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:15,846 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:15,846 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:15,846 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:15,846 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:15,846 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:15,846 called from diff.py: diff parser end
+2021-07-10 10:21:15,921 called from diff.py: diff parser start
+2021-07-10 10:21:15,921 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:15,921 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:15,921 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:15,921 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:15,921 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:15,921 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:15,921 called from diff.py: diff parser end
+2021-07-10 10:21:16,036 called from diff.py: diff parser start
+2021-07-10 10:21:16,036 called from diff.py: line_lengths old: 6; new: 6
+2021-07-10 10:21:16,036 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:16,036 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:16,036 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:16,036 called from diff.py: -> code[replace] old[6:6] new[6:6]
+2021-07-10 10:21:16,036 called from diff.py: parse_part from 6 to 6 (to 5 in part parser)
+2021-07-10 10:21:16,036 called from diff.py: diff parser end
+2021-07-10 10:21:20,559 called from diff.py: diff parser start
+2021-07-10 10:21:20,559 called from diff.py: line_lengths old: 6; new: 7
+2021-07-10 10:21:20,559 called from diff.py: -> code[equal] old[1:5] new[1:5]
+2021-07-10 10:21:20,559 called from diff.py: copy old[1:4] new[1:4]
+2021-07-10 10:21:20,559 called from diff.py: parse_part from 5 to 5 (to 5 in part parser)
+2021-07-10 10:21:20,559 called from diff.py: -> code[replace] old[6:6] new[6:7]
+2021-07-10 10:21:20,559 called from diff.py: parse_part from 6 to 7 (to 6 in part parser)
+2021-07-10 10:21:20,559 called from diff.py: diff parser end
+2021-07-10 10:21:20,871 called from diff.py: diff parser start
+2021-07-10 10:21:20,871 called from diff.py: line_lengths old: 7; new: 7
+2021-07-10 10:21:20,871 called from diff.py: -> code[equal] old[1:6] new[1:6]
+2021-07-10 10:21:20,871 called from diff.py: copy old[1:6] new[1:6]
+2021-07-10 10:21:20,871 called from diff.py: -> code[replace] old[7:7] new[7:7]
+2021-07-10 10:21:20,871 called from diff.py: parse_part from 7 to 7 (to 6 in part parser)
+2021-07-10 10:21:20,871 called from diff.py: diff parser end
+2021-07-10 10:21:21,168 called from diff.py: diff parser start
+2021-07-10 10:21:21,168 called from diff.py: line_lengths old: 7; new: 7
+2021-07-10 10:21:21,168 called from diff.py: -> code[equal] old[1:6] new[1:6]
+2021-07-10 10:21:21,168 called from diff.py: copy old[1:6] new[1:6]
+2021-07-10 10:21:21,168 called from diff.py: -> code[replace] old[7:7] new[7:7]
+2021-07-10 10:21:21,168 called from diff.py: parse_part from 7 to 7 (to 6 in part parser)
+2021-07-10 10:21:21,168 called from diff.py: diff parser end
+2021-07-10 10:21:21,355 called from diff.py: diff parser start
+2021-07-10 10:21:21,355 called from diff.py: line_lengths old: 7; new: 7
+2021-07-10 10:21:21,355 called from diff.py: -> code[equal] old[1:6] new[1:6]
+2021-07-10 10:21:21,355 called from diff.py: copy old[1:6] new[1:6]
+2021-07-10 10:21:21,355 called from diff.py: -> code[replace] old[7:7] new[7:7]
+2021-07-10 10:21:21,355 called from diff.py: parse_part from 7 to 7 (to 6 in part parser)
+2021-07-10 10:21:21,355 called from diff.py: diff parser end
+2021-07-10 10:21:21,496 called from diff.py: diff parser start
+2021-07-10 10:21:21,496 called from diff.py: line_lengths old: 7; new: 7
+2021-07-10 10:21:21,496 called from diff.py: -> code[equal] old[1:6] new[1:6]
+2021-07-10 10:21:21,496 called from diff.py: copy old[1:6] new[1:6]
+2021-07-10 10:21:21,496 called from diff.py: -> code[replace] old[7:7] new[7:7]
+2021-07-10 10:21:21,496 called from diff.py: parse_part from 7 to 7 (to 6 in part parser)
+2021-07-10 10:21:21,496 called from diff.py: diff parser end
+2021-07-10 10:21:22,091 called from diff.py: diff parser start
+2021-07-10 10:21:22,091 called from diff.py: line_lengths old: 7; new: 7
+2021-07-10 10:21:22,091 called from diff.py: -> code[equal] old[1:6] new[1:6]
+2021-07-10 10:21:22,091 called from diff.py: copy old[1:6] new[1:6]
+2021-07-10 10:21:22,091 called from diff.py: -> code[replace] old[7:7] new[7:7]
+2021-07-10 10:21:22,091 called from diff.py: parse_part from 7 to 7 (to 6 in part parser)
+2021-07-10 10:21:22,091 called from diff.py: diff parser end
+2021-07-10 10:21:22,326 called from diff.py: diff parser start
+2021-07-10 10:21:22,326 called from diff.py: line_lengths old: 7; new: 7
+2021-07-10 10:21:22,326 called from diff.py: -> code[equal] old[1:6] new[1:6]
+2021-07-10 10:21:22,326 called from diff.py: copy old[1:6] new[1:6]
+2021-07-10 10:21:22,326 called from diff.py: -> code[replace] old[7:7] new[7:7]
+2021-07-10 10:21:22,326 called from diff.py: parse_part from 7 to 7 (to 6 in part parser)
+2021-07-10 10:21:22,326 called from diff.py: diff parser end
+2021-07-10 10:21:22,466 called from diff.py: diff parser start
+2021-07-10 10:21:22,466 called from diff.py: line_lengths old: 7; new: 7
+2021-07-10 10:21:22,466 called from diff.py: -> code[equal] old[1:6] new[1:6]
+2021-07-10 10:21:22,466 called from diff.py: copy old[1:6] new[1:6]
+2021-07-10 10:21:22,466 called from diff.py: -> code[replace] old[7:7] new[7:7]
+2021-07-10 10:21:22,466 called from diff.py: parse_part from 7 to 7 (to 6 in part parser)
+2021-07-10 10:21:22,466 called from diff.py: diff parser end
+2021-07-10 10:21:22,591 called from diff.py: diff parser start
+2021-07-10 10:21:22,591 called from diff.py: line_lengths old: 7; new: 7
+2021-07-10 10:21:22,591 called from diff.py: -> code[equal] old[1:6] new[1:6]
+2021-07-10 10:21:22,591 called from diff.py: copy old[1:6] new[1:6]
+2021-07-10 10:21:22,591 called from diff.py: -> code[replace] old[7:7] new[7:7]
+2021-07-10 10:21:22,591 called from diff.py: parse_part from 7 to 7 (to 6 in part parser)
+2021-07-10 10:21:22,591 called from diff.py: diff parser end
+2021-07-10 10:21:22,733 called from diff.py: diff parser start
+2021-07-10 10:21:22,733 called from diff.py: line_lengths old: 7; new: 7
+2021-07-10 10:21:22,733 called from diff.py: -> code[equal] old[1:6] new[1:6]
+2021-07-10 10:21:22,733 called from diff.py: copy old[1:6] new[1:6]
+2021-07-10 10:21:22,733 called from diff.py: -> code[replace] old[7:7] new[7:7]
+2021-07-10 10:21:22,733 called from diff.py: parse_part from 7 to 7 (to 6 in part parser)
+2021-07-10 10:21:22,733 called from diff.py: diff parser end
+2021-07-10 10:21:23,864 called from diff.py: diff parser start
+2021-07-10 10:21:23,864 called from diff.py: line_lengths old: 7; new: 8
+2021-07-10 10:21:23,864 called from diff.py: -> code[equal] old[1:6] new[1:6]
+2021-07-10 10:21:23,864 called from diff.py: copy old[1:6] new[1:6]
+2021-07-10 10:21:23,864 called from diff.py: -> code[replace] old[7:7] new[7:8]
+2021-07-10 10:21:23,864 called from diff.py: parse_part from 7 to 8 (to 7 in part parser)
+2021-07-10 10:21:23,864 called from diff.py: diff parser end
+2021-07-10 10:21:24,085 called from diff.py: diff parser start
+2021-07-10 10:21:24,085 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:24,085 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:24,085 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:24,085 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:24,085 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:24,085 called from diff.py: diff parser end
+2021-07-10 10:21:24,225 called from diff.py: diff parser start
+2021-07-10 10:21:24,225 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:24,225 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:24,225 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:24,225 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:24,225 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:24,225 called from diff.py: diff parser end
+2021-07-10 10:21:24,400 called from diff.py: diff parser start
+2021-07-10 10:21:24,400 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:24,400 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:24,400 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:24,400 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:24,400 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:24,400 called from diff.py: diff parser end
+2021-07-10 10:21:27,331 called from diff.py: diff parser start
+2021-07-10 10:21:27,331 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:27,331 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:27,331 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:27,331 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:27,331 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:27,331 called from diff.py: diff parser end
+2021-07-10 10:21:27,622 called from diff.py: diff parser start
+2021-07-10 10:21:27,622 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:27,622 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:27,622 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:27,622 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:27,622 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:27,622 called from diff.py: diff parser end
+2021-07-10 10:21:27,799 called from diff.py: diff parser start
+2021-07-10 10:21:27,799 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:27,799 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:27,799 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:27,799 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:27,799 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:27,799 called from diff.py: diff parser end
+2021-07-10 10:21:27,949 called from diff.py: diff parser start
+2021-07-10 10:21:27,949 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:27,949 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:27,949 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:27,949 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:27,949 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:27,949 called from diff.py: diff parser end
+2021-07-10 10:21:28,529 called from diff.py: diff parser start
+2021-07-10 10:21:28,529 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:28,529 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:28,529 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:28,530 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:28,530 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:28,530 called from diff.py: diff parser end
+2021-07-10 10:21:28,746 called from diff.py: diff parser start
+2021-07-10 10:21:28,746 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:28,746 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:28,746 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:28,746 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:28,746 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:28,746 called from diff.py: diff parser end
+2021-07-10 10:21:28,949 called from diff.py: diff parser start
+2021-07-10 10:21:28,949 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:28,949 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:28,949 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:28,949 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:28,949 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:28,949 called from diff.py: diff parser end
+2021-07-10 10:21:29,090 called from diff.py: diff parser start
+2021-07-10 10:21:29,090 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:29,090 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:29,090 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:29,090 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:29,090 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:29,090 called from diff.py: diff parser end
+2021-07-10 10:21:29,140 called from diff.py: diff parser start
+2021-07-10 10:21:29,140 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:29,140 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:29,140 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:29,140 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:29,140 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:29,140 called from diff.py: diff parser end
+2021-07-10 10:21:29,347 called from diff.py: diff parser start
+2021-07-10 10:21:29,347 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:29,347 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:29,347 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:29,347 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:29,347 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:29,347 called from diff.py: diff parser end
+2021-07-10 10:21:29,567 called from diff.py: diff parser start
+2021-07-10 10:21:29,567 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:29,567 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:29,567 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:29,567 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:29,567 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:29,567 called from diff.py: diff parser end
+2021-07-10 10:21:30,115 called from diff.py: diff parser start
+2021-07-10 10:21:30,115 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:30,115 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:30,115 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:30,115 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:30,115 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:30,115 called from diff.py: diff parser end
+2021-07-10 10:21:30,266 called from diff.py: diff parser start
+2021-07-10 10:21:30,266 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:30,266 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:30,266 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:30,266 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:30,266 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:30,266 called from diff.py: diff parser end
+2021-07-10 10:21:31,362 called from diff.py: diff parser start
+2021-07-10 10:21:31,362 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:31,362 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:31,362 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:31,362 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:31,362 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:31,362 called from diff.py: diff parser end
+2021-07-10 10:21:31,574 called from diff.py: diff parser start
+2021-07-10 10:21:31,574 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:31,574 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:31,574 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:31,574 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:31,574 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:31,574 called from diff.py: diff parser end
+2021-07-10 10:21:31,812 called from diff.py: diff parser start
+2021-07-10 10:21:31,812 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:31,812 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:31,812 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:31,812 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:31,812 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:31,812 called from diff.py: diff parser end
+2021-07-10 10:21:32,953 called from diff.py: diff parser start
+2021-07-10 10:21:32,953 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:32,953 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:32,953 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:32,953 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:32,953 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:32,953 called from diff.py: diff parser end
+2021-07-10 10:21:34,731 called from diff.py: diff parser start
+2021-07-10 10:21:34,731 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:21:34,731 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:21:34,731 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:21:34,731 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:21:34,731 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:21:34,731 called from diff.py: diff parser end
+2021-07-10 10:22:03,394 called from diff.py: diff parser start
+2021-07-10 10:22:03,394 called from diff.py: line_lengths old: 8; new: 3
+2021-07-10 10:22:03,394 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:03,394 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:03,394 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:03,394 called from diff.py: -> code[replace] old[3:8] new[3:3]
+2021-07-10 10:22:03,394 called from diff.py: diff parser end
+2021-07-10 10:22:03,723 called from diff.py: diff parser start
+2021-07-10 10:22:03,723 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:22:03,723 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:03,723 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:03,723 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:03,723 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:22:03,723 called from diff.py: diff parser end
+2021-07-10 10:22:04,129 called from diff.py: diff parser start
+2021-07-10 10:22:04,129 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:22:04,129 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:04,129 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:04,129 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:04,129 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:22:04,129 called from diff.py: diff parser end
+2021-07-10 10:22:04,317 called from diff.py: diff parser start
+2021-07-10 10:22:04,317 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:22:04,317 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:04,317 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:04,317 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:04,317 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:22:04,317 called from diff.py: diff parser end
+2021-07-10 10:22:04,598 called from diff.py: diff parser start
+2021-07-10 10:22:04,598 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:22:04,598 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:04,598 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:04,598 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:04,598 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:22:04,598 called from diff.py: diff parser end
+2021-07-10 10:22:11,052 called from diff.py: diff parser start
+2021-07-10 10:22:11,052 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:22:11,052 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:11,052 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:11,052 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:11,052 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:22:11,052 called from diff.py: diff parser end
+2021-07-10 10:22:13,094 called from diff.py: diff parser start
+2021-07-10 10:22:13,094 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:22:13,094 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:13,094 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:13,094 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:13,094 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:22:13,094 called from diff.py: diff parser end
+2021-07-10 10:22:17,856 called from diff.py: diff parser start
+2021-07-10 10:22:17,856 called from diff.py: line_lengths old: 3; new: 4
+2021-07-10 10:22:17,856 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:17,856 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:17,856 called from diff.py: parse_part from 2 to 4 (to 3 in part parser)
+2021-07-10 10:22:17,856 called from diff.py: -> code[replace] old[3:3] new[3:4]
+2021-07-10 10:22:17,856 called from diff.py: diff parser end
+2021-07-10 10:22:18,563 called from diff.py: diff parser start
+2021-07-10 10:22:18,563 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:22:18,563 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:22:18,563 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:18,563 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:22:18,563 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:22:18,563 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:22:18,563 called from diff.py: diff parser end
+2021-07-10 10:22:18,736 called from diff.py: diff parser start
+2021-07-10 10:22:18,736 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:22:18,736 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:22:18,736 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:18,736 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:22:18,736 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:22:18,736 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:22:18,736 called from diff.py: diff parser end
+2021-07-10 10:22:19,111 called from diff.py: diff parser start
+2021-07-10 10:22:19,111 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:22:19,111 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:22:19,111 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:19,111 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:22:19,111 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:22:19,111 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:22:19,111 called from diff.py: diff parser end
+2021-07-10 10:22:19,518 called from diff.py: diff parser start
+2021-07-10 10:22:19,518 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:22:19,518 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:22:19,518 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:19,518 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:22:19,518 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:22:19,518 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:22:19,518 called from diff.py: diff parser end
+2021-07-10 10:22:20,472 called from diff.py: diff parser start
+2021-07-10 10:22:20,472 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:22:20,472 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:22:20,472 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:20,472 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:22:20,472 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:22:20,472 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:22:20,472 called from diff.py: diff parser end
+2021-07-10 10:22:20,708 called from diff.py: diff parser start
+2021-07-10 10:22:20,708 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:22:20,708 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:22:20,708 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:20,708 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:22:20,708 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:22:20,708 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:22:20,708 called from diff.py: diff parser end
+2021-07-10 10:22:22,496 called from diff.py: diff parser start
+2021-07-10 10:22:22,496 called from diff.py: line_lengths old: 4; new: 3
+2021-07-10 10:22:22,496 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:22,496 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:22,496 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:22,496 called from diff.py: -> code[replace] old[3:4] new[3:3]
+2021-07-10 10:22:22,496 called from diff.py: diff parser end
+2021-07-10 10:22:22,801 called from diff.py: diff parser start
+2021-07-10 10:22:22,801 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:22:22,801 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:22,801 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:22,801 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:22,801 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:22:22,801 called from diff.py: diff parser end
+2021-07-10 10:22:23,004 called from diff.py: diff parser start
+2021-07-10 10:22:23,004 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:22:23,004 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:23,004 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:23,004 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:23,004 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:22:23,004 called from diff.py: diff parser end
+2021-07-10 10:22:23,223 called from diff.py: diff parser start
+2021-07-10 10:22:23,223 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:22:23,223 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:23,223 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:23,223 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:23,223 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:22:23,223 called from diff.py: diff parser end
+2021-07-10 10:22:23,485 called from diff.py: diff parser start
+2021-07-10 10:22:23,485 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:22:23,485 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:23,485 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:23,485 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:22:23,485 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:22:23,485 called from diff.py: diff parser end
+2021-07-10 10:22:25,535 called from diff.py: diff parser start
+2021-07-10 10:22:25,535 called from diff.py: line_lengths old: 3; new: 4
+2021-07-10 10:22:25,535 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:22:25,535 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:25,535 called from diff.py: parse_part from 2 to 4 (to 3 in part parser)
+2021-07-10 10:22:25,535 called from diff.py: -> code[replace] old[3:3] new[3:4]
+2021-07-10 10:22:25,535 called from diff.py: diff parser end
+2021-07-10 10:22:26,109 called from diff.py: diff parser start
+2021-07-10 10:22:26,109 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:22:26,109 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:22:26,109 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:26,109 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:22:26,109 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:22:26,109 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:22:26,109 called from diff.py: diff parser end
+2021-07-10 10:22:26,359 called from diff.py: diff parser start
+2021-07-10 10:22:26,359 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:22:26,359 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:22:26,359 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:26,359 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:22:26,359 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:22:26,359 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:22:26,359 called from diff.py: diff parser end
+2021-07-10 10:22:26,609 called from diff.py: diff parser start
+2021-07-10 10:22:26,609 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:22:26,609 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:22:26,609 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:26,609 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:22:26,609 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:22:26,609 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:22:26,609 called from diff.py: diff parser end
+2021-07-10 10:22:26,923 called from diff.py: diff parser start
+2021-07-10 10:22:26,923 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:22:26,923 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:22:26,923 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:22:26,923 called from diff.py: parse_part from 2 to 2 (to 2 in part parser)
+2021-07-10 10:22:26,923 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:22:26,923 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:22:26,923 called from diff.py: diff parser end
+2021-07-10 10:27:41,625 called from diff.py: diff parser start
+2021-07-10 10:27:41,625 called from diff.py: line_lengths old: 4; new: 1
+2021-07-10 10:27:41,625 called from diff.py: -> code[replace] old[1:4] new[1:1]
+2021-07-10 10:27:41,625 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:41,625 called from diff.py: diff parser end
+2021-07-10 10:27:41,829 called from diff.py: diff parser start
+2021-07-10 10:27:41,829 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:41,829 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:41,829 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:41,829 called from diff.py: diff parser end
+2021-07-10 10:27:42,001 called from diff.py: diff parser start
+2021-07-10 10:27:42,001 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:42,001 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:42,001 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:42,001 called from diff.py: diff parser end
+2021-07-10 10:27:42,110 called from diff.py: diff parser start
+2021-07-10 10:27:42,110 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:42,110 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:42,110 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:42,110 called from diff.py: diff parser end
+2021-07-10 10:27:43,548 called from diff.py: diff parser start
+2021-07-10 10:27:43,548 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:43,548 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:43,548 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:43,548 called from diff.py: diff parser end
+2021-07-10 10:27:43,799 called from diff.py: diff parser start
+2021-07-10 10:27:43,799 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:43,799 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:43,799 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:43,799 called from diff.py: diff parser end
+2021-07-10 10:27:44,002 called from diff.py: diff parser start
+2021-07-10 10:27:44,002 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:44,002 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:44,002 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:44,002 called from diff.py: diff parser end
+2021-07-10 10:27:45,755 called from diff.py: diff parser start
+2021-07-10 10:27:45,755 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:45,755 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:45,755 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:45,755 called from diff.py: diff parser end
+2021-07-10 10:27:46,021 called from diff.py: diff parser start
+2021-07-10 10:27:46,021 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:46,021 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:46,021 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:46,021 called from diff.py: diff parser end
+2021-07-10 10:27:46,309 called from diff.py: diff parser start
+2021-07-10 10:27:46,309 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:46,309 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:46,309 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:46,309 called from diff.py: diff parser end
+2021-07-10 10:27:46,481 called from diff.py: diff parser start
+2021-07-10 10:27:46,481 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:46,481 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:46,481 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:46,481 called from diff.py: diff parser end
+2021-07-10 10:27:46,639 called from diff.py: diff parser start
+2021-07-10 10:27:46,639 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:46,639 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:46,639 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:46,639 called from diff.py: diff parser end
+2021-07-10 10:27:46,857 called from diff.py: diff parser start
+2021-07-10 10:27:46,857 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:46,857 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:46,857 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:46,857 called from diff.py: diff parser end
+2021-07-10 10:27:47,170 called from diff.py: diff parser start
+2021-07-10 10:27:47,170 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:47,170 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:47,170 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:47,170 called from diff.py: diff parser end
+2021-07-10 10:27:47,545 called from diff.py: diff parser start
+2021-07-10 10:27:47,545 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:47,545 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:47,545 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:47,545 called from diff.py: diff parser end
+2021-07-10 10:27:47,850 called from diff.py: diff parser start
+2021-07-10 10:27:47,850 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:47,850 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:47,850 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:47,850 called from diff.py: diff parser end
+2021-07-10 10:27:48,334 called from diff.py: diff parser start
+2021-07-10 10:27:48,334 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:48,334 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:48,334 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:48,334 called from diff.py: diff parser end
+2021-07-10 10:27:49,127 called from diff.py: diff parser start
+2021-07-10 10:27:49,127 called from diff.py: line_lengths old: 1; new: 1
+2021-07-10 10:27:49,127 called from diff.py: -> code[replace] old[1:1] new[1:1]
+2021-07-10 10:27:49,127 called from diff.py: parse_part from 1 to 1 (to 0 in part parser)
+2021-07-10 10:27:49,127 called from diff.py: diff parser end
+2021-07-10 10:28:35,562 called from diff.py: diff parser start
+2021-07-10 10:28:35,562 called from diff.py: line_lengths old: 1; new: 2
+2021-07-10 10:28:35,562 called from diff.py: -> code[replace] old[1:1] new[1:2]
+2021-07-10 10:28:35,562 called from diff.py: parse_part from 1 to 2 (to 1 in part parser)
+2021-07-10 10:28:35,562 called from diff.py: diff parser end
+2021-07-10 10:28:35,768 called from diff.py: diff parser start
+2021-07-10 10:28:35,768 called from diff.py: line_lengths old: 2; new: 2
+2021-07-10 10:28:35,768 called from diff.py: -> code[equal] old[1:1] new[1:1]
+2021-07-10 10:28:35,768 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:28:35,768 called from diff.py: -> code[replace] old[2:2] new[2:2]
+2021-07-10 10:28:35,768 called from diff.py: parse_part from 2 to 2 (to 1 in part parser)
+2021-07-10 10:28:35,768 called from diff.py: diff parser end
+2021-07-10 10:28:35,971 called from diff.py: diff parser start
+2021-07-10 10:28:35,971 called from diff.py: line_lengths old: 2; new: 2
+2021-07-10 10:28:35,971 called from diff.py: -> code[equal] old[1:1] new[1:1]
+2021-07-10 10:28:35,971 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:28:35,971 called from diff.py: -> code[replace] old[2:2] new[2:2]
+2021-07-10 10:28:35,971 called from diff.py: parse_part from 2 to 2 (to 1 in part parser)
+2021-07-10 10:28:35,971 called from diff.py: diff parser end
+2021-07-10 10:28:36,049 called from diff.py: diff parser start
+2021-07-10 10:28:36,049 called from diff.py: line_lengths old: 2; new: 2
+2021-07-10 10:28:36,049 called from diff.py: -> code[equal] old[1:1] new[1:1]
+2021-07-10 10:28:36,049 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:28:36,049 called from diff.py: -> code[replace] old[2:2] new[2:2]
+2021-07-10 10:28:36,049 called from diff.py: parse_part from 2 to 2 (to 1 in part parser)
+2021-07-10 10:28:36,049 called from diff.py: diff parser end
+2021-07-10 10:28:36,205 called from diff.py: diff parser start
+2021-07-10 10:28:36,205 called from diff.py: line_lengths old: 2; new: 2
+2021-07-10 10:28:36,205 called from diff.py: -> code[equal] old[1:1] new[1:1]
+2021-07-10 10:28:36,205 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:28:36,205 called from diff.py: -> code[replace] old[2:2] new[2:2]
+2021-07-10 10:28:36,205 called from diff.py: parse_part from 2 to 2 (to 1 in part parser)
+2021-07-10 10:28:36,205 called from diff.py: diff parser end
+2021-07-10 10:28:36,410 called from diff.py: diff parser start
+2021-07-10 10:28:36,410 called from diff.py: line_lengths old: 2; new: 2
+2021-07-10 10:28:36,410 called from diff.py: -> code[equal] old[1:1] new[1:1]
+2021-07-10 10:28:36,410 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:28:36,410 called from diff.py: -> code[replace] old[2:2] new[2:2]
+2021-07-10 10:28:36,410 called from diff.py: parse_part from 2 to 2 (to 1 in part parser)
+2021-07-10 10:28:36,410 called from diff.py: diff parser end
+2021-07-10 10:28:36,662 called from diff.py: diff parser start
+2021-07-10 10:28:36,662 called from diff.py: line_lengths old: 2; new: 2
+2021-07-10 10:28:36,662 called from diff.py: -> code[equal] old[1:1] new[1:1]
+2021-07-10 10:28:36,662 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:28:36,662 called from diff.py: -> code[replace] old[2:2] new[2:2]
+2021-07-10 10:28:36,662 called from diff.py: parse_part from 2 to 2 (to 1 in part parser)
+2021-07-10 10:28:36,662 called from diff.py: diff parser end
+2021-07-10 10:28:36,850 called from diff.py: diff parser start
+2021-07-10 10:28:36,850 called from diff.py: line_lengths old: 2; new: 2
+2021-07-10 10:28:36,850 called from diff.py: -> code[equal] old[1:1] new[1:1]
+2021-07-10 10:28:36,850 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:28:36,850 called from diff.py: -> code[replace] old[2:2] new[2:2]
+2021-07-10 10:28:36,850 called from diff.py: parse_part from 2 to 2 (to 1 in part parser)
+2021-07-10 10:28:36,850 called from diff.py: diff parser end
+2021-07-10 10:28:36,975 called from diff.py: diff parser start
+2021-07-10 10:28:36,975 called from diff.py: line_lengths old: 2; new: 2
+2021-07-10 10:28:36,975 called from diff.py: -> code[equal] old[1:1] new[1:1]
+2021-07-10 10:28:36,975 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:28:36,975 called from diff.py: -> code[replace] old[2:2] new[2:2]
+2021-07-10 10:28:36,975 called from diff.py: parse_part from 2 to 2 (to 1 in part parser)
+2021-07-10 10:28:36,975 called from diff.py: diff parser end
+2021-07-10 10:28:46,513 called from diff.py: diff parser start
+2021-07-10 10:28:46,513 called from diff.py: line_lengths old: 2; new: 3
+2021-07-10 10:28:46,513 called from diff.py: -> code[equal] old[1:1] new[1:1]
+2021-07-10 10:28:46,513 called from diff.py: copy old[1:1] new[1:1]
+2021-07-10 10:28:46,513 called from diff.py: -> code[replace] old[2:2] new[2:3]
+2021-07-10 10:28:46,513 called from diff.py: parse_part from 2 to 3 (to 2 in part parser)
+2021-07-10 10:28:46,513 called from diff.py: diff parser end
+2021-07-10 10:28:46,796 called from diff.py: diff parser start
+2021-07-10 10:28:46,796 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:46,796 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:46,796 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:46,796 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:46,796 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:46,796 called from diff.py: diff parser end
+2021-07-10 10:28:47,077 called from diff.py: diff parser start
+2021-07-10 10:28:47,077 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:47,077 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:47,077 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:47,077 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:47,077 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:47,077 called from diff.py: diff parser end
+2021-07-10 10:28:47,342 called from diff.py: diff parser start
+2021-07-10 10:28:47,342 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:47,342 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:47,342 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:47,342 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:47,342 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:47,342 called from diff.py: diff parser end
+2021-07-10 10:28:47,657 called from diff.py: diff parser start
+2021-07-10 10:28:47,657 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:47,657 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:47,657 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:47,657 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:47,657 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:47,657 called from diff.py: diff parser end
+2021-07-10 10:28:48,438 called from diff.py: diff parser start
+2021-07-10 10:28:48,438 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:48,438 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:48,438 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:48,438 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:48,438 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:48,438 called from diff.py: diff parser end
+2021-07-10 10:28:48,690 called from diff.py: diff parser start
+2021-07-10 10:28:48,690 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:48,690 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:48,690 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:48,690 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:48,690 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:48,690 called from diff.py: diff parser end
+2021-07-10 10:28:48,893 called from diff.py: diff parser start
+2021-07-10 10:28:48,893 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:48,893 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:48,893 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:48,893 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:48,893 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:48,893 called from diff.py: diff parser end
+2021-07-10 10:28:50,732 called from diff.py: diff parser start
+2021-07-10 10:28:50,732 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:50,732 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:50,732 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:50,732 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:50,732 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:50,732 called from diff.py: diff parser end
+2021-07-10 10:28:51,092 called from diff.py: diff parser start
+2021-07-10 10:28:51,092 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:51,092 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:51,092 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:51,092 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:51,092 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:51,092 called from diff.py: diff parser end
+2021-07-10 10:28:51,413 called from diff.py: diff parser start
+2021-07-10 10:28:51,413 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:51,413 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:51,413 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:51,413 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:51,413 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:51,413 called from diff.py: diff parser end
+2021-07-10 10:28:51,632 called from diff.py: diff parser start
+2021-07-10 10:28:51,632 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:51,632 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:51,632 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:51,632 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:51,632 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:51,632 called from diff.py: diff parser end
+2021-07-10 10:28:51,805 called from diff.py: diff parser start
+2021-07-10 10:28:51,805 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:51,805 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:51,805 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:51,805 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:51,805 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:51,805 called from diff.py: diff parser end
+2021-07-10 10:28:52,196 called from diff.py: diff parser start
+2021-07-10 10:28:52,196 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:52,196 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:52,196 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:52,196 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:52,196 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:52,196 called from diff.py: diff parser end
+2021-07-10 10:28:52,473 called from diff.py: diff parser start
+2021-07-10 10:28:52,473 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:52,473 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:52,473 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:52,473 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:52,473 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:52,473 called from diff.py: diff parser end
+2021-07-10 10:28:52,614 called from diff.py: diff parser start
+2021-07-10 10:28:52,614 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:52,614 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:52,614 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:52,614 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:52,614 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:52,614 called from diff.py: diff parser end
+2021-07-10 10:28:52,740 called from diff.py: diff parser start
+2021-07-10 10:28:52,740 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:52,740 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:52,740 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:52,740 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:52,740 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:52,740 called from diff.py: diff parser end
+2021-07-10 10:28:52,885 called from diff.py: diff parser start
+2021-07-10 10:28:52,885 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:52,885 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:52,885 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:52,885 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:52,885 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:52,885 called from diff.py: diff parser end
+2021-07-10 10:28:53,414 called from diff.py: diff parser start
+2021-07-10 10:28:53,414 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:53,414 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:53,414 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:53,414 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:53,414 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:53,414 called from diff.py: diff parser end
+2021-07-10 10:28:53,712 called from diff.py: diff parser start
+2021-07-10 10:28:53,712 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:53,712 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:53,712 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:53,712 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:53,712 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:53,712 called from diff.py: diff parser end
+2021-07-10 10:28:53,868 called from diff.py: diff parser start
+2021-07-10 10:28:53,868 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:53,868 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:53,868 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:53,868 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:53,868 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:53,868 called from diff.py: diff parser end
+2021-07-10 10:28:54,056 called from diff.py: diff parser start
+2021-07-10 10:28:54,056 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:54,056 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:54,056 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:54,056 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:54,056 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:54,056 called from diff.py: diff parser end
+2021-07-10 10:28:54,306 called from diff.py: diff parser start
+2021-07-10 10:28:54,306 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:54,306 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:54,306 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:54,306 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:54,306 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:54,306 called from diff.py: diff parser end
+2021-07-10 10:28:54,572 called from diff.py: diff parser start
+2021-07-10 10:28:54,572 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:54,572 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:54,572 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:54,572 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:54,572 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:54,572 called from diff.py: diff parser end
+2021-07-10 10:28:55,057 called from diff.py: diff parser start
+2021-07-10 10:28:55,057 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:55,057 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:55,057 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:55,057 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:55,057 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:55,057 called from diff.py: diff parser end
+2021-07-10 10:28:55,276 called from diff.py: diff parser start
+2021-07-10 10:28:55,276 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:55,276 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:55,276 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:55,276 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:55,276 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:55,276 called from diff.py: diff parser end
+2021-07-10 10:28:55,526 called from diff.py: diff parser start
+2021-07-10 10:28:55,526 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:55,526 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:55,526 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:55,526 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:55,526 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:55,526 called from diff.py: diff parser end
+2021-07-10 10:28:55,730 called from diff.py: diff parser start
+2021-07-10 10:28:55,730 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:55,730 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:55,730 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:55,730 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:55,730 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:55,730 called from diff.py: diff parser end
+2021-07-10 10:28:55,965 called from diff.py: diff parser start
+2021-07-10 10:28:55,965 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:55,965 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:55,965 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:55,965 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:55,965 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:55,965 called from diff.py: diff parser end
+2021-07-10 10:28:56,844 called from diff.py: diff parser start
+2021-07-10 10:28:56,844 called from diff.py: line_lengths old: 3; new: 3
+2021-07-10 10:28:56,844 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:28:56,844 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:28:56,844 called from diff.py: -> code[replace] old[3:3] new[3:3]
+2021-07-10 10:28:56,844 called from diff.py: parse_part from 3 to 3 (to 2 in part parser)
+2021-07-10 10:28:56,844 called from diff.py: diff parser end
+2021-07-10 10:29:30,834 called from diff.py: diff parser start
+2021-07-10 10:29:30,834 called from diff.py: line_lengths old: 3; new: 4
+2021-07-10 10:29:30,834 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:29:30,835 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:29:30,835 called from diff.py: -> code[replace] old[3:3] new[3:4]
+2021-07-10 10:29:30,836 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:29:30,837 called from diff.py: diff parser end
+2021-07-10 10:29:31,245 called from diff.py: diff parser start
+2021-07-10 10:29:31,246 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:29:31,246 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:29:31,246 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:29:31,247 called from diff.py: parse_part from 3 to 2 (to 2 in part parser)
+2021-07-10 10:29:31,248 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:29:31,248 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:29:31,248 called from diff.py: diff parser end
+2021-07-10 10:29:31,504 called from diff.py: diff parser start
+2021-07-10 10:29:31,504 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:29:31,504 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:29:31,504 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:29:31,504 called from diff.py: parse_part from 3 to 2 (to 2 in part parser)
+2021-07-10 10:29:31,504 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:29:31,504 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:29:31,504 called from diff.py: diff parser end
+2021-07-10 10:29:31,661 called from diff.py: diff parser start
+2021-07-10 10:29:31,661 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:29:31,661 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:29:31,661 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:29:31,661 called from diff.py: parse_part from 3 to 2 (to 2 in part parser)
+2021-07-10 10:29:31,661 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:29:31,661 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:29:31,661 called from diff.py: diff parser end
+2021-07-10 10:29:31,929 called from diff.py: diff parser start
+2021-07-10 10:29:31,929 called from diff.py: line_lengths old: 4; new: 4
+2021-07-10 10:29:31,929 called from diff.py: -> code[equal] old[1:3] new[1:3]
+2021-07-10 10:29:31,929 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:29:31,929 called from diff.py: parse_part from 3 to 2 (to 2 in part parser)
+2021-07-10 10:29:31,929 called from diff.py: parse_part from 3 to 4 (to 3 in part parser)
+2021-07-10 10:29:31,929 called from diff.py: -> code[replace] old[4:4] new[4:4]
+2021-07-10 10:29:31,929 called from diff.py: diff parser end
+2021-07-10 10:29:59,991 called from diff.py: diff parser start
+2021-07-10 10:29:59,991 called from diff.py: line_lengths old: 4; new: 8
+2021-07-10 10:29:59,991 called from diff.py: -> code[equal] old[1:2] new[1:2]
+2021-07-10 10:29:59,991 called from diff.py: copy old[1:2] new[1:2]
+2021-07-10 10:29:59,991 called from diff.py: -> code[insert] old[3:2] new[3:3]
+2021-07-10 10:29:59,991 called from diff.py: parse_part from 3 to 5 (to 6 in part parser)
+2021-07-10 10:29:59,991 called from diff.py: -> code[equal] old[3:3] new[4:4]
+2021-07-10 10:29:59,991 called from diff.py: -> code[replace] old[4:4] new[5:8]
+2021-07-10 10:29:59,991 called from diff.py: parse_part from 6 to 8 (to 7 in part parser)
+2021-07-10 10:29:59,991 called from diff.py: diff parser end
+2021-07-10 10:30:00,326 called from diff.py: diff parser start
+2021-07-10 10:30:00,327 called from diff.py: line_lengths old: 8; new: 8
+2021-07-10 10:30:00,328 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:30:00,329 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:00,329 called from diff.py: -> code[replace] old[8:8] new[8:8]
+2021-07-10 10:30:00,330 called from diff.py: parse_part from 8 to 8 (to 7 in part parser)
+2021-07-10 10:30:00,330 called from diff.py: diff parser end
+2021-07-10 10:30:12,555 called from diff.py: diff parser start
+2021-07-10 10:30:12,555 called from diff.py: line_lengths old: 8; new: 9
+2021-07-10 10:30:12,555 called from diff.py: -> code[equal] old[1:7] new[1:7]
+2021-07-10 10:30:12,555 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:12,555 called from diff.py: -> code[replace] old[8:8] new[8:9]
+2021-07-10 10:30:12,555 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:12,555 called from diff.py: diff parser end
+2021-07-10 10:30:12,796 called from diff.py: diff parser start
+2021-07-10 10:30:12,796 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:12,796 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:12,796 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:12,796 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:12,796 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:12,796 called from diff.py: diff parser end
+2021-07-10 10:30:13,030 called from diff.py: diff parser start
+2021-07-10 10:30:13,030 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:13,030 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:13,030 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:13,030 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:13,030 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:13,030 called from diff.py: diff parser end
+2021-07-10 10:30:13,704 called from diff.py: diff parser start
+2021-07-10 10:30:13,704 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:13,704 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:13,704 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:13,704 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:13,704 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:13,704 called from diff.py: diff parser end
+2021-07-10 10:30:13,939 called from diff.py: diff parser start
+2021-07-10 10:30:13,939 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:13,939 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:13,939 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:13,939 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:13,939 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:13,939 called from diff.py: diff parser end
+2021-07-10 10:30:14,064 called from diff.py: diff parser start
+2021-07-10 10:30:14,064 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:14,064 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:14,064 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:14,064 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:14,064 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:14,064 called from diff.py: diff parser end
+2021-07-10 10:30:14,158 called from diff.py: diff parser start
+2021-07-10 10:30:14,158 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:14,158 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:14,158 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:14,158 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:14,158 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:14,158 called from diff.py: diff parser end
+2021-07-10 10:30:14,454 called from diff.py: diff parser start
+2021-07-10 10:30:14,454 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:14,454 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:14,454 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:14,454 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:14,454 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:14,454 called from diff.py: diff parser end
+2021-07-10 10:30:14,816 called from diff.py: diff parser start
+2021-07-10 10:30:14,816 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:14,816 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:14,816 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:14,816 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:14,816 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:14,816 called from diff.py: diff parser end
+2021-07-10 10:30:15,456 called from diff.py: diff parser start
+2021-07-10 10:30:15,456 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:15,456 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:15,456 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:15,456 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:15,456 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:15,456 called from diff.py: diff parser end
+2021-07-10 10:30:15,645 called from diff.py: diff parser start
+2021-07-10 10:30:15,645 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:15,645 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:15,645 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:15,645 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:15,645 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:15,645 called from diff.py: diff parser end
+2021-07-10 10:30:15,879 called from diff.py: diff parser start
+2021-07-10 10:30:15,879 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:15,879 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:15,879 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:15,879 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:15,879 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:15,879 called from diff.py: diff parser end
+2021-07-10 10:30:16,410 called from diff.py: diff parser start
+2021-07-10 10:30:16,410 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:16,410 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:16,410 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:16,410 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:16,410 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:16,410 called from diff.py: diff parser end
+2021-07-10 10:30:16,771 called from diff.py: diff parser start
+2021-07-10 10:30:16,771 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:16,771 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:16,771 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:16,771 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:16,771 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:16,771 called from diff.py: diff parser end
+2021-07-10 10:30:17,037 called from diff.py: diff parser start
+2021-07-10 10:30:17,037 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:17,037 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:17,037 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:17,037 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:17,037 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:17,037 called from diff.py: diff parser end
+2021-07-10 10:30:17,599 called from diff.py: diff parser start
+2021-07-10 10:30:17,599 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:17,599 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:17,599 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:17,599 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:17,599 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:17,599 called from diff.py: diff parser end
+2021-07-10 10:30:18,184 called from diff.py: diff parser start
+2021-07-10 10:30:18,184 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:18,184 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:18,184 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:18,184 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:18,184 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:18,184 called from diff.py: diff parser end
+2021-07-10 10:30:18,470 called from diff.py: diff parser start
+2021-07-10 10:30:18,470 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:18,470 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:18,470 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:18,470 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:18,470 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:18,470 called from diff.py: diff parser end
+2021-07-10 10:30:18,659 called from diff.py: diff parser start
+2021-07-10 10:30:18,659 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:18,659 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:18,659 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:18,659 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:18,659 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:18,659 called from diff.py: diff parser end
+2021-07-10 10:30:18,921 called from diff.py: diff parser start
+2021-07-10 10:30:18,921 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:18,921 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:18,921 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:18,921 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:18,921 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:18,921 called from diff.py: diff parser end
+2021-07-10 10:30:18,999 called from diff.py: diff parser start
+2021-07-10 10:30:18,999 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:18,999 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:18,999 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:18,999 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:18,999 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:18,999 called from diff.py: diff parser end
+2021-07-10 10:30:19,374 called from diff.py: diff parser start
+2021-07-10 10:30:19,374 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:19,374 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:19,374 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:19,374 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:19,374 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:19,374 called from diff.py: diff parser end
+2021-07-10 10:30:21,820 called from diff.py: diff parser start
+2021-07-10 10:30:21,820 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:21,820 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:21,820 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:21,820 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:21,820 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:21,820 called from diff.py: diff parser end
+2021-07-10 10:30:22,133 called from diff.py: diff parser start
+2021-07-10 10:30:22,133 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:22,133 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:22,133 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:22,133 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:22,133 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:22,133 called from diff.py: diff parser end
+2021-07-10 10:30:22,368 called from diff.py: diff parser start
+2021-07-10 10:30:22,368 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:22,368 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:22,368 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:22,368 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:22,368 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:22,368 called from diff.py: diff parser end
+2021-07-10 10:30:22,539 called from diff.py: diff parser start
+2021-07-10 10:30:22,539 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:22,539 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:22,539 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:22,539 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:22,539 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:22,539 called from diff.py: diff parser end
+2021-07-10 10:30:22,838 called from diff.py: diff parser start
+2021-07-10 10:30:22,838 called from diff.py: line_lengths old: 9; new: 9
+2021-07-10 10:30:22,838 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:22,838 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:22,838 called from diff.py: parse_part from 8 to 9 (to 8 in part parser)
+2021-07-10 10:30:22,838 called from diff.py: -> code[replace] old[9:9] new[9:9]
+2021-07-10 10:30:22,838 called from diff.py: diff parser end
+2021-07-10 10:30:33,272 called from diff.py: diff parser start
+2021-07-10 10:30:33,272 called from diff.py: line_lengths old: 9; new: 10
+2021-07-10 10:30:33,272 called from diff.py: -> code[equal] old[1:8] new[1:8]
+2021-07-10 10:30:33,272 called from diff.py: copy old[1:7] new[1:7]
+2021-07-10 10:30:33,272 called from diff.py: parse_part from 8 to 9 (to 9 in part parser)
+2021-07-10 10:30:33,272 called from diff.py: -> code[replace] old[9:9] new[9:10]
+2021-07-10 10:30:33,272 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:33,272 called from diff.py: diff parser end
+2021-07-10 10:30:33,543 called from diff.py: diff parser start
+2021-07-10 10:30:33,543 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:33,543 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:33,543 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:33,543 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:33,543 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:33,543 called from diff.py: diff parser end
+2021-07-10 10:30:33,748 called from diff.py: diff parser start
+2021-07-10 10:30:33,748 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:33,748 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:33,748 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:33,748 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:33,748 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:33,748 called from diff.py: diff parser end
+2021-07-10 10:30:33,920 called from diff.py: diff parser start
+2021-07-10 10:30:33,920 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:33,920 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:33,920 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:33,920 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:33,920 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:33,920 called from diff.py: diff parser end
+2021-07-10 10:30:34,144 called from diff.py: diff parser start
+2021-07-10 10:30:34,144 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:34,144 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:34,144 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:34,144 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:34,144 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:34,144 called from diff.py: diff parser end
+2021-07-10 10:30:49,879 called from diff.py: diff parser start
+2021-07-10 10:30:49,879 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:49,879 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:49,879 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:49,879 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:49,879 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:49,879 called from diff.py: diff parser end
+2021-07-10 10:30:50,204 called from diff.py: diff parser start
+2021-07-10 10:30:50,204 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:50,204 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:50,204 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:50,204 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:50,204 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:50,204 called from diff.py: diff parser end
+2021-07-10 10:30:50,423 called from diff.py: diff parser start
+2021-07-10 10:30:50,423 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:50,423 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:50,423 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:50,423 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:50,423 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:50,423 called from diff.py: diff parser end
+2021-07-10 10:30:50,706 called from diff.py: diff parser start
+2021-07-10 10:30:50,706 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:50,706 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:50,706 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:50,706 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:50,706 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:50,706 called from diff.py: diff parser end
+2021-07-10 10:30:50,847 called from diff.py: diff parser start
+2021-07-10 10:30:50,847 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:50,847 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:50,847 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:50,847 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:50,847 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:50,847 called from diff.py: diff parser end
+2021-07-10 10:30:51,558 called from diff.py: diff parser start
+2021-07-10 10:30:51,558 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:51,558 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:51,558 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:51,558 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:51,558 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:51,558 called from diff.py: diff parser end
+2021-07-10 10:30:51,778 called from diff.py: diff parser start
+2021-07-10 10:30:51,778 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:51,778 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:51,778 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:51,778 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:51,778 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:51,778 called from diff.py: diff parser end
+2021-07-10 10:30:51,950 called from diff.py: diff parser start
+2021-07-10 10:30:51,950 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:51,950 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:51,950 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:51,950 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:51,950 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:51,950 called from diff.py: diff parser end
+2021-07-10 10:30:52,138 called from diff.py: diff parser start
+2021-07-10 10:30:52,138 called from diff.py: line_lengths old: 10; new: 10
+2021-07-10 10:30:52,138 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:30:52,138 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:30:52,138 called from diff.py: -> code[replace] old[10:10] new[10:10]
+2021-07-10 10:30:52,138 called from diff.py: parse_part from 10 to 10 (to 9 in part parser)
+2021-07-10 10:30:52,138 called from diff.py: diff parser end
+2021-07-10 10:31:06,590 called from diff.py: diff parser start
+2021-07-10 10:31:06,590 called from diff.py: line_lengths old: 10; new: 12
+2021-07-10 10:31:06,590 called from diff.py: -> code[equal] old[1:9] new[1:9]
+2021-07-10 10:31:06,590 called from diff.py: copy old[1:9] new[1:9]
+2021-07-10 10:31:06,590 called from diff.py: -> code[replace] old[10:10] new[10:12]
+2021-07-10 10:31:06,590 called from diff.py: parse_part from 10 to 12 (to 11 in part parser)
+2021-07-10 10:31:06,590 called from diff.py: diff parser end
+2021-07-10 10:31:06,907 called from diff.py: diff parser start
+2021-07-10 10:31:06,907 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:06,907 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:06,907 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:06,907 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:06,907 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:06,907 called from diff.py: diff parser end
+2021-07-10 10:31:07,204 called from diff.py: diff parser start
+2021-07-10 10:31:07,204 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:07,204 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:07,204 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:07,204 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:07,204 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:07,204 called from diff.py: diff parser end
+2021-07-10 10:31:07,360 called from diff.py: diff parser start
+2021-07-10 10:31:07,360 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:07,360 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:07,360 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:07,360 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:07,360 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:07,360 called from diff.py: diff parser end
+2021-07-10 10:31:07,674 called from diff.py: diff parser start
+2021-07-10 10:31:07,674 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:07,674 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:07,674 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:07,674 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:07,674 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:07,674 called from diff.py: diff parser end
+2021-07-10 10:31:07,773 called from diff.py: diff parser start
+2021-07-10 10:31:07,773 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:07,773 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:07,773 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:07,773 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:07,773 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:07,773 called from diff.py: diff parser end
+2021-07-10 10:31:07,882 called from diff.py: diff parser start
+2021-07-10 10:31:07,882 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:07,882 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:07,882 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:07,882 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:07,882 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:07,882 called from diff.py: diff parser end
+2021-07-10 10:31:08,562 called from diff.py: diff parser start
+2021-07-10 10:31:08,562 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:08,562 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:08,562 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:08,562 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:08,562 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:08,562 called from diff.py: diff parser end
+2021-07-10 10:31:08,908 called from diff.py: diff parser start
+2021-07-10 10:31:08,908 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:08,908 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:08,908 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:08,908 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:08,908 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:08,908 called from diff.py: diff parser end
+2021-07-10 10:31:09,128 called from diff.py: diff parser start
+2021-07-10 10:31:09,128 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:09,128 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:09,128 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:09,128 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:09,128 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:09,128 called from diff.py: diff parser end
+2021-07-10 10:31:10,004 called from diff.py: diff parser start
+2021-07-10 10:31:10,004 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:10,004 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:10,004 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:10,004 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:10,004 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:10,004 called from diff.py: diff parser end
+2021-07-10 10:31:10,395 called from diff.py: diff parser start
+2021-07-10 10:31:10,395 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:10,395 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:10,395 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:10,395 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:10,395 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:10,395 called from diff.py: diff parser end
+2021-07-10 10:31:10,614 called from diff.py: diff parser start
+2021-07-10 10:31:10,614 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:10,614 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:10,614 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:10,614 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:10,614 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:10,614 called from diff.py: diff parser end
+2021-07-10 10:31:10,896 called from diff.py: diff parser start
+2021-07-10 10:31:10,896 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:10,896 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:10,896 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:10,896 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:10,896 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:10,896 called from diff.py: diff parser end
+2021-07-10 10:31:11,490 called from diff.py: diff parser start
+2021-07-10 10:31:11,490 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:11,490 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:11,490 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:11,490 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:11,490 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:11,490 called from diff.py: diff parser end
+2021-07-10 10:31:11,902 called from diff.py: diff parser start
+2021-07-10 10:31:11,902 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:11,902 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:11,902 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:11,902 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:11,902 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:11,902 called from diff.py: diff parser end
+2021-07-10 10:31:12,261 called from diff.py: diff parser start
+2021-07-10 10:31:12,261 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:12,261 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:12,261 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:12,261 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:12,261 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:12,261 called from diff.py: diff parser end
+2021-07-10 10:31:12,558 called from diff.py: diff parser start
+2021-07-10 10:31:12,558 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:12,558 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:12,558 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:12,558 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:12,558 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:12,558 called from diff.py: diff parser end
+2021-07-10 10:31:12,685 called from diff.py: diff parser start
+2021-07-10 10:31:12,685 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:12,685 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:12,685 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:12,685 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:12,685 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:12,685 called from diff.py: diff parser end
+2021-07-10 10:31:12,893 called from diff.py: diff parser start
+2021-07-10 10:31:12,893 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:12,893 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:12,893 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:12,893 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:12,893 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:12,893 called from diff.py: diff parser end
+2021-07-10 10:31:16,004 called from diff.py: diff parser start
+2021-07-10 10:31:16,004 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:16,004 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:16,004 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:16,004 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:16,004 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:16,004 called from diff.py: diff parser end
+2021-07-10 10:31:16,518 called from diff.py: diff parser start
+2021-07-10 10:31:16,518 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:16,518 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:16,518 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:16,518 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:16,518 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:16,518 called from diff.py: diff parser end
+2021-07-10 10:31:16,643 called from diff.py: diff parser start
+2021-07-10 10:31:16,643 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:16,643 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:16,643 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:16,643 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:16,643 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:16,643 called from diff.py: diff parser end
+2021-07-10 10:31:16,878 called from diff.py: diff parser start
+2021-07-10 10:31:16,878 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:16,878 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:16,878 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:16,878 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:16,878 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:16,878 called from diff.py: diff parser end
+2021-07-10 10:31:17,144 called from diff.py: diff parser start
+2021-07-10 10:31:17,144 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:17,144 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:17,144 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:17,144 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:17,144 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:17,144 called from diff.py: diff parser end
+2021-07-10 10:31:17,394 called from diff.py: diff parser start
+2021-07-10 10:31:17,394 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:17,394 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:17,394 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:17,394 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:17,394 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:17,394 called from diff.py: diff parser end
+2021-07-10 10:31:17,628 called from diff.py: diff parser start
+2021-07-10 10:31:17,628 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:17,628 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:17,628 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:17,628 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:17,628 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:17,628 called from diff.py: diff parser end
+2021-07-10 10:31:17,836 called from diff.py: diff parser start
+2021-07-10 10:31:17,836 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:17,836 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:17,836 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:17,836 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:17,836 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:17,836 called from diff.py: diff parser end
+2021-07-10 10:31:17,946 called from diff.py: diff parser start
+2021-07-10 10:31:17,946 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:17,946 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:17,946 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:17,946 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:17,946 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:17,946 called from diff.py: diff parser end
+2021-07-10 10:31:18,133 called from diff.py: diff parser start
+2021-07-10 10:31:18,133 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:18,133 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:18,133 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:18,133 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:18,133 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:18,133 called from diff.py: diff parser end
+2021-07-10 10:31:18,642 called from diff.py: diff parser start
+2021-07-10 10:31:18,642 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:18,642 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:18,642 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:18,642 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:18,642 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:18,642 called from diff.py: diff parser end
+2021-07-10 10:31:18,954 called from diff.py: diff parser start
+2021-07-10 10:31:18,954 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:18,954 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:18,954 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:18,954 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:18,954 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:18,954 called from diff.py: diff parser end
+2021-07-10 10:31:19,064 called from diff.py: diff parser start
+2021-07-10 10:31:19,064 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:19,064 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:19,064 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:19,064 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:19,064 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:19,064 called from diff.py: diff parser end
+2021-07-10 10:31:19,361 called from diff.py: diff parser start
+2021-07-10 10:31:19,361 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:19,361 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:19,361 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:19,361 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:19,361 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:19,361 called from diff.py: diff parser end
+2021-07-10 10:31:19,610 called from diff.py: diff parser start
+2021-07-10 10:31:19,610 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:19,610 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:19,610 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:19,610 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:19,610 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:19,610 called from diff.py: diff parser end
+2021-07-10 10:31:19,830 called from diff.py: diff parser start
+2021-07-10 10:31:19,830 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:19,830 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:19,830 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:19,830 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:19,830 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:19,830 called from diff.py: diff parser end
+2021-07-10 10:31:19,924 called from diff.py: diff parser start
+2021-07-10 10:31:19,924 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:19,924 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:19,924 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:19,924 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:19,924 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:19,924 called from diff.py: diff parser end
+2021-07-10 10:31:20,159 called from diff.py: diff parser start
+2021-07-10 10:31:20,159 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:20,159 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:20,159 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:20,159 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:20,159 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:20,159 called from diff.py: diff parser end
+2021-07-10 10:31:20,268 called from diff.py: diff parser start
+2021-07-10 10:31:20,268 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:20,268 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:20,268 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:20,268 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:20,268 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:20,268 called from diff.py: diff parser end
+2021-07-10 10:31:33,523 called from diff.py: diff parser start
+2021-07-10 10:31:33,523 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:33,523 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:33,523 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:33,523 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:33,523 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:33,523 called from diff.py: diff parser end
+2021-07-10 10:31:33,822 called from diff.py: diff parser start
+2021-07-10 10:31:33,822 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:33,822 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:33,822 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:33,822 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:33,822 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:33,822 called from diff.py: diff parser end
+2021-07-10 10:31:34,103 called from diff.py: diff parser start
+2021-07-10 10:31:34,103 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:34,103 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:34,103 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:34,103 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:34,103 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:34,103 called from diff.py: diff parser end
+2021-07-10 10:31:34,368 called from diff.py: diff parser start
+2021-07-10 10:31:34,368 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:34,368 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:34,368 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:34,368 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:34,368 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:34,368 called from diff.py: diff parser end
+2021-07-10 10:31:34,509 called from diff.py: diff parser start
+2021-07-10 10:31:34,509 called from diff.py: line_lengths old: 12; new: 12
+2021-07-10 10:31:34,509 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:34,509 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:34,509 called from diff.py: parse_part from 11 to 12 (to 11 in part parser)
+2021-07-10 10:31:34,509 called from diff.py: -> code[replace] old[12:12] new[12:12]
+2021-07-10 10:31:34,509 called from diff.py: diff parser end
+2021-07-10 10:31:38,940 called from diff.py: diff parser start
+2021-07-10 10:31:38,940 called from diff.py: line_lengths old: 12; new: 13
+2021-07-10 10:31:38,940 called from diff.py: -> code[equal] old[1:11] new[1:11]
+2021-07-10 10:31:38,940 called from diff.py: copy old[1:10] new[1:10]
+2021-07-10 10:31:38,940 called from diff.py: parse_part from 11 to 12 (to 12 in part parser)
+2021-07-10 10:31:38,940 called from diff.py: -> code[replace] old[12:12] new[12:13]
+2021-07-10 10:31:38,940 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:38,940 called from diff.py: diff parser end
+2021-07-10 10:31:39,355 called from diff.py: diff parser start
+2021-07-10 10:31:39,355 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:39,355 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:39,355 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:39,355 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:39,355 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:39,355 called from diff.py: diff parser end
+2021-07-10 10:31:39,543 called from diff.py: diff parser start
+2021-07-10 10:31:39,543 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:39,543 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:39,543 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:39,543 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:39,543 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:39,543 called from diff.py: diff parser end
+2021-07-10 10:31:39,747 called from diff.py: diff parser start
+2021-07-10 10:31:39,747 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:39,747 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:39,747 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:39,747 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:39,747 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:39,747 called from diff.py: diff parser end
+2021-07-10 10:31:41,964 called from diff.py: diff parser start
+2021-07-10 10:31:41,964 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:41,964 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:41,964 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:41,964 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:41,964 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:41,964 called from diff.py: diff parser end
+2021-07-10 10:31:42,258 called from diff.py: diff parser start
+2021-07-10 10:31:42,258 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:42,258 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:42,258 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:42,258 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:42,258 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:42,258 called from diff.py: diff parser end
+2021-07-10 10:31:42,508 called from diff.py: diff parser start
+2021-07-10 10:31:42,508 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:42,508 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:42,508 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:42,508 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:42,508 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:42,508 called from diff.py: diff parser end
+2021-07-10 10:31:42,666 called from diff.py: diff parser start
+2021-07-10 10:31:42,666 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:42,666 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:42,666 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:42,666 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:42,666 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:42,666 called from diff.py: diff parser end
+2021-07-10 10:31:42,837 called from diff.py: diff parser start
+2021-07-10 10:31:42,837 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:42,837 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:42,837 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:42,837 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:42,837 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:42,837 called from diff.py: diff parser end
+2021-07-10 10:31:42,988 called from diff.py: diff parser start
+2021-07-10 10:31:42,988 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:42,988 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:42,988 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:42,988 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:42,988 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:42,988 called from diff.py: diff parser end
+2021-07-10 10:31:43,423 called from diff.py: diff parser start
+2021-07-10 10:31:43,423 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:43,423 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:43,423 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:43,423 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:43,423 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:43,423 called from diff.py: diff parser end
+2021-07-10 10:31:43,768 called from diff.py: diff parser start
+2021-07-10 10:31:43,768 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:43,768 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:43,768 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:43,768 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:43,768 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:43,768 called from diff.py: diff parser end
+2021-07-10 10:31:45,301 called from diff.py: diff parser start
+2021-07-10 10:31:45,301 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:45,301 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:45,301 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:45,301 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:45,301 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:45,301 called from diff.py: diff parser end
+2021-07-10 10:31:45,659 called from diff.py: diff parser start
+2021-07-10 10:31:45,659 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:45,659 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:45,659 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:45,659 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:45,659 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:45,659 called from diff.py: diff parser end
+2021-07-10 10:31:45,831 called from diff.py: diff parser start
+2021-07-10 10:31:45,831 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:45,831 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:45,831 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:45,831 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:45,831 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:45,831 called from diff.py: diff parser end
+2021-07-10 10:31:46,293 called from diff.py: diff parser start
+2021-07-10 10:31:46,293 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:46,293 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:46,293 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:46,293 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:46,293 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:46,293 called from diff.py: diff parser end
+2021-07-10 10:31:46,449 called from diff.py: diff parser start
+2021-07-10 10:31:46,449 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:46,449 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:46,449 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:46,449 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:46,449 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:46,449 called from diff.py: diff parser end
+2021-07-10 10:31:46,543 called from diff.py: diff parser start
+2021-07-10 10:31:46,543 called from diff.py: line_lengths old: 13; new: 13
+2021-07-10 10:31:46,543 called from diff.py: -> code[equal] old[1:12] new[1:12]
+2021-07-10 10:31:46,543 called from diff.py: copy old[1:12] new[1:12]
+2021-07-10 10:31:46,543 called from diff.py: -> code[replace] old[13:13] new[13:13]
+2021-07-10 10:31:46,543 called from diff.py: parse_part from 13 to 13 (to 12 in part parser)
+2021-07-10 10:31:46,543 called from diff.py: diff parser end

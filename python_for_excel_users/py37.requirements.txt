@@ -87,7 +87,7 @@ pytest-pylint==0.14.1
 python-dateutil==2.8.0
 pytz==2019.2
 PyWavelets==1.0.3
-pywin32==224
+pywin32==301
 pywinpty==0.5.5
 PyYAML==5.1.2
 pyzmq==18.1.0

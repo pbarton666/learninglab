@@ -55,7 +55,7 @@ mplayer.py==0.7.2.post1
 nbconvert==5.6.0
 nbformat==4.4.0
 networkx==2.3
-notebook==6.0.1
+notebook==6.4.10
 numba==0.45.1
 numpy==1.16.4
 olefile==0.46

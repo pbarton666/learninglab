@@ -52,7 +52,7 @@ mkl-random==1.0.2
 mkl-service==2.0.2
 more-itertools==7.2.0
 mplayer.py==0.7.2.post1
-nbconvert==5.6.0
+nbconvert==6.5.1
 nbformat==4.4.0
 networkx==2.3
 notebook==6.0.1
